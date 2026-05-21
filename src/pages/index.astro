@@ -13,6 +13,7 @@ const description =
 
 const homeFaqs = [
   { q: 'What is 399apps?', a: '399apps is a small, opinionated app store of business SaaS — Nidhi Books (accounting), Nidhi Inventory (stock), a Books + Inventory bundle, Nidhi Matrimonials and Nidhi Job Portal. Every product is available on our cloud or fully self-hostable on your server.' },
+  { q: 'How much does 399apps cost?', a: 'Same yearly pricing for every standalone app. Starter is ₹25,000/year on cloud or ₹39,000/year self-hosted. Growth is ₹49,000/year cloud or ₹79,000/year self-hosted and includes one free core-workflow customisation. Scale is bespoke. The Books + Inventory bundle is 10% off these prices. Unlimited users and exports on every plan.' },
   { q: 'Cloud or self-hosted — which should I pick?', a: 'Pick cloud if you want zero-ops, daily backups and the fastest path to live. Pick self-host if you have a compliance, data-locality or cost-per-scale reason to keep things in-house — we ship the same product as a single-server licence.' },
   { q: 'Do you offer white-label?', a: 'Yes. Every product can be rebranded under your domain, logo and colours. Talk to us about white-label deployments for community matrimonials, niche job boards or industry-specific Books / Inventory roll-outs.' },
   { q: 'Is there a free trial?', a: 'Yes. Every cloud product has a 14-day trial — no card required. Self-hosted plans come with a 7-day evaluation licence.' },
@@ -105,16 +106,16 @@ const jsonLd = [
           <p class="text-xs uppercase tracking-wider text-ink-500">Products shipping</p>
         </div>
         <div>
-          <p class="text-2xl font-semibold tracking-tightish text-ink-900">2</p>
-          <p class="text-xs uppercase tracking-wider text-ink-500">Deployment modes</p>
+          <p class="text-2xl font-semibold tracking-tightish text-ink-900">From ₹25K</p>
+          <p class="text-xs uppercase tracking-wider text-ink-500">Per app · per year · cloud</p>
+        </div>
+        <div>
+          <p class="text-2xl font-semibold tracking-tightish text-ink-900">Unlimited</p>
+          <p class="text-xs uppercase tracking-wider text-ink-500">Users + exports, every plan</p>
         </div>
         <div>
           <p class="text-2xl font-semibold tracking-tightish text-ink-900">100%</p>
           <p class="text-xs uppercase tracking-wider text-ink-500">Data ownership on self-host</p>
-        </div>
-        <div>
-          <p class="text-2xl font-semibold tracking-tightish text-ink-900">Yearly</p>
-          <p class="text-xs uppercase tracking-wider text-ink-500">Subscriptions</p>
         </div>
       </div>
     </div>
@@ -205,7 +206,7 @@ const jsonLd = [
       <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {[
           { icon: 'sparkle', t: 'Small surface, real depth', b: 'Each app is small enough to grok in a day, deep enough to run a business on.' },
-          { icon: 'rupee', t: 'Honest, yearly pricing', b: 'Annual plans starting at affordable price points. No surprise per-user upcharges.' },
+          { icon: 'rupee', t: 'Unlimited users, every plan', b: 'From ₹25K/year cloud, ₹39K/year self-host — for the whole team. We never price per seat.' },
           { icon: 'shield', t: 'Your data is yours', b: 'Encrypted on cloud. Fully self-hostable. Exportable any time, in standard formats.' },
           { icon: 'cloud', t: 'Cloud-native infra', b: 'Hosted on Cloudflare + AWS, region-pinned to India by default. 99.9% target.' },
           { icon: 'server', t: 'Self-host without pain', b: 'Single-binary or Docker deploys. Backups, upgrades and migrations are first-class.' },

@@ -107,6 +107,7 @@ const description = `${app.oneLiner} Available on the 399apps cloud or fully sel
           <ul class="mt-8 flex flex-wrap items-center gap-x-5 gap-y-2 text-xs text-ink-500">
             <li class="inline-flex items-center gap-1.5"><Icon name="cloud" size={14} class="text-brand-600" /> Cloud · yearly</li>
             <li class="inline-flex items-center gap-1.5"><Icon name="server" size={14} class="text-ink-700" /> Self-hosted · yearly</li>
+            <li class="inline-flex items-center gap-1.5"><Icon name="check" size={14} class="text-emerald-600" /> Unlimited users + exports</li>
             <li class="inline-flex items-center gap-1.5"><Icon name="shield" size={14} class="text-emerald-600" /> White-label ready</li>
           </ul>
         </div>
@@ -119,12 +120,14 @@ const description = `${app.oneLiner} Available on the 399apps cloud or fully sel
               <dd class="text-right font-medium text-emerald-700">Available</dd>
               <dt class="text-ink-500">Audience</dt>
               <dd class="text-right text-ink-800">{app.audiences.slice(0, 2).join(', ')}</dd>
-              <dt class="text-ink-500">Industries</dt>
-              <dd class="text-right text-ink-800">{app.industries.slice(0, 3).join(', ')}</dd>
               <dt class="text-ink-500">Hosting</dt>
               <dd class="text-right text-ink-800">Cloud · Self-host</dd>
+              <dt class="text-ink-500">Users</dt>
+              <dd class="text-right font-medium text-ink-800">Unlimited</dd>
+              <dt class="text-ink-500">Exports</dt>
+              <dd class="text-right font-medium text-ink-800">Unlimited</dd>
               <dt class="text-ink-500">Billing</dt>
-              <dd class="text-right text-ink-800">Yearly</dd>
+              <dd class="text-right text-ink-800">Yearly · INR</dd>
               <dt class="text-ink-500">White-label</dt>
               <dd class="text-right text-ink-800">Yes</dd>
             </dl>
@@ -133,7 +136,7 @@ const description = `${app.oneLiner} Available on the 399apps cloud or fully sel
               <p class="mt-1 text-2xl font-semibold tracking-tightish text-ink-900">
                 {app.pricing[0]?.cloud.yearly}
               </p>
-              <p class="mt-0.5 text-xs text-ink-500">cloud · billed yearly</p>
+              <p class="mt-0.5 text-xs text-ink-500">cloud · billed yearly · unlimited users</p>
             </div>
           </div>
         </aside>
@@ -192,9 +195,9 @@ const description = `${app.oneLiner} Available on the 399apps cloud or fully sel
     <div class="container-wide py-16 sm:py-20">
       <div class="mb-10 max-w-2xl">
         <span class="eyebrow">Pricing for {app.shortName}</span>
-        <h2 class="h2 mt-3">Honest, yearly plans.</h2>
+        <h2 class="h2 mt-3">One plan, every app. Unlimited users.</h2>
         <p class="lede mt-3">
-          One price, one year, no per-user gotchas. Cloud or self-host, your call.
+          Same yearly pricing as every product on 399apps. No per-seat gotchas — unlimited users and exports on every plan. Growth includes one free core-workflow customisation.
         </p>
       </div>
 
