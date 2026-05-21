@@ -5,6 +5,21 @@ export type AppPricing = {
   selfHost: { yearly: string; note?: string };
 };
 
+export type AppDetailGroup = {
+  title: string;
+  description?: string;
+  items: { title: string; body: string }[];
+};
+
+export type AppDetailSection = {
+  id: string;
+  eyebrow: string;
+  title: string;
+  description?: string;
+  groups: AppDetailGroup[];
+  note?: string;
+};
+
 export type App = {
   slug: string;
   name: string;
@@ -23,6 +38,7 @@ export type App = {
   pricing: AppPricing[];
   faqs: { q: string; a: string }[];
   keywords: string[];
+  sections?: AppDetailSection[];
 };
 
 // Same yearly pricing for every standalone product in the 399apps catalogue.
@@ -78,34 +94,84 @@ export const APPS: App[] = [
     name: 'Nidhi Books',
     shortName: 'Books',
     category: 'Accounting & Finance',
-    tagline: 'Modern double-entry accounting for small and growing businesses.',
+    tagline: 'GST-ready accounting for small and growing businesses in India.',
     oneLiner:
-      'GST-ready accounting, invoicing, expenses and reports — all in one clean dashboard.',
-    hero: 'Run your books without the spreadsheet chaos. Invoices, expenses, taxes and reports — finally simple.',
+      'GST-ready invoicing, TDS-aware payments, P&L and Cash Flow, with audit-grade CSV and PDF exports.',
+    hero: 'Run your books without the spreadsheet chaos. GST-compliant invoices, TDS-aware payments, live reports, audit-grade exports.',
     description:
-      'Nidhi Books is double-entry accounting reimagined for the small business owner. Create GST-compliant invoices in seconds, track expenses, reconcile payments, and pull instant P&L, Balance Sheet and GSTR-ready reports. Available on the 399apps cloud or self-hosted on your own server with full data ownership.',
+      'Nidhi Books is journal-backed accounting reimagined for the small business owner. Create GST-compliant invoices with HSN/SAC and place-of-supply handling, capture TDS on every applicable payment, reconcile customer and vendor accounts, and pull live P&L, Cash Flow, AR/AP Aging and Sales Register reports. Export GSTR-1 (with B2B, B2C, CDNR and HSN summary), GSTR-3B summary, and TDS reconciliations (26AS / 26Q) as CA-friendly CSV — or take a period-close audit snapshot with a SHA-256 hash. Available on the 399apps cloud or self-hosted with full data ownership.',
     icon: 'book',
     accent: 'from-emerald-500 to-teal-600',
     status: 'available',
     features: [
-      { title: 'GST-ready invoicing', body: 'Generate compliant invoices, quotes and credit notes with HSN/SAC, place of supply and e-invoice JSON in one click.' },
-      { title: 'Double-entry, no headaches', body: 'Every transaction is journal-backed. You see the simple form; the ledger stays clean.' },
-      { title: 'Live financial reports', body: 'P&L, Balance Sheet, Trial Balance, GSTR-1, GSTR-3B — recalculated as you type.' },
-      { title: 'Bank reconciliation', body: 'Import statements, auto-match transactions, reconcile in minutes instead of hours.' },
-      { title: 'Multi-currency & multi-branch', body: 'Operate across locations and currencies without juggling spreadsheets.' },
-      { title: 'Roles, audit log, backups', body: 'Granular permissions, full audit trail, encrypted backups — yours by default.' },
+      { title: 'GST-ready invoicing', body: 'Compliant invoices, quotes and credit notes with HSN/SAC, intra- vs inter-state CGST/SGST/IGST splitting, place-of-supply and UPI QR on the PDF.' },
+      { title: 'Journal-backed, no headaches', body: 'Every transaction posts to the ledger. You see the simple form; the journal stays clean and auditable.' },
+      { title: 'Live financial reports', body: 'P&L (accrual), Cash Flow, AR / AP Aging buckets, Sales Register and Stock Valuation — recalculated as you type.' },
+      { title: 'GSTR-1 + GSTR-3B exports', body: 'B2B, B2C consolidated, Credit/Debit notes to registered customers, HSN-wise summary, and the GSTR-3B 3.1.a outward-supplies block — CSV in CA hand-off format.' },
+      { title: 'TDS done properly', body: 'Capture TDS on customer payments (Form 26AS-style) and on vendor bills (Form 26Q). Section-wise summaries across 194C / 194J / 194I and more.' },
+      { title: 'Audit-grade exports', body: 'Period-close snapshot: CSV manifest + PDF cover, signed with a SHA-256 hash. Statutory audits get the immutable trail they expect.' },
     ],
     audiences: ['Small businesses', 'CAs and accounting firms', 'D2C brands', 'Service agencies'],
     industries: ['Retail', 'Services', 'Manufacturing', 'Wholesale & distribution'],
     pricing: STANDARD_PRICING,
+    sections: [
+      {
+        id: 'reports-exports',
+        eyebrow: 'Reports & exports',
+        title: 'Built for the way Indian SMBs actually file taxes.',
+        description: 'Specific, CA-friendly outputs that match what your accountant actually asks for at the end of the quarter — not generic dashboards. Everything below is shipping in Nidhi Books today.',
+        groups: [
+          {
+            title: 'GST & statutory reports',
+            description: 'Tax-compliant outputs ready to file or hand off to your CA.',
+            items: [
+              { title: 'GSTR-1 export (CSV)', body: 'Outward supplies — B2B, B2C consolidated (by state × rate), Credit/Debit notes to registered customers, and an HSN-wise summary. Section-headed CSV for direct CA upload.' },
+              { title: 'GSTR-3B summary', body: 'Section 3.1.a outward-supplies block with taxable value and CGST/SGST/IGST breakdown for the period.' },
+              { title: 'Sales Register', body: 'A chronological list of every invoice and credit note for the period with full tax breakup per row. Filterable by warehouse and period.' },
+              { title: 'HSN-wise summary', body: 'Quantity, taxable value and tax by rate aggregated by HSN, using date-aware tax rates so historical periods stay accurate.' },
+              { title: 'Place-of-Supply handling', body: 'Intra- vs inter-state detection drives CGST/SGST/IGST splitting on every line, every report.' },
+              { title: 'TDS on AR (Form 26AS reconcile)', body: 'TDS withheld by your customers on receipts, grouped by customer and section — line up cleanly with 26AS at year end.' },
+              { title: 'TDS on AP (Form 26Q reconcile)', body: 'TDS deducted on vendor bills, grouped by vendor and section — covers 194C, 194J, 194I-LB and more.' },
+            ],
+          },
+          {
+            title: 'Operational & financial reports',
+            description: 'The numbers you actually run the business on, between filings.',
+            items: [
+              { title: 'Profit & Loss', body: 'Accrual-basis P&L. Sales minus COGS (from recorded bills) minus operating expenses. GST is excluded as a pass-through.' },
+              { title: 'Cash Flow', body: 'Cash-basis movement — inflows from customer payments and vendor refunds, outflows from bill payments, expenses and customer refunds.' },
+              { title: 'AR Aging', body: 'Receivables bucketed by days overdue (current, 1–30, 31–60, 61–90, 90+) with per-invoice outstanding amount.' },
+              { title: 'AP Aging', body: 'Payables bucketed by days overdue, net of TDS deducted and vendor credit applied.' },
+              { title: 'Stock Valuation', body: 'Per-item on-hand quantity, unit cost and total stock value — shared with the Nidhi Inventory module.' },
+            ],
+          },
+          {
+            title: 'Exports & data ownership',
+            description: 'Get every record out — for CAs, for auditors, for your own systems.',
+            items: [
+              { title: 'Invoices CSV', body: 'Full invoice list with number, date, due date, customer, status, kind, subtotal, discount, tax and total. Respects every filter on the list page.' },
+              { title: 'Payments CSV', body: 'Receipts list with date, customer, method, reference, amount, applied vs unapplied, TDS withheld and TDS section.' },
+              { title: 'Customers CSV', body: 'Customer master with display name, company, GSTIN, email, phone, payment term and state.' },
+              { title: 'GSTR-1 CSV (CA hand-off)', body: 'Same data as the on-screen GSTR-1, structured with section headers so your CA can drop it straight into their workflow.' },
+              { title: 'Invoice PDF (Classic & Compact)', body: 'Per-invoice PDF with two template strategies and an embedded UPI QR for fast payment.' },
+              { title: 'Customer-portal PDF', body: 'Share an invoice via a public token — your customer can view and download the PDF without an account.' },
+              { title: 'Audit Export (period-close)', body: 'A snapshot CSV manifest plus a PDF cover, signed with a SHA-256 hash. Becomes an immutable record of the closed period.' },
+            ],
+          },
+        ],
+        note: 'On the roadmap (not yet shipped): Balance Sheet & Trial Balance, GSTR-2B / GSTR-9, e-invoice IRN, e-way bill, XLSX export and Tally sync. We will only show them here when they are real.',
+      },
+    ],
     faqs: [
-      { q: 'Is Nidhi Books GST-compliant for India?', a: 'Yes. Nidhi Books supports GST-ready invoices with HSN/SAC, place of supply, reverse charge, e-invoice JSON and GSTR-1 / GSTR-3B exports.' },
+      { q: 'Which GST reports does Nidhi Books actually generate today?', a: 'GSTR-1 (B2B, B2C consolidated, Credit/Debit notes to registered customers, HSN summary) as both an on-screen report and a CA-friendly CSV; the GSTR-3B 3.1.a outward-supplies summary; a Sales Register; TDS-on-AR (Form 26AS reconciliation) and TDS-on-AP (Form 26Q reconciliation). GSTR-2B / GSTR-9 / e-invoice IRN are on the roadmap.' },
+      { q: 'How do I export my data?', a: 'Every list view (Invoices, Payments, Customers) exports to CSV with the filters you have applied. GSTR-1 has its own structured CSV with section headers. Invoices download as PDF (Classic or Compact, with UPI QR). For statutory audits we also offer a period-close Audit Export — a CSV manifest plus a PDF cover signed with a SHA-256 hash.' },
+      { q: 'Does it handle TDS?', a: 'Yes. You can record TDS withheld on customer receipts (with section codes for 26AS) and TDS deducted on vendor bills (for 26Q). Both produce section-wise summaries you can hand to your CA at year-end.' },
       { q: 'Can I self-host Nidhi Books on my own server?', a: 'Yes. Every plan has a self-hostable equivalent. You get the same product, deployed on your infrastructure with full data ownership.' },
       { q: 'Is the team / user count limited?', a: 'No. Every plan — Starter, Growth and Scale — comes with unlimited users and unlimited exports. We don\'t price per seat.' },
-      { q: 'Do you offer migration from Tally / Zoho / QuickBooks?', a: 'We offer guided migration from common accounting tools. Talk to us at hello@399apps.com and we will scope it for you.' },
+      { q: 'Do you offer migration from Tally / Zoho / QuickBooks?', a: 'We offer guided migration from common accounting tools. Write to us at hello@399apps.com and we will scope it for you.' },
       { q: 'Is my data safe?', a: 'On cloud, your data is encrypted at rest and in transit, backed up daily, and isolated per tenant. On self-host, everything stays on your server.' },
     ],
-    keywords: ['GST accounting software', 'invoicing software India', 'self-hosted accounting', 'Zoho Books alternative', 'Tally alternative', 'small business accounting'],
+    keywords: ['GST accounting software', 'GSTR-1 software', 'GSTR-3B software', 'TDS accounting software India', 'Form 26AS reconciliation', 'self-hosted accounting', 'Zoho Books alternative', 'Tally alternative', 'small business accounting India', 'CA-friendly accounting software'],
   },
   {
     slug: 'inventory',

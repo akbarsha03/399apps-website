@@ -99,9 +99,15 @@ const description = `${app.oneLiner} Available on the 399apps cloud or fully sel
               Get a demo <Icon name="arrow-right" size={16} />
             </a>
             <a href="/pricing" class="btn-secondary">See pricing</a>
-            <a href="/self-hosting" class="btn-ghost">
-              Self-host details <Icon name="arrow-up-right" size={14} />
-            </a>
+            {app.sections && app.sections.length > 0 ? (
+              <a href={`#${app.sections[0].id}`} class="btn-ghost">
+                {app.sections[0].eyebrow} <Icon name="arrow-right" size={14} />
+              </a>
+            ) : (
+              <a href="/self-hosting" class="btn-ghost">
+                Self-host details <Icon name="arrow-up-right" size={14} />
+              </a>
+            )}
           </div>
 
           <ul class="mt-8 flex flex-wrap items-center gap-x-5 gap-y-2 text-xs text-ink-500">
@@ -189,6 +195,51 @@ const description = `${app.oneLiner} Available on the 399apps cloud or fully sel
       </div>
     </div>
   </section>
+
+  <!-- App-specific deep-dive sections (e.g. reports & exports for Books) -->
+  {app.sections?.map((section) => (
+    <section id={section.id} class="border-t border-ink-100 bg-ink-50/40">
+      <div class="container-wide py-16 sm:py-20">
+        <div class="mb-10 max-w-3xl">
+          <span class="eyebrow">{section.eyebrow}</span>
+          <h2 class="h2 mt-3">{section.title}</h2>
+          {section.description && <p class="lede mt-3">{section.description}</p>}
+        </div>
+
+        <div class="space-y-12">
+          {section.groups.map((group) => (
+            <div>
+              <div class="mb-5 flex flex-wrap items-baseline justify-between gap-3 border-b border-ink-100 pb-3">
+                <h3 class="font-display text-lg font-semibold tracking-tightish text-ink-900">{group.title}</h3>
+                {group.description && <p class="text-sm text-ink-500">{group.description}</p>}
+              </div>
+              <ul class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                {group.items.map((item) => (
+                  <li class="rounded-2xl border border-ink-100 bg-white p-5">
+                    <div class="flex items-start gap-3">
+                      <span class={`mt-0.5 inline-grid h-7 w-7 place-items-center rounded-md bg-gradient-to-br ${app.accent} text-white`}>
+                        <Icon name="check" size={14} strokeWidth={2.4} />
+                      </span>
+                      <div class="min-w-0">
+                        <p class="font-display text-[15px] font-semibold tracking-tightish text-ink-900">{item.title}</p>
+                        <p class="mt-1.5 text-sm leading-relaxed text-ink-600">{item.body}</p>
+                      </div>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+
+        {section.note && (
+          <p class="mt-10 max-w-3xl rounded-2xl border border-amber-200 bg-amber-50 px-5 py-4 text-sm leading-relaxed text-amber-900">
+            <span class="font-semibold">Heads-up. </span>{section.note}
+          </p>
+        )}
+      </div>
+    </section>
+  ))}
 
   <!-- Pricing -->
   <section class="border-y border-ink-100 bg-ink-50/40">

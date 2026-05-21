@@ -35,13 +35,13 @@ const jsonLd = {
           </p>
 
           <div class="mt-8 space-y-4">
-            <a href={`mailto:${SITE.email}`} class="flex items-center gap-3 rounded-2xl border border-ink-100 bg-white px-5 py-4 transition-colors hover:border-ink-200">
+            <a href={`mailto:${SITE.salesEmail}`} class="flex items-center gap-3 rounded-2xl border border-ink-100 bg-white px-5 py-4 transition-colors hover:border-ink-200">
               <span class="grid h-10 w-10 place-items-center rounded-lg bg-ink-50 text-ink-700">
                 <Icon name="mail" size={20} />
               </span>
               <div>
-                <p class="text-xs uppercase tracking-wider text-ink-500">Email</p>
-                <p class="font-medium text-ink-900">{SITE.email}</p>
+                <p class="text-xs uppercase tracking-wider text-ink-500">Sales · email</p>
+                <p class="font-medium text-ink-900">{SITE.salesEmail}</p>
               </div>
             </a>
             <a href={SITE.builderUrl} target="_blank" rel="noopener" class="flex items-center gap-3 rounded-2xl border border-ink-100 bg-white px-5 py-4 transition-colors hover:border-ink-200">
@@ -63,6 +63,7 @@ const jsonLd = {
             name="contact"
             action="https://formspree.io/f/your-form-id"
             data-static-form
+            data-email={SITE.salesEmail}
           >
             <h2 class="font-display text-lg font-semibold tracking-tightish text-ink-900">Tell us a bit about you</h2>
             <p class="mt-1 text-sm text-ink-500">We reply within one business day.</p>
@@ -122,7 +123,7 @@ const jsonLd = {
             </div>
 
             <p data-static-fallback class="mt-4 hidden rounded-lg bg-amber-50 px-4 py-3 text-xs text-amber-800">
-              Form not wired up yet — please email us at <a class="underline" href={`mailto:${SITE.email}`}>{SITE.email}</a> in the meantime.
+              Form not wired up yet — please email us at <a class="underline" href={`mailto:${SITE.salesEmail}`}>{SITE.salesEmail}</a> in the meantime.
             </p>
           </form>
         </div>
@@ -139,7 +140,7 @@ const jsonLd = {
         e.preventDefault();
         const params = new URLSearchParams();
         new FormData(form).forEach((v, k) => params.append(k, String(v)));
-        window.location.href = `mailto:hello@399apps.com?subject=399apps%20enquiry&body=${encodeURIComponent(params.toString())}`;
+        window.location.href = `mailto:${form.dataset.email}?subject=399apps%20enquiry&body=${encodeURIComponent(params.toString())}`;
       });
     }
   </script>
