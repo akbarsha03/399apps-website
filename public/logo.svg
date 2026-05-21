@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 64">
-  <rect x="0" y="8" width="48" height="48" rx="10" fill="#0a0b12"/>
-  <text x="24" y="42" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-weight="700" font-size="20" fill="#ffffff" letter-spacing="-1">399</text>
-  <text x="60" y="40" font-family="Inter, system-ui, sans-serif" font-weight="600" font-size="22" fill="#0a0b12" letter-spacing="-0.5">399apps<tspan fill="#8590a8">.com</tspan></text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240">
+  <rect width="240" height="240" rx="0" fill="#DC2626"/>
+  <text x="120" y="138" text-anchor="middle" font-family="Inter, system-ui, -apple-system, Segoe UI, sans-serif" font-weight="900" font-size="128" fill="#ffffff" letter-spacing="-4">399</text>
+  <text x="120" y="200" text-anchor="middle" font-family="Inter, system-ui, -apple-system, Segoe UI, sans-serif" font-weight="800" font-size="42" fill="#ffffff" letter-spacing="-1.5">apps.com</text>
 </svg>

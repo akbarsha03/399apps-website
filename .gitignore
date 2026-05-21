@@ -29,3 +29,7 @@ Thumbs.db
 # wrangler
 .wrangler/
 .dev.vars
+
+# workflow file kept locally; commit via web UI or after `gh auth refresh -s workflow`
+# (see SETUP.md). Template lives at .github/workflow-template/deploy.yml.
+.github/workflows/
