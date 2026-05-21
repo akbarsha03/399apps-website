@@ -1,0 +1,110 @@
+---
+import Layout from '~/layouts/Layout.astro';
+import Icon from '~/components/Icon.astro';
+import CTA from '~/components/CTA.astro';
+import FAQ from '~/components/FAQ.astro';
+import AppIcon from '~/components/AppIcon.astro';
+import { APPS } from '~/data/apps';
+import { SITE } from '~/data/site';
+
+const title = 'Pricing — 399apps. Cloud or self-host. Yearly.';
+const description =
+  'Transparent yearly pricing for every 399apps product — Nidhi Books, Inventory, Books + Inventory bundle, Matrimonials and Job Portal. Cloud and self-hosted plans, in INR.';
+
+const faqs = [
+  { q: 'Is GST included?', a: 'No — prices listed are exclusive of GST. We will add applicable GST on the invoice based on your billing location.' },
+  { q: 'Do you bill monthly?', a: '399apps is yearly-first because it keeps pricing honest and predictable. We will consider quarterly plans on enterprise scopes.' },
+  { q: 'Can I switch from cloud to self-host later?', a: 'Yes. We will migrate your data, set up your server with you, and transfer your remaining cloud term as a credit on the self-host plan.' },
+  { q: 'Do you offer non-profit or community discounts?', a: 'Yes. Registered non-profits, community organisations and educational projects can get a 25–50% discount. Write to us with proof of registration.' },
+  { q: 'What payment methods do you accept?', a: 'UPI, bank transfer (NEFT/RTGS) and cards for India. International customers can pay via card or wire.' },
+];
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a },
+  })),
+};
+---
+
+<Layout
+  title={title}
+  description={description}
+  keywords={['399apps pricing', 'business SaaS pricing India', 'self-hosted SaaS pricing', 'matrimonial software cost', 'job portal pricing']}
+  jsonLd={jsonLd}
+>
+  <section class="relative overflow-hidden border-b border-ink-100">
+    <div class="pointer-events-none absolute inset-0 grid-bg opacity-60"></div>
+    <div class="container-wide relative py-16 sm:py-20">
+      <div class="mx-auto max-w-3xl text-center">
+        <span class="eyebrow">Pricing</span>
+        <h1 class="h1 mt-5">Honest plans. Yearly. INR-first.</h1>
+        <p class="lede mt-5">
+          Pick an app, pick cloud or self-host. No per-user upsells. No surprise charges.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  {APPS.map((app) => (
+    <section class="border-b border-ink-100 bg-white last:border-b-0">
+      <div class="container-wide py-14 sm:py-16">
+        <div class="mb-8 flex flex-wrap items-center justify-between gap-4">
+          <div class="flex items-center gap-3">
+            <AppIcon icon={app.icon} accent={app.accent} size="md" />
+            <div>
+              <span class="eyebrow !text-ink-500">{app.category}</span>
+              <h2 class="h3 mt-1">{app.name}</h2>
+            </div>
+          </div>
+          <a href={`/apps/${app.slug}`} class="btn-ghost text-sm">Learn more <Icon name="arrow-right" size={14} /></a>
+        </div>
+
+        <div class="grid gap-4 lg:grid-cols-3">
+          {app.pricing.map((p, idx) => (
+            <article class:list={['card flex flex-col gap-4', idx === 1 ? 'ring-1 ring-ink-900' : '']}>
+              <div class="flex items-center justify-between">
+                <h3 class="font-display text-base font-semibold tracking-tightish text-ink-900">{p.plan}</h3>
+                <span class="text-xs uppercase tracking-wider text-ink-500">{p.audience}</span>
+              </div>
+              <div class="grid gap-3 sm:grid-cols-2">
+                <div class="rounded-xl border border-ink-100 bg-ink-50/40 p-4">
+                  <p class="inline-flex items-center gap-1.5 text-xs uppercase tracking-wider text-ink-500">
+                    <Icon name="cloud" size={12} /> Cloud
+                  </p>
+                  <p class="mt-2 font-display text-lg font-semibold text-ink-900">{p.cloud.yearly}</p>
+                  {p.cloud.note && <p class="mt-0.5 text-[11.5px] text-ink-500">{p.cloud.note}</p>}
+                </div>
+                <div class="rounded-xl border border-ink-100 bg-ink-50/40 p-4">
+                  <p class="inline-flex items-center gap-1.5 text-xs uppercase tracking-wider text-ink-500">
+                    <Icon name="server" size={12} /> Self-host
+                  </p>
+                  <p class="mt-2 font-display text-lg font-semibold text-ink-900">{p.selfHost.yearly}</p>
+                  {p.selfHost.note && <p class="mt-0.5 text-[11.5px] text-ink-500">{p.selfHost.note}</p>}
+                </div>
+              </div>
+              <a href={`/contact?intent=demo&app=${app.slug}&plan=${p.plan}`} class={idx === 1 ? 'btn-primary mt-auto' : 'btn-secondary mt-auto'}>
+                Choose {p.plan} <Icon name="arrow-right" size={14} />
+              </a>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  ))}
+
+  <FAQ items={faqs} title="Pricing — FAQs" />
+
+  <CTA
+    eyebrow="Need a custom scope?"
+    title="Enterprise, white-label or multi-app? Let's quote it."
+    body="Tell us about your team, your industry and your roll-out plan. We will come back with a clean, honest proposal."
+    primaryLabel="Request a quote"
+    primaryHref="/contact?intent=quote"
+    secondaryLabel="See white-label"
+    secondaryHref="/white-label"
+  />
+</Layout>

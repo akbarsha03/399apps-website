@@ -1,0 +1,146 @@
+---
+import Layout from '~/layouts/Layout.astro';
+import Icon from '~/components/Icon.astro';
+import { APPS } from '~/data/apps';
+import { SITE } from '~/data/site';
+
+const title = 'Contact — Talk to 399apps about a demo, plan or white-label.';
+const description =
+  'Get in touch with 399apps. Book a 20-minute demo, request a custom quote, or scope a white-label deployment. Email, WhatsApp, or the form.';
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'ContactPage',
+  name: 'Contact 399apps',
+  url: `${SITE.url}/contact`,
+  publisher: { '@type': 'Organization', name: SITE.name, url: SITE.url },
+};
+---
+
+<Layout
+  title={title}
+  description={description}
+  keywords={['contact 399apps', 'book a demo', 'business software demo', 'white label SaaS contact']}
+  jsonLd={jsonLd}
+>
+  <section class="relative overflow-hidden border-b border-ink-100">
+    <div class="pointer-events-none absolute inset-0 grid-bg opacity-60"></div>
+    <div class="container-wide relative py-16 sm:py-20">
+      <div class="grid items-start gap-12 lg:grid-cols-12">
+        <div class="lg:col-span-5">
+          <span class="eyebrow">Contact</span>
+          <h1 class="h1 mt-5">Tell us what you want to build.</h1>
+          <p class="lede mt-5">
+            A short conversation goes a long way. Share your context — we will recommend the right app, plan and hosting mode.
+          </p>
+
+          <div class="mt-8 space-y-4">
+            <a href={`mailto:${SITE.email}`} class="flex items-center gap-3 rounded-2xl border border-ink-100 bg-white px-5 py-4 transition-colors hover:border-ink-200">
+              <span class="grid h-10 w-10 place-items-center rounded-lg bg-ink-50 text-ink-700">
+                <Icon name="mail" size={20} />
+              </span>
+              <div>
+                <p class="text-xs uppercase tracking-wider text-ink-500">Email</p>
+                <p class="font-medium text-ink-900">{SITE.email}</p>
+              </div>
+            </a>
+            <a href={SITE.builderUrl} target="_blank" rel="noopener" class="flex items-center gap-3 rounded-2xl border border-ink-100 bg-white px-5 py-4 transition-colors hover:border-ink-200">
+              <span class="grid h-10 w-10 place-items-center rounded-lg bg-ink-50 text-ink-700">
+                <Icon name="globe" size={20} />
+              </span>
+              <div>
+                <p class="text-xs uppercase tracking-wider text-ink-500">Builder</p>
+                <p class="font-medium text-ink-900">shabuilds.tech ↗</p>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="lg:col-span-7">
+          <form
+            class="rounded-3xl border border-ink-100 bg-white p-6 shadow-[0_12px_40px_-24px_rgba(15,23,42,0.18)] sm:p-8"
+            method="POST"
+            name="contact"
+            action="https://formspree.io/f/your-form-id"
+            data-static-form
+          >
+            <h2 class="font-display text-lg font-semibold tracking-tightish text-ink-900">Tell us a bit about you</h2>
+            <p class="mt-1 text-sm text-ink-500">We reply within one business day.</p>
+
+            <div class="mt-6 grid gap-4 sm:grid-cols-2">
+              <label class="block">
+                <span class="text-xs font-medium text-ink-700">Name</span>
+                <input required type="text" name="name" autocomplete="name" class="mt-1.5 w-full rounded-lg border border-ink-200 bg-white px-3.5 py-2.5 text-sm text-ink-900 outline-none focus:border-ink-900 focus:ring-1 focus:ring-ink-900" />
+              </label>
+              <label class="block">
+                <span class="text-xs font-medium text-ink-700">Work email</span>
+                <input required type="email" name="email" autocomplete="email" class="mt-1.5 w-full rounded-lg border border-ink-200 bg-white px-3.5 py-2.5 text-sm text-ink-900 outline-none focus:border-ink-900 focus:ring-1 focus:ring-ink-900" />
+              </label>
+              <label class="block">
+                <span class="text-xs font-medium text-ink-700">Company</span>
+                <input type="text" name="company" autocomplete="organization" class="mt-1.5 w-full rounded-lg border border-ink-200 bg-white px-3.5 py-2.5 text-sm text-ink-900 outline-none focus:border-ink-900 focus:ring-1 focus:ring-ink-900" />
+              </label>
+              <label class="block">
+                <span class="text-xs font-medium text-ink-700">Phone / WhatsApp</span>
+                <input type="tel" name="phone" autocomplete="tel" class="mt-1.5 w-full rounded-lg border border-ink-200 bg-white px-3.5 py-2.5 text-sm text-ink-900 outline-none focus:border-ink-900 focus:ring-1 focus:ring-ink-900" />
+              </label>
+              <label class="block sm:col-span-2">
+                <span class="text-xs font-medium text-ink-700">Interested in</span>
+                <select name="app" class="mt-1.5 w-full rounded-lg border border-ink-200 bg-white px-3.5 py-2.5 text-sm text-ink-900 outline-none focus:border-ink-900 focus:ring-1 focus:ring-ink-900">
+                  <option value="">— Pick an app —</option>
+                  {APPS.map((a) => <option value={a.slug}>{a.name}</option>)}
+                  <option value="multiple">Multiple apps</option>
+                  <option value="whitelabel">White-label scope</option>
+                  <option value="other">Other</option>
+                </select>
+              </label>
+              <fieldset class="block sm:col-span-2">
+                <legend class="text-xs font-medium text-ink-700">Hosting preference</legend>
+                <div class="mt-1.5 flex flex-wrap gap-3">
+                  {[
+                    { v: 'cloud', l: 'Cloud' },
+                    { v: 'selfhost', l: 'Self-hosted' },
+                    { v: 'unsure', l: 'Unsure — advise me' },
+                  ].map((o) => (
+                    <label class="inline-flex items-center gap-2 rounded-full border border-ink-200 bg-white px-3 py-1.5 text-sm text-ink-700 has-[:checked]:border-ink-900 has-[:checked]:bg-ink-900 has-[:checked]:text-white">
+                      <input type="radio" name="hosting" value={o.v} class="sr-only" /> {o.l}
+                    </label>
+                  ))}
+                </div>
+              </fieldset>
+              <label class="block sm:col-span-2">
+                <span class="text-xs font-medium text-ink-700">What are you trying to do?</span>
+                <textarea name="message" rows="4" class="mt-1.5 w-full rounded-lg border border-ink-200 bg-white px-3.5 py-2.5 text-sm text-ink-900 outline-none focus:border-ink-900 focus:ring-1 focus:ring-ink-900" placeholder="A few lines on your business, team size, current stack…"></textarea>
+              </label>
+            </div>
+
+            <div class="mt-6 flex flex-col-reverse items-start justify-between gap-3 sm:flex-row sm:items-center">
+              <p class="text-xs text-ink-500">By submitting, you agree to our privacy practices. We don't spam.</p>
+              <button type="submit" class="btn-primary">
+                Send <Icon name="arrow-right" size={16} />
+              </button>
+            </div>
+
+            <p data-static-fallback class="mt-4 hidden rounded-lg bg-amber-50 px-4 py-3 text-xs text-amber-800">
+              Form not wired up yet — please email us at <a class="underline" href={`mailto:${SITE.email}`}>{SITE.email}</a> in the meantime.
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const form = document.querySelector<HTMLFormElement>('[data-static-form]');
+    const fallback = document.querySelector<HTMLElement>('[data-static-fallback]');
+    if (form && form.action.includes('your-form-id') && fallback) {
+      fallback.classList.remove('hidden');
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const params = new URLSearchParams();
+        new FormData(form).forEach((v, k) => params.append(k, String(v)));
+        window.location.href = `mailto:hello@399apps.com?subject=399apps%20enquiry&body=${encodeURIComponent(params.toString())}`;
+      });
+    }
+  </script>
+</Layout>

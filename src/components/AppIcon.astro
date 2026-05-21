@@ -1,0 +1,30 @@
+---
+import Icon from './Icon.astro';
+
+interface Props {
+  icon: string;
+  accent: string;
+  size?: 'sm' | 'md' | 'lg';
+  class?: string;
+}
+
+const { icon, accent, size = 'md', class: className = '' } = Astro.props;
+
+const sizes = {
+  sm: { wrap: 'h-10 w-10 rounded-lg', icon: 18 },
+  md: { wrap: 'h-12 w-12 rounded-xl', icon: 22 },
+  lg: { wrap: 'h-14 w-14 rounded-2xl', icon: 26 },
+};
+const s = sizes[size];
+---
+
+<span
+  class:list={[
+    'relative grid place-items-center bg-gradient-to-br text-white shadow-[0_8px_24px_-12px_rgba(15,23,42,0.4)]',
+    accent,
+    s.wrap,
+    className,
+  ]}
+>
+  <Icon name={icon as any} size={s.icon} strokeWidth={1.7} />
+</span>

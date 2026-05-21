@@ -1,0 +1,17 @@
+---
+import Layout from '~/layouts/Layout.astro';
+import Icon from '~/components/Icon.astro';
+---
+<Layout title="Page not found — 399apps" description="The page you were looking for doesn't exist." noindex={true}>
+  <section class="bg-white">
+    <div class="container-narrow py-24 text-center">
+      <span class="eyebrow">404</span>
+      <h1 class="h1 mt-5">We couldn't find that page.</h1>
+      <p class="lede mx-auto mt-4 max-w-xl">It may have moved, been renamed, or never existed. Head back to the homepage or pick an app below.</p>
+      <div class="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+        <a href="/" class="btn-primary">Back to home <Icon name="arrow-right" size={16} /></a>
+        <a href="/#apps" class="btn-secondary">Browse apps</a>
+      </div>
+    </div>
+  </section>
+</Layout>

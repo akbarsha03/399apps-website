@@ -1,0 +1,71 @@
+---
+import { SITE } from '~/data/site';
+
+interface Props {
+  title: string;
+  description: string;
+  path?: string;
+  image?: string;
+  type?: 'website' | 'article' | 'product';
+  noindex?: boolean;
+  keywords?: string[];
+  jsonLd?: Record<string, unknown> | Record<string, unknown>[];
+}
+
+const {
+  title,
+  description,
+  path = Astro.url.pathname,
+  image = '/og-image.svg',
+  type = 'website',
+  noindex = false,
+  keywords = [],
+  jsonLd,
+} = Astro.props;
+
+const cleanPath = path.endsWith('/') && path !== '/' ? path.slice(0, -1) : path;
+const canonical = new URL(cleanPath, SITE.url).toString();
+const imageUrl = image.startsWith('http') ? image : new URL(image, SITE.url).toString();
+
+const fullTitle = title.includes(SITE.name) ? title : `${title} — ${SITE.name}`;
+
+const schemas: Record<string, unknown>[] = [];
+if (jsonLd) {
+  if (Array.isArray(jsonLd)) schemas.push(...jsonLd);
+  else schemas.push(jsonLd);
+}
+---
+
+<title>{fullTitle}</title>
+<meta name="description" content={description} />
+<link rel="canonical" href={canonical} />
+{keywords.length > 0 && <meta name="keywords" content={keywords.join(', ')} />}
+{noindex && <meta name="robots" content="noindex,nofollow" />}
+{!noindex && <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />}
+
+<meta property="og:type" content={type} />
+<meta property="og:site_name" content={SITE.name} />
+<meta property="og:title" content={fullTitle} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={canonical} />
+<meta property="og:image" content={imageUrl} />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:locale" content="en_IN" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={fullTitle} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={imageUrl} />
+<meta name="twitter:site" content="@shabuilds" />
+
+<meta name="theme-color" content="#0a0b12" />
+<meta name="author" content={SITE.builderName} />
+<meta name="publisher" content={SITE.name} />
+<meta name="application-name" content={SITE.name} />
+<meta name="geo.region" content="IN" />
+<meta name="geo.placename" content="India" />
+
+{schemas.map((schema) => (
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+))}

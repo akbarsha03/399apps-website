@@ -1,0 +1,237 @@
+---
+import Layout from '~/layouts/Layout.astro';
+import AppCard from '~/components/AppCard.astro';
+import Icon from '~/components/Icon.astro';
+import CTA from '~/components/CTA.astro';
+import FAQ from '~/components/FAQ.astro';
+import { APPS } from '~/data/apps';
+import { SITE } from '~/data/site';
+
+const title = '399apps — Affordable Business SaaS. Cloud or Self-Hosted.';
+const description =
+  'A clean app store of affordable business software — accounting, inventory, matrimonials, job portal. Use them on the 399apps cloud or self-host on your own server. Yearly subscriptions. White-label ready.';
+
+const homeFaqs = [
+  { q: 'What is 399apps?', a: '399apps is a small, opinionated app store of business SaaS — Nidhi Books (accounting), Nidhi Inventory (stock), a Books + Inventory bundle, Nidhi Matrimonials and Nidhi Job Portal. Every product is available on our cloud or fully self-hostable on your server.' },
+  { q: 'Cloud or self-hosted — which should I pick?', a: 'Pick cloud if you want zero-ops, daily backups and the fastest path to live. Pick self-host if you have a compliance, data-locality or cost-per-scale reason to keep things in-house — we ship the same product as a single-server licence.' },
+  { q: 'Do you offer white-label?', a: 'Yes. Every product can be rebranded under your domain, logo and colours. Talk to us about white-label deployments for community matrimonials, niche job boards or industry-specific Books / Inventory roll-outs.' },
+  { q: 'Is there a free trial?', a: 'Yes. Every cloud product has a 14-day trial — no card required. Self-hosted plans come with a 7-day evaluation licence.' },
+  { q: 'Who builds and maintains 399apps?', a: '399apps is built, deployed and maintained by shabuilds (shabuilds.tech) — a small, focused product studio that ships software like real engineers, not like a typical agency.' },
+  { q: 'Where is the data hosted?', a: 'Cloud data is hosted on Cloudflare and AWS infrastructure with India-region defaults. On self-host, your data never leaves your server.' },
+];
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: SITE.name,
+    url: SITE.url,
+    potentialAction: {
+      '@type': 'SearchAction',
+      target: `${SITE.url}/search?q={search_term_string}`,
+      'query-input': 'required name=search_term_string',
+    },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    itemListElement: APPS.map((app, idx) => ({
+      '@type': 'ListItem',
+      position: idx + 1,
+      url: `${SITE.url}/apps/${app.slug}`,
+      name: app.name,
+    })),
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: homeFaqs.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  },
+];
+---
+
+<Layout
+  title={title}
+  description={description}
+  keywords={['business SaaS India', 'self-hosted business apps', 'accounting software', 'inventory software', 'matrimonial software', 'job portal software', 'white label SaaS', 'affordable business software']}
+  jsonLd={jsonLd}
+>
+  <!-- Hero -->
+  <section class="relative overflow-hidden border-b border-ink-100">
+    <div class="pointer-events-none absolute inset-0 grid-bg"></div>
+    <div class="pointer-events-none absolute -top-40 left-1/2 h-[440px] w-[820px] -translate-x-1/2 rounded-full bg-gradient-to-tr from-brand-200/40 via-fuchsia-200/30 to-amber-200/30 blur-3xl"></div>
+
+    <div class="container-wide relative py-20 sm:py-28">
+      <div class="mx-auto max-w-3xl text-center">
+        <span class="eyebrow">
+          <span class="h-1.5 w-1.5 rounded-full bg-emerald-500"></span>
+          Yearly plans · Cloud or self-host
+        </span>
+        <h1 class="h1 mt-5">
+          An app store of <span class="bg-gradient-to-r from-brand-600 via-fuchsia-600 to-amber-600 bg-clip-text text-transparent">honest business software.</span>
+        </h1>
+        <p class="lede mx-auto mt-5 max-w-2xl">
+          Run your accounting, stock, matrimony or job-board on a tight, well-built SaaS — on our cloud, or fully self-hosted on your own server.
+        </p>
+        <div class="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
+          <a href="#apps" class="btn-primary">
+            Browse apps <Icon name="arrow-right" size={16} />
+          </a>
+          <a href="/contact?intent=demo" class="btn-secondary">
+            Get a free demo
+          </a>
+        </div>
+
+        <ul class="mt-10 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs text-ink-500">
+          <li class="inline-flex items-center gap-1.5"><Icon name="check" size={14} class="text-emerald-600" /> 14-day cloud trial</li>
+          <li class="inline-flex items-center gap-1.5"><Icon name="check" size={14} class="text-emerald-600" /> Self-host on your server</li>
+          <li class="inline-flex items-center gap-1.5"><Icon name="check" size={14} class="text-emerald-600" /> White-label ready</li>
+          <li class="inline-flex items-center gap-1.5"><Icon name="check" size={14} class="text-emerald-600" /> GST-friendly</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust strip -->
+  <section class="border-b border-ink-100 bg-ink-50/40">
+    <div class="container-wide py-8">
+      <div class="grid grid-cols-2 gap-6 sm:grid-cols-4">
+        <div>
+          <p class="text-2xl font-semibold tracking-tightish text-ink-900">5</p>
+          <p class="text-xs uppercase tracking-wider text-ink-500">Products shipping</p>
+        </div>
+        <div>
+          <p class="text-2xl font-semibold tracking-tightish text-ink-900">2</p>
+          <p class="text-xs uppercase tracking-wider text-ink-500">Deployment modes</p>
+        </div>
+        <div>
+          <p class="text-2xl font-semibold tracking-tightish text-ink-900">100%</p>
+          <p class="text-xs uppercase tracking-wider text-ink-500">Data ownership on self-host</p>
+        </div>
+        <div>
+          <p class="text-2xl font-semibold tracking-tightish text-ink-900">Yearly</p>
+          <p class="text-xs uppercase tracking-wider text-ink-500">Subscriptions</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Apps grid -->
+  <section id="apps" class="bg-white">
+    <div class="container-wide py-20 sm:py-24">
+      <div class="mx-auto mb-12 max-w-2xl text-center">
+        <span class="eyebrow">The 399apps catalogue</span>
+        <h2 class="h2 mt-3">Pick an app. Plug it in. Go.</h2>
+        <p class="lede mt-3">
+          Each product is small enough to grok in a day and serious enough to run a business on.
+        </p>
+      </div>
+
+      <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        {APPS.map((app) => <AppCard app={app} />)}
+      </div>
+    </div>
+  </section>
+
+  <!-- Cloud vs Self-host -->
+  <section class="border-y border-ink-100 bg-ink-50/40">
+    <div class="container-wide py-20 sm:py-24">
+      <div class="grid items-start gap-12 lg:grid-cols-12">
+        <div class="lg:col-span-5">
+          <span class="eyebrow">Two ways to run it</span>
+          <h2 class="h2 mt-3">Cloud convenience, or your-server control.</h2>
+          <p class="lede mt-4">
+            Every app on 399apps ships in both shapes. Start on the cloud and move later, or self-host from day one — same product, same support.
+          </p>
+          <div class="mt-6 flex flex-wrap gap-3">
+            <a href="/self-hosting" class="btn-secondary">Self-host details</a>
+            <a href="/cloud-vs-self-hosted" class="btn-ghost">Compare modes <Icon name="arrow-right" size={14} /></a>
+          </div>
+        </div>
+
+        <div class="grid gap-4 lg:col-span-7 sm:grid-cols-2">
+          <article class="card">
+            <div class="flex items-center gap-3">
+              <span class="grid h-10 w-10 place-items-center rounded-lg bg-gradient-to-br from-brand-500 to-brand-700 text-white">
+                <Icon name="cloud" size={20} />
+              </span>
+              <h3 class="font-display text-lg font-semibold tracking-tightish">Cloud</h3>
+            </div>
+            <p class="mt-3 text-[14.5px] leading-relaxed text-ink-600">
+              Zero-ops. Multi-tenant. Daily backups, region-pinned, monitored 24×7. Fastest path to live.
+            </p>
+            <ul class="mt-4 space-y-1.5 text-sm text-ink-700">
+              <li class="flex gap-2"><Icon name="check" size={14} class="mt-1 text-emerald-600" /> Live in minutes</li>
+              <li class="flex gap-2"><Icon name="check" size={14} class="mt-1 text-emerald-600" /> Auto-updates</li>
+              <li class="flex gap-2"><Icon name="check" size={14} class="mt-1 text-emerald-600" /> India data region default</li>
+            </ul>
+          </article>
+          <article class="card">
+            <div class="flex items-center gap-3">
+              <span class="grid h-10 w-10 place-items-center rounded-lg bg-gradient-to-br from-ink-700 to-ink-900 text-white">
+                <Icon name="server" size={20} />
+              </span>
+              <h3 class="font-display text-lg font-semibold tracking-tightish">Self-host</h3>
+            </div>
+            <p class="mt-3 text-[14.5px] leading-relaxed text-ink-600">
+              Same product, your server. Full data ownership, your domain, your backups, your compliance posture.
+            </p>
+            <ul class="mt-4 space-y-1.5 text-sm text-ink-700">
+              <li class="flex gap-2"><Icon name="check" size={14} class="mt-1 text-emerald-600" /> Yearly server licence</li>
+              <li class="flex gap-2"><Icon name="check" size={14} class="mt-1 text-emerald-600" /> Docker / bare metal</li>
+              <li class="flex gap-2"><Icon name="check" size={14} class="mt-1 text-emerald-600" /> Optional managed support</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why us -->
+  <section class="bg-white">
+    <div class="container-wide py-20 sm:py-24">
+      <div class="mb-12 max-w-2xl">
+        <span class="eyebrow">Why 399apps</span>
+        <h2 class="h2 mt-3">Built like an engineer would build it.</h2>
+        <p class="lede mt-3">
+          No salesy bloat. No ten-tab dashboards. Just the workflows your business actually uses, made fast.
+        </p>
+      </div>
+
+      <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        {[
+          { icon: 'sparkle', t: 'Small surface, real depth', b: 'Each app is small enough to grok in a day, deep enough to run a business on.' },
+          { icon: 'rupee', t: 'Honest, yearly pricing', b: 'Annual plans starting at affordable price points. No surprise per-user upcharges.' },
+          { icon: 'shield', t: 'Your data is yours', b: 'Encrypted on cloud. Fully self-hostable. Exportable any time, in standard formats.' },
+          { icon: 'cloud', t: 'Cloud-native infra', b: 'Hosted on Cloudflare + AWS, region-pinned to India by default. 99.9% target.' },
+          { icon: 'server', t: 'Self-host without pain', b: 'Single-binary or Docker deploys. Backups, upgrades and migrations are first-class.' },
+          { icon: 'globe', t: 'White-label ready', b: 'Run any product under your own brand — domain, logo, colours, copy, the whole thing.' },
+        ].map((f) => (
+          <article class="card">
+            <span class="grid h-10 w-10 place-items-center rounded-lg bg-ink-50 text-ink-700">
+              <Icon name={f.icon as any} size={20} />
+            </span>
+            <h3 class="mt-4 font-display text-base font-semibold tracking-tightish text-ink-900">{f.t}</h3>
+            <p class="mt-2 text-sm leading-relaxed text-ink-600">{f.b}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <FAQ items={homeFaqs} description="Quick answers about pricing, hosting, white-label and how 399apps works in practice." />
+
+  <CTA
+    eyebrow="Talk to a human"
+    title="Not sure which app fits? Let us scope it with you."
+    body="A 20-minute call. We will understand your business, recommend the right product (or tell you we are not a fit), and quote honestly."
+    primaryLabel="Get a demo"
+    primaryHref="/contact?intent=demo"
+    secondaryLabel="See pricing"
+    secondaryHref="/pricing"
+  />
+</Layout>

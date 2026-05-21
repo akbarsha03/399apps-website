@@ -1,0 +1,76 @@
+---
+import { NAV, SITE } from '~/data/site';
+import Icon from './Icon.astro';
+
+const pathname = Astro.url.pathname;
+---
+
+<header class="sticky top-0 z-40 border-b border-ink-100 bg-white/85 backdrop-blur-md">
+  <div class="container-wide flex h-16 items-center justify-between">
+    <a href="/" class="group flex items-center gap-2.5" aria-label={`${SITE.name} home`}>
+      <span class="relative grid h-8 w-8 place-items-center rounded-lg bg-ink-900 text-white">
+        <span class="font-display text-[13px] font-bold tracking-tight">399</span>
+      </span>
+      <span class="font-display text-[15px] font-semibold tracking-tightish text-ink-900">
+        {SITE.name}<span class="text-ink-400">.com</span>
+      </span>
+    </a>
+
+    <nav class="hidden items-center gap-1 md:flex" aria-label="Primary">
+      {NAV.map((item) => {
+        const active =
+          item.href === '/'
+            ? pathname === '/'
+            : pathname === item.href || pathname.startsWith(item.href + '/');
+        return (
+          <a
+            href={item.href}
+            class:list={[
+              'rounded-full px-3.5 py-1.5 text-sm transition-colors',
+              active ? 'text-ink-900 bg-ink-50' : 'text-ink-600 hover:text-ink-900',
+            ]}
+          >
+            {item.label}
+          </a>
+        );
+      })}
+    </nav>
+
+    <div class="flex items-center gap-2">
+      <a href="/contact" class="hidden btn-secondary md:inline-flex">
+        Talk to sales
+      </a>
+      <a href="/contact?intent=demo" class="btn-primary">
+        <span>Get a demo</span>
+        <Icon name="arrow-right" size={16} />
+      </a>
+      <button
+        type="button"
+        class="grid h-9 w-9 place-items-center rounded-md text-ink-700 hover:bg-ink-50 md:hidden"
+        aria-label="Open menu"
+        data-menu-toggle
+      >
+        <Icon name="menu" />
+      </button>
+    </div>
+  </div>
+
+  <div class="hidden border-t border-ink-100 bg-white md:hidden" data-menu-panel>
+    <nav class="container-wide flex flex-col gap-1 py-3" aria-label="Mobile">
+      {NAV.map((item) => (
+        <a href={item.href} class="rounded-lg px-3 py-2 text-sm text-ink-700 hover:bg-ink-50">
+          {item.label}
+        </a>
+      ))}
+      <a href="/contact" class="btn-secondary mt-2 justify-center">Talk to sales</a>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const toggle = document.querySelector<HTMLButtonElement>('[data-menu-toggle]');
+  const panel = document.querySelector<HTMLElement>('[data-menu-panel]');
+  toggle?.addEventListener('click', () => {
+    panel?.classList.toggle('hidden');
+  });
+</script>

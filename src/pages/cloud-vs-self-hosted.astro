@@ -1,0 +1,103 @@
+---
+import Layout from '~/layouts/Layout.astro';
+import Icon from '~/components/Icon.astro';
+import CTA from '~/components/CTA.astro';
+import FAQ from '~/components/FAQ.astro';
+
+const title = 'Cloud vs Self-Hosted — Which 399apps mode is right for you?';
+const description =
+  'A side-by-side comparison of running 399apps on the cloud versus self-hosting on your own server. Cost, control, compliance, time-to-live — laid out plainly.';
+
+const rows: { label: string; cloud: string; self: string }[] = [
+  { label: 'Time to live', cloud: 'Minutes', self: '1–4 weeks' },
+  { label: 'Who runs the server', cloud: '399apps', self: 'You (or our managed add-on)' },
+  { label: 'Data location', cloud: 'India region by default', self: 'Wherever your server is' },
+  { label: 'Backups', cloud: 'Daily, retained 30 days', self: 'You configure (we ship tooling)' },
+  { label: 'Updates', cloud: 'Automatic', self: 'On your schedule' },
+  { label: 'Custom domain', cloud: 'Included', self: 'Yours' },
+  { label: 'White-label', cloud: 'Yes, on plan', self: 'Yes, on plan' },
+  { label: 'Source access', cloud: 'No', self: 'Yes, on Scale plans' },
+  { label: 'Best for', cloud: 'Speed, low-ops, predictable cost', self: 'Compliance, data locality, custom infra' },
+];
+
+const faqs = [
+  { q: 'Can I start on cloud and move later?', a: 'Yes. We will migrate your data, set up your self-hosted instance and transfer the remainder of your cloud term as credit on the self-host plan.' },
+  { q: 'Which is cheaper at scale?', a: 'Self-host is typically cheaper at high seat counts, but the break-even depends on your ops cost. We will model it honestly for your case.' },
+  { q: 'Can I move from self-host back to cloud?', a: 'Yes. The data model is identical. We will migrate you back and refund any unused server-licence months as cloud credit.' },
+];
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a },
+  })),
+};
+---
+
+<Layout
+  title={title}
+  description={description}
+  keywords={['cloud vs self-hosted', 'SaaS vs self host', 'on-premise vs cloud SaaS', 'self-hosted business software']}
+  jsonLd={jsonLd}
+>
+  <section class="relative overflow-hidden border-b border-ink-100">
+    <div class="pointer-events-none absolute inset-0 grid-bg opacity-60"></div>
+    <div class="container-wide relative py-16 sm:py-20">
+      <div class="mx-auto max-w-3xl text-center">
+        <span class="eyebrow">Cloud vs Self-hosted</span>
+        <h1 class="h1 mt-5">Which way should you run 399apps?</h1>
+        <p class="lede mt-5">
+          We sell both because both make sense — just for different teams. Here is how we think about it.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-white">
+    <div class="container-narrow py-16 sm:py-20">
+      <div class="overflow-x-auto rounded-2xl border border-ink-100 bg-white">
+        <table class="w-full border-collapse text-sm">
+          <thead class="bg-ink-50/60 text-left text-xs uppercase tracking-wider text-ink-500">
+            <tr>
+              <th class="px-5 py-4 font-medium">Dimension</th>
+              <th class="px-5 py-4 font-medium">
+                <span class="inline-flex items-center gap-1.5">
+                  <Icon name="cloud" size={14} /> Cloud
+                </span>
+              </th>
+              <th class="px-5 py-4 font-medium">
+                <span class="inline-flex items-center gap-1.5">
+                  <Icon name="server" size={14} /> Self-host
+                </span>
+              </th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-ink-100 text-ink-800">
+            {rows.map((row) => (
+              <tr>
+                <td class="px-5 py-4 text-ink-500">{row.label}</td>
+                <td class="px-5 py-4 font-medium">{row.cloud}</td>
+                <td class="px-5 py-4 font-medium">{row.self}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <FAQ items={faqs} title="Cloud vs Self-host — FAQs" />
+
+  <CTA
+    eyebrow="Still unsure?"
+    title="Tell us your situation. We will recommend honestly."
+    body="If cloud is obviously the right call, we will say so. If you should self-host, we will say that. We sell both, so we don't need to push one."
+    primaryLabel="Talk to us"
+    primaryHref="/contact"
+    secondaryLabel="See pricing"
+    secondaryHref="/pricing"
+  />
+</Layout>

@@ -1,0 +1,12 @@
+# SPA-style not needed for static, but useful aliases
+/apps          /#apps           302
+/books         /apps/books      301
+/inventory     /apps/inventory  301
+/bundle        /apps/books-inventory-bundle 301
+/matrimony     /apps/matrimonials 301
+/matrimonials  /apps/matrimonials 301
+/jobs          /apps/jobportal  301
+/jobportal     /apps/jobportal  301
+
+# Future asset placeholders
+/og.png        /og-image.svg    200

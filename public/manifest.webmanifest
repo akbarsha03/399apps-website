@@ -1,0 +1,13 @@
+{
+  "name": "399apps",
+  "short_name": "399apps",
+  "description": "Affordable business SaaS — accounting, inventory, matrimonials, job portal. Cloud or self-hosted.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0a0b12",
+  "icons": [
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}

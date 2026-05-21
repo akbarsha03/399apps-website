@@ -1,0 +1,64 @@
+---
+import Layout from '~/layouts/Layout.astro';
+import Icon from '~/components/Icon.astro';
+import CTA from '~/components/CTA.astro';
+import { SITE } from '~/data/site';
+
+const title = 'About 399apps — Small, opinionated, well-built.';
+const description =
+  '399apps is a small app-store of business SaaS built by shabuilds — accounting, inventory, matrimonials and a job portal. Cloud or self-hosted, with white-label support.';
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'AboutPage',
+  url: `${SITE.url}/about`,
+  publisher: { '@type': 'Organization', name: SITE.name, url: SITE.url },
+};
+---
+
+<Layout
+  title={title}
+  description={description}
+  keywords={['about 399apps', 'shabuilds', 'business SaaS India', '399apps team']}
+  jsonLd={jsonLd}
+>
+  <section class="relative overflow-hidden border-b border-ink-100">
+    <div class="pointer-events-none absolute inset-0 grid-bg opacity-60"></div>
+    <div class="container-narrow relative py-16 sm:py-20">
+      <span class="eyebrow">About</span>
+      <h1 class="h1 mt-5">Software that pays for itself in a quarter.</h1>
+      <p class="lede mt-5 max-w-2xl">
+        399apps exists because most business software is either too expensive, too bloated, or too closed. We are building a small catalogue of focused apps — accounting, inventory, matrimony, job portal — that are honest with their price and generous with their hosting.
+      </p>
+    </div>
+  </section>
+
+  <section class="bg-white">
+    <div class="container-narrow py-16 sm:py-20">
+      <div class="prose prose-ink max-w-none">
+        <h2>Why we built this</h2>
+        <p>
+          Small businesses, communities and niche operators in India have always been served by either expensive global SaaS, or by old-school desktop software that no one wants to use anymore. We wanted to build a third option: products that feel like Linear or Stripe to use, priced like an Indian tool, and offered with the option to self-host on your own server when you need it.
+        </p>
+        <h2>How we work</h2>
+        <p>
+          We ship like engineers, not like an agency. Every product has a small surface area, a clean codebase, and a real deploy story. We support self-hosting because we think you should be able to leave us. We sell yearly because monthly billing makes us optimise for the wrong thing.
+        </p>
+        <h2>Who builds it</h2>
+        <p>
+          399apps is built, deployed and maintained by <a href={SITE.builderUrl} target="_blank" rel="noopener">shabuilds</a> — a small, focused product studio. The 399apps app store is one of the things we run; if you like how this works, you might want to talk to us about your own product too.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <CTA
+    eyebrow="Want to chat?"
+    title="We like talking to operators."
+    body="Whether you want to use 399apps, white-label it, or just compare notes about building product — write to us."
+    primaryLabel="Email us"
+    primaryHref={`mailto:${SITE.email}`}
+    secondaryLabel="See apps"
+    secondaryHref="/#apps"
+  />
+</Layout>

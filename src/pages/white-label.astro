@@ -1,0 +1,117 @@
+---
+import Layout from '~/layouts/Layout.astro';
+import Icon from '~/components/Icon.astro';
+import CTA from '~/components/CTA.astro';
+import FAQ from '~/components/FAQ.astro';
+
+const title = 'White Label — Launch a 399apps product under your brand.';
+const description =
+  'White-label Nidhi Books, Inventory, Matrimonials or Job Portal under your own domain, logo and colours. B2B and B2C ready, on cloud or self-hosted.';
+
+const faqs = [
+  { q: 'What can I customise on a white-label deployment?', a: 'Domain, logo, favicon, brand colours, all copy, email templates, payment branding, supported languages, terms of use, and category taxonomies for matrimony / jobs.' },
+  { q: 'Will customers know it is 399apps under the hood?', a: 'No. Your customers see your brand. The 399apps name is not visible in the app, in emails or in legal copy. Engineering credits stay in the source — that is it.' },
+  { q: 'Is there a per-customer royalty?', a: 'No. White-label is a flat yearly licence per deployment. Add seats and scale tiers honestly without per-end-user royalties.' },
+  { q: 'How long does a white-label launch take?', a: 'Cloud white-label launches take roughly 1–2 weeks. Self-hosted launches typically take 2–4 weeks depending on customisation scope.' },
+  { q: 'Can you handle our payments + KYC?', a: 'Yes. We integrate Razorpay, Stripe, Cashfree or your provider of choice, and route payouts to your account. KYC flows are configurable per product.' },
+];
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a },
+  })),
+};
+---
+
+<Layout
+  title={title}
+  description={description}
+  keywords={['white label SaaS', 'white label matrimonial', 'white label job portal', 'white label inventory software', 'rebrandable business software']}
+  jsonLd={jsonLd}
+>
+  <section class="relative overflow-hidden border-b border-ink-100">
+    <div class="pointer-events-none absolute inset-0 grid-bg opacity-60"></div>
+    <div class="container-wide relative py-16 sm:py-20">
+      <div class="mx-auto max-w-3xl text-center">
+        <span class="eyebrow">White label</span>
+        <h1 class="h1 mt-5">Your brand on top. Our engineering underneath.</h1>
+        <p class="lede mt-5">
+          Run any 399apps product under your own brand — domain, logo, colours, copy, the whole thing. No per-user royalties, no fine print.
+        </p>
+        <div class="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
+          <a href="/contact?intent=whitelabel" class="btn-primary">Start a white-label conversation <Icon name="arrow-right" size={16} /></a>
+          <a href="/pricing" class="btn-secondary">See base pricing</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="border-b border-ink-100 bg-white">
+    <div class="container-wide py-16 sm:py-20">
+      <div class="grid gap-10 lg:grid-cols-12">
+        <div class="lg:col-span-5">
+          <span class="eyebrow">Perfect for</span>
+          <h2 class="h2 mt-3">When you need a product, not a project.</h2>
+          <p class="lede mt-4">
+            Communities, niche operators and agencies use 399apps to launch a serious product in weeks instead of years — without becoming a software company.
+          </p>
+        </div>
+        <div class="grid gap-5 lg:col-span-7 sm:grid-cols-2">
+          {[
+            { t: 'Community matrimony platforms', b: 'Caste, regional or NRI matrimonial brands that want a Shaadi-class product without a 12-month build.' },
+            { t: 'Niche job boards', b: 'Industry associations, alumni networks or specialist recruiters who want their own Naukri-class portal.' },
+            { t: 'Vertical accounting + inventory', b: 'Pharmacy, jewellery, fashion or distribution operators who want Books + Inventory tuned to their vocabulary.' },
+            { t: 'Agencies & resellers', b: 'Agencies bundling SaaS with services — resell 399apps under your brand with a flat yearly licence.' },
+          ].map((f) => (
+            <article class="card">
+              <h3 class="font-display text-base font-semibold tracking-tightish text-ink-900">{f.t}</h3>
+              <p class="mt-2 text-sm leading-relaxed text-ink-600">{f.b}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-white">
+    <div class="container-narrow py-16 sm:py-20">
+      <span class="eyebrow">What you get</span>
+      <h2 class="h2 mt-3">A real product, in your colours.</h2>
+      <div class="mt-8 grid gap-4 sm:grid-cols-2">
+        {[
+          'Your domain (yourbrand.com)',
+          'Logo, favicon, OG images',
+          'Brand colour system',
+          'All app copy, configurable per locale',
+          'Branded transactional emails',
+          'Custom T&Cs, privacy policy hooks',
+          'Per-product taxonomies (matrimony / jobs)',
+          'Razorpay / Stripe / Cashfree on your account',
+          'SEO setup on your domain (sitemap, schema, OG)',
+          'Optional managed support add-on',
+        ].map((item) => (
+          <p class="flex items-start gap-2 text-sm text-ink-800">
+            <Icon name="check" size={16} class="mt-0.5 text-emerald-600" />
+            {item}
+          </p>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <FAQ items={faqs} title="White-label — FAQs" />
+
+  <CTA
+    eyebrow="Ready to white-label?"
+    title="Tell us about the brand you want to launch."
+    body="A 30-minute conversation. We will scope your brand, product and timeline, and quote a fixed yearly licence."
+    primaryLabel="Talk to us"
+    primaryHref="/contact?intent=whitelabel"
+    secondaryLabel="See pricing"
+    secondaryHref="/pricing"
+  />
+</Layout>
