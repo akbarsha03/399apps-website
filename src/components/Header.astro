@@ -8,9 +8,15 @@ const pathname = Astro.url.pathname;
 <header class="sticky top-0 z-40 border-b border-ink-100 bg-white/85 backdrop-blur-md">
   <div class="container-wide flex h-16 items-center justify-between">
     <a href="/" class="group flex items-center gap-2.5" aria-label={`${SITE.name} home`}>
-      <span class="relative grid h-8 w-8 place-items-center rounded-lg bg-brand-600 text-white shadow-[0_4px_12px_-6px_rgba(220,38,38,0.7)]">
-        <span class="font-display text-[13px] font-extrabold tracking-tight">399</span>
-      </span>
+      <img
+        src="/logo.png"
+        alt="399apps.com logo"
+        width="32"
+        height="32"
+        loading="eager"
+        decoding="async"
+        class="h-8 w-8 rounded-lg shadow-[0_4px_12px_-6px_rgba(220,38,38,0.7)]"
+      />
       <span class="font-display text-[15px] font-semibold tracking-tightish text-ink-900">
         {SITE.name}<span class="text-ink-400">.com</span>
       </span>

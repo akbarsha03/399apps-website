@@ -10,12 +10,14 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
+    "assets": "node scripts/generate-assets.mjs",
     "deploy": "astro build && wrangler pages deploy dist --project-name=399apps-website"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.2.1",
     "@astrojs/tailwind": "^5.1.4",
     "astro": "^5.0.5",
+    "sharp": "^0.34.5",
     "tailwindcss": "^3.4.17"
   },
   "devDependencies": {
