@@ -9,21 +9,23 @@ const description =
   'A side-by-side comparison of running 399apps on the cloud versus self-hosting on your own server. Cost, control, compliance, time-to-live — laid out plainly.';
 
 const rows: { label: string; cloud: string; self: string }[] = [
+  { label: 'Price', cloud: '₹399/month, flat', self: 'Custom-quoted' },
+  { label: 'Users', cloud: 'Unlimited', self: 'Unlimited' },
   { label: 'Time to live', cloud: 'Minutes', self: '1–4 weeks' },
   { label: 'Who runs the server', cloud: '399apps', self: 'You (or our managed add-on)' },
   { label: 'Data location', cloud: 'India region by default', self: 'Wherever your server is' },
   { label: 'Backups', cloud: 'Daily, retained 30 days', self: 'You configure (we ship tooling)' },
   { label: 'Updates', cloud: 'Automatic', self: 'On your schedule' },
   { label: 'Custom domain', cloud: 'Included', self: 'Yours' },
-  { label: 'White-label', cloud: 'Yes, on plan', self: 'Yes, on plan' },
-  { label: 'Source access', cloud: 'No', self: 'Yes, on Scale plans' },
-  { label: 'Best for', cloud: 'Speed, low-ops, predictable cost', self: 'Compliance, data locality, custom infra' },
+  { label: 'White-label', cloud: 'Enterprise', self: 'Enterprise' },
+  { label: 'Source access', cloud: 'No', self: 'Yes, on enterprise' },
+  { label: 'Best for', cloud: 'Speed, low-ops, flat ₹399 price', self: 'Compliance, data locality, custom infra' },
 ];
 
 const faqs = [
-  { q: 'Can I start on cloud and move later?', a: 'Yes. We will migrate your data, set up your self-hosted instance and transfer the remainder of your cloud term as credit on the self-host plan.' },
-  { q: 'Which is cheaper at scale?', a: 'Self-host is typically cheaper at high seat counts, but the break-even depends on your ops cost. We will model it honestly for your case.' },
-  { q: 'Can I move from self-host back to cloud?', a: 'Yes. The data model is identical. We will migrate you back and refund any unused server-licence months as cloud credit.' },
+  { q: 'Can I start on cloud and move later?', a: 'Yes. We will migrate your data, set up your self-hosted instance and credit the remainder of your cloud subscription toward the self-host quote.' },
+  { q: 'Which is cheaper?', a: 'For most teams the ₹399/month cloud plan is the cheapest and simplest option — no server to run. Self-host makes sense when you have a compliance, data-locality or scale reason, not usually a cost one. We will model it honestly for your case.' },
+  { q: 'Can I move from self-host back to cloud?', a: 'Yes. The data model is identical. We will migrate you back onto the ₹399/month cloud plan and credit any unused self-host months.' },
 ];
 
 const jsonLd = {

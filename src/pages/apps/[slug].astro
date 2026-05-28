@@ -5,7 +5,7 @@ import AppCard from '~/components/AppCard.astro';
 import Icon from '~/components/Icon.astro';
 import CTA from '~/components/CTA.astro';
 import FAQ from '~/components/FAQ.astro';
-import { APPS } from '~/data/apps';
+import { APPS, PLANS } from '~/data/apps';
 import { SITE } from '~/data/site';
 
 export function getStaticPaths() {
@@ -36,15 +36,20 @@ const softwareJsonLd = {
   description: app.description,
   url: `${SITE.url}/apps/${app.slug}`,
   brand: { '@type': 'Brand', name: SITE.name },
-  offers: app.pricing.map((p) => ({
+  offers: {
     '@type': 'Offer',
-    name: `${p.plan} (Cloud)`,
-    price: p.cloud.yearly.replace(/[^0-9]/g, '') || undefined,
+    name: 'Cloud',
+    price: '399',
     priceCurrency: 'INR',
     availability: 'https://schema.org/InStock',
     url: `${SITE.url}/pricing`,
-  })),
-  aggregateRating: undefined,
+    priceSpecification: {
+      '@type': 'UnitPriceSpecification',
+      price: '399',
+      priceCurrency: 'INR',
+      unitText: 'MONTH',
+    },
+  },
   publisher: { '@type': 'Organization', name: SITE.name, url: SITE.url },
 };
 
@@ -111,8 +116,8 @@ const description = `${app.oneLiner} Available on the 399apps cloud or fully sel
           </div>
 
           <ul class="mt-8 flex flex-wrap items-center gap-x-5 gap-y-2 text-xs text-ink-500">
-            <li class="inline-flex items-center gap-1.5"><Icon name="cloud" size={14} class="text-brand-600" /> Cloud · yearly</li>
-            <li class="inline-flex items-center gap-1.5"><Icon name="server" size={14} class="text-ink-700" /> Self-hosted · yearly</li>
+            <li class="inline-flex items-center gap-1.5"><Icon name="cloud" size={14} class="text-brand-600" /> Cloud · ₹399/month</li>
+            <li class="inline-flex items-center gap-1.5"><Icon name="server" size={14} class="text-ink-700" /> Self-hosted · custom</li>
             <li class="inline-flex items-center gap-1.5"><Icon name="check" size={14} class="text-emerald-600" /> Unlimited users + exports</li>
             <li class="inline-flex items-center gap-1.5"><Icon name="shield" size={14} class="text-emerald-600" /> White-label ready</li>
           </ul>
@@ -133,16 +138,17 @@ const description = `${app.oneLiner} Available on the 399apps cloud or fully sel
               <dt class="text-ink-500">Exports</dt>
               <dd class="text-right font-medium text-ink-800">Unlimited</dd>
               <dt class="text-ink-500">Billing</dt>
-              <dd class="text-right text-ink-800">Yearly · INR</dd>
+              <dd class="text-right text-ink-800">Monthly · INR</dd>
               <dt class="text-ink-500">White-label</dt>
               <dd class="text-right text-ink-800">Yes</dd>
             </dl>
             <div class="mt-5 border-t border-ink-100 pt-5">
-              <p class="text-xs text-ink-500">Starting from</p>
-              <p class="mt-1 text-2xl font-semibold tracking-tightish text-ink-900">
-                {app.pricing[0]?.cloud.yearly}
+              <p class="text-xs text-ink-500">Cloud price</p>
+              <p class="mt-1 flex items-baseline gap-1">
+                <span class="text-2xl font-semibold tracking-tightish text-ink-900">₹399</span>
+                <span class="text-sm text-ink-500">/month</span>
               </p>
-              <p class="mt-0.5 text-xs text-ink-500">cloud · billed yearly · unlimited users</p>
+              <p class="mt-0.5 text-xs text-ink-500">unlimited users · self-host &amp; enterprise custom</p>
             </div>
           </div>
         </aside>
@@ -246,47 +252,42 @@ const description = `${app.oneLiner} Available on the 399apps cloud or fully sel
     <div class="container-wide py-16 sm:py-20">
       <div class="mb-10 max-w-2xl">
         <span class="eyebrow">Pricing for {app.shortName}</span>
-        <h2 class="h2 mt-3">One plan, every app. Unlimited users.</h2>
+        <h2 class="h2 mt-3">₹399/month on the cloud. Unlimited users.</h2>
         <p class="lede mt-3">
-          Same yearly pricing as every product on 399apps. No per-seat gotchas — unlimited users and exports on every plan. Growth includes one free core-workflow customisation.
+          {app.shortName} is the same flat price as every 399apps product — ₹399/month on the cloud, no per-seat charges. Self-hosted and enterprise needs are custom-quoted.
         </p>
       </div>
 
-      <div class="overflow-x-auto rounded-2xl border border-ink-100 bg-white">
-        <table class="w-full border-collapse text-sm">
-          <thead class="bg-ink-50/60 text-left text-xs uppercase tracking-wider text-ink-500">
-            <tr>
-              <th class="px-5 py-4 font-medium">Plan</th>
-              <th class="px-5 py-4 font-medium">Audience</th>
-              <th class="px-5 py-4 font-medium">Cloud (yearly)</th>
-              <th class="px-5 py-4 font-medium">Self-host (yearly)</th>
-              <th class="px-5 py-4"></th>
-            </tr>
-          </thead>
-          <tbody class="divide-y divide-ink-100 text-ink-800">
-            {app.pricing.map((p) => (
-              <tr>
-                <td class="px-5 py-4 font-medium">{p.plan}</td>
-                <td class="px-5 py-4 text-ink-600">{p.audience}</td>
-                <td class="px-5 py-4">
-                  <div class="font-semibold text-ink-900">{p.cloud.yearly}</div>
-                  {p.cloud.note && <div class="text-xs text-ink-500">{p.cloud.note}</div>}
-                </td>
-                <td class="px-5 py-4">
-                  <div class="font-semibold text-ink-900">{p.selfHost.yearly}</div>
-                  {p.selfHost.note && <div class="text-xs text-ink-500">{p.selfHost.note}</div>}
-                </td>
-                <td class="px-5 py-4 text-right">
-                  <a href="/contact?intent=demo" class="btn-secondary text-xs">Talk to us</a>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+      <div class="grid gap-4 lg:grid-cols-3">
+        {PLANS.map((plan) => (
+          <article class:list={['relative flex flex-col gap-4 rounded-2xl border bg-white p-6', plan.featured ? 'border-brand-600 ring-1 ring-brand-600/20' : 'border-ink-100']}>
+            {plan.featured && (
+              <span class="absolute -top-3 left-6 inline-flex items-center gap-1.5 rounded-full bg-brand-600 px-3 py-1 text-[11px] font-semibold uppercase tracking-wider text-white">
+                Most popular
+              </span>
+            )}
+            <div>
+              <h3 class="font-display text-lg font-semibold tracking-tightish text-ink-900">{plan.name}</h3>
+              <div class="mt-2 flex items-baseline gap-1">
+                <span class="font-display text-3xl font-semibold tracking-tightish text-ink-900">{plan.price}</span>
+                {plan.period && <span class="text-sm text-ink-500">{plan.period}</span>}
+              </div>
+              <p class="mt-2 text-sm leading-relaxed text-ink-600">{plan.blurb}</p>
+            </div>
+            <ul class="space-y-2 text-sm text-ink-700">
+              {plan.features.map((f) => (
+                <li class="flex items-start gap-2"><Icon name="check" size={15} class="mt-0.5 text-emerald-600" /> {f}</li>
+              ))}
+            </ul>
+            <a href={plan.cta.href} class:list={['mt-auto', plan.featured ? 'btn-primary' : 'btn-secondary']}>
+              {plan.cta.label} <Icon name="arrow-right" size={14} />
+            </a>
+          </article>
+        ))}
       </div>
 
       <p class="mt-4 text-xs text-ink-500">
-        Prices are indicative for India and exclude GST. International pricing on request. White-label and enterprise scopes are bespoke.
+        ₹399/month is exclusive of GST, billed monthly (annual billing on request). Self-hosted and enterprise scopes are bespoke.
       </p>
     </div>
   </section>
