@@ -19,7 +19,14 @@ const nav = [
   { label: t.header.nav.contact, href: '/contact' },
 ];
 
-const hreflangCode: Record<Lang, string> = { en: 'en-IN', hi: 'hi-Latn-IN', ta: 'ta-Latn-IN' };
+const hreflangCode: Record<Lang, string> = {
+  en: 'en-IN',
+  hi: 'hi-Latn-IN',
+  ta: 'ta-Latn-IN',
+  hindi: 'hi-IN',
+  tamil: 'ta-IN',
+};
+const current = LANGUAGES.find((l) => l.code === lang) ?? LANGUAGES[0];
 ---
 
 <header class="sticky top-0 z-40 border-b border-ink-100 bg-white/85 backdrop-blur-md">
@@ -51,30 +58,36 @@ const hreflangCode: Record<Lang, string> = { en: 'en-IN', hi: 'hi-Latn-IN', ta: 
     </nav>
 
     <div class="flex items-center gap-2">
-      <!-- Language switcher -->
-      <div
-        class="hidden items-center gap-0.5 rounded-full border border-ink-200 p-0.5 sm:flex"
-        role="group"
-        aria-label={t.header.languageLabel}
-      >
-        {LANGUAGES.map((l) => {
-          const active = l.code === lang;
-          return (
-            <a
-              href={localizedPath(pathname, l.code)}
-              hreflang={hreflangCode[l.code]}
-              aria-current={active ? 'true' : undefined}
-              title={l.label}
-              class:list={[
-                'rounded-full px-2.5 py-1 text-xs font-medium transition-colors',
-                active ? 'bg-ink-900 text-white' : 'text-ink-600 hover:text-ink-900',
-              ]}
-            >
-              {l.short}
-            </a>
-          );
-        })}
-      </div>
+      <!-- Language switcher (dropdown) -->
+      <details class="group relative hidden sm:block" data-lang-switch>
+        <summary
+          class="flex cursor-pointer list-none items-center gap-1.5 rounded-full border border-ink-200 px-3 py-1.5 text-xs font-medium text-ink-700 transition-colors hover:border-ink-300 [&::-webkit-details-marker]:hidden"
+          aria-label={t.header.languageLabel}
+        >
+          <Icon name="globe" size={14} />
+          <span>{current.short}</span>
+          <span class="text-ink-400 transition-transform group-open:rotate-180">▾</span>
+        </summary>
+        <div class="absolute right-0 z-50 mt-2 w-48 overflow-hidden rounded-xl border border-ink-100 bg-white p-1 shadow-[0_12px_40px_-12px_rgba(15,23,42,0.25)]">
+          {LANGUAGES.map((l) => {
+            const active = l.code === lang;
+            return (
+              <a
+                href={localizedPath(pathname, l.code)}
+                hreflang={hreflangCode[l.code]}
+                aria-current={active ? 'true' : undefined}
+                class:list={[
+                  'flex items-center justify-between rounded-lg px-3 py-2 text-sm transition-colors',
+                  active ? 'bg-ink-50 font-medium text-ink-900' : 'text-ink-700 hover:bg-ink-50',
+                ]}
+              >
+                <span>{l.label}</span>
+                {active && <Icon name="check" size={14} class="text-emerald-600" />}
+              </a>
+            );
+          })}
+        </div>
+      </details>
 
       <a href="/contact" class="hidden btn-secondary lg:inline-flex">
         {t.header.talkToSales}
@@ -132,5 +145,13 @@ const hreflangCode: Record<Lang, string> = { en: 'en-IN', hi: 'hi-Latn-IN', ta: 
   const panel = document.querySelector<HTMLElement>('[data-menu-panel]');
   toggle?.addEventListener('click', () => {
     panel?.classList.toggle('hidden');
+  });
+
+  // Close the language dropdown when clicking outside it.
+  const langSwitch = document.querySelector<HTMLDetailsElement>('[data-lang-switch]');
+  document.addEventListener('click', (e) => {
+    if (langSwitch && langSwitch.open && !langSwitch.contains(e.target as Node)) {
+      langSwitch.open = false;
+    }
   });
 </script>
