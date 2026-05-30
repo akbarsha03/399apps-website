@@ -1,10 +1,14 @@
 ---
 import Layout from '~/layouts/Layout.astro';
 import Landing from '~/components/Landing.astro';
-import { getTranslations, getHomeJsonLd } from '~/data/i18n';
+import { getTranslations, getHomeJsonLd, type Lang } from '~/data/i18n';
 import { SITE } from '~/data/site';
 
-const lang = 'en' as const;
+export function getStaticPaths() {
+  return [{ params: { lang: 'hi' } }, { params: { lang: 'ta' } }];
+}
+
+const lang = Astro.params.lang as Lang;
 const t = getTranslations(lang);
 const jsonLd = getHomeJsonLd(lang, SITE.url);
 ---
@@ -14,7 +18,6 @@ const jsonLd = getHomeJsonLd(lang, SITE.url);
   description={t.seo.description}
   lang={lang}
   localizedOf="/"
-  keywords={['business SaaS India', 'self-hosted business apps', 'accounting software', 'inventory software', 'matrimonial software', 'job portal software', 'white label SaaS', 'affordable business software']}
   jsonLd={jsonLd}
 >
   <Landing lang={lang} />

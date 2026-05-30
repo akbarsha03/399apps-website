@@ -4,6 +4,7 @@ import { SITE } from '~/data/site';
 import SEO from '~/components/SEO.astro';
 import Header from '~/components/Header.astro';
 import Footer from '~/components/Footer.astro';
+import { DEFAULT_LANG, localizedPath, type Lang } from '~/data/i18n';
 
 interface Props {
   title: string;
@@ -15,9 +16,13 @@ interface Props {
   keywords?: string[];
   jsonLd?: Record<string, unknown> | Record<string, unknown>[];
   hideChrome?: boolean;
+  lang?: Lang;
+  /** Path (in default-lang form) that has localized variants, for hreflang. */
+  localizedOf?: string;
 }
 
 const props = Astro.props;
+const lang = props.lang ?? DEFAULT_LANG;
 
 const baseOrgSchema = {
   '@context': 'https://schema.org',
@@ -39,14 +44,33 @@ const jsonLd = props.jsonLd
     ? [baseOrgSchema, ...props.jsonLd]
     : [baseOrgSchema, props.jsonLd]
   : [baseOrgSchema];
+
+const htmlLangAttr: Record<Lang, string> = {
+  en: 'en-IN',
+  hi: 'hi-Latn-IN',
+  ta: 'ta-Latn-IN',
+};
+const hreflangs: { code: string; lang: Lang }[] = [
+  { code: 'en-IN', lang: 'en' },
+  { code: 'hi-Latn-IN', lang: 'hi' },
+  { code: 'ta-Latn-IN', lang: 'ta' },
+];
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={htmlLangAttr[lang]}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <meta name="x-build-time" content={new Date().toISOString()} />
+    {props.localizedOf && (
+      <>
+        {hreflangs.map((h) => (
+          <link rel="alternate" hreflang={h.code} href={new URL(localizedPath(props.localizedOf!, h.lang), SITE.url).toString()} />
+        ))}
+        <link rel="alternate" hreflang="x-default" href={new URL(localizedPath(props.localizedOf!, 'en'), SITE.url).toString()} />
+      </>
+    )}
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
     <link rel="shortcut icon" href="/favicon.png" />
@@ -76,7 +100,7 @@ const jsonLd = props.jsonLd
     <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded focus:bg-ink-900 focus:px-3 focus:py-2 focus:text-white">
       Skip to content
     </a>
-    {!props.hideChrome && <Header />}
+    {!props.hideChrome && <Header lang={lang} />}
     <main id="main">
       <slot />
     </main>
