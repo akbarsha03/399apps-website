@@ -116,7 +116,7 @@ const description = `${app.oneLiner} Available on the 399apps cloud or fully sel
           </div>
 
           <ul class="mt-8 flex flex-wrap items-center gap-x-5 gap-y-2 text-xs text-ink-500">
-            <li class="inline-flex items-center gap-1.5"><Icon name="cloud" size={14} class="text-brand-600" /> Cloud · ₹399/month</li>
+            <li class="inline-flex items-center gap-1.5"><Icon name="cloud" size={14} class="text-brand-600" /> Cloud · ₹399/mo (₹99 as add-on)</li>
             <li class="inline-flex items-center gap-1.5"><Icon name="server" size={14} class="text-ink-700" /> Self-hosted · custom</li>
             <li class="inline-flex items-center gap-1.5"><Icon name="check" size={14} class="text-emerald-600" /> Unlimited users + exports</li>
             <li class="inline-flex items-center gap-1.5"><Icon name="shield" size={14} class="text-emerald-600" /> White-label ready</li>
@@ -148,7 +148,7 @@ const description = `${app.oneLiner} Available on the 399apps cloud or fully sel
                 <span class="text-2xl font-semibold tracking-tightish text-ink-900">₹399</span>
                 <span class="text-sm text-ink-500">/month</span>
               </p>
-              <p class="mt-0.5 text-xs text-ink-500">unlimited users · self-host &amp; enterprise custom</p>
+              <p class="mt-0.5 text-xs text-ink-500">as your first app · ₹99/mo as an add-on · unlimited users</p>
             </div>
           </div>
         </aside>
@@ -252,9 +252,9 @@ const description = `${app.oneLiner} Available on the 399apps cloud or fully sel
     <div class="container-wide py-16 sm:py-20">
       <div class="mb-10 max-w-2xl">
         <span class="eyebrow">Pricing for {app.shortName}</span>
-        <h2 class="h2 mt-3">₹399/month on the cloud. Unlimited users.</h2>
+        <h2 class="h2 mt-3">₹399/month as your first app. Unlimited users.</h2>
         <p class="lede mt-3">
-          {app.shortName} is the same flat price as every 399apps product — ₹399/month on the cloud, no per-seat charges. Self-hosted and enterprise needs are custom-quoted.
+          {app.shortName} is ₹399/month on the cloud as your base app — or ₹99/month added on top of another 399apps app. No per-seat charges. Self-hosted and enterprise needs are custom-quoted.
         </p>
       </div>
 
@@ -272,6 +272,7 @@ const description = `${app.oneLiner} Available on the 399apps cloud or fully sel
                 <span class="font-display text-3xl font-semibold tracking-tightish text-ink-900">{plan.price}</span>
                 {plan.period && <span class="text-sm text-ink-500">{plan.period}</span>}
               </div>
+              {plan.priceNote && <p class="mt-1 text-xs text-ink-500">{plan.priceNote}</p>}
               <p class="mt-2 text-sm leading-relaxed text-ink-600">{plan.blurb}</p>
             </div>
             <ul class="space-y-2 text-sm text-ink-700">

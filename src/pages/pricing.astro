@@ -7,16 +7,18 @@ import AppIcon from '~/components/AppIcon.astro';
 import { APPS, PLANS } from '~/data/apps';
 import { SITE } from '~/data/site';
 
-const title = 'Pricing — every app, ₹399/month. Unlimited users.';
+const title = 'Pricing — ₹399 first app, ₹99 each add-on. Unlimited users.';
 const description =
-  'Simple, honest pricing for every 399apps product — Nidhi Books, Inventory, the Books + Inventory bundle, Matrimonials and Job Portal. ₹399/month flat on the cloud, unlimited users. Self-hosted and enterprise are custom-quoted.';
+  'Simple, honest pricing for 399apps — Nidhi Books, Inventory, Matrimonials and Job Portal. ₹399/month for your first app on the cloud, ₹99/month for every additional app or add-on. Unlimited users. Self-hosted and enterprise are custom-quoted.';
 
 const faqs = [
-  { q: 'Is it really ₹399/month for everything on the cloud?', a: 'Yes. Every app on the 399apps cloud is a flat ₹399/month with unlimited users and unlimited exports. No per-seat charges, no tiers, no surprises.' },
-  { q: 'What does "unlimited users" mean?', a: 'No per-seat caps, ever. Add as many team members, admins, members, profiles, jobs or candidates as your business needs — the price stays ₹399/month.' },
+  { q: 'How does the ₹399 + ₹99 pricing work?', a: 'Your first app on the cloud is ₹399/month. Every additional app, and every add-on, is ₹99/month. So Books alone is ₹399; Books + Inventory is ₹498; Books + Inventory + one add-on is ₹597 — and so on. Unlimited users on all of it.' },
+  { q: 'Is the whole suite ₹399?', a: 'No. ₹399 is for your first app. Each further app or add-on is ₹99/month, so your bill scales with exactly what you use — never a flat all-you-can-eat price.' },
+  { q: 'What does "unlimited users" mean?', a: 'No per-seat caps, ever. Add as many team members, admins, members, profiles, jobs or candidates as your business needs — it never changes your price.' },
+  { q: 'What counts as an "add-on"?', a: 'Optional capabilities on top of an app — extra modules, integrations or workflow extensions. Each is ₹99/month, the same as adding another app.' },
   { q: 'What about self-hosting?', a: 'If you want to run a 399apps product on your own server with full data ownership, we quote it custom based on your scale and support needs. Talk to us and we will scope it.' },
   { q: 'What counts as "enterprise"?', a: 'White-label deployments, deep customisation, SSO, audit logs, custom SLAs, or very large scale. These are bespoke — we scope and quote per engagement.' },
-  { q: 'Is GST included?', a: 'No — ₹399 is exclusive of GST. We add applicable GST on the invoice based on your billing location.' },
+  { q: 'Is GST included?', a: 'No — the ₹399 and ₹99 prices are exclusive of GST. We add applicable GST on the invoice based on your billing location.' },
   { q: 'Can I pay annually?', a: 'Yes, annual billing is available on request (with a discount). The headline ₹399/month is the simplest way to think about it.' },
   { q: 'Do you offer non-profit or community discounts?', a: 'Yes. Registered non-profits, community organisations and educational projects can get a discount. Write to us with proof of registration.' },
   { q: 'What payment methods do you accept?', a: 'UPI, bank transfer (NEFT/RTGS) and cards for India. International customers can pay via card or wire.' },
@@ -45,9 +47,9 @@ const jsonLd = {
     <div class="container-wide relative py-16 sm:py-20">
       <div class="mx-auto max-w-3xl text-center">
         <span class="eyebrow">Pricing</span>
-        <h1 class="h1 mt-5">Every app. <span class="bg-gradient-to-r from-brand-700 via-brand-500 to-amber-500 bg-clip-text text-transparent">₹399/month.</span> Unlimited users.</h1>
+        <h1 class="h1 mt-5"><span class="bg-gradient-to-r from-brand-700 via-brand-500 to-amber-500 bg-clip-text text-transparent">₹399</span> first app. <span class="bg-gradient-to-r from-brand-700 via-brand-500 to-amber-500 bg-clip-text text-transparent">₹99</span> each after.</h1>
         <p class="lede mt-5">
-          One flat price for everything on the cloud — Books, Inventory, the bundle, Matrimonials, Job Portal. No tiers, no per-seat charges. Self-hosted and enterprise needs are custom-quoted.
+          Your first app is ₹399/month on the cloud. Every additional app or add-on is just ₹99/month. Unlimited users on all of it. No tiers, no per-seat charges. Self-hosted and enterprise needs are custom-quoted.
         </p>
         <ul class="mt-8 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-sm text-ink-600">
           <li class="inline-flex items-center gap-1.5"><Icon name="check" size={14} class="text-emerald-600" /> Unlimited users</li>
@@ -76,6 +78,7 @@ const jsonLd = {
                 <span class="font-display text-4xl font-semibold tracking-tightish text-ink-900">{plan.price}</span>
                 {plan.period && <span class="text-sm text-ink-500">{plan.period}</span>}
               </div>
+              {plan.priceNote && <p class="mt-1 text-xs text-ink-500">{plan.priceNote}</p>}
               <p class="mt-3 text-sm leading-relaxed text-ink-600">{plan.blurb}</p>
             </div>
 
@@ -92,8 +95,32 @@ const jsonLd = {
         ))}
       </div>
 
+      <!-- How it adds up -->
+      <div class="mx-auto mt-10 max-w-2xl rounded-2xl border border-ink-100 bg-ink-50/50 p-6">
+        <p class="text-center text-xs font-semibold uppercase tracking-wider text-ink-500">How it adds up</p>
+        <div class="mt-4 space-y-2 text-sm">
+          <div class="flex items-center justify-between">
+            <span class="text-ink-700">First app (e.g. Books)</span>
+            <span class="font-medium text-ink-900">₹399/mo</span>
+          </div>
+          <div class="flex items-center justify-between">
+            <span class="text-ink-700">+ Add Inventory</span>
+            <span class="font-medium text-ink-900">₹99/mo</span>
+          </div>
+          <div class="flex items-center justify-between">
+            <span class="text-ink-700">+ Any add-on</span>
+            <span class="font-medium text-ink-900">₹99/mo</span>
+          </div>
+          <div class="mt-2 flex items-center justify-between border-t border-ink-200 pt-3">
+            <span class="font-semibold text-ink-900">Your total</span>
+            <span class="font-display text-lg font-semibold text-ink-900">₹597/mo</span>
+          </div>
+        </div>
+        <p class="mt-3 text-center text-xs text-ink-500">Unlimited users throughout. No per-seat charges, ever.</p>
+      </div>
+
       <p class="mt-6 text-center text-xs text-ink-500">
-        ₹399/month is per app, exclusive of GST, billed monthly (annual billing available on request). The same price covers the Books + Inventory bundle.
+        Prices exclude GST, billed monthly (annual billing available on request). Self-hosted and enterprise scopes are custom-quoted.
       </p>
     </div>
   </section>
@@ -102,10 +129,10 @@ const jsonLd = {
   <section class="border-t border-ink-100 bg-ink-50/40">
     <div class="container-wide py-16 sm:py-20">
       <div class="mb-10 max-w-2xl">
-        <span class="eyebrow">Same price, every app</span>
-        <h2 class="h2 mt-3">Five apps. One flat price.</h2>
+        <span class="eyebrow">Same simple pricing, every app</span>
+        <h2 class="h2 mt-3">Pick a first app. Add the rest for ₹99.</h2>
         <p class="lede mt-3">
-          Pick any product in the 399apps catalogue — same ₹399/month on the cloud, same unlimited-user policy.
+          Any product can be your ₹399/month base app — every other app or add-on you bolt on is ₹99/month, with unlimited users throughout.
         </p>
       </div>
       <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -116,7 +143,7 @@ const jsonLd = {
               <h3 class="font-display text-[15px] font-semibold tracking-tightish text-ink-900">{app.name}</h3>
               <p class="mt-0.5 text-xs text-ink-500">{app.category}</p>
             </div>
-            <span class="text-sm font-semibold text-ink-900">₹399<span class="text-xs font-normal text-ink-400">/mo</span></span>
+            <span class="text-right text-sm font-semibold text-ink-900">₹399<span class="text-xs font-normal text-ink-400">/mo</span><span class="block text-[11px] font-normal text-ink-400">or ₹99 as add-on</span></span>
           </a>
         ))}
       </div>

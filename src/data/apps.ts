@@ -3,26 +3,34 @@ export type Plan = {
   name: string;
   price: string;
   period: string;
+  priceNote?: string;
   blurb: string;
   features: string[];
   cta: { label: string; href: string };
   featured?: boolean;
 };
 
-// One price for everything on the cloud. Self-host and enterprise are bespoke.
+// Simple land-and-expand cloud pricing. Self-host and enterprise are bespoke.
+export const PRICING = {
+  base: '₹399',
+  extra: '₹99',
+  period: '/month',
+};
+
 export const PLANS: Plan[] = [
   {
     id: 'cloud',
     name: 'Cloud',
     price: '₹399',
     period: '/month',
-    blurb: 'Fully managed on the 399apps cloud. Every feature, every app, the same flat price.',
+    priceNote: 'for your first app',
+    blurb: 'Fully managed on the 399apps cloud. Add more apps or add-ons at ₹99/month each — the maths always stays clear.',
     features: [
+      '+ ₹99/month per additional app',
+      '+ ₹99/month per add-on',
       'Unlimited users — never priced per seat',
-      'Unlimited exports',
-      'Every feature and update included',
+      'Unlimited exports, every feature included',
       'Daily backups, India data region',
-      'Email support',
     ],
     cta: { label: 'Start now', href: '/contact?intent=cloud' },
     featured: true,
@@ -216,10 +224,10 @@ export const APPS: App[] = [
     category: 'Bundle',
     tagline: 'The complete back-office. Accounting and stock, deeply integrated.',
     oneLiner:
-      'Books + Inventory, working as one — on the flat ₹399/month cloud plan.',
+      'Books + Inventory, working as one — ₹399 + ₹99 = ₹498/month on the cloud.',
     hero: 'Run your back-office on a single, well-integrated stack — accounting, stock and reports without the duct tape.',
     description:
-      'Most growing businesses end up paying for an accounting tool and an inventory tool, then paying again to integrate them. The 399apps bundle gives you Nidhi Books and Nidhi Inventory deeply integrated out of the box — every invoice updates stock, every purchase updates your books, every transfer is journal-aware. On the cloud it is the same flat ₹399/month as any single app, with unlimited users.',
+      'Most growing businesses end up paying for an accounting tool and an inventory tool, then paying again to integrate them. The 399apps bundle gives you Nidhi Books and Nidhi Inventory deeply integrated out of the box — every invoice updates stock, every purchase updates your books, every transfer is journal-aware. On the cloud it is ₹399/month for Books plus ₹99/month to add Inventory — ₹498/month for both, with unlimited users.',
     icon: 'bundle',
     accent: 'from-violet-500 to-fuchsia-600',
     status: 'available',
@@ -228,16 +236,16 @@ export const APPS: App[] = [
       { title: 'Invoices that move stock', body: 'Every sales invoice deducts from the right warehouse automatically.' },
       { title: 'POs that update books', body: 'Vendor bills, GST and journal entries are created without copy-paste.' },
       { title: 'Unified reporting', body: 'See revenue, margin, stock value and tax liabilities in one dashboard.' },
-      { title: 'One flat price', body: 'Both apps, deeply integrated, on the same ₹399/month cloud plan — with unlimited users.' },
+      { title: 'Simple add-on price', body: 'Books is ₹399/month; add Inventory for ₹99/month. ₹498/month for both, deeply integrated, with unlimited users.' },
       { title: 'Self-host friendly', body: 'Bundle ships as a single deployment on your server.' },
     ],
     audiences: ['Growing SMBs', 'D2C brands', 'Retail chains', 'Distributors'],
     industries: ['Retail', 'Wholesale', 'Manufacturing', 'eCommerce'],
     faqs: [
-      { q: 'How is the bundle priced?', a: 'On the cloud it is the same flat ₹399/month as any single 399apps app — Books and Inventory together, deeply integrated, with unlimited users. Self-hosted and enterprise deployments are custom-quoted.' },
-      { q: 'Can I start with one app and add the other later?', a: 'Yes. You can begin with either product and move to the bundle at any time — your data and users carry over automatically.' },
+      { q: 'How is the bundle priced?', a: 'Books is your base app at ₹399/month, and Inventory is added at ₹99/month — ₹498/month for the pair on the cloud, deeply integrated, with unlimited users. Self-hosted and enterprise deployments are custom-quoted.' },
+      { q: 'Can I start with one app and add the other later?', a: 'Yes. Start with Books at ₹399/month and add Inventory for ₹99/month whenever you are ready — your data and users carry over automatically.' },
       { q: 'Is the bundle a single login?', a: 'Yes. Single login, shared users and roles, and a unified dashboard.' },
-      { q: 'How many users does the bundle support?', a: 'Unlimited. The "no per-seat" ₹399/month cloud pricing applies to the bundle exactly as it does to any single app.' },
+      { q: 'How many users does the bundle support?', a: 'Unlimited. The "no per-seat" cloud pricing applies to the bundle exactly as it does to any single app.' },
     ],
     keywords: ['accounting + inventory bundle', 'ERP for small business India', 'Zoho One alternative', 'self-hosted ERP', 'Tally alternative SaaS'],
   },
