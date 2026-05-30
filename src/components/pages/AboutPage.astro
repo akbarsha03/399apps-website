@@ -1,0 +1,65 @@
+---
+import Layout from '~/layouts/Layout.astro';
+import CTA from '~/components/CTA.astro';
+import { SITE } from '~/data/site';
+import { getAboutCopy, localizedPath, type Lang } from '~/data/i18n';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = getAboutCopy(lang);
+
+const appsAnchor = localizedPath('/#apps', lang);
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'AboutPage',
+  url: `${SITE.url}/about`,
+  inLanguage: lang,
+  publisher: { '@type': 'Organization', name: SITE.name, url: SITE.url },
+};
+---
+
+<Layout
+  title={t.seo.title}
+  description={t.seo.description}
+  keywords={t.seo.keywords}
+  jsonLd={jsonLd}
+  lang={lang}
+  localizedOf="/about"
+>
+  <section class="relative overflow-hidden border-b border-ink-100">
+    <div class="pointer-events-none absolute inset-0 grid-bg opacity-60"></div>
+    <div class="container-narrow relative py-16 sm:py-20">
+      <span class="eyebrow">{t.hero.eyebrow}</span>
+      <h1 class="h1 mt-5">{t.hero.title}</h1>
+      <p class="lede mt-5 max-w-2xl">{t.hero.lede}</p>
+    </div>
+  </section>
+
+  <section class="bg-white">
+    <div class="container-narrow py-16 sm:py-20">
+      <div class="prose prose-ink max-w-none">
+        <h2>{t.body.whyTitle}</h2>
+        <p>{t.body.whyP1}</p>
+        <h2>{t.body.howTitle}</h2>
+        <p>{t.body.howP1}</p>
+        <h2>{t.body.whoTitle}</h2>
+        <p>
+          {t.body.whoBefore}<a href={SITE.builderUrl} target="_blank" rel="noopener">{t.body.whoLink}</a>{t.body.whoAfter}
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <CTA
+    eyebrow={t.finalCta.eyebrow}
+    title={t.finalCta.title}
+    body={t.finalCta.body}
+    primaryLabel={t.finalCta.primaryLabel}
+    primaryHref={`mailto:${SITE.email}`}
+    secondaryLabel={t.finalCta.secondaryLabel}
+    secondaryHref={appsAnchor}
+  />
+</Layout>

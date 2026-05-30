@@ -4,13 +4,13 @@ import Icon from '~/components/Icon.astro';
 import CTA from '~/components/CTA.astro';
 import FAQ from '~/components/FAQ.astro';
 import { APPS } from '~/data/apps';
-import { getTranslations, localizedPath, type Lang } from '~/data/i18n';
+import { getLandingCopy, localizedPath, type Lang } from '~/data/i18n';
 
 interface Props {
   lang: Lang;
 }
 const { lang } = Astro.props;
-const t = getTranslations(lang);
+const t = getLandingCopy(lang);
 
 const demoHref = localizedPath('/contact?intent=demo', lang);
 const pricingHref = localizedPath('/pricing', lang);
@@ -77,7 +77,7 @@ const compareHref = localizedPath('/cloud-vs-self-hosted', lang);
     </div>
 
     <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-      {APPS.map((app) => <AppCard app={app} />)}
+      {APPS.map((app) => <AppCard app={app} lang={lang} />)}
     </div>
   </div>
 </section>

@@ -2,7 +2,15 @@
 import { SITE } from '~/data/site';
 import { APPS } from '~/data/apps';
 import Icon from './Icon.astro';
+import { getChromeCopy, localizedPath, DEFAULT_LANG, type Lang } from '~/data/i18n';
 
+interface Props {
+  lang?: Lang;
+}
+const { lang = DEFAULT_LANG } = Astro.props;
+const t = getChromeCopy(lang);
+
+const home = localizedPath('/', lang);
 const year = new Date().getFullYear();
 ---
 
@@ -10,7 +18,7 @@ const year = new Date().getFullYear();
   <div class="container-wide py-14">
     <div class="grid gap-12 md:grid-cols-12">
       <div class="md:col-span-4">
-        <a href="/" class="flex items-center gap-2.5" aria-label={`${SITE.name} home`}>
+        <a href={home} class="flex items-center gap-2.5" aria-label={`${SITE.name} home`}>
           <img
             src="/logo.png"
             alt="399apps.com logo"
@@ -28,7 +36,7 @@ const year = new Date().getFullYear();
           {SITE.description}
         </p>
         <p class="mt-6 text-xs text-ink-500">
-          Built, deployed and maintained by
+          {t.footer.builtBy}
           {' '}
           <a href={SITE.builderUrl} class="font-medium text-ink-800 underline-offset-2 hover:underline" target="_blank" rel="noopener">
             {SITE.builderName}
@@ -37,11 +45,11 @@ const year = new Date().getFullYear();
       </div>
 
       <div class="md:col-span-2">
-        <h4 class="text-xs font-semibold uppercase tracking-wider text-ink-500">Apps</h4>
+        <h4 class="text-xs font-semibold uppercase tracking-wider text-ink-500">{t.footer.apps}</h4>
         <ul class="mt-4 space-y-2 text-sm">
           {APPS.map((app) => (
             <li>
-              <a href={`/apps/${app.slug}`} class="text-ink-700 hover:text-ink-900">
+              <a href={localizedPath(`/apps/${app.slug}`, lang)} class="text-ink-700 hover:text-ink-900">
                 {app.shortName}
               </a>
             </li>
@@ -50,27 +58,27 @@ const year = new Date().getFullYear();
       </div>
 
       <div class="md:col-span-2">
-        <h4 class="text-xs font-semibold uppercase tracking-wider text-ink-500">Product</h4>
+        <h4 class="text-xs font-semibold uppercase tracking-wider text-ink-500">{t.footer.product}</h4>
         <ul class="mt-4 space-y-2 text-sm">
-          <li><a href="/pricing" class="text-ink-700 hover:text-ink-900">Pricing</a></li>
-          <li><a href="/self-hosting" class="text-ink-700 hover:text-ink-900">Self-hosting</a></li>
-          <li><a href="/white-label" class="text-ink-700 hover:text-ink-900">White label</a></li>
-          <li><a href="/cloud-vs-self-hosted" class="text-ink-700 hover:text-ink-900">Cloud vs self-host</a></li>
+          <li><a href={localizedPath('/pricing', lang)} class="text-ink-700 hover:text-ink-900">{t.footer.pricing}</a></li>
+          <li><a href={localizedPath('/self-hosting', lang)} class="text-ink-700 hover:text-ink-900">{t.footer.selfHosting}</a></li>
+          <li><a href={localizedPath('/white-label', lang)} class="text-ink-700 hover:text-ink-900">{t.footer.whiteLabel}</a></li>
+          <li><a href={localizedPath('/cloud-vs-self-hosted', lang)} class="text-ink-700 hover:text-ink-900">{t.footer.cloudVsSelf}</a></li>
         </ul>
       </div>
 
       <div class="md:col-span-2">
-        <h4 class="text-xs font-semibold uppercase tracking-wider text-ink-500">Company</h4>
+        <h4 class="text-xs font-semibold uppercase tracking-wider text-ink-500">{t.footer.company}</h4>
         <ul class="mt-4 space-y-2 text-sm">
-          <li><a href="/about" class="text-ink-700 hover:text-ink-900">About</a></li>
-          <li><a href="/contact" class="text-ink-700 hover:text-ink-900">Contact</a></li>
-          <li><a href="/privacy" class="text-ink-700 hover:text-ink-900">Privacy</a></li>
-          <li><a href="/terms" class="text-ink-700 hover:text-ink-900">Terms</a></li>
+          <li><a href={localizedPath('/about', lang)} class="text-ink-700 hover:text-ink-900">{t.footer.about}</a></li>
+          <li><a href={localizedPath('/contact', lang)} class="text-ink-700 hover:text-ink-900">{t.footer.contactLink}</a></li>
+          <li><a href="/privacy" class="text-ink-700 hover:text-ink-900">{t.footer.privacy}</a></li>
+          <li><a href="/terms" class="text-ink-700 hover:text-ink-900">{t.footer.terms}</a></li>
         </ul>
       </div>
 
       <div class="md:col-span-2">
-        <h4 class="text-xs font-semibold uppercase tracking-wider text-ink-500">Contact</h4>
+        <h4 class="text-xs font-semibold uppercase tracking-wider text-ink-500">{t.footer.contact}</h4>
         <ul class="mt-4 space-y-2 text-sm">
           <li>
             <a href={`mailto:${SITE.email}`} class="inline-flex items-center gap-2 text-ink-700 hover:text-ink-900">
@@ -87,9 +95,9 @@ const year = new Date().getFullYear();
     </div>
 
     <div class="mt-12 flex flex-col items-start justify-between gap-4 border-t border-ink-100 pt-8 text-xs text-ink-500 sm:flex-row sm:items-center">
-      <p>© {year} {SITE.name}. All rights reserved.</p>
+      <p>© {year} {SITE.name}. {t.footer.rights}</p>
       <p>
-        Made with care in India.
+        {t.footer.madeIn}
         {' '}
         <a href={SITE.builderUrl} target="_blank" rel="noopener" class="text-ink-700 underline-offset-2 hover:underline">
           shabuilds.tech ↗

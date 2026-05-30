@@ -1,17 +1,45 @@
 ---
 import Layout from '~/layouts/Layout.astro';
 import Icon from '~/components/Icon.astro';
+import { getNotFoundCopy, LANGUAGES, localizedPath, type Lang } from '~/data/i18n';
+
+// 404 is served as a single static file by the host (Cloudflare Pages), so
+// we cannot pick the language server-side. Render all five blocks and pick
+// the right one client-side from `location.pathname`.
+const blocks = LANGUAGES.map((l) => ({ lang: l.code as Lang, copy: getNotFoundCopy(l.code as Lang) }));
+const en = getNotFoundCopy('en');
 ---
-<Layout title="Page not found — 399apps" description="The page you were looking for doesn't exist." noindex={true}>
+
+<Layout title={en.seo.title} description={en.seo.description} noindex={true}>
   <section class="bg-white">
     <div class="container-narrow py-24 text-center">
-      <span class="eyebrow">404</span>
-      <h1 class="h1 mt-5">We couldn't find that page.</h1>
-      <p class="lede mx-auto mt-4 max-w-xl">It may have moved, been renamed, or never existed. Head back to the homepage or pick an app below.</p>
-      <div class="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-        <a href="/" class="btn-primary">Back to home <Icon name="arrow-right" size={16} /></a>
-        <a href="/#apps" class="btn-secondary">Browse apps</a>
-      </div>
+      {blocks.map(({ lang, copy }) => (
+        <div data-lang-block={lang} class:list={[lang !== 'en' && 'hidden']}>
+          <span class="eyebrow">{copy.eyebrow}</span>
+          <h1 class="h1 mt-5">{copy.title}</h1>
+          <p class="lede mx-auto mt-4 max-w-xl">{copy.body}</p>
+          <div class="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+            <a href={localizedPath('/', lang)} class="btn-primary">{copy.back} <Icon name="arrow-right" size={16} /></a>
+            <a href={localizedPath('/#apps', lang)} class="btn-secondary">{copy.apps}</a>
+          </div>
+        </div>
+      ))}
     </div>
   </section>
+  <script is:inline>
+    (function () {
+      var path = window.location.pathname || '';
+      var match = path.match(/^\/(hindi|tamil|hi|ta)(?:\/|$)/);
+      var lang = match ? match[1] : 'en';
+      var blocks = document.querySelectorAll('[data-lang-block]');
+      blocks.forEach(function (el) {
+        var target = el.getAttribute('data-lang-block');
+        if (target === lang) {
+          el.classList.remove('hidden');
+        } else {
+          el.classList.add('hidden');
+        }
+      });
+    })();
+  </script>
 </Layout>

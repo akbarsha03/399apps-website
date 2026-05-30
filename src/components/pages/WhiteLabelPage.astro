@@ -1,0 +1,98 @@
+---
+import Layout from '~/layouts/Layout.astro';
+import Icon from '~/components/Icon.astro';
+import CTA from '~/components/CTA.astro';
+import FAQ from '~/components/FAQ.astro';
+import { getWhiteLabelCopy, localizedPath, type Lang } from '~/data/i18n';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = getWhiteLabelCopy(lang);
+
+const whitelabelHref = localizedPath('/contact?intent=whitelabel', lang);
+const pricingHref = localizedPath('/pricing', lang);
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  inLanguage: lang,
+  mainEntity: t.faq.items.map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a },
+  })),
+};
+---
+
+<Layout
+  title={t.seo.title}
+  description={t.seo.description}
+  keywords={t.seo.keywords}
+  jsonLd={jsonLd}
+  lang={lang}
+  localizedOf="/white-label"
+>
+  <section class="relative overflow-hidden border-b border-ink-100">
+    <div class="pointer-events-none absolute inset-0 grid-bg opacity-60"></div>
+    <div class="container-wide relative py-16 sm:py-20">
+      <div class="mx-auto max-w-3xl text-center">
+        <span class="eyebrow">{t.hero.eyebrow}</span>
+        <h1 class="h1 mt-5">{t.hero.title}</h1>
+        <p class="lede mt-5">{t.hero.lede}</p>
+        <div class="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
+          <a href={whitelabelHref} class="btn-primary">{t.hero.primaryCta} <Icon name="arrow-right" size={16} /></a>
+          <a href={pricingHref} class="btn-secondary">{t.hero.secondaryCta}</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="border-b border-ink-100 bg-white">
+    <div class="container-wide py-16 sm:py-20">
+      <div class="grid gap-10 lg:grid-cols-12">
+        <div class="lg:col-span-5">
+          <span class="eyebrow">{t.perfectFor.eyebrow}</span>
+          <h2 class="h2 mt-3">{t.perfectFor.title}</h2>
+          <p class="lede mt-4">{t.perfectFor.lede}</p>
+        </div>
+        <div class="grid gap-5 lg:col-span-7 sm:grid-cols-2">
+          {t.perfectFor.cards.map((f) => (
+            <article class="card">
+              <h3 class="font-display text-base font-semibold tracking-tightish text-ink-900">{f.t}</h3>
+              <p class="mt-2 text-sm leading-relaxed text-ink-600">{f.b}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-white">
+    <div class="container-narrow py-16 sm:py-20">
+      <span class="eyebrow">{t.whatYouGet.eyebrow}</span>
+      <h2 class="h2 mt-3">{t.whatYouGet.title}</h2>
+      <div class="mt-8 grid gap-4 sm:grid-cols-2">
+        {t.whatYouGet.items.map((item) => (
+          <p class="flex items-start gap-2 text-sm text-ink-800">
+            <Icon name="check" size={16} class="mt-0.5 text-emerald-600" />
+            {item}
+          </p>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <FAQ items={t.faq.items} title={t.faq.title} />
+
+  <CTA
+    eyebrow={t.finalCta.eyebrow}
+    title={t.finalCta.title}
+    body={t.finalCta.body}
+    primaryLabel={t.finalCta.primaryLabel}
+    primaryHref={whitelabelHref}
+    secondaryLabel={t.finalCta.secondaryLabel}
+    secondaryHref={pricingHref}
+  />
+</Layout>

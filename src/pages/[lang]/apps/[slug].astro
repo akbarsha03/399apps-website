@@ -1,0 +1,19 @@
+---
+import AppDetailPage from '~/components/pages/AppDetailPage.astro';
+import { APPS } from '~/data/apps';
+import type { Lang } from '~/data/i18n';
+
+export function getStaticPaths() {
+  const langs: Lang[] = ['hi', 'ta', 'hindi', 'tamil'];
+  return langs.flatMap((lang) =>
+    APPS.map((app) => ({
+      params: { lang, slug: app.slug },
+      props: { app },
+    })),
+  );
+}
+
+const { app } = Astro.props;
+const lang = Astro.params.lang as Lang;
+---
+<AppDetailPage app={app} lang={lang} />

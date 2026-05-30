@@ -1,31 +1,26 @@
 ---
 import { SITE } from '~/data/site';
 import Icon from './Icon.astro';
-import { getTranslations, localizedPath, LANGUAGES, DEFAULT_LANG, type Lang } from '~/data/i18n';
+import { getChromeCopy, localizedPath, LANGUAGES, DEFAULT_LANG, HTML_LANG_ATTR, type Lang } from '~/data/i18n';
 
 interface Props {
   lang?: Lang;
 }
 const { lang = DEFAULT_LANG } = Astro.props;
-const t = getTranslations(lang);
+const t = getChromeCopy(lang);
 const pathname = Astro.url.pathname;
 
 const home = localizedPath('/', lang);
 const nav = [
   { label: t.header.nav.apps, href: home === '/' ? '/#apps' : `${home}#apps` },
-  { label: t.header.nav.pricing, href: '/pricing' },
-  { label: t.header.nav.selfHosting, href: '/self-hosting' },
-  { label: t.header.nav.whiteLabel, href: '/white-label' },
-  { label: t.header.nav.contact, href: '/contact' },
+  { label: t.header.nav.pricing, href: localizedPath('/pricing', lang) },
+  { label: t.header.nav.selfHosting, href: localizedPath('/self-hosting', lang) },
+  { label: t.header.nav.whiteLabel, href: localizedPath('/white-label', lang) },
+  { label: t.header.nav.contact, href: localizedPath('/contact', lang) },
 ];
 
-const hreflangCode: Record<Lang, string> = {
-  en: 'en-IN',
-  hi: 'hi-Latn-IN',
-  ta: 'ta-Latn-IN',
-  hindi: 'hi-IN',
-  tamil: 'ta-IN',
-};
+const hreflangCode = HTML_LANG_ATTR;
+const contactHref = localizedPath('/contact', lang);
 const current = LANGUAGES.find((l) => l.code === lang) ?? LANGUAGES[0];
 ---
 
@@ -89,7 +84,7 @@ const current = LANGUAGES.find((l) => l.code === lang) ?? LANGUAGES[0];
         </div>
       </details>
 
-      <a href="/contact" class="hidden btn-secondary lg:inline-flex">
+      <a href={contactHref} class="hidden btn-secondary lg:inline-flex">
         {t.header.talkToSales}
       </a>
       <a href={localizedPath('/contact?intent=demo', lang)} class="btn-primary">
@@ -114,7 +109,7 @@ const current = LANGUAGES.find((l) => l.code === lang) ?? LANGUAGES[0];
           {item.label}
         </a>
       ))}
-      <a href="/contact" class="btn-secondary mt-2 justify-center">{t.header.talkToSales}</a>
+      <a href={contactHref} class="btn-secondary mt-2 justify-center">{t.header.talkToSales}</a>
 
       <div class="mt-3 border-t border-ink-100 pt-3">
         <p class="px-3 text-xs uppercase tracking-wider text-ink-500">{t.header.languageLabel}</p>

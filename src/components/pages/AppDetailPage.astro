@@ -1,0 +1,324 @@
+---
+import Layout from '~/layouts/Layout.astro';
+import AppIcon from '~/components/AppIcon.astro';
+import AppCard from '~/components/AppCard.astro';
+import Icon from '~/components/Icon.astro';
+import CTA from '~/components/CTA.astro';
+import FAQ from '~/components/FAQ.astro';
+import { APPS, PLANS, type App } from '~/data/apps';
+import { SITE } from '~/data/site';
+import { getAppDetailCopy, localizedPath, type Lang } from '~/data/i18n';
+
+interface Props {
+  app: App;
+  lang: Lang;
+}
+const { app, lang } = Astro.props;
+const t = getAppDetailCopy(lang);
+
+const related = APPS.filter((a) => a.slug !== app.slug).slice(0, 3);
+const homeHref = localizedPath('/', lang);
+const appsAnchor = localizedPath('/#apps', lang);
+const pricingHref = localizedPath('/pricing', lang);
+const selfHostingHref = localizedPath('/self-hosting', lang);
+const demoHref = localizedPath(`/contact?intent=demo&app=${app.slug}`, lang);
+
+const breadcrumbJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: t.breadcrumb.home, item: SITE.url },
+    { '@type': 'ListItem', position: 2, name: t.breadcrumb.apps, item: `${SITE.url}/#apps` },
+    { '@type': 'ListItem', position: 3, name: app.name, item: `${SITE.url}/apps/${app.slug}` },
+  ],
+};
+
+const softwareJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: app.name,
+  applicationCategory: 'BusinessApplication',
+  applicationSubCategory: app.category,
+  operatingSystem: 'Web, Linux (self-hosted)',
+  description: app.description,
+  url: `${SITE.url}/apps/${app.slug}`,
+  brand: { '@type': 'Brand', name: SITE.name },
+  offers: {
+    '@type': 'Offer',
+    name: 'Cloud',
+    price: '399',
+    priceCurrency: 'INR',
+    availability: 'https://schema.org/InStock',
+    url: `${SITE.url}/pricing`,
+    priceSpecification: {
+      '@type': 'UnitPriceSpecification',
+      price: '399',
+      priceCurrency: 'INR',
+      unitText: 'MONTH',
+    },
+  },
+  publisher: { '@type': 'Organization', name: SITE.name, url: SITE.url },
+};
+
+const faqJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  inLanguage: lang,
+  mainEntity: app.faqs.map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a },
+  })),
+};
+
+const title = `${app.name} — ${app.tagline}`;
+const description = `${app.oneLiner} ${t.seoSuffix}`;
+const pricingLede = t.pricing.ledeTemplate.replace('{shortName}', app.shortName);
+const faqTitle = t.faqTitleTemplate.replace('{shortName}', app.shortName);
+const finalEyebrow = t.finalCta.eyebrowTemplate.replace('{shortName}', app.shortName);
+const finalTitle = t.finalCta.titleTemplate.replace('{name}', app.name);
+---
+
+<Layout
+  title={title}
+  description={description}
+  type="product"
+  keywords={app.keywords}
+  jsonLd={[breadcrumbJsonLd, softwareJsonLd, faqJsonLd]}
+  lang={lang}
+  localizedOf={`/apps/${app.slug}`}
+>
+  <section class="relative overflow-hidden border-b border-ink-100">
+    <div class="pointer-events-none absolute inset-0 grid-bg opacity-70"></div>
+    <div class={`pointer-events-none absolute -top-32 right-0 h-[360px] w-[600px] bg-gradient-to-br ${app.accent} opacity-[0.15] blur-3xl`}></div>
+
+    <div class="container-wide relative py-16 sm:py-20">
+      <nav class="mb-8 text-xs text-ink-500" aria-label="Breadcrumb">
+        <ol class="flex flex-wrap items-center gap-1.5">
+          <li><a href={homeHref} class="hover:text-ink-700">{t.breadcrumb.home}</a></li>
+          <li class="text-ink-400">/</li>
+          <li><a href={appsAnchor} class="hover:text-ink-700">{t.breadcrumb.apps}</a></li>
+          <li class="text-ink-400">/</li>
+          <li class="text-ink-800">{app.name}</li>
+        </ol>
+      </nav>
+
+      <div class="grid items-start gap-10 lg:grid-cols-12">
+        <div class="lg:col-span-7">
+          <div class="flex items-center gap-3">
+            <AppIcon icon={app.icon} accent={app.accent} size="md" />
+            <span class="eyebrow">{app.category}</span>
+          </div>
+          <h1 class="h1 mt-6">{app.name}</h1>
+          <p class="lede mt-4 max-w-2xl">{app.hero}</p>
+
+          <div class="mt-7 flex flex-wrap gap-3">
+            <a href={demoHref} class="btn-primary">
+              {t.ctaDemo} <Icon name="arrow-right" size={16} />
+            </a>
+            <a href={pricingHref} class="btn-secondary">{t.ctaPricing}</a>
+            {app.sections && app.sections.length > 0 ? (
+              <a href={`#${app.sections[0].id}`} class="btn-ghost">
+                {app.sections[0].eyebrow} <Icon name="arrow-right" size={14} />
+              </a>
+            ) : (
+              <a href={selfHostingHref} class="btn-ghost">
+                {t.selfHostFallback} <Icon name="arrow-up-right" size={14} />
+              </a>
+            )}
+          </div>
+
+          <ul class="mt-8 flex flex-wrap items-center gap-x-5 gap-y-2 text-xs text-ink-500">
+            <li class="inline-flex items-center gap-1.5"><Icon name="cloud" size={14} class="text-brand-600" /> {t.badges.cloud}</li>
+            <li class="inline-flex items-center gap-1.5"><Icon name="server" size={14} class="text-ink-700" /> {t.badges.selfHost}</li>
+            <li class="inline-flex items-center gap-1.5"><Icon name="check" size={14} class="text-emerald-600" /> {t.badges.unlimited}</li>
+            <li class="inline-flex items-center gap-1.5"><Icon name="shield" size={14} class="text-emerald-600" /> {t.badges.whiteLabel}</li>
+          </ul>
+        </div>
+
+        <aside class="lg:col-span-5">
+          <div class="rounded-2xl border border-ink-100 bg-white p-6 shadow-[0_12px_40px_-24px_rgba(15,23,42,0.18)]">
+            <h2 class="font-display text-base font-semibold tracking-tightish text-ink-900">{t.glance.title}</h2>
+            <dl class="mt-4 grid grid-cols-2 gap-y-4 text-sm">
+              <dt class="text-ink-500">{t.glance.status}</dt>
+              <dd class="text-right font-medium text-emerald-700">{t.glance.statusAvailable}</dd>
+              <dt class="text-ink-500">{t.glance.audience}</dt>
+              <dd class="text-right text-ink-800">{app.audiences.slice(0, 2).join(', ')}</dd>
+              <dt class="text-ink-500">{t.glance.hosting}</dt>
+              <dd class="text-right text-ink-800">{t.glance.hostingValue}</dd>
+              <dt class="text-ink-500">{t.glance.users}</dt>
+              <dd class="text-right font-medium text-ink-800">{t.glance.usersValue}</dd>
+              <dt class="text-ink-500">{t.glance.exports}</dt>
+              <dd class="text-right font-medium text-ink-800">{t.glance.exportsValue}</dd>
+              <dt class="text-ink-500">{t.glance.billing}</dt>
+              <dd class="text-right text-ink-800">{t.glance.billingValue}</dd>
+              <dt class="text-ink-500">{t.glance.whiteLabel}</dt>
+              <dd class="text-right text-ink-800">{t.glance.whiteLabelValue}</dd>
+            </dl>
+            <div class="mt-5 border-t border-ink-100 pt-5">
+              <p class="text-xs text-ink-500">{t.glance.cloudPrice}</p>
+              <p class="mt-1 flex items-baseline gap-1">
+                <span class="text-2xl font-semibold tracking-tightish text-ink-900">₹399</span>
+                <span class="text-sm text-ink-500">{t.glance.perMonth}</span>
+              </p>
+              <p class="mt-0.5 text-xs text-ink-500">{t.glance.cloudPriceNote}</p>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="border-b border-ink-100 bg-white">
+    <div class="container-narrow py-16 sm:py-20">
+      <div class="grid gap-10 md:grid-cols-12">
+        <div class="md:col-span-4">
+          <span class="eyebrow">{t.overview.eyebrow}</span>
+          <h2 class="h2 mt-3">{app.tagline}</h2>
+        </div>
+        <div class="md:col-span-8">
+          <p class="text-[17px] leading-relaxed text-ink-700">{app.description}</p>
+          <div class="mt-6 grid gap-3 sm:grid-cols-2">
+            <div class="rounded-xl border border-ink-100 bg-ink-50/40 p-4">
+              <p class="text-xs uppercase tracking-wider text-ink-500">{t.overview.bestFor}</p>
+              <p class="mt-1.5 text-sm text-ink-800">{app.audiences.join(' · ')}</p>
+            </div>
+            <div class="rounded-xl border border-ink-100 bg-ink-50/40 p-4">
+              <p class="text-xs uppercase tracking-wider text-ink-500">{t.overview.worksAcross}</p>
+              <p class="mt-1.5 text-sm text-ink-800">{app.industries.join(' · ')}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-white">
+    <div class="container-wide py-16 sm:py-20">
+      <div class="mb-10 max-w-2xl">
+        <span class="eyebrow">{t.features.eyebrow}</span>
+        <h2 class="h2 mt-3">{t.features.title}</h2>
+      </div>
+      <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        {app.features.map((feature) => (
+          <article class="card">
+            <span class={`inline-grid h-9 w-9 place-items-center rounded-lg bg-gradient-to-br ${app.accent} text-white`}>
+              <Icon name="sparkle" size={18} />
+            </span>
+            <h3 class="mt-4 font-display text-base font-semibold tracking-tightish text-ink-900">{feature.title}</h3>
+            <p class="mt-2 text-sm leading-relaxed text-ink-600">{feature.body}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  {app.sections?.map((section) => (
+    <section id={section.id} class="border-t border-ink-100 bg-ink-50/40">
+      <div class="container-wide py-16 sm:py-20">
+        <div class="mb-10 max-w-3xl">
+          <span class="eyebrow">{section.eyebrow}</span>
+          <h2 class="h2 mt-3">{section.title}</h2>
+          {section.description && <p class="lede mt-3">{section.description}</p>}
+        </div>
+
+        <div class="space-y-12">
+          {section.groups.map((group) => (
+            <div>
+              <div class="mb-5 flex flex-wrap items-baseline justify-between gap-3 border-b border-ink-100 pb-3">
+                <h3 class="font-display text-lg font-semibold tracking-tightish text-ink-900">{group.title}</h3>
+                {group.description && <p class="text-sm text-ink-500">{group.description}</p>}
+              </div>
+              <ul class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                {group.items.map((item) => (
+                  <li class="rounded-2xl border border-ink-100 bg-white p-5">
+                    <div class="flex items-start gap-3">
+                      <span class={`mt-0.5 inline-grid h-7 w-7 place-items-center rounded-md bg-gradient-to-br ${app.accent} text-white`}>
+                        <Icon name="check" size={14} strokeWidth={2.4} />
+                      </span>
+                      <div class="min-w-0">
+                        <p class="font-display text-[15px] font-semibold tracking-tightish text-ink-900">{item.title}</p>
+                        <p class="mt-1.5 text-sm leading-relaxed text-ink-600">{item.body}</p>
+                      </div>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+
+        {section.note && (
+          <p class="mt-10 max-w-3xl rounded-2xl border border-amber-200 bg-amber-50 px-5 py-4 text-sm leading-relaxed text-amber-900">
+            <span class="font-semibold">{t.noteHeading} </span>{section.note}
+          </p>
+        )}
+      </div>
+    </section>
+  ))}
+
+  <section class="border-y border-ink-100 bg-ink-50/40">
+    <div class="container-wide py-16 sm:py-20">
+      <div class="mb-10 max-w-2xl">
+        <span class="eyebrow">{t.pricing.eyebrowPrefix} {app.shortName}</span>
+        <h2 class="h2 mt-3">{t.pricing.title}</h2>
+        <p class="lede mt-3">{pricingLede}</p>
+      </div>
+
+      <div class="grid gap-4 lg:grid-cols-3">
+        {PLANS.map((plan) => (
+          <article class:list={['relative flex flex-col gap-4 rounded-2xl border bg-white p-6', plan.featured ? 'border-brand-600 ring-1 ring-brand-600/20' : 'border-ink-100']}>
+            {plan.featured && (
+              <span class="absolute -top-3 left-6 inline-flex items-center gap-1.5 rounded-full bg-brand-600 px-3 py-1 text-[11px] font-semibold uppercase tracking-wider text-white">
+                Most popular
+              </span>
+            )}
+            <div>
+              <h3 class="font-display text-lg font-semibold tracking-tightish text-ink-900">{plan.name}</h3>
+              <div class="mt-2 flex items-baseline gap-1">
+                <span class="font-display text-3xl font-semibold tracking-tightish text-ink-900">{plan.price}</span>
+                {plan.period && <span class="text-sm text-ink-500">{plan.period}</span>}
+              </div>
+              {plan.priceNote && <p class="mt-1 text-xs text-ink-500">{plan.priceNote}</p>}
+              <p class="mt-2 text-sm leading-relaxed text-ink-600">{plan.blurb}</p>
+            </div>
+            <ul class="space-y-2 text-sm text-ink-700">
+              {plan.features.map((f) => (
+                <li class="flex items-start gap-2"><Icon name="check" size={15} class="mt-0.5 text-emerald-600" /> {f}</li>
+              ))}
+            </ul>
+            <a href={localizedPath(plan.cta.href, lang)} class:list={['mt-auto', plan.featured ? 'btn-primary' : 'btn-secondary']}>
+              {plan.cta.label} <Icon name="arrow-right" size={14} />
+            </a>
+          </article>
+        ))}
+      </div>
+
+      <p class="mt-4 text-xs text-ink-500">{t.pricing.fineprint}</p>
+    </div>
+  </section>
+
+  <FAQ items={app.faqs} title={faqTitle} />
+
+  <section class="bg-white">
+    <div class="container-wide py-16 sm:py-20">
+      <div class="mb-10 max-w-2xl">
+        <span class="eyebrow">{t.related.eyebrow}</span>
+        <h2 class="h2 mt-3">{t.related.title}</h2>
+      </div>
+      <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        {related.map((r) => <AppCard app={r} lang={lang} />)}
+      </div>
+    </div>
+  </section>
+
+  <CTA
+    eyebrow={finalEyebrow}
+    title={finalTitle}
+    body={t.finalCta.body}
+    primaryLabel={t.finalCta.primaryLabel}
+    primaryHref={demoHref}
+    secondaryLabel={t.finalCta.secondaryLabel}
+    secondaryHref={pricingHref}
+  />
+</Layout>

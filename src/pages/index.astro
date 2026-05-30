@@ -1,11 +1,11 @@
 ---
 import Layout from '~/layouts/Layout.astro';
 import Landing from '~/components/Landing.astro';
-import { getTranslations, getHomeJsonLd } from '~/data/i18n';
+import { getLandingCopy, getHomeJsonLd } from '~/data/i18n';
 import { SITE } from '~/data/site';
 
 const lang = 'en' as const;
-const t = getTranslations(lang);
+const t = getLandingCopy(lang);
 const jsonLd = getHomeJsonLd(lang, SITE.url);
 ---
 

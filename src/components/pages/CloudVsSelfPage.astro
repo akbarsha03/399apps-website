@@ -1,0 +1,92 @@
+---
+import Layout from '~/layouts/Layout.astro';
+import Icon from '~/components/Icon.astro';
+import CTA from '~/components/CTA.astro';
+import FAQ from '~/components/FAQ.astro';
+import { getCloudVsSelfCopy, localizedPath, type Lang } from '~/data/i18n';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = getCloudVsSelfCopy(lang);
+
+const contactHref = localizedPath('/contact', lang);
+const pricingHref = localizedPath('/pricing', lang);
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  inLanguage: lang,
+  mainEntity: t.faq.items.map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a },
+  })),
+};
+---
+
+<Layout
+  title={t.seo.title}
+  description={t.seo.description}
+  keywords={t.seo.keywords}
+  jsonLd={jsonLd}
+  lang={lang}
+  localizedOf="/cloud-vs-self-hosted"
+>
+  <section class="relative overflow-hidden border-b border-ink-100">
+    <div class="pointer-events-none absolute inset-0 grid-bg opacity-60"></div>
+    <div class="container-wide relative py-16 sm:py-20">
+      <div class="mx-auto max-w-3xl text-center">
+        <span class="eyebrow">{t.hero.eyebrow}</span>
+        <h1 class="h1 mt-5">{t.hero.title}</h1>
+        <p class="lede mt-5">{t.hero.lede}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-white">
+    <div class="container-narrow py-16 sm:py-20">
+      <div class="overflow-x-auto rounded-2xl border border-ink-100 bg-white">
+        <table class="w-full border-collapse text-sm">
+          <thead class="bg-ink-50/60 text-left text-xs uppercase tracking-wider text-ink-500">
+            <tr>
+              <th class="px-5 py-4 font-medium">{t.table.dimension}</th>
+              <th class="px-5 py-4 font-medium">
+                <span class="inline-flex items-center gap-1.5">
+                  <Icon name="cloud" size={14} /> {t.table.cloud}
+                </span>
+              </th>
+              <th class="px-5 py-4 font-medium">
+                <span class="inline-flex items-center gap-1.5">
+                  <Icon name="server" size={14} /> {t.table.selfHost}
+                </span>
+              </th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-ink-100 text-ink-800">
+            {t.table.rows.map((row) => (
+              <tr>
+                <td class="px-5 py-4 text-ink-500">{row.label}</td>
+                <td class="px-5 py-4 font-medium">{row.cloud}</td>
+                <td class="px-5 py-4 font-medium">{row.self}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <FAQ items={t.faq.items} title={t.faq.title} />
+
+  <CTA
+    eyebrow={t.finalCta.eyebrow}
+    title={t.finalCta.title}
+    body={t.finalCta.body}
+    primaryLabel={t.finalCta.primaryLabel}
+    primaryHref={contactHref}
+    secondaryLabel={t.finalCta.secondaryLabel}
+    secondaryHref={pricingHref}
+  />
+</Layout>

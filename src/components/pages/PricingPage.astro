@@ -1,0 +1,143 @@
+---
+import Layout from '~/layouts/Layout.astro';
+import Icon from '~/components/Icon.astro';
+import CTA from '~/components/CTA.astro';
+import FAQ from '~/components/FAQ.astro';
+import AppIcon from '~/components/AppIcon.astro';
+import { APPS, PLANS } from '~/data/apps';
+import { getPricingCopy, localizedPath, type Lang } from '~/data/i18n';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = getPricingCopy(lang);
+
+const enterpriseHref = localizedPath('/contact?intent=enterprise', lang);
+const appsAnchor = localizedPath('/#apps', lang);
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  inLanguage: lang,
+  mainEntity: t.faq.items.map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a },
+  })),
+};
+---
+
+<Layout
+  title={t.seo.title}
+  description={t.seo.description}
+  keywords={t.seo.keywords}
+  jsonLd={jsonLd}
+  lang={lang}
+  localizedOf="/pricing"
+>
+  <section class="relative overflow-hidden border-b border-ink-100">
+    <div class="pointer-events-none absolute inset-0 grid-bg opacity-60"></div>
+    <div class="pointer-events-none absolute -top-32 left-1/2 h-[360px] w-[700px] -translate-x-1/2 rounded-full bg-gradient-to-tr from-brand-200/40 via-rose-200/30 to-amber-200/30 blur-3xl"></div>
+    <div class="container-wide relative py-16 sm:py-20">
+      <div class="mx-auto max-w-3xl text-center">
+        <span class="eyebrow">{t.hero.eyebrow}</span>
+        <h1 class="h1 mt-5"><span class="bg-gradient-to-r from-brand-700 via-brand-500 to-amber-500 bg-clip-text text-transparent">₹399</span> {t.hero.titleA} <span class="bg-gradient-to-r from-brand-700 via-brand-500 to-amber-500 bg-clip-text text-transparent">₹99</span> {t.hero.titleB}</h1>
+        <p class="lede mt-5">{t.hero.lede}</p>
+        <ul class="mt-8 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-sm text-ink-600">
+          {t.hero.badges.map((b) => (
+            <li class="inline-flex items-center gap-1.5"><Icon name="check" size={14} class="text-emerald-600" /> {b}</li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-white">
+    <div class="container-wide py-16 sm:py-20">
+      <div class="grid gap-5 lg:grid-cols-3">
+        {PLANS.map((plan) => (
+          <article class:list={['relative flex flex-col gap-5 rounded-2xl border bg-white p-7', plan.featured ? 'border-brand-600 shadow-[0_24px_60px_-30px_rgba(220,38,38,0.4)] ring-1 ring-brand-600/20' : 'border-ink-100']}>
+            {plan.featured && (
+              <span class="absolute -top-3 left-7 inline-flex items-center gap-1.5 rounded-full bg-brand-600 px-3 py-1 text-[11px] font-semibold uppercase tracking-wider text-white shadow-[0_4px_12px_-6px_rgba(220,38,38,0.7)]">
+                Most popular
+              </span>
+            )}
+            <div>
+              <h2 class="font-display text-xl font-semibold tracking-tightish text-ink-900">{plan.name}</h2>
+              <div class="mt-3 flex items-baseline gap-1">
+                <span class="font-display text-4xl font-semibold tracking-tightish text-ink-900">{plan.price}</span>
+                {plan.period && <span class="text-sm text-ink-500">{plan.period}</span>}
+              </div>
+              {plan.priceNote && <p class="mt-1 text-xs text-ink-500">{plan.priceNote}</p>}
+              <p class="mt-3 text-sm leading-relaxed text-ink-600">{plan.blurb}</p>
+            </div>
+
+            <ul class="space-y-2 text-sm text-ink-700">
+              {plan.features.map((f) => (
+                <li class="flex items-start gap-2"><Icon name="check" size={15} class="mt-0.5 text-emerald-600" /> {f}</li>
+              ))}
+            </ul>
+
+            <a href={localizedPath(plan.cta.href, lang)} class:list={['mt-auto', plan.featured ? 'btn-primary' : 'btn-secondary']}>
+              {plan.cta.label} <Icon name="arrow-right" size={14} />
+            </a>
+          </article>
+        ))}
+      </div>
+
+      <div class="mx-auto mt-10 max-w-2xl rounded-2xl border border-ink-100 bg-ink-50/50 p-6">
+        <p class="text-center text-xs font-semibold uppercase tracking-wider text-ink-500">{t.addsUp.title}</p>
+        <div class="mt-4 space-y-2 text-sm">
+          {t.addsUp.rows.map((r) => (
+            <div class="flex items-center justify-between">
+              <span class="text-ink-700">{r.label}</span>
+              <span class="font-medium text-ink-900">{r.value}</span>
+            </div>
+          ))}
+          <div class="mt-2 flex items-center justify-between border-t border-ink-200 pt-3">
+            <span class="font-semibold text-ink-900">{t.addsUp.totalLabel}</span>
+            <span class="font-display text-lg font-semibold text-ink-900">{t.addsUp.totalValue}</span>
+          </div>
+        </div>
+        <p class="mt-3 text-center text-xs text-ink-500">{t.addsUp.footnote}</p>
+      </div>
+
+      <p class="mt-6 text-center text-xs text-ink-500">{t.addsUp.fineprint}</p>
+    </div>
+  </section>
+
+  <section class="border-t border-ink-100 bg-ink-50/40">
+    <div class="container-wide py-16 sm:py-20">
+      <div class="mb-10 max-w-2xl">
+        <span class="eyebrow">{t.whichApps.eyebrow}</span>
+        <h2 class="h2 mt-3">{t.whichApps.title}</h2>
+        <p class="lede mt-3">{t.whichApps.lede}</p>
+      </div>
+      <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {APPS.map((app) => (
+          <a href={localizedPath(`/apps/${app.slug}`, lang)} class="group flex items-center gap-4 rounded-2xl border border-ink-100 bg-white p-5 transition-all duration-200 hover:border-ink-200 hover:shadow-[0_8px_28px_-12px_rgba(15,23,42,0.12)]">
+            <AppIcon icon={app.icon} accent={app.accent} size="md" />
+            <div class="min-w-0 flex-1">
+              <h3 class="font-display text-[15px] font-semibold tracking-tightish text-ink-900">{app.name}</h3>
+              <p class="mt-0.5 text-xs text-ink-500">{app.category}</p>
+            </div>
+            <span class="text-right text-sm font-semibold text-ink-900">₹399<span class="text-xs font-normal text-ink-400">/mo</span><span class="block text-[11px] font-normal text-ink-400">{t.whichApps.addOnNote}</span></span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <FAQ items={t.faq.items} title={t.faq.title} />
+
+  <CTA
+    eyebrow={t.finalCta.eyebrow}
+    title={t.finalCta.title}
+    body={t.finalCta.body}
+    primaryLabel={t.finalCta.primaryLabel}
+    primaryHref={enterpriseHref}
+    secondaryLabel={t.finalCta.secondaryLabel}
+    secondaryHref={appsAnchor}
+  />
+</Layout>

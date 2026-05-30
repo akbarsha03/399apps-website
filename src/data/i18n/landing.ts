@@ -1,48 +1,6 @@
-// Multilingual config for 399apps.
-// en = English (canonical), hi = Hinglish (Romanised Hindi + English),
-// ta = Tanglish (Romanised Tamil + English).
-// Brand names, product names and technical terms (GST, cloud, Docker…)
-// stay in English on purpose — that's how the audience actually speaks.
-
-export type Lang = 'en' | 'hi' | 'ta' | 'hindi' | 'tamil';
-
-export const DEFAULT_LANG: Lang = 'en';
-
-export const LANGUAGES: { code: Lang; label: string; short: string }[] = [
-  { code: 'en', label: 'English', short: 'EN' },
-  { code: 'hi', label: 'Hinglish', short: 'Hinglish' },
-  { code: 'ta', label: 'Tanglish', short: 'Tanglish' },
-  { code: 'hindi', label: 'हिन्दी · Hindi', short: 'हिन्दी' },
-  { code: 'tamil', label: 'தமிழ் · Tamil', short: 'தமிழ்' },
-];
-
-const LANG_CODES: Lang[] = ['en', 'hi', 'ta', 'hindi', 'tamil'];
-
-export function isLang(value: string): value is Lang {
-  return (LANG_CODES as string[]).includes(value);
-}
-
-// Build a path for a given language by swapping the leading lang prefix.
-// localizedPath('/', 'hindi') -> '/hindi'   localizedPath('/hi', 'en') -> '/'
-export function localizedPath(path: string, lang: Lang): string {
-  const stripped = path.replace(/^\/(hindi|tamil|hi|ta)(?=\/|$)/, '') || '/';
-  if (lang === DEFAULT_LANG) return stripped;
-  return stripped === '/' ? `/${lang}` : `/${lang}${stripped}`;
-}
+import { pickByLang, type Lang } from './shared';
 
 const en = {
-  header: {
-    nav: {
-      apps: 'Apps',
-      pricing: 'Pricing',
-      selfHosting: 'Self-Hosting',
-      whiteLabel: 'White Label',
-      contact: 'Contact',
-    },
-    talkToSales: 'Talk to sales',
-    getDemo: 'Get a demo',
-    languageLabel: 'Language',
-  },
   seo: {
     title: '399apps — Affordable Business SaaS. Cloud or Self-Hosted.',
     description:
@@ -120,21 +78,9 @@ const en = {
   },
 };
 
-export type Copy = typeof en;
+export type LandingCopy = typeof en;
 
-const hi: Copy = {
-  header: {
-    nav: {
-      apps: 'Apps',
-      pricing: 'Pricing',
-      selfHosting: 'Self-Hosting',
-      whiteLabel: 'White Label',
-      contact: 'Contact',
-    },
-    talkToSales: 'Sales se baat karein',
-    getDemo: 'Demo lein',
-    languageLabel: 'Bhasha',
-  },
+const hi: LandingCopy = {
   seo: {
     title: '399apps — Affordable Business Software. Cloud ya Self-Hosted.',
     description:
@@ -212,19 +158,7 @@ const hi: Copy = {
   },
 };
 
-const ta: Copy = {
-  header: {
-    nav: {
-      apps: 'Apps',
-      pricing: 'Pricing',
-      selfHosting: 'Self-Hosting',
-      whiteLabel: 'White Label',
-      contact: 'Contact',
-    },
-    talkToSales: 'Sales kitta pesunga',
-    getDemo: 'Demo paarunga',
-    languageLabel: 'Mozhi',
-  },
+const ta: LandingCopy = {
   seo: {
     title: '399apps — Affordable Business Software. Cloud illa Self-Hosted.',
     description:
@@ -302,19 +236,7 @@ const ta: Copy = {
   },
 };
 
-const hindi: Copy = {
-  header: {
-    nav: {
-      apps: 'Apps',
-      pricing: 'Pricing',
-      selfHosting: 'Self-Hosting',
-      whiteLabel: 'White Label',
-      contact: 'Contact',
-    },
-    talkToSales: 'सेल्स से बात करें',
-    getDemo: 'डेमो देखें',
-    languageLabel: 'भाषा',
-  },
+const hindi: LandingCopy = {
   seo: {
     title: '399apps — किफ़ायती बिज़नेस सॉफ़्टवेयर। क्लाउड या सेल्फ़-होस्टेड।',
     description:
@@ -392,19 +314,7 @@ const hindi: Copy = {
   },
 };
 
-const tamil: Copy = {
-  header: {
-    nav: {
-      apps: 'Apps',
-      pricing: 'Pricing',
-      selfHosting: 'Self-Hosting',
-      whiteLabel: 'White Label',
-      contact: 'Contact',
-    },
-    talkToSales: 'சேல்ஸ்-ஐ தொடர்பு கொள்ளுங்கள்',
-    getDemo: 'டெமோ பாருங்கள்',
-    languageLabel: 'மொழி',
-  },
+const tamil: LandingCopy = {
   seo: {
     title: '399apps — மலிவான பிசினஸ் சாஃப்ட்வேர். கிளவுட் அல்லது செல்ஃப்-ஹோஸ்டட்.',
     description:
@@ -482,15 +392,15 @@ const tamil: Copy = {
   },
 };
 
-export const I18N: Record<Lang, Copy> = { en, hi, ta, hindi, tamil };
+const LANDING: Record<Lang, LandingCopy> = { en, hi, ta, hindi, tamil };
 
-export function getTranslations(lang: Lang): Copy {
-  return I18N[lang] ?? I18N[DEFAULT_LANG];
+export function getLandingCopy(lang: Lang): LandingCopy {
+  return pickByLang(LANDING, lang);
 }
 
 // Home-page structured data (WebSite + FAQPage) built from the localized copy.
 export function getHomeJsonLd(lang: Lang, siteUrl: string) {
-  const t = getTranslations(lang);
+  const t = getLandingCopy(lang);
   return [
     {
       '@context': 'https://schema.org',
