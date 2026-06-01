@@ -12,3 +12,4 @@ export { getCloudVsSelfCopy, type CloudVsSelfCopy } from './cloud-vs-self';
 export { getAboutCopy, type AboutCopy } from './about';
 export { getAppDetailCopy, type AppDetailCopy } from './app-detail';
 export { getNotFoundCopy, type NotFoundCopy } from './not-found';
+export { getPrivacyCopy, type PrivacyCopy, type PrivacySection } from './privacy';

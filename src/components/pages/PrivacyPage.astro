@@ -1,0 +1,59 @@
+---
+import Layout from '~/layouts/Layout.astro';
+import { SITE } from '~/data/site';
+import { getPrivacyCopy, type Lang } from '~/data/i18n';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = getPrivacyCopy(lang);
+---
+
+<Layout
+  title={t.seo.title}
+  description={t.seo.description}
+  keywords={t.seo.keywords}
+  lang={lang}
+  localizedOf="/privacy"
+>
+  <section class="bg-white">
+    <div class="container-narrow py-16 sm:py-20">
+      <span class="eyebrow">{t.hero.eyebrow}</span>
+      <h1 class="h1 mt-5">{t.hero.title}</h1>
+      <p class="mt-3 text-sm text-ink-500">{t.hero.updatedLabel}: {t.hero.updated}</p>
+
+      <div class="prose prose-ink mt-10 max-w-none">
+        {t.intro.map((p) => <p>{p}</p>)}
+
+        {t.sections.map((section) => (
+          <section id={section.id}>
+            <h2>{section.title}</h2>
+            {section.paragraphs.map((p) => <p>{p}</p>)}
+            {section.bullets && (
+              <ul>
+                {section.bullets.map((b) => (
+                  <li><strong>{b.label}.</strong> {b.text}</li>
+                ))}
+              </ul>
+            )}
+          </section>
+        ))}
+
+        <section id="grievance">
+          <h2>{t.grievance.title}</h2>
+          <p>{t.grievance.body}</p>
+          <ul>
+            <li>{t.grievance.name}</li>
+            <li>{t.grievance.address}</li>
+            <li>{t.grievance.emailLabel}: <a href={`mailto:${SITE.email}`}>{SITE.email}</a></li>
+          </ul>
+        </section>
+
+        {t.canonicalNote && (
+          <p class="text-sm text-ink-500"><em>{t.canonicalNote}</em></p>
+        )}
+      </div>
+    </div>
+  </section>
+</Layout>

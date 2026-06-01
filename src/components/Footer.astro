@@ -72,7 +72,7 @@ const year = new Date().getFullYear();
         <ul class="mt-4 space-y-2 text-sm">
           <li><a href={localizedPath('/about', lang)} class="text-ink-700 hover:text-ink-900">{t.footer.about}</a></li>
           <li><a href={localizedPath('/contact', lang)} class="text-ink-700 hover:text-ink-900">{t.footer.contactLink}</a></li>
-          <li><a href="/privacy" class="text-ink-700 hover:text-ink-900">{t.footer.privacy}</a></li>
+          <li><a href={localizedPath('/privacy', lang)} class="text-ink-700 hover:text-ink-900">{t.footer.privacy}</a></li>
           <li><a href="/terms" class="text-ink-700 hover:text-ink-900">{t.footer.terms}</a></li>
         </ul>
       </div>
