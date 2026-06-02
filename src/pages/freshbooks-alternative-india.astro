@@ -1,0 +1,229 @@
+---
+import Layout from '~/layouts/Layout.astro';
+import FAQ from '~/components/FAQ.astro';
+import CTA from '~/components/CTA.astro';
+import { ALT_JSONLD } from '~/data/alt-jsonld';
+
+const SLUG = 'freshbooks-alternative-india';
+const graph = ALT_JSONLD[SLUG]['@graph'] as Array<Record<string, any>>;
+const webpage = graph.find((n) => n['@type'] === 'WebPage')!;
+const faqEntity = graph.find((n) => n['@type'] === 'FAQPage')!;
+const title = (webpage.name as string).replace(/\s*\|\s*399Apps\s*$/, '');
+const description = webpage.description as string;
+const faqs = (faqEntity.mainEntity as Array<Record<string, any>>).map((q) => ({
+  q: q.name as string,
+  a: q.acceptedAnswer.text as string,
+}));
+const keywords = ['freshbooks alternative india', 'freshbooks gst alternative', 'freshbooks alternative no client cap', 'gst invoicing software india'];
+
+const ctaPrimary = `/contact?intent=cloud&utm_source=organic&utm_medium=alt-vs-cluster&utm_campaign=${SLUG}&utm_content=primary-cta`;
+const ctaSecondary = `/contact?intent=demo&utm_source=organic&utm_medium=alt-vs-cluster&utm_campaign=${SLUG}&utm_content=secondary-demo`;
+---
+
+<Layout title={title} description={description} type="product" keywords={keywords} rawJsonLd={ALT_JSONLD[SLUG]}>
+  <section class="relative overflow-hidden border-b border-ink-100">
+    <div class="pointer-events-none absolute inset-0 grid-bg opacity-70"></div>
+    <div class="container-wide relative py-16 sm:py-20">
+      <nav class="mb-8 text-xs text-ink-500" aria-label="Breadcrumb">
+        <ol class="flex flex-wrap items-center gap-1.5">
+          <li><a href="/" class="hover:text-ink-700">Home</a></li>
+          <li class="text-ink-400">/</li>
+          <li class="text-ink-800">{title}</li>
+        </ol>
+      </nav>
+      <span class="eyebrow">399Apps vs FreshBooks</span>
+      <h1 class="h1 mt-4 max-w-4xl">The Best FreshBooks Alternative in India in 2026: GST-Native, No Client Caps</h1>
+      <p class="lede mt-5 max-w-3xl">The best FreshBooks alternative for Indian freelancers and small businesses is 399Apps — a GST-native cloud invoicing and accounting platform (the Cloud plan, with Nidhi Books for accounting) from ₹399/month for your first app with unlimited users — no per-seat fee — and no billable-client caps. FreshBooks is great for global freelancers, but it has no GST/India support, caps billable clients (Lite 5, Plus 50), charges per additional team member, and prices in USD ($19–$65/month). For Indian users who need GST invoices and unlimited users without per-seat fees, an India-built tool fits far better. Prices exclude GST; add more apps or add-ons at ₹99/month each, billed monthly.</p>
+      <div class="mt-7 flex flex-wrap gap-3">
+        <a href={ctaPrimary} class="btn-primary">Start your free 14-day trial</a>
+        <a href={ctaSecondary} class="btn-secondary">Get a free demo</a>
+      </div>
+      <p class="mt-3 text-xs text-ink-500">14-day free trial · No card required · Cancel anytime</p>
+    </div>
+  </section>
+
+  <!-- ====== BODY SECTIONS HERE ====== -->
+
+  <section class="bg-white">
+    <div class="container-narrow py-16 sm:py-20">
+      <h2 class="h2">What is a "FreshBooks alternative for India"?</h2>
+      <p class="mt-4 text-[17px] leading-relaxed text-ink-700">A FreshBooks alternative for India is invoicing/accounting software used instead of FreshBooks by Indian freelancers and SMBs — primarily to get GST-compliant invoicing (FreshBooks has none for India), no billable-client limits, and unlimited users with no per-seat fee, at INR pricing. The common India alternatives are GST-native cloud tools like 399Apps and Zoho Books.</p>
+      <p class="mt-4 text-[17px] leading-relaxed text-ink-700"><strong>Who looks for one?</strong> Indian freelancers and agencies on FreshBooks who need GST invoices, users hitting the 5- or 50-client caps, teams tired of per-member add-on fees, and anyone facing USD pricing.</p>
+    </div>
+  </section>
+
+  <section class="border-t border-ink-100 bg-ink-50/40">
+    <div class="container-narrow py-16 sm:py-20">
+      <h2 class="h2">399Apps vs FreshBooks (for India) — at a glance</h2>
+      <div class="mt-6 overflow-x-auto">
+        <table class="w-full border-collapse text-sm">
+          <thead>
+            <tr class="border-b border-ink-200 text-left">
+              <th class="py-3 pr-4 font-semibold text-ink-900"></th>
+              <th class="py-3 pr-4 font-semibold text-ink-900">399Apps</th>
+              <th class="py-3 pr-4 font-semibold text-ink-900">FreshBooks</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-ink-100">
+            <tr>
+              <td class="py-3 pr-4 font-medium text-ink-900">GST / India</td>
+              <td class="py-3 pr-4 text-ink-700">GST-native, India-first</td>
+              <td class="py-3 pr-4 text-ink-700">No GST / India localization</td>
+            </tr>
+            <tr>
+              <td class="py-3 pr-4 font-medium text-ink-900">Pricing</td>
+              <td class="py-3 pr-4 text-ink-700">From ₹399/mo — first app, unlimited users, no per-seat fee; +₹99/mo per extra app/add-on; prices exclude GST (INR)</td>
+              <td class="py-3 pr-4 text-ink-700">USD: Lite $19 · Plus $38 · Premium $65 /mo</td>
+            </tr>
+            <tr>
+              <td class="py-3 pr-4 font-medium text-ink-900">Billable-client cap</td>
+              <td class="py-3 pr-4 text-ink-700">Unlimited</td>
+              <td class="py-3 pr-4 text-ink-700">Lite 5 clients · Plus 50 clients</td>
+            </tr>
+            <tr>
+              <td class="py-3 pr-4 font-medium text-ink-900">Per-team-member fee</td>
+              <td class="py-3 pr-4 text-ink-700">Included — unlimited users, no per-seat add-on</td>
+              <td class="py-3 pr-4 text-ink-700">Extra fee per team member</td>
+            </tr>
+            <tr>
+              <td class="py-3 pr-4 font-medium text-ink-900">Invoicing</td>
+              <td class="py-3 pr-4 text-ink-700">GST invoices (HSN/SAC, CGST/SGST/IGST)</td>
+              <td class="py-3 pr-4 text-ink-700">Strong invoicing (no GST)</td>
+            </tr>
+            <tr>
+              <td class="py-3 pr-4 font-medium text-ink-900">Accounting depth</td>
+              <td class="py-3 pr-4 text-ink-700">Full accounting + inventory</td>
+              <td class="py-3 pr-4 text-ink-700">Invoicing + lighter accounting</td>
+            </tr>
+            <tr>
+              <td class="py-3 pr-4 font-medium text-ink-900">Deployment</td>
+              <td class="py-3 pr-4 text-ink-700">Cloud + mobile</td>
+              <td class="py-3 pr-4 text-ink-700">Cloud + mobile</td>
+            </tr>
+            <tr>
+              <td class="py-3 pr-4 font-medium text-ink-900">Best for</td>
+              <td class="py-3 pr-4 text-ink-700">Indian freelancers/SMBs needing GST + unlimited users</td>
+              <td class="py-3 pr-4 text-ink-700">Global service freelancers/agencies</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="mt-3 text-xs italic text-ink-500">FreshBooks pricing: freshbooks.com/pricing (Lite $19, Plus $38, Premium $65/mo; client caps; per-member add-on) plus NerdWallet review. 399Apps: Cloud plan from ₹399/mo (first app), +₹99/mo per add-on, unlimited users, prices exclude GST — confirm inclusions with CRO. Verify FX/tiers at publish.</p>
+    </div>
+  </section>
+
+  <section class="bg-white">
+    <div class="container-narrow py-16 sm:py-20">
+      <h2 class="h2">Why Indian users switch from FreshBooks</h2>
+      <ol class="mt-5 list-decimal space-y-3 pl-5 text-[15px] leading-relaxed text-ink-700">
+        <li><strong>You need GST invoices.</strong> FreshBooks has no GST story. 399Apps issues GST-compliant invoices (HSN/SAC, CGST/SGST/IGST, place of supply) and GSTR-1/3B-ready exports — essential for Indian compliance.</li>
+        <li><strong>You hit the client cap.</strong> FreshBooks Lite limits you to 5 billable clients and Plus to 50; growing past them forces an upgrade. 399Apps has no client cap on the Cloud plan.</li>
+        <li><strong>Per-seat fees stack up.</strong> FreshBooks charges per additional team member. 399Apps includes unlimited users — no per-seat fee — from ₹399/month (first app; prices exclude GST).</li>
+        <li><strong>USD pricing is steep in rupees.</strong> $19–$65/month converts to a high INR cost. 399Apps is priced in INR from ₹399/month (first app; +₹99/month per add-on; prices exclude GST).</li>
+      </ol>
+
+      <h3 class="h2 mt-12 text-2xl">Cost reality for an Indian freelancer/agency</h3>
+      <div class="mt-6 overflow-x-auto">
+        <table class="w-full border-collapse text-sm">
+          <thead>
+            <tr class="border-b border-ink-200 text-left">
+              <th class="py-3 pr-4 font-semibold text-ink-900"></th>
+              <th class="py-3 pr-4 font-semibold text-ink-900">FreshBooks Lite</th>
+              <th class="py-3 pr-4 font-semibold text-ink-900">FreshBooks Plus</th>
+              <th class="py-3 pr-4 font-semibold text-ink-900">399Apps</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-ink-100">
+            <tr>
+              <td class="py-3 pr-4 font-medium text-ink-900">List price</td>
+              <td class="py-3 pr-4 text-ink-700">$19/mo</td>
+              <td class="py-3 pr-4 text-ink-700">$38/mo</td>
+              <td class="py-3 pr-4 text-ink-700">from ₹399/mo (prices exclude GST)</td>
+            </tr>
+            <tr>
+              <td class="py-3 pr-4 font-medium text-ink-900">Billable clients</td>
+              <td class="py-3 pr-4 text-ink-700">5</td>
+              <td class="py-3 pr-4 text-ink-700">50</td>
+              <td class="py-3 pr-4 text-ink-700"><strong>unlimited</strong></td>
+            </tr>
+            <tr>
+              <td class="py-3 pr-4 font-medium text-ink-900">Extra team member</td>
+              <td class="py-3 pr-4 text-ink-700">+ per-seat fee</td>
+              <td class="py-3 pr-4 text-ink-700">+ per-seat fee</td>
+              <td class="py-3 pr-4 text-ink-700"><strong>included — unlimited users</strong></td>
+            </tr>
+            <tr>
+              <td class="py-3 pr-4 font-medium text-ink-900">GST invoicing</td>
+              <td class="py-3 pr-4 text-ink-700">✗</td>
+              <td class="py-3 pr-4 text-ink-700">✗</td>
+              <td class="py-3 pr-4 text-ink-700"><strong>✓</strong></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="mt-3 text-xs italic text-ink-500">Even before FX, FreshBooks' client caps and per-seat fees push the real cost up — and it still can't issue a GST invoice. 399Apps is from ₹399/month for your first app with unlimited users; a 2-app setup is ~₹498/month (≈ ₹5,976/yr), prices exclude GST — still far below per-user USD plans.</p>
+    </div>
+  </section>
+
+  <section class="border-t border-ink-100 bg-ink-50/40">
+    <div class="container-narrow py-16 sm:py-20">
+      <h2 class="h2">GST &amp; India advantage</h2>
+      <p class="mt-4 text-[17px] leading-relaxed text-ink-700">This is the decisive gap — FreshBooks simply doesn't serve it:</p>
+      <ul class="mt-5 space-y-3 text-[15px] leading-relaxed text-ink-700">
+        <li><strong>GST-compliant invoicing</strong> (HSN/SAC, CGST/SGST/IGST, place of supply).</li>
+        <li><strong>GSTR-1 / GSTR-3B-ready</strong> exports for filing.</li>
+        <li><strong>E-invoice &amp; e-way bill</strong> support above applicable thresholds.</li>
+        <li><strong>INR pricing from ₹399/month</strong> (prices exclude GST) with unlimited clients and unlimited users — no per-seat fee.</li>
+        <li><strong>India-first</strong> invoicing built for how Indian freelancers and SMBs actually bill.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="bg-white">
+    <div class="container-narrow py-16 sm:py-20">
+      <h2 class="h2">How to migrate from FreshBooks to 399Apps</h2>
+      <ol class="mt-5 list-decimal space-y-3 pl-5 text-[15px] leading-relaxed text-ink-700">
+        <li><strong>Export from FreshBooks</strong> — clients, items/services, and invoices (FreshBooks exports clients/invoices to CSV; reports to CSV/Excel).</li>
+        <li><strong>Note outstanding invoices and balances</strong> as of your switch date.</li>
+        <li><strong>Import into 399Apps</strong> — clients, items, and opening balances via guided import.</li>
+        <li><strong>Set up GST</strong> (your GSTIN, tax rates, place of supply) — new capability vs FreshBooks — and send a test GST invoice.</li>
+        <li><strong>Add team members</strong> (unlimited users, no per-seat fee) so your whole team can work in the books.</li>
+        <li><strong>Go live</strong> in 399Apps; keep FreshBooks exports as an archive.</li>
+      </ol>
+      <p class="mt-6 rounded-2xl border border-amber-200 bg-amber-50 px-5 py-4 text-sm leading-relaxed text-amber-900"><strong>Tip:</strong> Keep your FreshBooks exports archived so historical invoices and client records stay accessible while you run live in 399Apps with GST invoicing switched on.</p>
+    </div>
+  </section>
+
+  <section class="border-t border-ink-100 bg-ink-50/40">
+    <div class="container-narrow py-16 sm:py-20">
+      <h2 class="h2">When FreshBooks might still be the better fit</h2>
+      <p class="mt-4 text-[17px] leading-relaxed text-ink-700">Stay on FreshBooks if you bill only international/non-GST clients, you're deep in its time-tracking/proposals workflow, and GST is irrelevant to you. For India-based billing that needs GST, unlimited clients, and unlimited users with no per-seat fee, 399Apps is the better fit.</p>
+    </div>
+  </section>
+
+  <FAQ items={faqs} title="FreshBooks alternative (India) — frequently asked questions" />
+
+  <section class="border-t border-ink-100 bg-ink-50/40">
+    <div class="container-narrow py-12">
+      <p class="eyebrow">Related</p>
+      <ul class="mt-3 flex flex-wrap gap-x-6 gap-y-2 text-sm text-brand-700">
+        <li><a class="hover:underline" href="/tally-vs-zoho-vs-vyapar-vs-399apps/">Tally vs Zoho vs Vyapar vs 399Apps</a></li>
+        <li><a class="hover:underline" href="/quickbooks-alternative-india/">QuickBooks alternative (India)</a></li>
+        <li><a class="hover:underline" href="/zoho-books-alternative/">Zoho Books alternative</a></li>
+        <li><a class="hover:underline" href="/cheapest-gst-software-india/">Cheapest GST software in India</a></li>
+        <li><a class="hover:underline" href="/apps/books/">Nidhi Books — GST accounting</a></li>
+        <li><a class="hover:underline" href="/pricing/">Pricing</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <CTA
+    eyebrow="Switch from FreshBooks"
+    title="Try the GST-native FreshBooks alternative free"
+    body="GST invoices, unlimited clients, no per-seat fees. From ₹399/month for your first app (prices exclude GST), with unlimited users included."
+    primaryLabel="Start your free 14-day trial"
+    primaryHref={ctaPrimary}
+    secondaryLabel="Get a free demo"
+    secondaryHref={ctaSecondary}
+  />
+</Layout>

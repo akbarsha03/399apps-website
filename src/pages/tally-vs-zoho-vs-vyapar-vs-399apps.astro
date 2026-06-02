@@ -1,0 +1,269 @@
+---
+import Layout from '~/layouts/Layout.astro';
+import FAQ from '~/components/FAQ.astro';
+import CTA from '~/components/CTA.astro';
+import { ALT_JSONLD } from '~/data/alt-jsonld';
+
+const SLUG = 'tally-vs-zoho-vs-vyapar-vs-399apps';
+const graph = ALT_JSONLD[SLUG]['@graph'] as Array<Record<string, any>>;
+const webpage = graph.find((n) => n['@type'] === 'WebPage')!;
+const faqEntity = graph.find((n) => n['@type'] === 'FAQPage')!;
+const title = (webpage.name as string).replace(/\s*\|\s*399Apps\s*$/, '');
+const description = webpage.description as string;
+const faqs = (faqEntity.mainEntity as Array<Record<string, any>>).map((q) => ({
+  q: q.name as string,
+  a: q.acceptedAnswer.text as string,
+}));
+const keywords = ['tally vs zoho books', 'tally vs zoho vs vyapar', 'best gst accounting software india', 'gst software comparison 2026'];
+
+const ctaPrimary = `/contact?intent=cloud&utm_source=organic&utm_medium=alt-vs-cluster&utm_campaign=${SLUG}&utm_content=primary-cta`;
+const ctaSecondary = `/contact?intent=demo&utm_source=organic&utm_medium=alt-vs-cluster&utm_campaign=${SLUG}&utm_content=secondary-demo`;
+---
+
+<Layout title={title} description={description} type="website" keywords={keywords} rawJsonLd={ALT_JSONLD[SLUG]}>
+  <section class="relative overflow-hidden border-b border-ink-100">
+    <div class="pointer-events-none absolute inset-0 grid-bg opacity-70"></div>
+    <div class="container-wide relative py-16 sm:py-20">
+      <nav class="mb-8 text-xs text-ink-500" aria-label="Breadcrumb">
+        <ol class="flex flex-wrap items-center gap-1.5">
+          <li><a href="/" class="hover:text-ink-700">Home</a></li>
+          <li class="text-ink-400">/</li>
+          <li class="text-ink-800">{title}</li>
+        </ol>
+      </nav>
+      <span class="eyebrow">GST accounting software compared · 2026</span>
+      <h1 class="h1 mt-4 max-w-4xl">Tally vs Zoho Books vs Vyapar vs 399Apps (2026): Price, Cloud &amp; GST Compared</h1>
+      <p class="lede mt-5 max-w-3xl">For most Indian small businesses in 2026, the four leading GST accounting and billing tools fit different needs. <strong>Tally</strong> is the desktop standard with strong CA support but a high upfront license (from ₹22,500). <strong>Zoho Books</strong> is feature-rich cloud accounting with a genuine free tier, but paid plans add 18% GST and per-user fees. <strong>Vyapar</strong> is the cheapest, mobile-first GST billing app (≈₹499/year) but lighter on cloud and full accounting. And <strong>399Apps</strong> is cloud, full-accounting software at a low base price — from ₹399/month for your first app, +₹99/month per add-on, with unlimited users included (prices exclude GST). Pick Tally for desktop and CA workflows, Zoho for deep features, Vyapar for cheap solo billing, and 399Apps for cloud and full accounting with unlimited users at a low base price.</p>
+      <div class="mt-7 flex flex-wrap gap-3">
+        <a href={ctaPrimary} class="btn-primary">Try 399Apps free</a>
+        <a href={ctaSecondary} class="btn-secondary">Get a free demo</a>
+      </div>
+      <p class="mt-3 text-xs text-ink-500">14-day free trial · No card required · Cancel anytime</p>
+    </div>
+  </section>
+
+  <!-- ====== BODY SECTIONS ====== -->
+
+  <!-- 1. Neutral note -->
+  <section class="bg-white">
+    <div class="container-narrow py-16 sm:py-20">
+      <span class="eyebrow">How to read this</span>
+      <h2 class="h2 mt-3">A neutral comparison maintained by 399Apps</h2>
+      <p class="mt-4 text-[17px] leading-relaxed text-ink-700">This is a neutral comparison maintained by 399Apps. We state where each tool wins — including where competitors beat us — so you can decide on facts. All four serve Indian GST well; the right choice depends on whether you prioritise upfront cost, cloud access, feature depth, or simplicity.</p>
+    </div>
+  </section>
+
+  <!-- 2. What these four tools are -->
+  <section class="border-t border-ink-100 bg-ink-50/40">
+    <div class="container-narrow py-16 sm:py-20">
+      <span class="eyebrow">The contenders</span>
+      <h2 class="h2 mt-3">What these four tools are</h2>
+      <ul class="mt-5 space-y-3 text-[15px] leading-relaxed text-ink-700">
+        <li><strong>Tally (TallyPrime)</strong> — India's default desktop accounting and GST software, sold as a one-time perpetual license with annual TSS for updates. Deep CA and reseller ecosystem.</li>
+        <li><strong>Zoho Books</strong> — Cloud accounting in a 6-tier range (Free → Ultimate), a registered GSP that can file GSTR directly; part of the broader Zoho ecosystem.</li>
+        <li><strong>Vyapar</strong> — Mobile/desktop app positioned as "India's #1 GST billing software"; freemium and billing-first for shopkeepers and SMBs.</li>
+        <li><strong>399Apps</strong> — Cloud GST accounting, billing and inventory from ₹399/month for your first app (+₹99/month per add-on; prices exclude GST), India-first, with unlimited users included.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 3. Full 4-way comparison table -->
+  <section class="bg-white">
+    <div class="container-wide py-16 sm:py-20">
+      <span class="eyebrow">Comparison</span>
+      <h2 class="h2 mt-3">Full comparison table</h2>
+      <div class="mt-6 overflow-x-auto">
+        <table class="w-full border-collapse text-sm">
+          <thead>
+            <tr class="border-b border-ink-200 text-left">
+              <th class="py-3 pr-4 font-semibold text-ink-900">Dimension</th>
+              <th class="py-3 pr-4 font-semibold text-ink-900">Tally (TallyPrime)</th>
+              <th class="py-3 pr-4 font-semibold text-ink-900">Zoho Books</th>
+              <th class="py-3 pr-4 font-semibold text-ink-900">Vyapar</th>
+              <th class="py-3 pr-4 font-semibold text-ink-900">399Apps</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-ink-100">
+            <tr>
+              <td class="py-3 pr-4 font-medium text-ink-900">Type</td>
+              <td class="py-3 pr-4 text-ink-700">Desktop accounting</td>
+              <td class="py-3 pr-4 text-ink-700">Cloud accounting</td>
+              <td class="py-3 pr-4 text-ink-700">Mobile/desktop billing app</td>
+              <td class="py-3 pr-4 text-ink-700">Cloud accounting + billing</td>
+            </tr>
+            <tr>
+              <td class="py-3 pr-4 font-medium text-ink-900">Deployment</td>
+              <td class="py-3 pr-4 text-ink-700">Desktop (cloud via paid hosting)</td>
+              <td class="py-3 pr-4 text-ink-700">Cloud + mobile</td>
+              <td class="py-3 pr-4 text-ink-700">App (mobile/PC), device-bound</td>
+              <td class="py-3 pr-4 text-ink-700"><strong>Cloud + mobile, multi-device</strong></td>
+            </tr>
+            <tr>
+              <td class="py-3 pr-4 font-medium text-ink-900">Entry price</td>
+              <td class="py-3 pr-4 text-ink-700">₹22,500 one-time (₹26,550 +GST)</td>
+              <td class="py-3 pr-4 text-ink-700">Free (capped) → ₹899/mo</td>
+              <td class="py-3 pr-4 text-ink-700">Free basic → ≈₹499/yr</td>
+              <td class="py-3 pr-4 text-ink-700"><strong>From ₹399/mo</strong> (first app, unlimited users; +₹99/mo per add-on; prices exclude GST)</td>
+            </tr>
+            <tr>
+              <td class="py-3 pr-4 font-medium text-ink-900">Multi-user price</td>
+              <td class="py-3 pr-4 text-ink-700">₹67,500 Gold (₹79,650 +GST)</td>
+              <td class="py-3 pr-4 text-ink-700">+₹150–180/user/mo</td>
+              <td class="py-3 pr-4 text-ink-700">Limited</td>
+              <td class="py-3 pr-4 text-ink-700"><strong>Included (unlimited users)</strong></td>
+            </tr>
+            <tr>
+              <td class="py-3 pr-4 font-medium text-ink-900">GST on price</td>
+              <td class="py-3 pr-4 text-ink-700">+18% on license</td>
+              <td class="py-3 pr-4 text-ink-700">+18% on plans</td>
+              <td class="py-3 pr-4 text-ink-700">Low</td>
+              <td class="py-3 pr-4 text-ink-700">+ GST (like all)</td>
+            </tr>
+            <tr>
+              <td class="py-3 pr-4 font-medium text-ink-900">Ongoing cost</td>
+              <td class="py-3 pr-4 text-ink-700">TSS ₹4,500–13,500/yr</td>
+              <td class="py-3 pr-4 text-ink-700">Monthly + per-user</td>
+              <td class="py-3 pr-4 text-ink-700">≈₹499/yr</td>
+              <td class="py-3 pr-4 text-ink-700">From ₹399/mo + ₹99/add-on</td>
+            </tr>
+            <tr>
+              <td class="py-3 pr-4 font-medium text-ink-900">GST compliance</td>
+              <td class="py-3 pr-4 text-ink-700">Strong (e-invoice/e-way)</td>
+              <td class="py-3 pr-4 text-ink-700">Strong (GSP, files GSTR)</td>
+              <td class="py-3 pr-4 text-ink-700">GST billing</td>
+              <td class="py-3 pr-4 text-ink-700">GST-native, GSTR-ready</td>
+            </tr>
+            <tr>
+              <td class="py-3 pr-4 font-medium text-ink-900">Accounting depth</td>
+              <td class="py-3 pr-4 text-ink-700">Deep</td>
+              <td class="py-3 pr-4 text-ink-700">Deep</td>
+              <td class="py-3 pr-4 text-ink-700">Billing-first</td>
+              <td class="py-3 pr-4 text-ink-700">Full accounting</td>
+            </tr>
+            <tr>
+              <td class="py-3 pr-4 font-medium text-ink-900">Free tier</td>
+              <td class="py-3 pr-4 text-ink-700">No (rental from ₹750/mo)</td>
+              <td class="py-3 pr-4 text-ink-700"><strong>Yes</strong> (&lt; ₹25L, ~1,000 inv/yr)</td>
+              <td class="py-3 pr-4 text-ink-700"><strong>Yes</strong> (basic mobile)</td>
+              <td class="py-3 pr-4 text-ink-700">Free trial</td>
+            </tr>
+            <tr>
+              <td class="py-3 pr-4 font-medium text-ink-900">Ease of use</td>
+              <td class="py-3 pr-4 text-ink-700">Steeper learning curve</td>
+              <td class="py-3 pr-4 text-ink-700">Moderate (6 tiers)</td>
+              <td class="py-3 pr-4 text-ink-700">Simple (billing)</td>
+              <td class="py-3 pr-4 text-ink-700">Simple, modern</td>
+            </tr>
+            <tr>
+              <td class="py-3 pr-4 font-medium text-ink-900">Best for</td>
+              <td class="py-3 pr-4 text-ink-700">Desktop + CA-led businesses</td>
+              <td class="py-3 pr-4 text-ink-700">Feature-depth &amp; GSP filing</td>
+              <td class="py-3 pr-4 text-ink-700">Cheap solo billing</td>
+              <td class="py-3 pr-4 text-ink-700">Cloud + full books from ₹399/mo, unlimited users</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="mt-3 text-xs italic text-ink-500">Sources: Tally (tallysolutions.com/buy-tally + TSS rates), Zoho (zoho.com/in/books/pricing, +18% GST, per-user ₹150–180), Vyapar (vyaparapp.in/pricing), per APPAA-3 audit. India market, 2026 — verify at publish. 399Apps from ₹399/mo (first app, unlimited users; +₹99/mo per add-on; prices exclude GST).</p>
+    </div>
+  </section>
+
+  <!-- 4. Who should pick which — best for each -->
+  <section class="border-t border-ink-100 bg-ink-50/40">
+    <div class="container-narrow py-16 sm:py-20">
+      <span class="eyebrow">Best for each</span>
+      <h2 class="h2 mt-3">Who should pick which?</h2>
+      <div class="mt-6 grid gap-4 sm:grid-cols-2">
+        <article class="card">
+          <h3 class="font-display text-base font-semibold text-ink-900">Pick Tally</h3>
+          <p class="mt-2 text-sm leading-relaxed text-ink-600">If your accountant works in Tally data files, you want a one-time desktop purchase, and you don't need cloud access. Trade-off: high upfront cost, desktop-bound, steeper learning curve.</p>
+        </article>
+        <article class="card">
+          <h3 class="font-display text-base font-semibold text-ink-900">Pick Zoho Books</h3>
+          <p class="mt-2 text-sm leading-relaxed text-ink-600">If you need the deepest features, in-product GSP GSTR filing, or you're already in the Zoho ecosystem. Trade-off: +18% GST and per-user fees raise the true cost; 6 tiers add complexity.</p>
+        </article>
+        <article class="card">
+          <h3 class="font-display text-base font-semibold text-ink-900">Pick Vyapar</h3>
+          <p class="mt-2 text-sm leading-relaxed text-ink-600">If you're a solo shopkeeper who just needs fast, very cheap GST billing on one device. Trade-off: billing-first, limited cloud/multi-user and full accounting.</p>
+        </article>
+        <article class="card">
+          <h3 class="font-display text-base font-semibold text-ink-900">Pick 399Apps</h3>
+          <p class="mt-2 text-sm leading-relaxed text-ink-600">If you want cloud access on any device, full accounting, and unlimited users (no per-seat fee) from a low base price — ₹399/month for your first app, +₹99/month per add-on (prices exclude GST). Trade-off: subscription model; Vyapar is cheaper in raw rupees for solo billing-only use.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Price reality check (Year 1) table -->
+  <section class="bg-white">
+    <div class="container-narrow py-16 sm:py-20">
+      <span class="eyebrow">Cost breakdown</span>
+      <h2 class="h2 mt-3">Price reality check (Year 1, single + small team)</h2>
+      <div class="mt-6 overflow-x-auto">
+        <table class="w-full border-collapse text-sm">
+          <thead>
+            <tr class="border-b border-ink-200 text-left">
+              <th class="py-3 pr-4 font-semibold text-ink-900"></th>
+              <th class="py-3 pr-4 font-semibold text-ink-900">Tally Silver</th>
+              <th class="py-3 pr-4 font-semibold text-ink-900">Zoho Standard (+GST, 2 users)</th>
+              <th class="py-3 pr-4 font-semibold text-ink-900">Vyapar premium</th>
+              <th class="py-3 pr-4 font-semibold text-ink-900">399Apps</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-ink-100">
+            <tr>
+              <td class="py-3 pr-4 font-medium text-ink-900">Year-1 cost</td>
+              <td class="py-3 pr-4 text-ink-700">~₹26,550 + TSS</td>
+              <td class="py-3 pr-4 text-ink-700">~₹16,700/yr (₹1,391 × 12)</td>
+              <td class="py-3 pr-4 text-ink-700">≈₹499/yr</td>
+              <td class="py-3 pr-4 text-ink-700"><strong>from ₹4,788/yr + GST</strong> (first app)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="mt-3 text-xs italic text-ink-500">Vyapar is cheapest in raw rupees for solo billing; among full cloud-accounting options with unlimited users, 399Apps is the lowest entry price (from ₹399/mo, first app; +₹99/mo per add-on; prices exclude GST). Tally's upfront license dominates year one.</p>
+    </div>
+  </section>
+
+  <!-- 6. GST & India: all four compared -->
+  <section class="border-t border-ink-100 bg-ink-50/40">
+    <div class="container-narrow py-16 sm:py-20">
+      <span class="eyebrow">India-first</span>
+      <h2 class="h2 mt-3">GST &amp; India: all four, compared</h2>
+      <p class="mt-4 text-[17px] leading-relaxed text-ink-700">All four serve Indian GST, but differently:</p>
+      <ul class="mt-5 space-y-3 text-[15px] leading-relaxed text-ink-700">
+        <li><strong>Tally &amp; Zoho:</strong> deepest compliance (Zoho is a GSP that files GSTR directly; Tally has mature e-invoice/e-way bill).</li>
+        <li><strong>Vyapar:</strong> solid GST billing for shopkeepers, lighter on accounting.</li>
+        <li><strong>399Apps:</strong> GST-native invoicing (HSN/SAC, CGST/SGST/IGST), GSTR-1/3B-ready exports, e-invoice/e-way bill support — from ₹399/mo with unlimited users included (prices exclude GST).</li>
+      </ul>
+      <p class="mt-4 text-[17px] leading-relaxed text-ink-700">If raw filing depth is your priority, Zoho and Tally lead; if GST compliance at a low base price with cloud access and unlimited users is the goal, 399Apps is the value pick.</p>
+    </div>
+  </section>
+
+  <FAQ items={faqs} title="Tally vs Zoho vs Vyapar vs 399Apps — frequently asked questions" />
+
+  <section class="border-t border-ink-100 bg-ink-50/40">
+    <div class="container-narrow py-12">
+      <p class="eyebrow">Compare individually</p>
+      <ul class="mt-3 flex flex-wrap gap-x-6 gap-y-2 text-sm text-brand-700">
+        <li><a class="hover:underline" href="/tally-alternative/">Tally alternative</a></li>
+        <li><a class="hover:underline" href="/zoho-books-alternative/">Zoho Books alternative</a></li>
+        <li><a class="hover:underline" href="/vyapar-alternative/">Vyapar alternative</a></li>
+        <li><a class="hover:underline" href="/quickbooks-alternative-india/">QuickBooks alternative (India)</a></li>
+        <li><a class="hover:underline" href="/freshbooks-alternative-india/">FreshBooks alternative (India)</a></li>
+        <li><a class="hover:underline" href="/cheapest-gst-software-india/">Cheapest GST software in India</a></li>
+        <li><a class="hover:underline" href="/pricing/">Pricing</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <CTA
+    eyebrow="Get started"
+    title="See why growing businesses pick 399Apps"
+    body="Cloud GST accounting and billing from ₹399/month for your first app (prices exclude GST), with unlimited users included. Try it free, or get a guided demo."
+    primaryLabel="Try 399Apps free"
+    primaryHref={ctaPrimary}
+    secondaryLabel="Get a free demo"
+    secondaryHref={ctaSecondary}
+  />
+</Layout>

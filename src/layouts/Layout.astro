@@ -1,6 +1,6 @@
 ---
 import '~/styles/global.css';
-import { SITE } from '~/data/site';
+import { SITE, canonicalUrl } from '~/data/site';
 import SEO from '~/components/SEO.astro';
 import Header from '~/components/Header.astro';
 import Footer from '~/components/Footer.astro';
@@ -15,6 +15,13 @@ interface Props {
   noindex?: boolean;
   keywords?: string[];
   jsonLd?: Record<string, unknown> | Record<string, unknown>[];
+  /**
+   * Emit this JSON-LD verbatim as the page's ONLY structured data, bypassing the
+   * auto-injected Organization block. Use when the page supplies a complete,
+   * pre-validated `@graph` that already declares its own Organization/WebSite
+   * (e.g. the alternative/vs comparison cluster). Takes precedence over `jsonLd`.
+   */
+  rawJsonLd?: Record<string, unknown> | Record<string, unknown>[];
   hideChrome?: boolean;
   lang?: Lang;
   /** Path (in default-lang form) that has localized variants, for hreflang. */
@@ -39,11 +46,13 @@ const baseOrgSchema = {
   sameAs: Object.values(SITE.social),
 };
 
-const jsonLd = props.jsonLd
-  ? Array.isArray(props.jsonLd)
-    ? [baseOrgSchema, ...props.jsonLd]
-    : [baseOrgSchema, props.jsonLd]
-  : [baseOrgSchema];
+const jsonLd = props.rawJsonLd
+  ? (Array.isArray(props.rawJsonLd) ? props.rawJsonLd : [props.rawJsonLd])
+  : props.jsonLd
+    ? Array.isArray(props.jsonLd)
+      ? [baseOrgSchema, ...props.jsonLd]
+      : [baseOrgSchema, props.jsonLd]
+    : [baseOrgSchema];
 
 ---
 
@@ -56,9 +65,9 @@ const jsonLd = props.jsonLd
     {props.localizedOf && (
       <>
         {HREFLANGS.map((h) => (
-          <link rel="alternate" hreflang={h.code} href={new URL(localizedPath(props.localizedOf!, h.lang), SITE.url).toString()} />
+          <link rel="alternate" hreflang={h.code} href={canonicalUrl(localizedPath(props.localizedOf!, h.lang))} />
         ))}
-        <link rel="alternate" hreflang="x-default" href={new URL(localizedPath(props.localizedOf!, 'en'), SITE.url).toString()} />
+        <link rel="alternate" hreflang="x-default" href={canonicalUrl(localizedPath(props.localizedOf!, 'en'))} />
       </>
     )}
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
@@ -69,10 +78,19 @@ const jsonLd = props.jsonLd
     <link rel="sitemap" href="/sitemap-index.xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    {/* Load the font CSS non-blocking so it never blocks first render (CWV/LCP). */}
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      media="print"
+      onload="this.media='all'"
     />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      />
+    </noscript>
     <meta name="generator" content={Astro.generator} />
 
     <SEO
