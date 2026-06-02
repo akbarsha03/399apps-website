@@ -36,13 +36,17 @@ const breadcrumbJsonLd = {
 const softwareJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'SoftwareApplication',
+  '@id': canonicalUrl(`/apps/${app.slug}#software`),
   name: app.name,
   applicationCategory: 'BusinessApplication',
   applicationSubCategory: app.category,
   operatingSystem: 'Web, Linux (self-hosted)',
   description: app.description,
   url: canonicalUrl(`/apps/${app.slug}`),
+  featureList: app.features.map((f) => f.title),
+  inLanguage: lang,
   brand: { '@type': 'Brand', name: SITE.name },
+  provider: { '@type': 'Organization', '@id': `${SITE.url}/#organization`, name: SITE.name, url: SITE.url },
   offers: {
     '@type': 'Offer',
     name: 'Cloud',
