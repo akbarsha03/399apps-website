@@ -1,0 +1,131 @@
+---
+import Layout from '~/layouts/Layout.astro';
+import FAQ from '~/components/FAQ.astro';
+import CTA from '~/components/CTA.astro';
+import { BEST_JSONLD } from '~/data/best-jsonld';
+
+const SLUG = 'gst-billing-software';
+const graph = BEST_JSONLD[SLUG]['@graph'] as Array<Record<string, any>>;
+const webpage = graph.find((n) => n['@type'] === 'WebPage')!;
+const faqEntity = graph.find((n) => n['@type'] === 'FAQPage')!;
+const title = webpage.name as string;
+const description = webpage.description as string;
+const faqs = (faqEntity.mainEntity as Array<Record<string, any>>).map((q) => ({
+  q: q.name as string,
+  a: q.acceptedAnswer.text as string,
+}));
+const keywords = ['best gst billing software', 'gst billing software india', 'gst invoice software', 'e-invoicing software india', 'gst billing software for small business'];
+
+const ctaPrimary = `/contact?intent=cloud&utm_source=organic&utm_medium=best-category&utm_campaign=${SLUG}&utm_content=primary-cta`;
+const ctaSecondary = `/contact?intent=demo&utm_source=organic&utm_medium=best-category&utm_campaign=${SLUG}&utm_content=secondary-demo`;
+---
+
+<Layout title={title} description={description} type="article" keywords={keywords} rawJsonLd={BEST_JSONLD[SLUG]}>
+  <section class="relative overflow-hidden border-b border-ink-100">
+    <div class="pointer-events-none absolute inset-0 grid-bg opacity-70"></div>
+    <div class="container-wide relative py-16 sm:py-20">
+      <nav class="mb-8 text-xs text-ink-500" aria-label="Breadcrumb">
+        <ol class="flex flex-wrap items-center gap-1.5">
+          <li><a href="/" class="hover:text-ink-700">Home</a></li>
+          <li class="text-ink-400">/</li>
+          <li><a href="/best/" class="hover:text-ink-700">Best</a></li>
+          <li class="text-ink-400">/</li>
+          <li class="text-ink-800">GST billing software</li>
+        </ol>
+      </nav>
+      <span class="eyebrow">Buyer's guide · 2026</span>
+      <h1 class="h1 mt-4 max-w-4xl">Best GST Billing Software in India (2026)</h1>
+      <p class="lede mt-5 max-w-3xl">The best <strong>GST billing software</strong> in India for 2026 is <strong>Nidhi Books</strong> for affordable, compliant billing (from ₹399/month, unlimited users, e-invoicing + GSTR exports), with <strong>Vyapar</strong> best for mobile/offline shop billing and <strong>Zoho Books</strong> best when you need billing tied to deep accounting. All generate GST-compliant invoices; the difference is price, device model, and accounting depth.</p>
+      <div class="mt-7 flex flex-wrap gap-3">
+        <a href={ctaPrimary} class="btn-primary">Start your free 14-day trial</a>
+        <a href={ctaSecondary} class="btn-secondary">Get a free demo</a>
+      </div>
+      <p class="mt-3 text-xs text-ink-500">14-day free trial · No card required · Cancel anytime</p>
+    </div>
+  </section>
+
+  <section class="bg-white">
+    <div class="container-narrow py-16 sm:py-20">
+      <span class="eyebrow">Definition</span>
+      <h2 class="h2 mt-3">What is GST billing software?</h2>
+      <p class="mt-4 text-[17px] leading-relaxed text-ink-700">GST billing software creates <strong>GST-compliant tax invoices</strong> — with GSTIN, HSN/SAC codes, CGST/SGST/IGST breakup, and e-invoice (IRN/QR) generation above the turnover threshold — and feeds <strong>GSTR-1</strong> sales data for filing. Good GST billing software also tracks payments, manages customers, and exports return-ready data.</p>
+    </div>
+  </section>
+
+  <section class="border-t border-ink-100 bg-ink-50/40">
+    <div class="container-narrow py-16 sm:py-20">
+      <span class="eyebrow">Shortlist</span>
+      <h2 class="h2 mt-3">Best GST billing software (2026)</h2>
+      <div class="mt-6 overflow-x-auto">
+        <table class="w-full border-collapse text-sm">
+          <thead>
+            <tr class="border-b border-ink-200 text-left">
+              <th class="py-3 pr-4 font-semibold text-ink-900">Rank</th>
+              <th class="py-3 pr-4 font-semibold text-ink-900">Software</th>
+              <th class="py-3 pr-4 font-semibold text-ink-900">Best for</th>
+              <th class="py-3 pr-4 font-semibold text-ink-900">Starting price</th>
+              <th class="py-3 pr-4 font-semibold text-ink-900">E-invoicing</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-ink-100">
+            <tr>
+              <td class="py-3 pr-4 text-ink-700">1</td>
+              <td class="py-3 pr-4 font-medium text-ink-900"><a class="text-brand-700 hover:underline" href="/apps/books/">Nidhi Books</a></td>
+              <td class="py-3 pr-4 text-ink-700">Best value GST billing + accounting</td>
+              <td class="py-3 pr-4 text-ink-700"><strong>From ₹399/month</strong>, unlimited users</td>
+              <td class="py-3 pr-4 text-ink-700">Yes</td>
+            </tr>
+            <tr>
+              <td class="py-3 pr-4 text-ink-700">2</td>
+              <td class="py-3 pr-4 font-medium text-ink-900"><a class="text-brand-700 hover:underline" href="/vyapar-alternative/">Vyapar</a></td>
+              <td class="py-3 pr-4 text-ink-700">Best for mobile/offline shop billing</td>
+              <td class="py-3 pr-4 text-ink-700">~₹3,399/year</td>
+              <td class="py-3 pr-4 text-ink-700">Yes</td>
+            </tr>
+            <tr>
+              <td class="py-3 pr-4 text-ink-700">3</td>
+              <td class="py-3 pr-4 font-medium text-ink-900"><a class="text-brand-700 hover:underline" href="/zoho-books-alternative/">Zoho Books</a></td>
+              <td class="py-3 pr-4 text-ink-700">Best billing tied to deep accounting</td>
+              <td class="py-3 pr-4 text-ink-700">Free &lt;₹25L; then ₹899/mo</td>
+              <td class="py-3 pr-4 text-ink-700">Yes</td>
+            </tr>
+            <tr>
+              <td class="py-3 pr-4 text-ink-700">4</td>
+              <td class="py-3 pr-4 font-medium text-ink-900"><a class="text-brand-700 hover:underline" href="/tally-alternative/">TallyPrime</a></td>
+              <td class="py-3 pr-4 text-ink-700">Best for accountants &amp; inventory-heavy billing</td>
+              <td class="py-3 pr-4 text-ink-700">₹22,500 one-time</td>
+              <td class="py-3 pr-4 text-ink-700">Yes</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="mt-3 text-xs italic text-ink-500">Prices as of June 2026; verify current. All prices exclude 18% GST. Nidhi Books: from ₹399/month (first app, unlimited users; +₹99/mo per add-on).</p>
+      <p class="mt-6 text-[15px] leading-relaxed text-ink-700"><strong>Why Nidhi Books leads:</strong> GST-compliant invoicing with e-invoicing and GSTR-1/3B exports, plus full accounting, from ₹399/month with unlimited users — the lowest total cost for a small team that needs both billing and books.</p>
+    </div>
+  </section>
+
+  <FAQ items={faqs} title="GST billing software — frequently asked questions" />
+
+  <section class="border-t border-ink-100 bg-ink-50/40">
+    <div class="container-narrow py-12">
+      <p class="eyebrow">Related</p>
+      <ul class="mt-3 flex flex-wrap gap-x-6 gap-y-2 text-sm text-brand-700">
+        <li><a class="hover:underline" href="/best/accounting-software-small-business-india/">Best accounting software for small business</a></li>
+        <li><a class="hover:underline" href="/best/cheapest-invoicing-software/">Cheapest invoicing software</a></li>
+        <li><a class="hover:underline" href="/vyapar-alternative/">Vyapar alternative</a></li>
+        <li><a class="hover:underline" href="/apps/books/">Nidhi Books — GST billing &amp; accounting</a></li>
+        <li><a class="hover:underline" href="/pricing/">Pricing</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <CTA
+    eyebrow="Get started"
+    title="Generate GST-compliant invoices in minutes"
+    body="HSN/SAC, CGST/SGST/IGST split, e-invoicing and GSTR-1 exports built in. The Cloud plan starts from ₹399/month for your first app (prices exclude GST), with unlimited users included."
+    primaryLabel="Start your free 14-day trial"
+    primaryHref={ctaPrimary}
+    secondaryLabel="Get a free demo"
+    secondaryHref={ctaSecondary}
+  />
+</Layout>

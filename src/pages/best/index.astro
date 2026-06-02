@@ -1,0 +1,45 @@
+---
+import Layout from '~/layouts/Layout.astro';
+
+const title = 'Best Software Buyer’s Guides for Indian Businesses (2026)';
+const description = 'Honest, multi-vendor buyer’s guides comparing the best accounting, GST billing and invoicing software for Indian small businesses in 2026.';
+const keywords = ['best accounting software india', 'best gst billing software', 'cheapest invoicing software india'];
+
+const guides = [
+  { href: '/best/accounting-software-small-business-india/', title: 'Best Accounting Software for Small Business in India', blurb: 'GST accounting compared on price, features and users — Nidhi Books, Zoho Books, TallyPrime, Vyapar.' },
+  { href: '/best/gst-billing-software/', title: 'Best GST Billing Software in India', blurb: 'GST-compliant invoicing and e-invoicing tools ranked for value, mobile billing and accounting depth.' },
+  { href: '/best/cheapest-invoicing-software/', title: 'Cheapest Invoicing Software in India', blurb: 'Free tiers vs flat pricing, compared honestly — including when free actually costs more.' },
+];
+---
+
+<Layout title={title} description={description} type="website" keywords={keywords}>
+  <section class="relative overflow-hidden border-b border-ink-100">
+    <div class="pointer-events-none absolute inset-0 grid-bg opacity-70"></div>
+    <div class="container-wide relative py-16 sm:py-20">
+      <nav class="mb-8 text-xs text-ink-500" aria-label="Breadcrumb">
+        <ol class="flex flex-wrap items-center gap-1.5">
+          <li><a href="/" class="hover:text-ink-700">Home</a></li>
+          <li class="text-ink-400">/</li>
+          <li class="text-ink-800">Best</li>
+        </ol>
+      </nav>
+      <span class="eyebrow">Buyer's guides</span>
+      <h1 class="h1 mt-4 max-w-4xl">Best software for Indian businesses</h1>
+      <p class="lede mt-5 max-w-3xl">Honest, multi-vendor shortlists for the software Indian small businesses buy most. We rank on real cost (including GST and per-user fees), GST compliance, and fit — and tell you when a competitor or a free tier is the better choice.</p>
+    </div>
+  </section>
+
+  <section class="bg-white">
+    <div class="container-narrow py-16 sm:py-20">
+      <ul class="grid gap-5 sm:grid-cols-2">
+        {guides.map((g) => (
+          <li class="rounded-2xl border border-ink-100 bg-white p-6 transition hover:border-ink-200 hover:shadow-sm">
+            <h2 class="text-lg font-semibold text-ink-900"><a class="hover:underline" href={g.href}>{g.title}</a></h2>
+            <p class="mt-2 text-[15px] leading-relaxed text-ink-600">{g.blurb}</p>
+            <a class="mt-3 inline-block text-sm text-brand-700 hover:underline" href={g.href}>Read the guide &rarr;</a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+</Layout>
