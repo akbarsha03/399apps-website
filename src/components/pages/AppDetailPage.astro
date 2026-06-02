@@ -46,7 +46,7 @@ const softwareJsonLd = {
   featureList: app.features.map((f) => f.title),
   inLanguage: lang,
   brand: { '@type': 'Brand', name: SITE.name },
-  provider: { '@type': 'Organization', '@id': `${SITE.url}/#organization`, name: SITE.name, url: SITE.url },
+  provider: { '@id': `${SITE.url}/#organization` },
   offers: {
     '@type': 'Offer',
     name: 'Cloud',
@@ -61,7 +61,7 @@ const softwareJsonLd = {
       unitText: 'MONTH',
     },
   },
-  publisher: { '@type': 'Organization', name: SITE.name, url: SITE.url },
+  publisher: { '@id': `${SITE.url}/#organization` },
 };
 
 const faqJsonLd = {
