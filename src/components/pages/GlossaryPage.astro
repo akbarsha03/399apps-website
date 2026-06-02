@@ -1,0 +1,147 @@
+---
+import Layout from '~/layouts/Layout.astro';
+import CTA from '~/components/CTA.astro';
+import FAQ from '~/components/FAQ.astro';
+import { canonicalUrl } from '~/data/site';
+import {
+  getGlossaryCopy,
+  GLOSSARY_TERMS,
+  GLOSSARY_FAQS,
+  localizedPath,
+  type Lang,
+} from '~/data/i18n';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = getGlossaryCopy(lang);
+
+// This page's own canonical URL (localized), used as the JSON-LD @id base so the
+// DefinedTermSet/BreadcrumbList identity matches the page's <link rel="canonical">.
+const glossaryPath = localizedPath('/glossary', lang);
+const glossaryUrl = canonicalUrl(glossaryPath);
+const setId = `${glossaryUrl}#definedtermset`;
+
+const pricingHref = localizedPath('/pricing', lang);
+const appsAnchor = localizedPath('/#apps', lang);
+
+// Quick lookup so "Related" links can show display names, not raw slugs.
+const nameBySlug = Object.fromEntries(GLOSSARY_TERMS.map((term) => [term.slug, term.name]));
+
+// DefinedTermSet — generated from the single GLOSSARY_TERMS list so the structured
+// data always matches the visible definitions (APPAA-35 / GEO #5). One DefinedTerm
+// per term with a stable @id + inDefinedTermSet back-reference.
+const definedTermSet = {
+  '@context': 'https://schema.org',
+  '@type': 'DefinedTermSet',
+  '@id': setId,
+  name: '399Apps GST & Accounting Glossary',
+  url: glossaryUrl,
+  inLanguage: lang,
+  hasDefinedTerm: GLOSSARY_TERMS.map((term) => ({
+    '@type': 'DefinedTerm',
+    '@id': `${glossaryUrl}#${term.slug}`,
+    name: term.name,
+    description: term.description,
+    inDefinedTermSet: setId,
+  })),
+};
+
+const breadcrumb = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  '@id': `${glossaryUrl}#breadcrumb`,
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: canonicalUrl(localizedPath('/', lang)) },
+    { '@type': 'ListItem', position: 2, name: 'Glossary', item: glossaryUrl },
+  ],
+};
+
+const faqPage = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  '@id': `${glossaryUrl}#faq`,
+  inLanguage: lang,
+  mainEntity: GLOSSARY_FAQS.map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a },
+  })),
+};
+
+const jsonLd = [definedTermSet, breadcrumb, faqPage];
+---
+
+<Layout
+  title={t.seo.title}
+  description={t.seo.description}
+  keywords={t.seo.keywords}
+  jsonLd={jsonLd}
+  lang={lang}
+  localizedOf="/glossary"
+>
+  <section class="relative overflow-hidden border-b border-ink-100">
+    <div class="pointer-events-none absolute inset-0 grid-bg opacity-60"></div>
+    <div class="container-narrow relative py-16 sm:py-20">
+      <span class="eyebrow">{t.hero.eyebrow}</span>
+      <h1 class="h1 mt-5">{t.hero.title}</h1>
+      <p class="lede mt-5 max-w-2xl">{t.hero.lede}</p>
+
+      <nav class="mt-8 flex flex-wrap gap-2" aria-label="Jump to term">
+        {GLOSSARY_TERMS.map((term) => (
+          <a
+            href={`#${term.slug}`}
+            class="inline-flex items-center rounded-full border border-ink-200 bg-white px-3 py-1 text-sm font-medium text-ink-700 transition-colors hover:border-brand-300 hover:text-brand-700"
+          >
+            {term.name}
+          </a>
+        ))}
+      </nav>
+    </div>
+  </section>
+
+  <section class="bg-white">
+    <div class="container-narrow py-16 sm:py-20">
+      <h2 class="h2">{t.termsTitle}</h2>
+      <dl class="mt-10 divide-y divide-ink-100 rounded-2xl border border-ink-100">
+        {GLOSSARY_TERMS.map((term) => (
+          <div id={term.slug} class="scroll-mt-24 px-6 py-8 sm:px-8">
+            <dt class="text-xl font-semibold text-ink-900">{term.name}</dt>
+            {/* Answer-first one-liner for AEO snippet capture. */}
+            <dd class="mt-2 text-[17px] font-medium leading-relaxed text-ink-800">{term.short}</dd>
+            <dd class="mt-4">
+              <span class="block text-xs font-semibold uppercase tracking-wide text-ink-400">{t.definitionLabel}</span>
+              <p class="mt-1.5 text-[15px] leading-relaxed text-ink-600">{term.description}</p>
+            </dd>
+            {term.related.length > 0 && (
+              <dd class="mt-5 flex flex-wrap items-center gap-2">
+                <span class="text-xs font-semibold uppercase tracking-wide text-ink-400">{t.relatedLabel}:</span>
+                {term.related.map((slug) => (
+                  <a
+                    href={`#${slug}`}
+                    class="inline-flex items-center rounded-full bg-ink-50 px-2.5 py-1 text-sm text-ink-700 transition-colors hover:bg-brand-50 hover:text-brand-700"
+                  >
+                    {nameBySlug[slug] ?? slug}
+                  </a>
+                ))}
+              </dd>
+            )}
+          </div>
+        ))}
+      </dl>
+    </div>
+  </section>
+
+  <FAQ items={GLOSSARY_FAQS} title={t.faqTitle} />
+
+  <CTA
+    eyebrow={t.cta.eyebrow}
+    title={t.cta.title}
+    body={t.cta.body}
+    primaryLabel={t.cta.primaryLabel}
+    primaryHref={pricingHref}
+    secondaryLabel={t.cta.secondaryLabel}
+    secondaryHref={appsAnchor}
+  />
+</Layout>
