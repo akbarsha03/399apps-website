@@ -4,7 +4,7 @@ import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
   site: 'https://399apps.com',
-  trailingSlash: 'ignore',
+  trailingSlash: 'always',
   build: {
     inlineStylesheets: 'auto',
   },

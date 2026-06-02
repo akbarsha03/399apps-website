@@ -2,7 +2,7 @@
 import Layout from '~/layouts/Layout.astro';
 import Icon from '~/components/Icon.astro';
 import { APPS } from '~/data/apps';
-import { SITE } from '~/data/site';
+import { SITE, canonicalUrl } from '~/data/site';
 import { getContactCopy, type Lang } from '~/data/i18n';
 
 interface Props {
@@ -17,7 +17,7 @@ const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'ContactPage',
   name: 'Contact 399apps',
-  url: `${SITE.url}/contact`,
+  url: canonicalUrl('/contact'),
   inLanguage: lang,
   publisher: { '@type': 'Organization', name: SITE.name, url: SITE.url },
 };

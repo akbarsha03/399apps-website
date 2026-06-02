@@ -1,5 +1,5 @@
 ---
-import { SITE } from '~/data/site';
+import { SITE, canonicalUrl } from '~/data/site';
 
 interface Props {
   title: string;
@@ -23,8 +23,8 @@ const {
   jsonLd,
 } = Astro.props;
 
-const cleanPath = path.endsWith('/') && path !== '/' ? path.slice(0, -1) : path;
-const canonical = new URL(cleanPath, SITE.url).toString();
+// Always emit the trailing-slash form so canonical == served URL == sitemap URL.
+const canonical = canonicalUrl(path);
 const imageUrl = image.startsWith('http') ? image : new URL(image, SITE.url).toString();
 
 const fullTitle = title.includes(SITE.name) ? title : `${title} — ${SITE.name}`;

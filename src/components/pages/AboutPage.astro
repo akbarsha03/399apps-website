@@ -1,7 +1,7 @@
 ---
 import Layout from '~/layouts/Layout.astro';
 import CTA from '~/components/CTA.astro';
-import { SITE } from '~/data/site';
+import { SITE, canonicalUrl } from '~/data/site';
 import { getAboutCopy, localizedPath, type Lang } from '~/data/i18n';
 
 interface Props {
@@ -15,7 +15,7 @@ const appsAnchor = localizedPath('/#apps', lang);
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'AboutPage',
-  url: `${SITE.url}/about`,
+  url: canonicalUrl('/about'),
   inLanguage: lang,
   publisher: { '@type': 'Organization', name: SITE.name, url: SITE.url },
 };

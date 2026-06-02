@@ -17,6 +17,21 @@ export const SITE = {
   },
 };
 
+/**
+ * Absolute canonical URL for an internal path, normalized to a trailing slash so
+ * canonical == served URL == sitemap URL (matches Astro `trailingSlash: 'always'`).
+ * The site root stays `/`; any `#hash` or `?query` is preserved after the slash.
+ * Use for every page-level URL we emit: canonical, og:url, hreflang, JSON-LD url/offers.url.
+ */
+export function canonicalUrl(path = '/'): string {
+  const m = path.match(/^([^#?]*)([#?].*)?$/) ?? ['', path, ''];
+  const rawPath = m[1] || '/';
+  const suffix = m[2] ?? '';
+  const clean = ('/' + rawPath).replace(/\/{2,}/g, '/');
+  const withSlash = clean === '/' ? '/' : clean.replace(/\/$/, '') + '/';
+  return new URL(withSlash + suffix, SITE.url).toString();
+}
+
 export const NAV = [
   { label: 'Apps', href: '/#apps' },
   { label: 'Pricing', href: '/pricing' },
