@@ -108,7 +108,7 @@ export const ALT_JSONLD: Record<string, Record<string, unknown>> = {
             "name": "Can I move my Tally data to 399Apps?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes. Export your ledgers, stock items, parties and transactions from Tally (Excel/XML) and import them into 399Apps, then set opening balances as of your switch date. Keep Tally as a read-only archive for prior periods."
+              "text": "Yes. Export your ledgers, stock items, parties and transactions from Tally (Excel/XML) and import them into 399Apps, then set opening balances as of your switch date. Contacts, invoices and ledgers all import; guided migration support is available for large or complex datasets. Keep Tally as a read-only archive for prior periods."
             }
           },
           {
@@ -278,7 +278,7 @@ export const ALT_JSONLD: Record<string, Record<string, unknown>> = {
             "name": "Can I move my data from Zoho Books to 399Apps?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes. Export contacts, items, chart of accounts and transactions from Zoho Books (CSV/Excel) and import them into 399Apps, then set opening balances on your switch date."
+              "text": "Yes. Export contacts, items, chart of accounts and transactions from Zoho Books (CSV/Excel) and import them into 399Apps, then set opening balances on your switch date. Contacts, invoices and ledgers all import; guided migration support is available for large or complex datasets."
             }
           },
           {
@@ -440,7 +440,7 @@ export const ALT_JSONLD: Record<string, Record<string, unknown>> = {
             "name": "Can I move my Vyapar data to 399Apps?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes. Export items, parties and transactions from Vyapar to Excel, then import them into 399Apps and set opening stock/balances as of your switch date."
+              "text": "Yes. Export items, parties and transactions from Vyapar to CSV/Excel, then import them into 399Apps and set opening stock/balances as of your switch date. Guided migration support is available for large or complex datasets."
             }
           },
           {
@@ -602,7 +602,7 @@ export const ALT_JSONLD: Record<string, Record<string, unknown>> = {
             "name": "Can I migrate my QuickBooks data to 399Apps?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes. Export customers, vendors, chart of accounts, items and transactions from QuickBooks (CSV/Excel), import them into 399Apps, and enter opening balances from your QuickBooks trial balance on the switch date."
+              "text": "Yes. Export customers, vendors, chart of accounts, items and transactions from QuickBooks (CSV/Excel), import them into 399Apps, and enter opening balances from your QuickBooks trial balance on the switch date. Contacts, invoices and ledgers all import; guided migration support is available for large or complex datasets."
             }
           },
           {
@@ -772,7 +772,7 @@ export const ALT_JSONLD: Record<string, Record<string, unknown>> = {
             "name": "Can I move my FreshBooks data to 399Apps?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes. Export clients, items/services and invoices from FreshBooks (CSV), import them into 399Apps, and set outstanding balances as of your switch date."
+              "text": "Yes. Export clients, items/services and invoices from FreshBooks (CSV/Excel), import them into 399Apps, and set outstanding balances as of your switch date. Guided migration support is available for large or complex datasets."
             }
           },
           {
