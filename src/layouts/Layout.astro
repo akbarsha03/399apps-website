@@ -36,8 +36,8 @@ const baseOrgSchema = {
   '@type': 'Organization',
   '@id': `${SITE.url}/#organization`,
   name: SITE.name,
-  alternateName: '399 Apps',
-  url: SITE.url,
+  alternateName: ['399Apps', '399 Apps'],
+  url: canonicalUrl('/'),
   logo: new URL('/logo.png', SITE.url).toString(),
   description:
     '399apps is an affordable app store of business SaaS for Indian small businesses — GST-ready accounting (Nidhi Books), inventory, matrimonials and job-portal software. ₹399/month for your first app, ₹99 per additional app, unlimited users, cloud or self-hosted.',
