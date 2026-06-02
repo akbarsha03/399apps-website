@@ -1,7 +1,7 @@
 {
   "name": "399apps",
   "short_name": "399apps",
-  "description": "Affordable business SaaS — accounting, inventory, matrimonials, job portal. Cloud or self-hosted.",
+  "description": "Affordable business SaaS — GST-ready accounting and inventory. Cloud or self-hosted.",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",

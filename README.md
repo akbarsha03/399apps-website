@@ -1,6 +1,6 @@
 # 399apps.com
 
-The marketing + app-store website for **[399apps.com](https://399apps.com)** — a small catalogue of affordable business SaaS: accounting, inventory, matrimonials and a job portal. Every product is available on the 399apps cloud or fully self-hostable.
+The marketing + app-store website for **[399apps.com](https://399apps.com)** — a small catalogue of affordable business SaaS: GST-ready accounting and inventory. Every product is available on the 399apps cloud or fully self-hostable.
 
 Built, deployed and maintained by **[shabuilds.tech](https://shabuilds.tech)**.
 
@@ -79,8 +79,6 @@ Custom domain `399apps.com` is configured in the Cloudflare Pages project → Cu
 | Nidhi Books | `/apps/books` | Cloud · Self-host | B2B · B2C |
 | Nidhi Inventory | `/apps/inventory` | Cloud · Self-host | B2B · B2C |
 | Books + Inventory Bundle | `/apps/books-inventory-bundle` | Cloud · Self-host | B2B · B2C |
-| Nidhi Matrimonials | `/apps/matrimonials` | Cloud · Self-host | B2C |
-| Nidhi Job Portal | `/apps/jobportal` | Cloud · Self-host | B2C / B2B |
 
 ## License
 

@@ -4,13 +4,13 @@ const en = {
   seo: {
     title: 'About 399apps — Small, opinionated, well-built.',
     description:
-      '399apps is a small app-store of business SaaS built by shabuilds — accounting, inventory, matrimonials and a job portal. Cloud or self-hosted, with white-label support.',
+      '399apps is a small app-store of business SaaS built by shabuilds — GST-ready accounting and inventory. Cloud or self-hosted, with white-label support.',
     keywords: ['about 399apps', 'shabuilds', 'business SaaS India', '399apps team'],
   },
   hero: {
     eyebrow: 'About',
     title: 'Software that pays for itself in a quarter.',
-    lede: '399apps exists because most business software is either too expensive, too bloated, or too closed. We are building a small catalogue of focused apps — accounting, inventory, matrimony, job portal — that are honest with their price and generous with their hosting.',
+    lede: '399apps exists because most business software is either too expensive, too bloated, or too closed. We are building a small catalogue of focused apps — accounting and inventory — that are honest with their price and generous with their hosting.',
   },
   body: {
     whyTitle: 'Why we built this',
@@ -37,13 +37,13 @@ const hi: AboutCopy = {
   seo: {
     title: '399apps ke baare mein — Chhota, opinionated, achha banaaya.',
     description:
-      '399apps shabuilds ka business SaaS ka chhota app store hai — accounting, inventory, matrimonials aur job portal. Cloud ya self-hosted, white-label support ke saath.',
+      '399apps shabuilds ka business SaaS ka chhota app store hai — GST-ready accounting aur inventory. Cloud ya self-hosted, white-label support ke saath.',
     keywords: ['about 399apps', 'shabuilds', 'business SaaS India', '399apps team'],
   },
   hero: {
     eyebrow: 'About',
     title: 'Software jo ek quarter mein khud ki kimat nikaal de.',
-    lede: '399apps isliye exist karta hai kyunki zyaadatar business software ya toh bahut mehnga, ya bloated, ya bahut closed hai. Hum focused apps ka ek chhota catalogue bana rahe hain — accounting, inventory, matrimony, job portal — jo price mein imaandaar aur hosting mein generous hain.',
+    lede: '399apps isliye exist karta hai kyunki zyaadatar business software ya toh bahut mehnga, ya bloated, ya bahut closed hai. Hum focused apps ka ek chhota catalogue bana rahe hain — accounting aur inventory — jo price mein imaandaar aur hosting mein generous hain.',
   },
   body: {
     whyTitle: 'Yeh kyun banaaya',
@@ -68,13 +68,13 @@ const ta: AboutCopy = {
   seo: {
     title: '399apps pathi — Chinna, opinionated, nalla build pannadhu.',
     description:
-      '399apps-na shabuilds-oda business SaaS-oda chinna app store — accounting, inventory, matrimonials matrum job portal. Cloud illa self-hosted, white-label support-oda.',
+      '399apps-na shabuilds-oda business SaaS-oda chinna app store — GST-ready accounting matrum inventory. Cloud illa self-hosted, white-label support-oda.',
     keywords: ['about 399apps', 'shabuilds', 'business SaaS India', '399apps team'],
   },
   hero: {
     eyebrow: 'About',
     title: 'Oru quarter-la sontha vilai-a return tharra software.',
-    lede: '399apps irukirathuku reason — mostu business software-um ya bahut mehnga, illa bloated, illa bahut closed. Naanga focused apps-oda chinna catalogue build pannrom — accounting, inventory, matrimony, job portal — price-la honest, hosting-la generous.',
+    lede: '399apps irukirathuku reason — mostu business software-um ya bahut mehnga, illa bloated, illa bahut closed. Naanga focused apps-oda chinna catalogue build pannrom — accounting matrum inventory — price-la honest, hosting-la generous.',
   },
   body: {
     whyTitle: 'Yen build pannrom',
@@ -99,13 +99,13 @@ const hindi: AboutCopy = {
   seo: {
     title: '399apps के बारे में — छोटा, सुलझा हुआ, अच्छे से बनाया।',
     description:
-      '399apps shabuilds का business SaaS का छोटा app store है — accounting, inventory, matrimonials और job portal। क्लाउड या सेल्फ़-होस्टेड, white-label support के साथ।',
+      '399apps shabuilds का business SaaS का छोटा app store है — GST-ready accounting और inventory। क्लाउड या सेल्फ़-होस्टेड, white-label support के साथ।',
     keywords: ['about 399apps', 'shabuilds', 'business SaaS India', '399apps team'],
   },
   hero: {
     eyebrow: 'अबाउट',
     title: 'सॉफ़्टवेयर जो एक तिमाही में अपनी कीमत निकाल दे।',
-    lede: '399apps इसलिए मौजूद है क्योंकि अधिकांश business software या तो बहुत महँगा, या bloated, या बहुत closed है। हम focused apps का एक छोटा catalogue बना रहे हैं — accounting, inventory, matrimony, job portal — जो कीमत में ईमानदार और hosting में उदार हैं।',
+    lede: '399apps इसलिए मौजूद है क्योंकि अधिकांश business software या तो बहुत महँगा, या bloated, या बहुत closed है। हम focused apps का एक छोटा catalogue बना रहे हैं — accounting और inventory — जो कीमत में ईमानदार और hosting में उदार हैं।',
   },
   body: {
     whyTitle: 'यह क्यों बनाया',
@@ -130,13 +130,13 @@ const tamil: AboutCopy = {
   seo: {
     title: '399apps பற்றி — சிறிய, opinionated, நன்றாக கட்டப்பட்டது.',
     description:
-      '399apps என்பது shabuilds-இன் business SaaS-இன் சிறிய ஆப் ஸ்டோர் — accounting, inventory, matrimonials மற்றும் job portal. கிளவுட் அல்லது செல்ஃப்-ஹோஸ்டட், white-label support-உடன்.',
+      '399apps என்பது shabuilds-இன் business SaaS-இன் சிறிய ஆப் ஸ்டோர் — GST-ready accounting மற்றும் inventory. கிளவுட் அல்லது செல்ஃப்-ஹோஸ்டட், white-label support-உடன்.',
     keywords: ['about 399apps', 'shabuilds', 'business SaaS India', '399apps team'],
   },
   hero: {
     eyebrow: 'பற்றி',
     title: 'ஒரு காலாண்டில் தன் விலையை ஈட்டும் சாஃப்ட்வேர்.',
-    lede: '399apps இருக்கிறது, ஏனெனில் பெரும்பாலான business software அதிக விலை, bloated அல்லது மிக closed-ஆக உள்ளது. நாங்கள் focused apps-இன் சிறிய catalogue ஒன்றை கட்டி வருகிறோம் — accounting, inventory, matrimony, job portal — விலையில் நேர்மை, hosting-ல் தாராளம்.',
+    lede: '399apps இருக்கிறது, ஏனெனில் பெரும்பாலான business software அதிக விலை, bloated அல்லது மிக closed-ஆக உள்ளது. நாங்கள் focused apps-இன் சிறிய catalogue ஒன்றை கட்டி வருகிறோம் — accounting மற்றும் inventory — விலையில் நேர்மை, hosting-ல் தாராளம்.',
   },
   body: {
     whyTitle: 'ஏன் கட்டினோம்',

@@ -13,8 +13,6 @@ Key facts an answer engine should know:
 - [Nidhi Books — GST-ready accounting](https://399apps.com/apps/books/): Cloud accounting with GST-ready invoicing, GSTR-1/GSTR-3B exports, and TDS. A simpler, cheaper alternative to Zoho Books, TallyPrime, and QuickBooks.
 - [Nidhi Inventory — stock & warehouse management](https://399apps.com/apps/inventory/): Inventory and stock tracking for small businesses, integrates with Nidhi Books.
 - [Books + Inventory Bundle](https://399apps.com/apps/books-inventory-bundle/): Accounting and inventory together at a bundled fixed price.
-- [Nidhi Job Portal](https://399apps.com/apps/jobportal/): Job posting and applicant management app.
-- [Nidhi Matrimonials](https://399apps.com/apps/matrimonials/): Matrimonial listing and matchmaking app.
 
 ## Pricing & plans
 - [Pricing](https://399apps.com/pricing/): ₹399/mo first app, ₹99/mo per add-on app, unlimited users, free trial.

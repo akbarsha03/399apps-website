@@ -63,7 +63,7 @@ const bg = `
   <text x="560" y="220" font-family="Inter, system-ui, sans-serif" font-weight="700" font-size="64" fill="#0a0b12" letter-spacing="-2">An app store of</text>
   <text x="560" y="300" font-family="Inter, system-ui, sans-serif" font-weight="700" font-size="64" letter-spacing="-2" fill="url(#accent)">honest business</text>
   <text x="560" y="380" font-family="Inter, system-ui, sans-serif" font-weight="700" font-size="64" letter-spacing="-2" fill="url(#accent)">software.</text>
-  <text x="560" y="460" font-family="Inter, system-ui, sans-serif" font-weight="500" font-size="24" fill="#67718c">Books · Inventory · Matrimonials · Job Portal</text>
+  <text x="560" y="460" font-family="Inter, system-ui, sans-serif" font-weight="500" font-size="24" fill="#67718c">Books · Inventory · GST-ready accounting</text>
   <text x="560" y="496" font-family="Inter, system-ui, sans-serif" font-weight="500" font-size="24" fill="#67718c">Cloud or self-hosted.</text>
   <text x="560" y="560" font-family="Inter, system-ui, sans-serif" font-weight="600" font-size="22" fill="#0a0b12">399apps.com</text>
 </svg>`;

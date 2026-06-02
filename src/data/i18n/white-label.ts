@@ -4,8 +4,8 @@ const en = {
   seo: {
     title: 'White Label — Launch a 399apps product under your brand.',
     description:
-      'White-label Nidhi Books, Inventory, Matrimonials or Job Portal under your own domain, logo and colours. B2B and B2C ready, on cloud or self-hosted.',
-    keywords: ['white label SaaS', 'white label matrimonial', 'white label job portal', 'white label inventory software', 'rebrandable business software'],
+      'White-label Nidhi Books and Inventory under your own domain, logo and colours. B2B and B2C ready, on cloud or self-hosted.',
+    keywords: ['white label SaaS', 'white label accounting software', 'white label GST software', 'white label inventory software', 'rebrandable business software'],
   },
   hero: {
     eyebrow: 'White label',
@@ -19,8 +19,8 @@ const en = {
     title: 'When you need a product, not a project.',
     lede: 'Communities, niche operators and agencies use 399apps to launch a serious product in weeks instead of years — without becoming a software company.',
     cards: [
-      { t: 'Community matrimony platforms', b: 'Caste, regional or NRI matrimonial brands that want a Shaadi-class product without a 12-month build.' },
-      { t: 'Niche job boards', b: 'Industry associations, alumni networks or specialist recruiters who want their own Naukri-class portal.' },
+      { t: 'Accountants & CA firms', b: 'Offer GST-ready Books to every client under your own brand — no per-client royalties.' },
+      { t: 'Trade & industry associations', b: 'Give your members a branded billing and inventory tool as a membership perk.' },
       { t: 'Vertical accounting + inventory', b: 'Pharmacy, jewellery, fashion or distribution operators who want Books + Inventory tuned to their vocabulary.' },
       { t: 'Agencies & resellers', b: 'Agencies bundling SaaS with services — resell 399apps under your brand with a flat yearly licence.' },
     ],
@@ -35,7 +35,7 @@ const en = {
       'All app copy, configurable per locale',
       'Branded transactional emails',
       'Custom T&Cs, privacy policy hooks',
-      'Per-product taxonomies (matrimony / jobs)',
+      'Per-product taxonomies & custom fields',
       'Razorpay / Stripe / Cashfree on your account',
       'SEO setup on your domain (sitemap, schema, OG)',
       'Optional managed support add-on',
@@ -44,7 +44,7 @@ const en = {
   faq: {
     title: 'White-label — FAQs',
     items: [
-      { q: 'What can I customise on a white-label deployment?', a: 'Domain, logo, favicon, brand colours, all copy, email templates, payment branding, supported languages, terms of use, and category taxonomies for matrimony / jobs.' },
+      { q: 'What can I customise on a white-label deployment?', a: 'Domain, logo, favicon, brand colours, all copy, email templates, payment branding, supported languages, terms of use, and per-product category taxonomies and custom fields.' },
       { q: 'Will customers know it is 399apps under the hood?', a: 'No. Your customers see your brand. The 399apps name is not visible in the app, in emails or in legal copy. Engineering credits stay in the source — that is it.' },
       { q: 'Is there a per-customer royalty?', a: 'No. White-label is a flat yearly licence per deployment. Add seats and scale tiers honestly without per-end-user royalties.' },
       { q: 'How long does a white-label launch take?', a: 'Cloud white-label launches take roughly 1–2 weeks. Self-hosted launches typically take 2–4 weeks depending on customisation scope.' },
@@ -66,8 +66,8 @@ const hi: WhiteLabelCopy = {
   seo: {
     title: 'White Label — 399apps product apne brand mein launch karein.',
     description:
-      'Nidhi Books, Inventory, Matrimonials ya Job Portal ko apne domain, logo aur colours mein white-label karein. B2B aur B2C ready, cloud ya self-hosted.',
-    keywords: ['white label SaaS', 'white label matrimonial', 'white label job portal', 'white label inventory software', 'rebrandable business software'],
+      'Nidhi Books aur Inventory ko apne domain, logo aur colours mein white-label karein. B2B aur B2C ready, cloud ya self-hosted.',
+    keywords: ['white label SaaS', 'white label accounting software', 'white label GST software', 'white label inventory software', 'rebrandable business software'],
   },
   hero: {
     eyebrow: 'White label',
@@ -81,8 +81,8 @@ const hi: WhiteLabelCopy = {
     title: 'Jab aapko product chahiye, project nahi.',
     lede: 'Communities, niche operators aur agencies 399apps use karte hain ek serious product weeks mein launch karne ke liye — software company banne ke bina.',
     cards: [
-      { t: 'Community matrimony platforms', b: 'Caste, regional ya NRI matrimony brands jo 12-mahine ki build ke bina Shaadi-class product chahte hain.' },
-      { t: 'Niche job boards', b: 'Industry associations, alumni networks ya specialist recruiters jo apna Naukri-class portal chahte hain.' },
+      { t: 'Accountants aur CA firms', b: 'Har client ko GST-ready Books apne brand mein offer karein — koi per-client royalty nahi.' },
+      { t: 'Trade aur industry associations', b: 'Apne members ko ek branded billing aur inventory tool membership perk ke roop mein dein.' },
       { t: 'Vertical accounting + inventory', b: 'Pharmacy, jewellery, fashion ya distribution operators jo apni vocabulary mein Books + Inventory chahte hain.' },
       { t: 'Agencies aur resellers', b: 'Agencies jo SaaS + services bundle karte hain — 399apps ko apne brand mein flat yearly licence pe resell karein.' },
     ],
@@ -97,7 +97,7 @@ const hi: WhiteLabelCopy = {
       'Saara app copy, har locale ke liye configurable',
       'Branded transactional emails',
       'Custom T&Cs, privacy policy hooks',
-      'Per-product taxonomies (matrimony / jobs)',
+      'Per-product taxonomies & custom fields',
       'Razorpay / Stripe / Cashfree aapke account pe',
       'Aapke domain pe SEO setup (sitemap, schema, OG)',
       'Optional managed support add-on',
@@ -106,7 +106,7 @@ const hi: WhiteLabelCopy = {
   faq: {
     title: 'White-label — FAQs',
     items: [
-      { q: 'White-label deployment mein kya customise kar sakte hain?', a: 'Domain, logo, favicon, brand colours, saari copy, email templates, payment branding, supported languages, terms of use, aur matrimony / jobs ke category taxonomies.' },
+      { q: 'White-label deployment mein kya customise kar sakte hain?', a: 'Domain, logo, favicon, brand colours, saari copy, email templates, payment branding, supported languages, terms of use, aur per-product category taxonomies aur custom fields.' },
       { q: 'Kya customers ko pata chalega ki andar 399apps hai?', a: 'Nahi. Aapke customers aapka brand dekhenge. 399apps naam app mein, emails mein ya legal copy mein nahi dikhega. Engineering credits sirf source mein rehte hain.' },
       { q: 'Kya per-customer royalty hai?', a: 'Nahi. White-label ek flat yearly licence per deployment hai. Seats aur scale tiers honestly add karein, koi per-end-user royalty nahi.' },
       { q: 'White-label launch mein kitna time lagta hai?', a: 'Cloud white-label launches lagbhag 1–2 weeks. Self-hosted launches typically 2–4 weeks, customisation scope pe depend karta hai.' },
@@ -126,8 +126,8 @@ const ta: WhiteLabelCopy = {
   seo: {
     title: 'White Label — 399apps product-a unga brand-la launch pannunga.',
     description:
-      'Nidhi Books, Inventory, Matrimonials illa Job Portal-a unga sontha domain, logo, colours-la white-label pannunga. B2B matrum B2C ready, cloud illa self-hosted.',
-    keywords: ['white label SaaS', 'white label matrimonial', 'white label job portal', 'white label inventory software', 'rebrandable business software'],
+      'Nidhi Books matrum Inventory-a unga sontha domain, logo, colours-la white-label pannunga. B2B matrum B2C ready, cloud illa self-hosted.',
+    keywords: ['white label SaaS', 'white label accounting software', 'white label GST software', 'white label inventory software', 'rebrandable business software'],
   },
   hero: {
     eyebrow: 'White label',
@@ -141,8 +141,8 @@ const ta: WhiteLabelCopy = {
     title: 'Project illa, product venumna.',
     lede: 'Communities, niche operators matrum agencies 399apps-a use pannraanga, oru serious product-a weeks-la launch panna — software company aagama.',
     cards: [
-      { t: 'Community matrimony platforms', b: 'Caste, regional illa NRI matrimony brands, 12-maasa build illama Shaadi-class product venumna.' },
-      { t: 'Niche job boards', b: 'Industry associations, alumni networks illa specialist recruiters, sontha Naukri-class portal venumna.' },
+      { t: 'Accountants & CA firms', b: 'Ovvoru client-kum GST-ready Books-a unga sontha brand-la offer pannunga — per-client royalty illa.' },
+      { t: 'Trade & industry associations', b: 'Unga members-ku oru branded billing matrum inventory tool-a membership perk-a kudunga.' },
       { t: 'Vertical accounting + inventory', b: 'Pharmacy, jewellery, fashion illa distribution operators, Books + Inventory-a unga vocabulary-la tune panna.' },
       { t: 'Agencies & resellers', b: 'Agencies SaaS + services bundle pannraanga — 399apps-a unga brand-la flat yearly licence-la resell pannunga.' },
     ],
@@ -157,7 +157,7 @@ const ta: WhiteLabelCopy = {
       'Mottha app copy, ovvoru locale-ku configurable',
       'Branded transactional emails',
       'Custom T&Cs, privacy policy hooks',
-      'Per-product taxonomies (matrimony / jobs)',
+      'Per-product taxonomies & custom fields',
       'Razorpay / Stripe / Cashfree unga account-la',
       'Unga domain-la SEO setup (sitemap, schema, OG)',
       'Optional managed support add-on',
@@ -166,7 +166,7 @@ const ta: WhiteLabelCopy = {
   faq: {
     title: 'White-label — FAQs',
     items: [
-      { q: 'White-label deployment-la enna customise pannalaam?', a: 'Domain, logo, favicon, brand colours, ella copy, email templates, payment branding, supported languages, terms of use, matrum matrimony / jobs-ku category taxonomies.' },
+      { q: 'White-label deployment-la enna customise pannalaam?', a: 'Domain, logo, favicon, brand colours, ella copy, email templates, payment branding, supported languages, terms of use, matrum per-product category taxonomies matrum custom fields.' },
       { q: 'Customers-ku ulla 399apps irukku-nu theriyuma?', a: 'Illa. Unga customers unga brand-a paaparganga. 399apps peyru app-la, emails-la illa legal copy-la theriyaadhu. Engineering credits source-la mattum thaan.' },
       { q: 'Per-customer royalty irukka?', a: 'Illa. White-label oru flat yearly licence per deployment. Seats matrum scale tiers honest-a add pannunga, per-end-user royalty illa.' },
       { q: 'White-label launch evvalavu naal aagum?', a: 'Cloud white-label launches roughly 1–2 weeks. Self-hosted launches usually 2–4 weeks, customisation scope-a poruthadhu.' },
@@ -186,8 +186,8 @@ const hindi: WhiteLabelCopy = {
   seo: {
     title: 'व्हाइट लेबल — 399apps प्रोडक्ट अपने ब्रांड में लॉन्च करें।',
     description:
-      'Nidhi Books, Inventory, Matrimonials या Job Portal को अपने डोमेन, लोगो और रंगों में व्हाइट-लेबल करें। B2B और B2C रेडी, क्लाउड या सेल्फ़-होस्टेड।',
-    keywords: ['white label SaaS', 'white label matrimonial', 'white label job portal', 'white label inventory software', 'rebrandable business software'],
+      'Nidhi Books और Inventory को अपने डोमेन, लोगो और रंगों में व्हाइट-लेबल करें। B2B और B2C रेडी, क्लाउड या सेल्फ़-होस्टेड।',
+    keywords: ['white label SaaS', 'white label accounting software', 'white label GST software', 'white label inventory software', 'rebrandable business software'],
   },
   hero: {
     eyebrow: 'व्हाइट लेबल',
@@ -201,8 +201,8 @@ const hindi: WhiteLabelCopy = {
     title: 'जब आपको प्रोजेक्ट नहीं, प्रोडक्ट चाहिए।',
     lede: 'Communities, niche operators और agencies 399apps का इस्तेमाल करती हैं ताकि weeks में एक serious product launch हो सके — software company बने बिना।',
     cards: [
-      { t: 'कम्युनिटी मैट्रिमोनी प्लेटफ़ॉर्म', b: 'जाति, क्षेत्रीय या NRI मैट्रिमोनी ब्रांड, जो 12 महीने की build के बिना Shaadi-class प्रोडक्ट चाहते हैं।' },
-      { t: 'Niche जॉब बोर्ड्स', b: 'इंडस्ट्री associations, alumni networks या specialist recruiters, जिन्हें अपना Naukri-class portal चाहिए।' },
+      { t: 'अकाउंटेंट्स और CA फ़र्म्स', b: 'हर client को GST-ready Books अपने ब्रांड में offer करें — कोई per-client royalty नहीं।' },
+      { t: 'ट्रेड और इंडस्ट्री associations', b: 'अपने members को एक branded billing और inventory tool membership perk के रूप में दें।' },
       { t: 'Vertical accounting + inventory', b: 'फार्मेसी, ज्वैलरी, फ़ैशन या distribution operators जो Books + Inventory अपनी vocabulary में चाहते हैं।' },
       { t: 'Agencies & resellers', b: 'Agencies जो SaaS + services bundle करती हैं — 399apps को अपने ब्रांड में flat yearly licence पर resell करें।' },
     ],
@@ -217,7 +217,7 @@ const hindi: WhiteLabelCopy = {
       'पूरी ऐप कॉपी, हर locale के लिए configurable',
       'Branded transactional emails',
       'Custom T&Cs, privacy policy hooks',
-      'Per-product taxonomies (matrimony / jobs)',
+      'Per-product taxonomies & custom fields',
       'Razorpay / Stripe / Cashfree आपके account पर',
       'आपके डोमेन पर SEO setup (sitemap, schema, OG)',
       'Optional managed support add-on',
@@ -226,7 +226,7 @@ const hindi: WhiteLabelCopy = {
   faq: {
     title: 'व्हाइट-लेबल — FAQs',
     items: [
-      { q: 'व्हाइट-लेबल डिप्लॉयमेंट में क्या customise कर सकते हैं?', a: 'डोमेन, लोगो, favicon, brand colours, सारी कॉपी, email templates, payment branding, supported languages, terms of use, और matrimony / jobs के category taxonomies।' },
+      { q: 'व्हाइट-लेबल डिप्लॉयमेंट में क्या customise कर सकते हैं?', a: 'डोमेन, लोगो, favicon, brand colours, सारी कॉपी, email templates, payment branding, supported languages, terms of use, और per-product category taxonomies और custom fields।' },
       { q: 'क्या customers को पता चलेगा कि अंदर 399apps है?', a: 'नहीं। आपके customers आपका ब्रांड देखेंगे। 399apps नाम ऐप में, emails में या legal copy में नहीं दिखेगा। Engineering credits सिर्फ़ source में रहते हैं।' },
       { q: 'क्या per-customer royalty है?', a: 'नहीं। व्हाइट-लेबल एक flat yearly licence per deployment है। Seats और scale tiers ईमानदारी से जोड़ें, कोई per-end-user royalty नहीं।' },
       { q: 'व्हाइट-लेबल launch में कितना समय लगता है?', a: 'क्लाउड व्हाइट-लेबल launches लगभग 1–2 weeks। सेल्फ़-होस्टेड launches typically 2–4 weeks, customisation scope पर निर्भर।' },
@@ -246,8 +246,8 @@ const tamil: WhiteLabelCopy = {
   seo: {
     title: 'ஒயிட் லேபல் — 399apps புராடக்ட்டை உங்கள் ப்ராண்டில் தொடங்குங்கள்.',
     description:
-      'Nidhi Books, Inventory, Matrimonials அல்லது Job Portal-ஐ உங்கள் சொந்த டொமைன், லோகோ மற்றும் கலர்ஸில் ஒயிட்-லேபல் செய்யுங்கள். B2B மற்றும் B2C ரெடி, கிளவுட் அல்லது செல்ஃப்-ஹோஸ்டட்.',
-    keywords: ['white label SaaS', 'white label matrimonial', 'white label job portal', 'white label inventory software', 'rebrandable business software'],
+      'Nidhi Books மற்றும் Inventory-ஐ உங்கள் சொந்த டொமைன், லோகோ மற்றும் கலர்ஸில் ஒயிட்-லேபல் செய்யுங்கள். B2B மற்றும் B2C ரெடி, கிளவுட் அல்லது செல்ஃப்-ஹோஸ்டட்.',
+    keywords: ['white label SaaS', 'white label accounting software', 'white label GST software', 'white label inventory software', 'rebrandable business software'],
   },
   hero: {
     eyebrow: 'ஒயிட் லேபல்',
@@ -261,8 +261,8 @@ const tamil: WhiteLabelCopy = {
     title: 'புராஜெக்ட் இல்லை, புராடக்ட் வேண்டும் என்றால்.',
     lede: 'Communities, niche operators மற்றும் agencies 399apps-ஐ பயன்படுத்துகின்றனர், serious புராடக்ட்டை வாரங்களில் தொடங்க — software company ஆகாமலேயே.',
     cards: [
-      { t: 'கம்யூனிட்டி மேட்ரிமோனி பிளாட்ஃபார்ம்', b: 'ஜாதி, பிராந்திய அல்லது NRI மேட்ரிமோனி ப்ராண்ட்கள், 12-மாத கட்டுமானம் இல்லாமல் Shaadi-class புராடக்ட் வேண்டுமென்றால்.' },
-      { t: 'Niche ஜாப் போர்டுகள்', b: 'Industry associations, alumni networks அல்லது specialist recruiters, தங்களின் Naukri-class portal வேண்டுமென்றால்.' },
+      { t: 'அக்கவுண்டெண்ட்ஸ் & CA firms', b: 'ஒவ்வொரு client-க்கும் GST-ready Books-ஐ உங்கள் சொந்த ப்ராண்டில் வழங்குங்கள் — per-client ராயல்டி இல்லை.' },
+      { t: 'வர்த்தக & தொழில் சங்கங்கள்', b: 'உங்கள் members-க்கு ஒரு branded billing மற்றும் inventory tool-ஐ membership perk-ஆக வழங்குங்கள்.' },
       { t: 'Vertical accounting + inventory', b: 'பார்மசி, நகை, ஃபேஷன் அல்லது distribution operators, தங்கள் vocabulary-ல் Books + Inventory tune செய்ய.' },
       { t: 'Agencies & resellers', b: 'Agencies SaaS + services bundle செய்கின்றனர் — 399apps-ஐ உங்கள் ப்ராண்டில் flat yearly licence-ல் resell செய்யுங்கள்.' },
     ],
@@ -277,7 +277,7 @@ const tamil: WhiteLabelCopy = {
       'மொத்த ஆப் காப்பி, ஒவ்வொரு locale-க்கும் configurable',
       'Branded transactional emails',
       'Custom T&Cs, privacy policy hooks',
-      'Per-product taxonomies (matrimony / jobs)',
+      'Per-product taxonomies & custom fields',
       'Razorpay / Stripe / Cashfree உங்கள் account-ல்',
       'உங்கள் டொமைனில் SEO setup (sitemap, schema, OG)',
       'Optional managed support add-on',
@@ -286,7 +286,7 @@ const tamil: WhiteLabelCopy = {
   faq: {
     title: 'ஒயிட்-லேபல் — FAQs',
     items: [
-      { q: 'ஒயிட்-லேபல் டிப்ளாய்மென்டில் என்ன customise செய்யலாம்?', a: 'டொமைன், லோகோ, favicon, brand colours, அனைத்து காப்பி, email templates, payment branding, supported languages, terms of use, மற்றும் matrimony / jobs-க்கு category taxonomies.' },
+      { q: 'ஒயிட்-லேபல் டிப்ளாய்மென்டில் என்ன customise செய்யலாம்?', a: 'டொமைன், லோகோ, favicon, brand colours, அனைத்து காப்பி, email templates, payment branding, supported languages, terms of use, மற்றும் per-product category taxonomies மற்றும் custom fields.' },
       { q: 'Customers-க்கு உள்ளே 399apps இருக்கிறது என்று தெரியுமா?', a: 'இல்லை. உங்கள் customers உங்கள் ப்ராண்டை மட்டுமே பார்ப்பார்கள். 399apps பெயர் ஆப்பில், emails-ல் அல்லது legal copy-ல் தெரியாது. Engineering credits source-ல் மட்டுமே.' },
       { q: 'Per-customer ராயல்டி உள்ளதா?', a: 'இல்லை. ஒயிட்-லேபல் ஒரு flat yearly licence per deployment. Seats மற்றும் scale tiers நேர்மையாக சேர்க்கவும், per-end-user ராயல்டி இல்லை.' },
       { q: 'ஒயிட்-லேபல் launch எவ்வளவு நாள் ஆகும்?', a: 'கிளவுட் ஒயிட்-லேபல் launches தோராயமாக 1–2 weeks. செல்ஃப்-ஹோஸ்டட் launches பொதுவாக 2–4 weeks, customisation scope-ஐப் பொருத்து.' },

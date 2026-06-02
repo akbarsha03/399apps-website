@@ -4,7 +4,7 @@ export const SITE = {
   url: 'https://399apps.com',
   tagline: 'Affordable business software, made for India and the world.',
   description:
-    '399apps is a suite of clean, affordable business SaaS — books, inventory, matrimonials, and a job portal — available on the cloud or fully self-hostable. Built for B2B, B2C and white-label.',
+    '399apps is a suite of clean, affordable business SaaS — GST-ready accounting and inventory — available on the cloud or fully self-hostable. Built for B2B, B2C and white-label.',
   email: 'hello@shabuilds.tech',
   whatsapp: '+91 00000 00000',
   builderName: 'shabuilds',

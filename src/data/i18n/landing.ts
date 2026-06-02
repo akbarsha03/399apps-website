@@ -4,13 +4,13 @@ const en = {
   seo: {
     title: '399apps — Affordable Business SaaS. Cloud or Self-Hosted.',
     description:
-      'A clean app store of affordable business software — accounting, inventory, matrimonials, job portal. ₹399/month for your first app on the cloud, ₹99/month for each additional app or add-on, unlimited users — or self-host on your own server. White-label ready.',
+      'A clean app store of affordable business software — GST-ready accounting and inventory. ₹399/month for your first app on the cloud, ₹99/month for each additional app or add-on, unlimited users — or self-host on your own server. White-label ready.',
   },
   hero: {
     eyebrow: '₹399 first app · ₹99 each add-on',
     titleLead: 'An app store of',
     titleHighlight: 'honest business software.',
-    lede: 'Run your accounting, stock, matrimony or job-board on a tight, well-built SaaS — on our cloud, or fully self-hosted on your own server.',
+    lede: 'Run your accounting and stock on a tight, well-built SaaS — on our cloud, or fully self-hosted on your own server.',
     ctaBrowse: 'Browse apps',
     ctaDemo: 'Get a free demo',
     badges: ['14-day cloud trial', 'Self-host on your server', 'White-label ready', 'GST-friendly'],
@@ -60,10 +60,10 @@ const en = {
     title: 'Frequently asked questions',
     description: 'Quick answers about pricing, hosting, white-label and how 399apps works in practice.',
     items: [
-      { q: 'What is 399apps?', a: '399apps is a small, opinionated app store of business SaaS — Nidhi Books (accounting), Nidhi Inventory (stock), a Books + Inventory bundle, Nidhi Matrimonials and Nidhi Job Portal. Every product is available on our cloud or fully self-hostable on your server.' },
+      { q: 'What is 399apps?', a: '399apps is a small, opinionated app store of business SaaS — Nidhi Books (accounting), Nidhi Inventory (stock) and a Books + Inventory bundle. Every product is available on our cloud or fully self-hostable on your server.' },
       { q: 'How much does 399apps cost?', a: 'Your first app is ₹399/month on the 399apps cloud. Every additional app or add-on is ₹99/month. So Books alone is ₹399, Books + Inventory is ₹498, and so on — always with unlimited users and unlimited exports, no per-seat charges. Self-hosted and enterprise deployments are custom-quoted — just talk to us.' },
       { q: 'Cloud or self-hosted — which should I pick?', a: 'Pick cloud if you want zero-ops, daily backups and the fastest path to live. Pick self-host if you have a compliance, data-locality or cost-per-scale reason to keep things in-house — we ship the same product as a single-server licence.' },
-      { q: 'Do you offer white-label?', a: 'Yes. Every product can be rebranded under your domain, logo and colours. Talk to us about white-label deployments for community matrimonials, niche job boards or industry-specific Books / Inventory roll-outs.' },
+      { q: 'Do you offer white-label?', a: 'Yes. Every product can be rebranded under your domain, logo and colours. Talk to us about white-label deployments for accountants, resellers or industry-specific Books / Inventory roll-outs.' },
       { q: 'Is there a free trial?', a: 'Yes. Every cloud product has a 14-day trial — no card required. Self-hosted plans come with a 7-day evaluation licence.' },
       { q: 'Who builds and maintains 399apps?', a: '399apps is built, deployed and maintained by shabuilds (shabuilds.tech) — a small, focused product studio that ships software like real engineers, not like a typical agency.' },
       { q: 'Where is the data hosted?', a: 'Cloud data is hosted on Cloudflare and AWS infrastructure with India-region defaults. On self-host, your data never leaves your server.' },
@@ -84,13 +84,13 @@ const hi: LandingCopy = {
   seo: {
     title: '399apps — Affordable Business Software. Cloud ya Self-Hosted.',
     description:
-      'Affordable business software ka ek saaf app store — accounting, inventory, matrimony, job portal. Pehla app cloud pe ₹399/month, har additional app ya add-on ₹99/month, unlimited users — ya apne server pe self-host karein. White-label ready.',
+      'Affordable business software ka ek saaf app store — GST-ready accounting aur inventory. Pehla app cloud pe ₹399/month, har additional app ya add-on ₹99/month, unlimited users — ya apne server pe self-host karein. White-label ready.',
   },
   hero: {
     eyebrow: '₹399 pehla app · ₹99 har add-on',
     titleLead: 'Imaandaar business software ka',
     titleHighlight: 'ek app store.',
-    lede: 'Apna accounting, stock, matrimony ya job-board ek solid, achhe banaye SaaS pe chalayein — hamare cloud pe, ya apne server pe poori tarah self-hosted.',
+    lede: 'Apna accounting aur stock ek solid, achhe banaye SaaS pe chalayein — hamare cloud pe, ya apne server pe poori tarah self-hosted.',
     ctaBrowse: 'Apps dekhein',
     ctaDemo: 'Free demo lein',
     badges: ['14-din ka cloud trial', 'Apne server pe self-host', 'White-label ready', 'GST-friendly'],
@@ -140,10 +140,10 @@ const hi: LandingCopy = {
     title: 'Aksar pooche jaane waale sawaal',
     description: 'Pricing, hosting, white-label aur 399apps kaise kaam karta hai — iske quick jawaab.',
     items: [
-      { q: '399apps kya hai?', a: '399apps business SaaS ka ek chhota, opinionated app store hai — Nidhi Books (accounting), Nidhi Inventory (stock), Books + Inventory bundle, Nidhi Matrimonials aur Nidhi Job Portal. Har product hamare cloud pe ya aapke server pe self-hostable hai.' },
+      { q: '399apps kya hai?', a: '399apps business SaaS ka ek chhota, opinionated app store hai — Nidhi Books (accounting), Nidhi Inventory (stock) aur Books + Inventory bundle. Har product hamare cloud pe ya aapke server pe self-hostable hai.' },
       { q: '399apps ki cost kya hai?', a: 'Pehla app 399apps cloud pe ₹399/month. Har additional app ya add-on ₹99/month. Toh sirf Books ₹399, Books + Inventory ₹498, aise hi aage — hamesha unlimited users aur unlimited exports ke saath, koi per-seat charge nahi. Self-hosted aur enterprise deployments custom-quoted hain — bas humse baat karein.' },
       { q: 'Cloud ya self-hosted — kaunsa chunein?', a: 'Cloud chunein agar aapko zero-ops, daily backups aur sabse fast live jaana hai. Self-host chunein agar compliance, data-locality ya scale-cost ki wajah se cheezein in-house rakhni hain — hum same product single-server licence ke roop mein dete hain.' },
-      { q: 'Kya white-label milta hai?', a: 'Haan. Har product aapke domain, logo aur colours pe rebrand ho sakta hai. Community matrimony, niche job board ya industry-specific Books / Inventory roll-out ke liye white-label deployment ki baat karein.' },
+      { q: 'Kya white-label milta hai?', a: 'Haan. Har product aapke domain, logo aur colours pe rebrand ho sakta hai. Accountants, resellers ya industry-specific Books / Inventory roll-out ke liye white-label deployment ki baat karein.' },
       { q: 'Kya free trial hai?', a: 'Haan. Har cloud product pe 14-din ka trial — koi card nahi chahiye. Self-hosted plans ke saath 7-din ka evaluation licence aata hai.' },
       { q: '399apps kaun banata aur maintain karta hai?', a: '399apps ko shabuilds (shabuilds.tech) banata, deploy aur maintain karta hai — ek chhota, focused product studio jo software ek asli engineer ki tarah ship karta hai, typical agency ki tarah nahi.' },
       { q: 'Data kahaan host hota hai?', a: 'Cloud data Cloudflare aur AWS pe host hota hai, default India-region. Self-host pe aapka data kabhi aapke server se bahar nahi jaata.' },
@@ -162,13 +162,13 @@ const ta: LandingCopy = {
   seo: {
     title: '399apps — Affordable Business Software. Cloud illa Self-Hosted.',
     description:
-      'Affordable business software-oda clean app store — accounting, inventory, matrimony, job portal. Mudhal app cloud-la ₹399/month, ovvoru additional app illa add-on ₹99/month, unlimited users — illa unga sontha server-la self-host pannunga. White-label ready.',
+      'Affordable business software-oda clean app store — GST-ready accounting matrum inventory. Mudhal app cloud-la ₹399/month, ovvoru additional app illa add-on ₹99/month, unlimited users — illa unga sontha server-la self-host pannunga. White-label ready.',
   },
   hero: {
     eyebrow: '₹399 mudhal app · ₹99 ovvoru add-on',
     titleLead: 'Honest business software-oda',
     titleHighlight: 'oru app store.',
-    lede: 'Unga accounting, stock, matrimony illa job-board-a oru solid, nalla build panna SaaS-la run pannunga — engaloda cloud-la, illa unga sontha server-la fully self-hosted-a.',
+    lede: 'Unga accounting matrum stock-a oru solid, nalla build panna SaaS-la run pannunga — engaloda cloud-la, illa unga sontha server-la fully self-hosted-a.',
     ctaBrowse: 'Apps-a paarunga',
     ctaDemo: 'Free demo paarunga',
     badges: ['14-naal cloud trial', 'Unga server-la self-host', 'White-label ready', 'GST-friendly'],
@@ -218,10 +218,10 @@ const ta: LandingCopy = {
     title: 'Adikkadi kekkura kelvigal',
     description: 'Pricing, hosting, white-label, matrum 399apps eppadi velai seyyudhu — quick badhilgal.',
     items: [
-      { q: '399apps-na enna?', a: '399apps-na business SaaS-oda oru chinna, opinionated app store — Nidhi Books (accounting), Nidhi Inventory (stock), Books + Inventory bundle, Nidhi Matrimonials matrum Nidhi Job Portal. Ovvoru product-um engaloda cloud-la illa unga server-la self-hostable.' },
+      { q: '399apps-na enna?', a: '399apps-na business SaaS-oda oru chinna, opinionated app store — Nidhi Books (accounting), Nidhi Inventory (stock) matrum Books + Inventory bundle. Ovvoru product-um engaloda cloud-la illa unga server-la self-hostable.' },
       { q: '399apps cost evvalavu?', a: 'Mudhal app 399apps cloud-la ₹399/month. Ovvoru additional app illa add-on ₹99/month. So Books mattum ₹399, Books + Inventory ₹498, apdiye thodarum — eppovum unlimited users matrum unlimited exports, per-seat charge illa. Self-hosted matrum enterprise deployments custom-quoted — enga kitta pesunga.' },
       { q: 'Cloud illa self-hosted — edhu select pannanum?', a: 'Zero-ops, daily backups, fastest live vேண்டumna cloud select pannunga. Compliance, data-locality illa scale-cost reason irundha self-host select pannunga — naanga same product-a single-server licence-a kudukrom.' },
-      { q: 'White-label kidaikuma?', a: 'Aamaa. Ovvoru product-aiyum unga domain, logo, colours-la rebrand pannalaam. Community matrimony, niche job board illa industry-specific Books / Inventory roll-out-ku white-label deployment pathi pesunga.' },
+      { q: 'White-label kidaikuma?', a: 'Aamaa. Ovvoru product-aiyum unga domain, logo, colours-la rebrand pannalaam. Accountants, resellers illa industry-specific Books / Inventory roll-out-ku white-label deployment pathi pesunga.' },
       { q: 'Free trial irukka?', a: 'Aamaa. Ovvoru cloud product-kum 14-naal trial — card thேvai illa. Self-hosted plans-oda 7-naal evaluation licence varum.' },
       { q: '399apps-a yaaru build panni maintain pannradhu?', a: '399apps-a shabuilds (shabuilds.tech) build panni, deploy panni, maintain pannudhu — oru chinna, focused product studio, software-a real engineers maadhiri ship pannudhu, typical agency maadhiri illa.' },
       { q: 'Data enge host aagudhu?', a: 'Cloud data Cloudflare matrum AWS-la host aagudhu, default India-region. Self-host-la unga data eppovum unga server-a vittu veliye poradhu illa.' },
@@ -240,13 +240,13 @@ const hindi: LandingCopy = {
   seo: {
     title: '399apps — किफ़ायती बिज़नेस सॉफ़्टवेयर। क्लाउड या सेल्फ़-होस्टेड।',
     description:
-      'किफ़ायती बिज़नेस सॉफ़्टवेयर का एक साफ़-सुथरा ऐप स्टोर — अकाउंटिंग, इन्वेंटरी, मैट्रिमोनी, जॉब पोर्टल। पहला ऐप क्लाउड पर ₹399/महीना, हर अतिरिक्त ऐप या ऐड-ऑन ₹99/महीना, अनलिमिटेड यूज़र्स — या अपने सर्वर पर सेल्फ़-होस्ट करें। व्हाइट-लेबल रेडी।',
+      'किफ़ायती बिज़नेस सॉफ़्टवेयर का एक साफ़-सुथरा ऐप स्टोर — GST-रेडी अकाउंटिंग और इन्वेंटरी। पहला ऐप क्लाउड पर ₹399/महीना, हर अतिरिक्त ऐप या ऐड-ऑन ₹99/महीना, अनलिमिटेड यूज़र्स — या अपने सर्वर पर सेल्फ़-होस्ट करें। व्हाइट-लेबल रेडी।',
   },
   hero: {
     eyebrow: '₹399 पहला ऐप · ₹99 हर ऐड-ऑन',
     titleLead: 'ईमानदार बिज़नेस सॉफ़्टवेयर का',
     titleHighlight: 'एक ऐप स्टोर।',
-    lede: 'अपनी अकाउंटिंग, स्टॉक, मैट्रिमोनी या जॉब-बोर्ड एक मज़बूत, अच्छे बने SaaS पर चलाएँ — हमारे क्लाउड पर, या अपने सर्वर पर पूरी तरह सेल्फ़-होस्टेड।',
+    lede: 'अपनी अकाउंटिंग और स्टॉक एक मज़बूत, अच्छे बने SaaS पर चलाएँ — हमारे क्लाउड पर, या अपने सर्वर पर पूरी तरह सेल्फ़-होस्टेड।',
     ctaBrowse: 'ऐप्स देखें',
     ctaDemo: 'फ़्री डेमो लें',
     badges: ['14-दिन का क्लाउड ट्रायल', 'अपने सर्वर पर सेल्फ़-होस्ट', 'व्हाइट-लेबल रेडी', 'GST-फ्रेंडली'],
@@ -296,10 +296,10 @@ const hindi: LandingCopy = {
     title: 'अक्सर पूछे जाने वाले सवाल',
     description: 'प्राइसिंग, होस्टिंग, व्हाइट-लेबल और 399apps कैसे काम करता है — इसके त्वरित जवाब।',
     items: [
-      { q: '399apps क्या है?', a: '399apps बिज़नेस SaaS का एक छोटा, सुलझा हुआ ऐप स्टोर है — Nidhi Books (अकाउंटिंग), Nidhi Inventory (स्टॉक), Books + Inventory बंडल, Nidhi Matrimonials और Nidhi Job Portal। हर प्रोडक्ट हमारे क्लाउड पर या आपके सर्वर पर सेल्फ़-होस्टेबल है।' },
+      { q: '399apps क्या है?', a: '399apps बिज़नेस SaaS का एक छोटा, सुलझा हुआ ऐप स्टोर है — Nidhi Books (अकाउंटिंग), Nidhi Inventory (स्टॉक) और Books + Inventory बंडल। हर प्रोडक्ट हमारे क्लाउड पर या आपके सर्वर पर सेल्फ़-होस्टेबल है।' },
       { q: '399apps की कीमत क्या है?', a: 'पहला ऐप 399apps क्लाउड पर ₹399/महीना। हर अतिरिक्त ऐप या ऐड-ऑन ₹99/महीना। तो अकेले Books ₹399, Books + Inventory ₹498, और ऐसे ही आगे — हमेशा अनलिमिटेड यूज़र्स और अनलिमिटेड एक्सपोर्ट्स के साथ, कोई per-seat चार्ज नहीं। सेल्फ़-होस्टेड और एंटरप्राइज़ डिप्लॉयमेंट कस्टम-कोटेड हैं — बस हमसे बात करें।' },
       { q: 'क्लाउड या सेल्फ़-होस्टेड — कौन-सा चुनें?', a: 'क्लाउड चुनें अगर आपको ज़ीरो-ऑप्स, डेली बैकअप और सबसे तेज़ लाइव होना है। सेल्फ़-होस्ट चुनें अगर कंप्लायंस, डेटा-लोकैलिटी या स्केल-कॉस्ट की वजह से चीज़ें इन-हाउस रखनी हैं — हम वही प्रोडक्ट सिंगल-सर्वर लाइसेंस के रूप में देते हैं।' },
-      { q: 'क्या व्हाइट-लेबल मिलता है?', a: 'हाँ। हर प्रोडक्ट आपके डोमेन, लोगो और रंगों पर रीब्रांड हो सकता है। कम्युनिटी मैट्रिमोनी, niche जॉब बोर्ड या इंडस्ट्री-स्पेसिफ़िक Books / Inventory रोल-आउट के लिए व्हाइट-लेबल डिप्लॉयमेंट की बात करें।' },
+      { q: 'क्या व्हाइट-लेबल मिलता है?', a: 'हाँ। हर प्रोडक्ट आपके डोमेन, लोगो और रंगों पर रीब्रांड हो सकता है। अकाउंटेंट्स, रीसेलर्स या इंडस्ट्री-स्पेसिफ़िक Books / Inventory रोल-आउट के लिए व्हाइट-लेबल डिप्लॉयमेंट की बात करें।' },
       { q: 'क्या फ़्री ट्रायल है?', a: 'हाँ। हर क्लाउड प्रोडक्ट पर 14-दिन का ट्रायल — कोई कार्ड नहीं चाहिए। सेल्फ़-होस्टेड प्लान के साथ 7-दिन का इवैल्यूएशन लाइसेंस आता है।' },
       { q: '399apps को कौन बनाता और मेंटेन करता है?', a: '399apps को shabuilds (shabuilds.tech) बनाता, डिप्लॉय और मेंटेन करता है — एक छोटा, फ़ोकस्ड प्रोडक्ट स्टूडियो जो सॉफ़्टवेयर एक असली इंजीनियर की तरह शिप करता है, आम एजेंसी की तरह नहीं।' },
       { q: 'डेटा कहाँ होस्ट होता है?', a: 'क्लाउड डेटा Cloudflare और AWS पर होस्ट होता है, डिफ़ॉल्ट India-रीजन। सेल्फ़-होस्ट पर आपका डेटा कभी आपके सर्वर से बाहर नहीं जाता।' },
@@ -318,13 +318,13 @@ const tamil: LandingCopy = {
   seo: {
     title: '399apps — மலிவான பிசினஸ் சாஃப்ட்வேர். கிளவுட் அல்லது செல்ஃப்-ஹோஸ்டட்.',
     description:
-      'மலிவான பிசினஸ் சாஃப்ட்வேரின் ஒரு சுத்தமான ஆப் ஸ்டோர் — அக்கவுண்டிங், இன்வென்டரி, மேட்ரிமோனி, ஜாப் போர்டல். முதல் ஆப் கிளவுடில் ₹399/மாதம், ஒவ்வொரு கூடுதல் ஆப் அல்லது ஆட்-ஆன் ₹99/மாதம், அன்லிமிடெட் யூசர்கள் — அல்லது உங்கள் சர்வரில் செல்ஃப்-ஹோஸ்ட் செய்யுங்கள். ஒயிட்-லேபல் ரெடி.',
+      'மலிவான பிசினஸ் சாஃப்ட்வேரின் ஒரு சுத்தமான ஆப் ஸ்டோர் — GST-ரெடி அக்கவுண்டிங் மற்றும் இன்வென்டரி. முதல் ஆப் கிளவுடில் ₹399/மாதம், ஒவ்வொரு கூடுதல் ஆப் அல்லது ஆட்-ஆன் ₹99/மாதம், அன்லிமிடெட் யூசர்கள் — அல்லது உங்கள் சர்வரில் செல்ஃப்-ஹோஸ்ட் செய்யுங்கள். ஒயிட்-லேபல் ரெடி.',
   },
   hero: {
     eyebrow: '₹399 முதல் ஆப் · ₹99 ஒவ்வொரு ஆட்-ஆன்',
     titleLead: 'நேர்மையான பிசினஸ் சாஃப்ட்வேரின்',
     titleHighlight: 'ஒரு ஆப் ஸ்டோர்.',
-    lede: 'உங்கள் அக்கவுண்டிங், ஸ்டாக், மேட்ரிமோனி அல்லது ஜாப்-போர்டை ஒரு உறுதியான, நன்றாக கட்டப்பட்ட SaaS-ல் இயக்குங்கள் — எங்கள் கிளவுடில், அல்லது உங்கள் சர்வரில் முழுமையாக செல்ஃப்-ஹோஸ்டட்.',
+    lede: 'உங்கள் அக்கவுண்டிங் மற்றும் ஸ்டாக்கை ஒரு உறுதியான, நன்றாக கட்டப்பட்ட SaaS-ல் இயக்குங்கள் — எங்கள் கிளவுடில், அல்லது உங்கள் சர்வரில் முழுமையாக செல்ஃப்-ஹோஸ்டட்.',
     ctaBrowse: 'ஆப்ஸ் பாருங்கள்',
     ctaDemo: 'ஃப்ரீ டெமோ பாருங்கள்',
     badges: ['14-நாள் கிளவுட் ட்ரையல்', 'உங்கள் சர்வரில் செல்ஃப்-ஹோஸ்ட்', 'ஒயிட்-லேபல் ரெடி', 'GST-ஃப்ரெண்ட்லி'],
@@ -374,10 +374,10 @@ const tamil: LandingCopy = {
     title: 'அடிக்கடி கேட்கப்படும் கேள்விகள்',
     description: 'ப்ரைசிங், ஹோஸ்டிங், ஒயிட்-லேபல், மற்றும் 399apps எப்படி வேலை செய்யுது — விரைவான பதில்கள்.',
     items: [
-      { q: '399apps-னா என்ன?', a: '399apps-னா பிசினஸ் SaaS-ஓட ஒரு சின்ன, தெளிவான ஆப் ஸ்டோர் — Nidhi Books (அக்கவுண்டிங்), Nidhi Inventory (ஸ்டாக்), Books + Inventory பண்டில், Nidhi Matrimonials மற்றும் Nidhi Job Portal. ஒவ்வொரு புராடக்ட்டும் எங்க கிளவுடில் அல்லது உங்க சர்வரில் செல்ஃப்-ஹோஸ்டபிள்.' },
+      { q: '399apps-னா என்ன?', a: '399apps-னா பிசினஸ் SaaS-ஓட ஒரு சின்ன, தெளிவான ஆப் ஸ்டோர் — Nidhi Books (அக்கவுண்டிங்), Nidhi Inventory (ஸ்டாக்) மற்றும் Books + Inventory பண்டில். ஒவ்வொரு புராடக்ட்டும் எங்க கிளவுடில் அல்லது உங்க சர்வரில் செல்ஃப்-ஹோஸ்டபிள்.' },
       { q: '399apps விலை எவ்வளவு?', a: 'முதல் ஆப் 399apps கிளவுடில் ₹399/மாதம். ஒவ்வொரு கூடுதல் ஆப் அல்லது ஆட்-ஆன் ₹99/மாதம். அதனால Books மட்டும் ₹399, Books + Inventory ₹498, அப்படியே தொடரும் — எப்பவும் அன்லிமிடெட் யூசர்கள் மற்றும் அன்லிமிடெட் எக்ஸ்போர்ட்ஸ்-ஓட, per-seat சார்ஜ் இல்லை. செல்ஃப்-ஹோஸ்டட் மற்றும் எண்டர்ப்ரைஸ் டிப்ளாய்மென்ட் கஸ்டம்-கோட்டட் — எங்க கிட்ட பேசுங்க.' },
       { q: 'கிளவுட் அல்லது செல்ஃப்-ஹோஸ்டட் — எது தேர்ந்தெடுக்கணும்?', a: 'ஜீரோ-ஆப்ஸ், டெய்லி பேக்அப், வேகமா லைவ் ஆகணும்னா கிளவுட் தேர்ந்தெடுங்க. காம்ப்ளையன்ஸ், டேட்டா-லொக்காலிட்டி அல்லது ஸ்கேல்-காஸ்ட் காரணத்துக்கு இன்-ஹவுஸ்-ல வைக்கணும்னா செல்ஃப்-ஹோஸ்ட் தேர்ந்தெடுங்க — நாங்க அதே புராடக்ட்டை சிங்கிள்-சர்வர் லைசன்ஸ்-ஆ தரோம்.' },
-      { q: 'ஒயிட்-லேபல் கிடைக்குமா?', a: 'ஆமா. ஒவ்வொரு புராடக்ட்டையும் உங்க டொமைன், லோகோ, கலர்ஸ்-ல ரீப்ராண்ட் பண்ணலாம். கம்யூனிட்டி மேட்ரிமோனி, niche ஜாப் போர்டு அல்லது இண்டஸ்ட்ரி-ஸ்பெசிஃபிக் Books / Inventory ரோல்-அவுட்-க்கு ஒயிட்-லேபல் டிப்ளாய்மென்ட் பத்தி பேசுங்க.' },
+      { q: 'ஒயிட்-லேபல் கிடைக்குமா?', a: 'ஆமா. ஒவ்வொரு புராடக்ட்டையும் உங்க டொமைன், லோகோ, கலர்ஸ்-ல ரீப்ராண்ட் பண்ணலாம். அக்கவுண்டெண்ட்ஸ், ரீசெல்லர்ஸ் அல்லது இண்டஸ்ட்ரி-ஸ்பெசிஃபிக் Books / Inventory ரோல்-அவுட்-க்கு ஒயிட்-லேபல் டிப்ளாய்மென்ட் பத்தி பேசுங்க.' },
       { q: 'ஃப்ரீ ட்ரையல் இருக்கா?', a: 'ஆமா. ஒவ்வொரு கிளவுட் புராடக்ட்-க்கும் 14-நாள் ட்ரையல் — கார்டு தேவை இல்லை. செல்ஃப்-ஹோஸ்டட் பிளான்ஸ்-ஓட 7-நாள் இவால்யுவேஷன் லைசன்ஸ் வரும்.' },
       { q: '399apps-ஐ யாரு உருவாக்கி மெயின்டெயின் பண்றாங்க?', a: '399apps-ஐ shabuilds (shabuilds.tech) உருவாக்கி, டிப்ளாய் பண்ணி, மெயின்டெயின் பண்றாங்க — ஒரு சின்ன, ஃபோகஸ்டு புராடக்ட் ஸ்டுடியோ, சாஃப்ட்வேரை உண்மையான இன்ஜினியர்கள் மாதிரி ஷிப் பண்றாங்க, சாதாரண ஏஜென்சி மாதிரி இல்லை.' },
       { q: 'டேட்டா எங்க ஹோஸ்ட் ஆகுது?', a: 'கிளவுட் டேட்டா Cloudflare மற்றும் AWS-ல ஹோஸ்ட் ஆகுது, டிஃபால்ட் India-ரீஜன். செல்ஃப்-ஹோஸ்ட்-ல உங்க டேட்டா எப்பவும் உங்க சர்வரை விட்டு வெளியே போகாது.' },

@@ -4,8 +4,8 @@ const en = {
   seo: {
     title: 'Self-Hosting — Run 399apps on your own server.',
     description:
-      'Self-host Nidhi Books, Nidhi Inventory, Nidhi Matrimonials and Nidhi Job Portal on your own infrastructure. Custom-quoted licence, Docker / bare metal, full data ownership.',
-    keywords: ['self-hosted SaaS', 'self-hosted accounting software', 'self-hosted inventory software', 'on-premise business software', 'self hosted matrimonial software'],
+      'Self-host Nidhi Books and Nidhi Inventory on your own infrastructure. Custom-quoted licence, Docker / bare metal, full data ownership.',
+    keywords: ['self-hosted SaaS', 'self-hosted accounting software', 'self-hosted inventory software', 'on-premise business software', 'self-hosted GST software'],
   },
   hero: {
     eyebrow: 'Self-hosting',
@@ -60,8 +60,8 @@ const hi: SelfHostingCopy = {
   seo: {
     title: 'Self-Hosting — 399apps ko apne server pe chalayein.',
     description:
-      'Nidhi Books, Nidhi Inventory, Nidhi Matrimonials aur Nidhi Job Portal ko apne infrastructure pe self-host karein. Custom-quoted licence, Docker / bare metal, full data ownership.',
-    keywords: ['self-hosted SaaS', 'self-hosted accounting software', 'self-hosted inventory software', 'on-premise business software', 'self hosted matrimonial software'],
+      'Nidhi Books aur Nidhi Inventory ko apne infrastructure pe self-host karein. Custom-quoted licence, Docker / bare metal, full data ownership.',
+    keywords: ['self-hosted SaaS', 'self-hosted accounting software', 'self-hosted inventory software', 'on-premise business software', 'self-hosted GST software'],
   },
   hero: {
     eyebrow: 'Self-hosting',
@@ -114,8 +114,8 @@ const ta: SelfHostingCopy = {
   seo: {
     title: 'Self-Hosting — 399apps-a unga sontha server-la run pannunga.',
     description:
-      'Nidhi Books, Nidhi Inventory, Nidhi Matrimonials matrum Nidhi Job Portal-a unga sontha infrastructure-la self-host pannunga. Custom-quoted licence, Docker / bare metal, full data ownership.',
-    keywords: ['self-hosted SaaS', 'self-hosted accounting software', 'self-hosted inventory software', 'on-premise business software', 'self hosted matrimonial software'],
+      'Nidhi Books matrum Nidhi Inventory-a unga sontha infrastructure-la self-host pannunga. Custom-quoted licence, Docker / bare metal, full data ownership.',
+    keywords: ['self-hosted SaaS', 'self-hosted accounting software', 'self-hosted inventory software', 'on-premise business software', 'self-hosted GST software'],
   },
   hero: {
     eyebrow: 'Self-hosting',
@@ -168,8 +168,8 @@ const hindi: SelfHostingCopy = {
   seo: {
     title: 'सेल्फ़-होस्टिंग — 399apps को अपने सर्वर पर चलाएँ।',
     description:
-      'Nidhi Books, Nidhi Inventory, Nidhi Matrimonials और Nidhi Job Portal को अपने इंफ्रास्ट्रक्चर पर सेल्फ़-होस्ट करें। कस्टम-कोटेड लाइसेंस, Docker / बेयर मेटल, पूरा डेटा ओनरशिप।',
-    keywords: ['self-hosted SaaS', 'self-hosted accounting software', 'self-hosted inventory software', 'on-premise business software', 'self hosted matrimonial software'],
+      'Nidhi Books और Nidhi Inventory को अपने इंफ्रास्ट्रक्चर पर सेल्फ़-होस्ट करें। कस्टम-कोटेड लाइसेंस, Docker / बेयर मेटल, पूरा डेटा ओनरशिप।',
+    keywords: ['self-hosted SaaS', 'self-hosted accounting software', 'self-hosted inventory software', 'on-premise business software', 'self-hosted GST software'],
   },
   hero: {
     eyebrow: 'सेल्फ़-होस्टिंग',
@@ -222,8 +222,8 @@ const tamil: SelfHostingCopy = {
   seo: {
     title: 'செல்ஃப்-ஹோஸ்டிங் — 399apps-ஐ உங்கள் சர்வரில் இயக்குங்கள்.',
     description:
-      'Nidhi Books, Nidhi Inventory, Nidhi Matrimonials மற்றும் Nidhi Job Portal-ஐ உங்கள் சொந்த இன்ஃப்ராஸ்ட்ரக்சரில் செல்ஃப்-ஹோஸ்ட் செய்யுங்கள். கஸ்டம்-கோட்டட் லைசன்ஸ், Docker / பேர் மெட்டல், முழு டேட்டா ஓனர்ஷிப்.',
-    keywords: ['self-hosted SaaS', 'self-hosted accounting software', 'self-hosted inventory software', 'on-premise business software', 'self hosted matrimonial software'],
+      'Nidhi Books மற்றும் Nidhi Inventory-ஐ உங்கள் சொந்த இன்ஃப்ராஸ்ட்ரக்சரில் செல்ஃப்-ஹோஸ்ட் செய்யுங்கள். கஸ்டம்-கோட்டட் லைசன்ஸ், Docker / பேர் மெட்டல், முழு டேட்டா ஓனர்ஷிப்.',
+    keywords: ['self-hosted SaaS', 'self-hosted accounting software', 'self-hosted inventory software', 'on-premise business software', 'self-hosted GST software'],
   },
   hero: {
     eyebrow: 'செல்ஃப்-ஹோஸ்டிங்',

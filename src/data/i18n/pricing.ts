@@ -4,7 +4,7 @@ const en = {
   seo: {
     title: 'Pricing — ₹399 first app, ₹99 each add-on. Unlimited users.',
     description:
-      'Simple, honest pricing for 399apps — Nidhi Books, Inventory, Matrimonials and Job Portal. ₹399/month for your first app on the cloud, ₹99/month for every additional app or add-on. Unlimited users. Self-hosted and enterprise are custom-quoted.',
+      'Simple, honest pricing for 399apps — Nidhi Books and Inventory. ₹399/month for your first app on the cloud, ₹99/month for every additional app or add-on. Unlimited users. Self-hosted and enterprise are custom-quoted.',
     keywords: ['399apps pricing', '₹399 per month business software', 'unlimited user SaaS India', 'flat pricing accounting software', 'cheap GST billing software'],
   },
   hero: {
@@ -62,7 +62,7 @@ const hi: PricingCopy = {
   seo: {
     title: 'Pricing — ₹399 pehla app, ₹99 har add-on. Unlimited users.',
     description:
-      '399apps ki simple aur imaandaar pricing — Nidhi Books, Inventory, Matrimonials aur Job Portal. Pehla app cloud pe ₹399/month, har additional app ya add-on ₹99/month. Unlimited users. Self-hosted aur enterprise custom-quoted.',
+      '399apps ki simple aur imaandaar pricing — Nidhi Books aur Inventory. Pehla app cloud pe ₹399/month, har additional app ya add-on ₹99/month. Unlimited users. Self-hosted aur enterprise custom-quoted.',
     keywords: ['399apps pricing', '₹399 per month business software', 'unlimited user SaaS India', 'flat pricing accounting software', 'cheap GST billing software'],
   },
   hero: {
@@ -118,7 +118,7 @@ const ta: PricingCopy = {
   seo: {
     title: 'Pricing — ₹399 mudhal app, ₹99 ovvoru add-on. Unlimited users.',
     description:
-      '399apps-oda simple, honest pricing — Nidhi Books, Inventory, Matrimonials matrum Job Portal. Mudhal app cloud-la ₹399/month, ovvoru additional app illa add-on ₹99/month. Unlimited users. Self-hosted matrum enterprise custom-quoted.',
+      '399apps-oda simple, honest pricing — Nidhi Books matrum Inventory. Mudhal app cloud-la ₹399/month, ovvoru additional app illa add-on ₹99/month. Unlimited users. Self-hosted matrum enterprise custom-quoted.',
     keywords: ['399apps pricing', '₹399 per month business software', 'unlimited user SaaS India', 'flat pricing accounting software', 'cheap GST billing software'],
   },
   hero: {
@@ -174,7 +174,7 @@ const hindi: PricingCopy = {
   seo: {
     title: 'प्राइसिंग — ₹399 पहला ऐप, ₹99 हर ऐड-ऑन। अनलिमिटेड यूज़र्स।',
     description:
-      '399apps की सरल, ईमानदार प्राइसिंग — Nidhi Books, Inventory, Matrimonials और Job Portal। पहला ऐप क्लाउड पर ₹399/महीना, हर अतिरिक्त ऐप या ऐड-ऑन ₹99/महीना। अनलिमिटेड यूज़र्स। सेल्फ़-होस्टेड और एंटरप्राइज़ कस्टम-कोटेड हैं।',
+      '399apps की सरल, ईमानदार प्राइसिंग — Nidhi Books और Inventory। पहला ऐप क्लाउड पर ₹399/महीना, हर अतिरिक्त ऐप या ऐड-ऑन ₹99/महीना। अनलिमिटेड यूज़र्स। सेल्फ़-होस्टेड और एंटरप्राइज़ कस्टम-कोटेड हैं।',
     keywords: ['399apps pricing', '₹399 per month business software', 'unlimited user SaaS India', 'flat pricing accounting software', 'cheap GST billing software'],
   },
   hero: {
@@ -230,7 +230,7 @@ const tamil: PricingCopy = {
   seo: {
     title: 'ப்ரைசிங் — ₹399 முதல் ஆப், ₹99 ஒவ்வொரு ஆட்-ஆன். அன்லிமிடெட் யூசர்கள்.',
     description:
-      '399apps-இன் எளிய, நேர்மையான ப்ரைசிங் — Nidhi Books, Inventory, Matrimonials மற்றும் Job Portal. முதல் ஆப் கிளவுடில் ₹399/மாதம், ஒவ்வொரு கூடுதல் ஆப் அல்லது ஆட்-ஆன் ₹99/மாதம். அன்லிமிடெட் யூசர்கள். செல்ஃப்-ஹோஸ்டட் மற்றும் எண்டர்ப்ரைஸ் கஸ்டம்-கோட்டட்.',
+      '399apps-இன் எளிய, நேர்மையான ப்ரைசிங் — Nidhi Books மற்றும் Inventory. முதல் ஆப் கிளவுடில் ₹399/மாதம், ஒவ்வொரு கூடுதல் ஆப் அல்லது ஆட்-ஆன் ₹99/மாதம். அன்லிமிடெட் யூசர்கள். செல்ஃப்-ஹோஸ்டட் மற்றும் எண்டர்ப்ரைஸ் கஸ்டம்-கோட்டட்.',
     keywords: ['399apps pricing', '₹399 per month business software', 'unlimited user SaaS India', 'flat pricing accounting software', 'cheap GST billing software'],
   },
   hero: {

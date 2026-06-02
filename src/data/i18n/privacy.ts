@@ -38,7 +38,7 @@ const en: PrivacyCopy = {
     updated: UPDATED,
   },
   intro: [
-    'This Privacy Policy explains how 399apps ("we", "us", "our") — operated by shabuilds (shabuilds.tech) — collects, uses and protects information when you visit 399apps.com or use any of our products: Nidhi Books, Nidhi Inventory, the Books + Inventory bundle, Nidhi Matrimonials and Nidhi Job Portal.',
+    'This Privacy Policy explains how 399apps ("we", "us", "our") — operated by shabuilds (shabuilds.tech) — collects, uses and protects information when you visit 399apps.com or use any of our products: Nidhi Books, Nidhi Inventory and the Books + Inventory bundle.',
     'We sell business software to small and growing businesses, communities and operators — primarily in India, but also internationally. We try to keep this policy short, plain-spoken and honest. If something here is unclear, write to us and we will explain.',
   ],
   sections: [
@@ -46,7 +46,7 @@ const en: PrivacyCopy = {
       id: 'who-we-are',
       title: 'Who we are',
       paragraphs: [
-        '399apps is a small catalogue of business SaaS — accounting, inventory, matrimonials and a job portal — built and run by shabuilds. We sell our products either as a managed cloud service on 399apps.com, or as a self-hosted licence that you deploy on your own server.',
+        '399apps is a small catalogue of business SaaS — GST-ready accounting and inventory — built and run by shabuilds. We sell our products either as a managed cloud service on 399apps.com, or as a self-hosted licence that you deploy on your own server.',
         'When we say "you" in this policy we mean either a visitor to our website, a customer using one of our products, or — for white-label and self-hosted deployments — an organisation operating a 399apps product under its own brand.',
       ],
     },
@@ -56,7 +56,7 @@ const en: PrivacyCopy = {
       paragraphs: ['We collect only what we actually need to run the service:'],
       bullets: [
         { label: 'Account & contact details', text: 'Name, work email, company, phone or WhatsApp number, country — collected when you fill the contact form, sign up for a cloud account, request a demo, or write to us.' },
-        { label: 'Product data on cloud', text: 'The business data you put into our products on the 399apps cloud — invoices, GST and TDS records, stock items, matrimony profiles, job postings, applications, candidate resumes — is stored on our managed infrastructure on your behalf. We treat it as confidential customer data.' },
+        { label: 'Product data on cloud', text: 'The business data you put into our products on the 399apps cloud — invoices, GST and TDS records, stock items — is stored on our managed infrastructure on your behalf. We treat it as confidential customer data.' },
         { label: 'Product data on self-host', text: 'When you self-host a 399apps product, your business and customer data lives entirely on your server. We do not receive it, do not back it up and cannot access it. Optional anonymous product telemetry (whether a deployment is healthy, version numbers) can be turned off.' },
         { label: 'Payment information', text: 'Cloud subscriptions are billed via UPI, NEFT/RTGS, or via Razorpay/Stripe/Cashfree for cards. We never see or store your full card number; only the cardholder name, last four digits and an opaque token from the payment provider.' },
         { label: 'Usage logs', text: 'Standard server logs — IP address, user agent, pages visited, timestamps — used for security, debugging and aggregate analytics. We do not run any third-party advertising or behavioural tracking on our websites.' },
@@ -149,7 +149,7 @@ const en: PrivacyCopy = {
       title: "Children's data",
       paragraphs: [
         '399apps products are intended for businesses, professional users and adults. We do not knowingly collect personal data from anyone under 18 for our own purposes.',
-        'If you use one of our products to handle data about minors (for example, a community matrimony platform with age verification, or a campus job portal), you are responsible for following applicable laws on the collection and use of children\'s data, including obtaining valid consent from parents or guardians where required.',
+        'If you use one of our products to handle data about minors, you are responsible for following applicable laws on the collection and use of children\'s data, including obtaining valid consent from parents or guardians where required.',
       ],
     },
     {
@@ -200,7 +200,7 @@ const hi: PrivacyCopy = {
     updated: UPDATED,
   },
   intro: [
-    'Yeh Privacy Policy bataati hai ki 399apps ("hum", "humara") — jo shabuilds (shabuilds.tech) chalata hai — 399apps.com pe visit karne pe ya humare products (Nidhi Books, Nidhi Inventory, Books + Inventory bundle, Nidhi Matrimonials aur Nidhi Job Portal) use karne pe kaise information collect, use aur protect karta hai.',
+    'Yeh Privacy Policy bataati hai ki 399apps ("hum", "humara") — jo shabuilds (shabuilds.tech) chalata hai — 399apps.com pe visit karne pe ya humare products (Nidhi Books, Nidhi Inventory aur Books + Inventory bundle) use karne pe kaise information collect, use aur protect karta hai.',
     'Hum chhote aur badhte hue businesses, communities aur operators ko business software bechte hain — mainly India mein, par internationally bhi. Hum is policy ko chhota, saaf aur honest rakhne ki koshish karte hain. Agar kuch unclear ho, humein likhein, hum samjha denge.',
   ],
   sections: [
@@ -208,7 +208,7 @@ const hi: PrivacyCopy = {
       id: 'who-we-are',
       title: 'Hum kaun hain',
       paragraphs: [
-        '399apps ek chhota business SaaS catalogue hai — accounting, inventory, matrimony aur job portal — jo shabuilds banaata aur chalata hai. Hum apne products do tarah se bechte hain: managed cloud service 399apps.com pe, ya ek self-hosted licence jo aap apne server pe deploy karte hain.',
+        '399apps ek chhota business SaaS catalogue hai — GST-ready accounting aur inventory — jo shabuilds banaata aur chalata hai. Hum apne products do tarah se bechte hain: managed cloud service 399apps.com pe, ya ek self-hosted licence jo aap apne server pe deploy karte hain.',
         'Is policy mein jab hum "aap" kehte hain toh iska matlab hai humari website ka visitor, humare kisi product ka cloud customer, ya — white-label aur self-host deployment ke liye — woh organisation jo apne brand ke neeche 399apps product chalata hai.',
       ],
     },
@@ -218,7 +218,7 @@ const hi: PrivacyCopy = {
       paragraphs: ['Service chalane ke liye sirf utna hi collect karte hain jitna sach mein chahiye:'],
       bullets: [
         { label: 'Account aur contact details', text: 'Naam, work email, company, phone ya WhatsApp number, country — jab aap contact form bharte hain, cloud account banate hain, demo request karte hain ya humein likhte hain tab milta hai.' },
-        { label: 'Cloud pe product data', text: 'Aap jo business data 399apps cloud pe humare products mein daalte hain — invoices, GST aur TDS records, stock items, matrimony profiles, job postings, applications, candidate resumes — woh humari managed infrastructure pe aapke liye store hota hai. Hum isse confidential customer data maante hain.' },
+        { label: 'Cloud pe product data', text: 'Aap jo business data 399apps cloud pe humare products mein daalte hain — invoices, GST aur TDS records, stock items — woh humari managed infrastructure pe aapke liye store hota hai. Hum isse confidential customer data maante hain.' },
         { label: 'Self-host pe product data', text: 'Jab aap 399apps product self-host karte hain, toh aapka business aur customer data poori tarah aapke server pe rehta hai. Humein nahi milta, hum backup nahi lete, hum access nahi karte. Optional anonymous product telemetry (deployment healthy hai ya nahi, version number) aap off bhi kar sakte hain.' },
         { label: 'Payment information', text: 'Cloud subscription UPI, NEFT/RTGS, ya cards ke liye Razorpay/Stripe/Cashfree ke through bill hoti hai. Hum aapka full card number na dekhte hain na store karte hain; sirf cardholder ka naam, last char digits aur payment provider ka token rakhte hain.' },
         { label: 'Usage logs', text: 'Standard server logs — IP address, user agent, visit kiye gaye pages, timestamps — security, debugging aur aggregate analytics ke liye use hote hain. Hum apni websites pe koi third-party advertising ya behavioural tracking nahi chalate.' },
@@ -311,7 +311,7 @@ const hi: PrivacyCopy = {
       title: 'Bachhon ka data',
       paragraphs: [
         '399apps products businesses, professional users aur adults ke liye hain. Hum apne purposes ke liye 18 saal se chhote kisi se personal data knowingly collect nahi karte.',
-        'Agar aap humare kisi product ko minors ka data handle karne ke liye use karte hain (jaise age verification waala community matrimony platform, ya campus job portal), toh bachhon ke data ke collection aur use par lagne waale laws follow karna aapki zimmedaari hai, jismein parents ya guardians se valid consent lena bhi shaamil hai jahaan zaroori ho.',
+        'Agar aap humare kisi product ko minors ka data handle karne ke liye use karte hain, toh bachhon ke data ke collection aur use par lagne waale laws follow karna aapki zimmedaari hai, jismein parents ya guardians se valid consent lena bhi shaamil hai jahaan zaroori ho.',
       ],
     },
     {
@@ -363,7 +363,7 @@ const ta: PrivacyCopy = {
     updated: UPDATED,
   },
   intro: [
-    'Indha Privacy Policy sollra 399apps ("naanga", "engal") — shabuilds (shabuilds.tech) operate pannra — 399apps.com-a paarka varum bodhu illa engaloda products (Nidhi Books, Nidhi Inventory, Books + Inventory bundle, Nidhi Matrimonials matrum Nidhi Job Portal) use pannumbodhu eppadi information collect, use, protect pannradhu nu.',
+    'Indha Privacy Policy sollra 399apps ("naanga", "engal") — shabuilds (shabuilds.tech) operate pannra — 399apps.com-a paarka varum bodhu illa engaloda products (Nidhi Books, Nidhi Inventory matrum Books + Inventory bundle) use pannumbodhu eppadi information collect, use, protect pannradhu nu.',
     'Naanga chinna aana valarum businesses, communities matrum operators-ku business software vikrom — mostly India-la, aana internationally-yum. Indha policy-a chinna, clear, honest-a vekka prayatchikrom. Edhuvum unclear-a irundha, engaluku ezhuthunga, naanga vilakkitharom.',
   ],
   sections: [
@@ -371,7 +371,7 @@ const ta: PrivacyCopy = {
       id: 'who-we-are',
       title: 'Naanga yaaru',
       paragraphs: [
-        '399apps oru chinna business SaaS catalogue — accounting, inventory, matrimony matrum job portal — shabuilds build panni run pannradhu. Naanga products-a rendu vazhi-la vikrom: 399apps.com-la managed cloud service-aa, illa neenga unga sontha server-la deploy panra self-hosted licence-aa.',
+        '399apps oru chinna business SaaS catalogue — GST-ready accounting matrum inventory — shabuilds build panni run pannradhu. Naanga products-a rendu vazhi-la vikrom: 399apps.com-la managed cloud service-aa, illa neenga unga sontha server-la deploy panra self-hosted licence-aa.',
         'Indha policy-la "neenga" nu sonna, athan artham engal website-oda visitor, engaloda kisi product-oda cloud customer, illa — white-label matrum self-host deployments-ku — apna brand-la 399apps product run panra organisation.',
       ],
     },
@@ -381,7 +381,7 @@ const ta: PrivacyCopy = {
       paragraphs: ['Service run panna evvalavu venumo athu mattum collect pannrom:'],
       bullets: [
         { label: 'Account matrum contact details', text: 'Per, work email, company, phone illa WhatsApp number, country — neenga contact form fill pannumbodhu, cloud account sign up pannumbodhu, demo request pannumbodhu, illa engaluku ezhudhumbodhu kidaikum.' },
-        { label: 'Cloud-la product data', text: 'Neenga 399apps cloud-la engaloda products-la podra business data — invoices, GST matrum TDS records, stock items, matrimony profiles, job postings, applications, candidate resumes — ellam engaloda managed infrastructure-la unga sarbu store aagudhu. Idha naanga confidential customer data-a karuthurom.' },
+        { label: 'Cloud-la product data', text: 'Neenga 399apps cloud-la engaloda products-la podra business data — invoices, GST matrum TDS records, stock items — ellam engaloda managed infrastructure-la unga sarbu store aagudhu. Idha naanga confidential customer data-a karuthurom.' },
         { label: 'Self-host-la product data', text: 'Neenga 399apps product-a self-host pannumbodhu, unga business matrum customer data muzhumayaa unga server-la mattum thaan irukum. Engaluku kidaikadhu, naanga backup edukka maatom, access pannrathum illa. Optional anonymous product telemetry (deployment healthy-aa irukka, version numbers) off pannalaam.' },
         { label: 'Payment information', text: 'Cloud subscriptions UPI, NEFT/RTGS, illa cards-ku Razorpay/Stripe/Cashfree mulamaa bill aagudhu. Naanga unga full card number-a paakavum illa store pannavum illa; cardholder peyar, last naalu digits matrum payment provider-oda opaque token mattum.' },
         { label: 'Usage logs', text: 'Standard server logs — IP address, user agent, paartha pages, timestamps — security, debugging matrum aggregate analytics-ku use aagudhu. Engal websites-la edhuvum third-party advertising illa behavioural tracking run pannama irukrom.' },
@@ -474,7 +474,7 @@ const ta: PrivacyCopy = {
       title: 'Kuzhandhaigaloda data',
       paragraphs: [
         '399apps products businesses, professional users matrum adults-ku. Naanga engal purposes-ku 18 vayasukkulla yaarudaiya personal data-yum knowingly collect pannamaatom.',
-        'Neenga engal kisi product-a minors-oda data handle panna use panneengana (eg. age verification-oda community matrimony platform, illa campus job portal), kuzhandhaigaloda data collection matrum use mela varum applicable laws follow pannradhu unga zimmedaari, thேvayaana parents illa guardians-la irundhu valid consent vaangurathu inclusive.',
+        'Neenga engal kisi product-a minors-oda data handle panna use panneengana, kuzhandhaigaloda data collection matrum use mela varum applicable laws follow pannradhu unga zimmedaari, thேvayaana parents illa guardians-la irundhu valid consent vaangurathu inclusive.',
       ],
     },
     {
@@ -526,7 +526,7 @@ const hindi: PrivacyCopy = {
     updated: UPDATED,
   },
   intro: [
-    'यह गोपनीयता नीति बताती है कि 399apps ("हम", "हमारा") — जिसे shabuilds (shabuilds.tech) चलाता है — 399apps.com पर आने पर या हमारे किसी भी प्रोडक्ट (Nidhi Books, Nidhi Inventory, Books + Inventory बंडल, Nidhi Matrimonials और Nidhi Job Portal) के इस्तेमाल पर जानकारी कैसे एकत्र, उपयोग और सुरक्षित करता है।',
+    'यह गोपनीयता नीति बताती है कि 399apps ("हम", "हमारा") — जिसे shabuilds (shabuilds.tech) चलाता है — 399apps.com पर आने पर या हमारे किसी भी प्रोडक्ट (Nidhi Books, Nidhi Inventory और Books + Inventory बंडल) के इस्तेमाल पर जानकारी कैसे एकत्र, उपयोग और सुरक्षित करता है।',
     'हम छोटे और बढ़ते businesses, communities और operators को business software बेचते हैं — मुख्य रूप से India में, लेकिन अन्य देशों में भी। हम इस नीति को छोटा, स्पष्ट और ईमानदार रखने की कोशिश करते हैं। अगर कुछ अस्पष्ट हो, हमें लिखें, हम समझा देंगे।',
   ],
   sections: [
@@ -534,7 +534,7 @@ const hindi: PrivacyCopy = {
       id: 'who-we-are',
       title: 'हम कौन हैं',
       paragraphs: [
-        '399apps business SaaS का एक छोटा catalogue है — accounting, inventory, matrimony और job portal — जिसे shabuilds बनाता और चलाता है। हम अपने प्रोडक्ट दो तरह से बेचते हैं: 399apps.com पर managed cloud service के रूप में, या एक self-hosted licence के रूप में जिसे आप अपने सर्वर पर deploy करते हैं।',
+        '399apps business SaaS का एक छोटा catalogue है — GST-ready accounting और inventory — जिसे shabuilds बनाता और चलाता है। हम अपने प्रोडक्ट दो तरह से बेचते हैं: 399apps.com पर managed cloud service के रूप में, या एक self-hosted licence के रूप में जिसे आप अपने सर्वर पर deploy करते हैं।',
         'इस नीति में "आप" का अर्थ हमारी वेबसाइट का visitor, किसी प्रोडक्ट का cloud ग्राहक, या — white-label और self-host deployments के लिए — वह organisation है जो अपने ब्रांड के तहत 399apps प्रोडक्ट चलाता है।',
       ],
     },
@@ -544,7 +544,7 @@ const hindi: PrivacyCopy = {
       paragraphs: ['Service चलाने के लिए जितनी ज़रूरत है, सिर्फ़ उतनी ही एकत्र करते हैं:'],
       bullets: [
         { label: 'खाता और संपर्क विवरण', text: 'नाम, work email, कंपनी, फ़ोन या WhatsApp नंबर, देश — जब आप contact form भरते हैं, cloud account बनाते हैं, demo request करते हैं या हमें लिखते हैं तब मिलता है।' },
-        { label: 'क्लाउड पर प्रोडक्ट डेटा', text: '399apps cloud पर हमारे प्रोडक्ट में आप जो business data डालते हैं — invoices, GST और TDS records, stock items, matrimony profiles, job postings, applications, candidate resumes — वह हमारी managed infrastructure पर आपकी ओर से store होता है। हम इसे गोपनीय customer data मानते हैं।' },
+        { label: 'क्लाउड पर प्रोडक्ट डेटा', text: '399apps cloud पर हमारे प्रोडक्ट में आप जो business data डालते हैं — invoices, GST और TDS records, stock items — वह हमारी managed infrastructure पर आपकी ओर से store होता है। हम इसे गोपनीय customer data मानते हैं।' },
         { label: 'सेल्फ़-होस्ट पर प्रोडक्ट डेटा', text: 'जब आप 399apps प्रोडक्ट को self-host करते हैं, आपका business और customer data पूरी तरह आपके सर्वर पर रहता है। हमें मिलता नहीं, हम बैकअप नहीं लेते, हम access नहीं करते। वैकल्पिक anonymous product telemetry (deployment स्वस्थ है या नहीं, version numbers) बंद की जा सकती है।' },
         { label: 'भुगतान जानकारी', text: 'Cloud subscriptions UPI, NEFT/RTGS, या cards के लिए Razorpay/Stripe/Cashfree के माध्यम से billed होती हैं। हम कभी आपका पूरा कार्ड नंबर नहीं देखते या store करते; केवल cardholder का नाम, अंतिम चार अंक और payment provider का token रखते हैं।' },
         { label: 'Usage logs', text: 'Standard सर्वर लॉग्स — IP address, user agent, visit किए गए पेज, timestamps — security, debugging और aggregate analytics के लिए। हमारी websites पर कोई third-party advertising या behavioural tracking नहीं चलता।' },
@@ -637,7 +637,7 @@ const hindi: PrivacyCopy = {
       title: 'बच्चों का डेटा',
       paragraphs: [
         '399apps products businesses, professional users और वयस्कों के लिए हैं। हम अपने उद्देश्यों के लिए 18 साल से कम उम्र के किसी से personal data जानबूझकर एकत्र नहीं करते।',
-        'अगर आप हमारे किसी प्रोडक्ट का उपयोग बच्चों का data handle करने के लिए करते हैं (जैसे age verification वाला community matrimony प्लेटफ़ॉर्म, या campus job portal), तो बच्चों के data के संग्रह और उपयोग पर लागू क़ानूनों का पालन करना आपकी ज़िम्मेदारी है, जहाँ ज़रूरी हो वहाँ माता-पिता या अभिभावकों से वैध सहमति लेना भी इसमें शामिल है।',
+        'अगर आप हमारे किसी प्रोडक्ट का उपयोग बच्चों का data handle करने के लिए करते हैं, तो बच्चों के data के संग्रह और उपयोग पर लागू क़ानूनों का पालन करना आपकी ज़िम्मेदारी है, जहाँ ज़रूरी हो वहाँ माता-पिता या अभिभावकों से वैध सहमति लेना भी इसमें शामिल है।',
       ],
     },
     {
@@ -689,7 +689,7 @@ const tamil: PrivacyCopy = {
     updated: UPDATED,
   },
   intro: [
-    'இந்த தனியுரிமைக் கொள்கை விளக்குகிறது 399apps ("நாங்கள்", "எங்கள்") — shabuilds (shabuilds.tech) நிர்வகிக்கிறது — 399apps.com-ஐ பார்வையிடும் போது அல்லது எங்கள் தயாரிப்புகளில் ஒன்றை (Nidhi Books, Nidhi Inventory, Books + Inventory பண்டில், Nidhi Matrimonials மற்றும் Nidhi Job Portal) பயன்படுத்தும் போது தகவலை எப்படி சேகரிக்கிறோம், பயன்படுத்துகிறோம் மற்றும் பாதுகாக்கிறோம் என்பதை.',
+    'இந்த தனியுரிமைக் கொள்கை விளக்குகிறது 399apps ("நாங்கள்", "எங்கள்") — shabuilds (shabuilds.tech) நிர்வகிக்கிறது — 399apps.com-ஐ பார்வையிடும் போது அல்லது எங்கள் தயாரிப்புகளில் ஒன்றை (Nidhi Books, Nidhi Inventory மற்றும் Books + Inventory பண்டில்) பயன்படுத்தும் போது தகவலை எப்படி சேகரிக்கிறோம், பயன்படுத்துகிறோம் மற்றும் பாதுகாக்கிறோம் என்பதை.',
     'நாங்கள் சிறிய மற்றும் வளரும் businesses, communities மற்றும் operators-க்கு business software விற்கிறோம் — முதன்மையாக India-வில், ஆனால் சர்வதேச அளவிலும். இந்த கொள்கையை குறுகியதாக, தெளிவாக, நேர்மையாக வைக்க முயற்சிக்கிறோம். எதுவும் தெளிவில்லாமல் இருந்தால், எங்களுக்கு எழுதுங்கள், விளக்குகிறோம்.',
   ],
   sections: [
@@ -697,7 +697,7 @@ const tamil: PrivacyCopy = {
       id: 'who-we-are',
       title: 'நாங்கள் யார்',
       paragraphs: [
-        '399apps என்பது business SaaS-இன் சிறிய தொகுப்பு — accounting, inventory, matrimony மற்றும் job portal — shabuilds கட்டி, இயக்குகிறது. நாங்கள் எங்கள் தயாரிப்புகளை இரண்டு வழிகளில் விற்கிறோம்: 399apps.com-ல் managed cloud service ஆக, அல்லது நீங்கள் உங்கள் சர்வரில் deploy செய்யும் self-hosted licence ஆக.',
+        '399apps என்பது business SaaS-இன் சிறிய தொகுப்பு — GST-ready accounting மற்றும் inventory — shabuilds கட்டி, இயக்குகிறது. நாங்கள் எங்கள் தயாரிப்புகளை இரண்டு வழிகளில் விற்கிறோம்: 399apps.com-ல் managed cloud service ஆக, அல்லது நீங்கள் உங்கள் சர்வரில் deploy செய்யும் self-hosted licence ஆக.',
         'இந்த கொள்கையில் "நீங்கள்" என்றால் எங்கள் வலைதளத்தின் visitor, எங்கள் தயாரிப்புகளில் ஒன்றின் cloud customer, அல்லது — white-label மற்றும் self-host deployments-க்கு — தங்கள் ப்ராண்டின் கீழ் 399apps தயாரிப்பை இயக்கும் organisation.',
       ],
     },
@@ -707,7 +707,7 @@ const tamil: PrivacyCopy = {
       paragraphs: ['சேவையை இயக்க எவ்வளவு தேவையோ அவ்வளவே சேகரிக்கிறோம்:'],
       bullets: [
         { label: 'கணக்கு மற்றும் தொடர்பு விவரங்கள்', text: 'பெயர், work email, நிறுவனம், தொலைபேசி அல்லது WhatsApp எண், நாடு — நீங்கள் contact form நிரப்பும் போது, cloud கணக்கு உருவாக்கும் போது, டெமோ கோரும் போது, அல்லது எங்களுக்கு எழுதும் போது கிடைக்கும்.' },
-        { label: 'கிளவுடில் தயாரிப்பு டேட்டா', text: '399apps cloud-ல் எங்கள் தயாரிப்புகளில் நீங்கள் வைக்கும் business data — invoices, GST மற்றும் TDS records, stock items, matrimony profiles, job postings, applications, candidate resumes — எங்கள் managed infrastructure-ல் உங்களுக்காக சேமிக்கப்படுகிறது. இதை நாங்கள் ரகசிய customer data ஆக கருதுகிறோம்.' },
+        { label: 'கிளவுடில் தயாரிப்பு டேட்டா', text: '399apps cloud-ல் எங்கள் தயாரிப்புகளில் நீங்கள் வைக்கும் business data — invoices, GST மற்றும் TDS records, stock items — எங்கள் managed infrastructure-ல் உங்களுக்காக சேமிக்கப்படுகிறது. இதை நாங்கள் ரகசிய customer data ஆக கருதுகிறோம்.' },
         { label: 'செல்ஃப்-ஹோஸ்டில் தயாரிப்பு டேட்டா', text: 'நீங்கள் 399apps தயாரிப்பை self-host செய்யும் போது, உங்கள் business மற்றும் customer data முழுமையாக உங்கள் சர்வரில் தங்கியிருக்கும். எங்களுக்கு கிடைக்காது, நாங்கள் backup எடுக்க மாட்டோம், access செய்ய மாட்டோம். விருப்ப அநாமதேய தயாரிப்பு telemetry (deployment ஆரோக்கியமாக உள்ளதா, version எண்கள்) ஆஃப் செய்யலாம்.' },
         { label: 'பேமென்ட் தகவல்', text: 'Cloud subscriptions UPI, NEFT/RTGS, அல்லது cards-க்கு Razorpay/Stripe/Cashfree மூலம் billed. நாங்கள் உங்கள் முழு கார்டு எண்ணை பார்க்கவோ சேமிக்கவோ மாட்டோம்; cardholder பெயர், கடைசி நான்கு இலக்கங்கள் மற்றும் payment provider-இன் opaque token மட்டுமே.' },
         { label: 'பயன்பாடு logs', text: 'Standard சர்வர் logs — IP address, user agent, பார்த்த பக்கங்கள், timestamps — security, debugging மற்றும் aggregate analytics-க்கு. எங்கள் வலைதளங்களில் எந்த third-party advertising அல்லது behavioural tracking நாங்கள் இயக்கவில்லை.' },
@@ -800,7 +800,7 @@ const tamil: PrivacyCopy = {
       title: 'குழந்தைகளின் டேட்டா',
       paragraphs: [
         '399apps தயாரிப்புகள் businesses, professional users மற்றும் வயதுவந்தோருக்காக. எங்கள் சொந்த நோக்கங்களுக்காக 18 வயதிற்குட்பட்ட எவரிடமிருந்தும் personal data-ஐ தெரிந்தே சேகரிப்பதில்லை.',
-        'நீங்கள் எங்கள் தயாரிப்புகளில் ஒன்றை minors-இன் data-ஐ கையாள பயன்படுத்தினால் (உ.ம். வயது சரிபார்ப்பு உள்ள கம்யூனிட்டி matrimony platform, அல்லது campus job portal), குழந்தைகளின் data சேகரிப்பு மற்றும் பயன்பாட்டில் பொருந்தும் சட்டங்களை பின்பற்றுவது உங்கள் பொறுப்பு, தேவையான இடங்களில் பெற்றோர் அல்லது பாதுகாவலர்களிடமிருந்து சரியான சம்மதம் பெறுவது உட்பட.',
+        'நீங்கள் எங்கள் தயாரிப்புகளில் ஒன்றை minors-இன் data-ஐ கையாள பயன்படுத்தினால், குழந்தைகளின் data சேகரிப்பு மற்றும் பயன்பாட்டில் பொருந்தும் சட்டங்களை பின்பற்றுவது உங்கள் பொறுப்பு, தேவையான இடங்களில் பெற்றோர் அல்லது பாதுகாவலர்களிடமிருந்து சரியான சம்மதம் பெறுவது உட்பட.',
       ],
     },
     {
