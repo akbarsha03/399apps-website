@@ -1,0 +1,67 @@
+name: CF Always Use HTTPS (APPAA-39)
+
+# One-shot maintenance workflow: enable Cloudflare zone setting
+# "Always Use HTTPS" on 399apps.com so http:// (incl. http://www) 301s
+# to https:// at the edge instead of returning 522.
+# Uses the existing CLOUDFLARE_API_TOKEN repo secret (same one the deploy
+# workflow uses). If that token is Pages-scoped only, the API call will
+# fail with a permissions error that this log surfaces explicitly.
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  toggle:
+    name: Enable Always Use HTTPS
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Toggle always_use_https=on for 399apps.com
+        env:
+          CF_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: |
+          set -euo pipefail
+          api="https://api.cloudflare.com/client/v4"
+
+          echo "::group::Verify token"
+          VRESP=$(curl -s -X GET "$api/user/tokens/verify" \
+            -H "Authorization: Bearer ${CF_API_TOKEN}" -H "Content-Type: application/json")
+          echo "token verify success: $(echo "$VRESP" | jq -r '.success')"
+          echo "$VRESP" | jq -r '.errors // empty'
+          echo "::endgroup::"
+
+          echo "::group::Resolve zone id"
+          ZRESP=$(curl -s -X GET "$api/zones?name=399apps.com" \
+            -H "Authorization: Bearer ${CF_API_TOKEN}" -H "Content-Type: application/json")
+          echo "zone lookup success: $(echo "$ZRESP" | jq -r '.success')"
+          ZONE_ID=$(echo "$ZRESP" | jq -r '.result[0].id // empty')
+          if [ -z "$ZONE_ID" ]; then
+            echo "::error::Could not resolve zone id for 399apps.com (token likely lacks Zone:Read)."
+            echo "$ZRESP" | jq '{success, errors, messages}'
+            exit 1
+          fi
+          echo "zone id resolved (len ${#ZONE_ID})"
+          echo "::endgroup::"
+
+          echo "::group::Set always_use_https=on"
+          PRESP=$(curl -s -X PATCH "$api/zones/${ZONE_ID}/settings/always_use_https" \
+            -H "Authorization: Bearer ${CF_API_TOKEN}" -H "Content-Type: application/json" \
+            --data '{"value":"on"}')
+          OK=$(echo "$PRESP" | jq -r '.success')
+          echo "patch success: $OK"
+          echo "$PRESP" | jq '{success, result:{id:.result.id, value:.result.value}, errors, messages}'
+          if [ "$OK" != "true" ]; then
+            echo "::error::PATCH failed — token likely lacks 'Zone Settings: Edit' permission. See errors above."
+            exit 1
+          fi
+          echo "::endgroup::"
+
+          echo "::group::Confirm"
+          curl -s -X GET "$api/zones/${ZONE_ID}/settings/always_use_https" \
+            -H "Authorization: Bearer ${CF_API_TOKEN}" | jq '{value:.result.value, modified_on:.result.modified_on}'
+          echo "::endgroup::"
+
+          echo "Always Use HTTPS is now ON for 399apps.com."
