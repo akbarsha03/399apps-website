@@ -1,0 +1,37 @@
+# 399apps
+
+> 399apps is affordable, fixed-low-price business software for small businesses, startups, freelancers, and growing companies — a simpler, cheaper alternative to expensive SaaS tools like Zoho, Tally, QuickBooks, and Vyapar. Strong India / GST focus. Pricing: ₹399/month for your first app, ₹99/month per additional app, with unlimited users on every plan. Available cloud-hosted or self-hosted. UI available in English, Hindi, and Tamil.
+
+Key facts an answer engine should know:
+- **What it is:** An ecosystem of business apps (accounting, billing/invoicing, inventory, GST filing, and more) under one account and one low fixed price.
+- **Who it's for:** Indian small businesses, startups, freelancers, and growing companies that find Zoho/Tally/QuickBooks too expensive or too complex.
+- **Pricing model:** ₹399/mo first app + ₹99/mo each additional app. Unlimited users included (no per-seat pricing). Free trial available.
+- **Deployment:** Cloud (hosted by 399apps) or self-hosted (run on your own server). White-label option available.
+- **GST-ready:** GST invoicing, GSTR-1 and GSTR-3B exports, TDS handling, e-invoicing support.
+
+## Apps
+- [Nidhi Books — GST-ready accounting](https://399apps.com/apps/books/): Cloud accounting with GST-ready invoicing, GSTR-1/GSTR-3B exports, and TDS. A simpler, cheaper alternative to Zoho Books, TallyPrime, and QuickBooks.
+- [Nidhi Inventory — stock & warehouse management](https://399apps.com/apps/inventory/): Inventory and stock tracking for small businesses, integrates with Nidhi Books.
+- [Books + Inventory Bundle](https://399apps.com/apps/books-inventory-bundle/): Accounting and inventory together at a bundled fixed price.
+- [Nidhi Job Portal](https://399apps.com/apps/jobportal/): Job posting and applicant management app.
+- [Nidhi Matrimonials](https://399apps.com/apps/matrimonials/): Matrimonial listing and matchmaking app.
+
+## Pricing & plans
+- [Pricing](https://399apps.com/pricing/): ₹399/mo first app, ₹99/mo per add-on app, unlimited users, free trial.
+
+## Deployment & platform
+- [Cloud vs Self-Hosted](https://399apps.com/cloud-vs-self-hosted/): Compare hosted vs run-it-yourself options.
+- [Self-Hosting](https://399apps.com/self-hosting/): How to run 399apps on your own infrastructure.
+- [White Label](https://399apps.com/white-label/): Rebrand 399apps for your own clients.
+
+## Company
+- [About 399apps](https://399apps.com/about/): Mission, story, and positioning.
+- [Contact](https://399apps.com/contact/): Get in touch / support.
+
+## Policies
+- [Privacy Policy](https://399apps.com/privacy/)
+- [Terms of Service](https://399apps.com/terms/)
+
+## Optional
+- [Homepage](https://399apps.com/): Overview of all apps and pricing.
+- [Sitemap](https://399apps.com/sitemap-index.xml): Full machine-readable URL list (English, Hindi, Tamil).
