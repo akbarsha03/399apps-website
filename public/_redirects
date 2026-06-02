@@ -4,5 +4,11 @@
 /inventory     /apps/inventory  301
 /bundle        /apps/books-inventory-bundle 301
 
+# Removed products (APPAA-42) — redirect old product URLs to the app store
+/apps/matrimonials    /#apps    301
+/apps/matrimonials/*  /#apps    301
+/apps/jobportal       /#apps    301
+/apps/jobportal/*     /#apps    301
+
 # Future asset placeholders
 /og.png        /og-image.svg    200
