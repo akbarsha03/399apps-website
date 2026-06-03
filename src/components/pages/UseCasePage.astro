@@ -1,0 +1,138 @@
+---
+// Wave-4 industry use-case page (APPAA-64). English-first, data-driven.
+// Renders any entry in USECASES; JSON-LD is generated from the same data.
+import Layout from '~/layouts/Layout.astro';
+import FAQ from '~/components/FAQ.astro';
+import CTA from '~/components/CTA.astro';
+import { USECASES, buildUseCaseGraph } from '~/data/usecase';
+
+interface Props {
+  slug: string;
+}
+const { slug } = Astro.props;
+const uc = USECASES[slug];
+if (!uc) throw new Error(`UseCasePage: unknown slug "${slug}"`);
+
+const rawJsonLd = buildUseCaseGraph(slug);
+
+const ctaPrimary = `/contact?intent=cloud&utm_source=organic&utm_medium=industry-usecase&utm_campaign=${slug}&utm_content=primary-cta`;
+const ctaSecondary = `/contact?intent=demo&utm_source=organic&utm_medium=industry-usecase&utm_campaign=${slug}&utm_content=secondary-demo`;
+---
+
+<Layout
+  title={uc.seo.title}
+  description={uc.seo.description}
+  type="product"
+  keywords={uc.seo.keywords}
+  rawJsonLd={rawJsonLd}
+>
+  <section class="relative overflow-hidden border-b border-ink-100">
+    <div class="pointer-events-none absolute inset-0 grid-bg opacity-70"></div>
+    <div class="container-wide relative py-16 sm:py-20">
+      <nav class="mb-8 text-xs text-ink-500" aria-label="Breadcrumb">
+        <ol class="flex flex-wrap items-center gap-1.5">
+          <li><a href="/" class="hover:text-ink-700">Home</a></li>
+          <li class="text-ink-400">/</li>
+          <li class="text-ink-800">{uc.breadcrumbLeaf}</li>
+        </ol>
+      </nav>
+      <span class="eyebrow">{uc.hero.eyebrow}</span>
+      <h1 class="h1 mt-4 max-w-4xl">{uc.hero.h1}</h1>
+      <p class="lede mt-5 max-w-3xl">{uc.hero.verdict}</p>
+      <div class="mt-7 flex flex-wrap gap-3">
+        <a href={ctaPrimary} class="btn-primary">Start your free 14-day trial</a>
+        <a href={ctaSecondary} class="btn-secondary">Get a free demo</a>
+      </div>
+      <p class="mt-3 text-xs text-ink-500">{uc.hero.trustNote}</p>
+    </div>
+  </section>
+
+  <section class="bg-white">
+    <div class="container-narrow py-16 sm:py-20">
+      <h2 class="h2">{uc.definition.h2}</h2>
+      <p class="mt-4 text-[17px] leading-relaxed text-ink-700">{uc.definition.body}</p>
+      {uc.definition.body2 && (
+        <p class="mt-4 text-[17px] leading-relaxed text-ink-700">{uc.definition.body2}</p>
+      )}
+    </div>
+  </section>
+
+  <section class="border-t border-ink-100 bg-ink-50/40">
+    <div class="container-narrow py-16 sm:py-20">
+      <span class="eyebrow">Pain → feature</span>
+      <h2 class="h2 mt-3">{uc.pains.h2}</h2>
+      <p class="mt-3 text-[15px] leading-relaxed text-ink-600">{uc.pains.intro}</p>
+      <div class="mt-6 overflow-x-auto">
+        <table class="w-full border-collapse text-sm">
+          <thead>
+            <tr class="border-b border-ink-200 text-left">
+              <th class="py-3 pr-4 font-semibold text-ink-900">What slows you down</th>
+              <th class="py-3 pr-4 font-semibold text-ink-900">What 399Apps does</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-ink-100">
+            {uc.pains.items.map((row) => (
+              <tr>
+                <td class="py-3 pr-4 font-medium text-ink-900 align-top">{row.pain}</td>
+                <td class="py-3 pr-4 text-ink-700">{row.solution}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-white">
+    <div class="container-narrow py-16 sm:py-20">
+      <h2 class="h2">{uc.why.h2}</h2>
+      <p class="mt-4 text-[17px] leading-relaxed text-ink-700">{uc.why.intro}</p>
+      <ul class="mt-5 space-y-3 text-[15px] leading-relaxed text-ink-700">
+        {uc.why.items.map((item) => (
+          <li class="flex gap-3">
+            <span class="mt-1 text-brand-600">✓</span>
+            <span>{item}</span>
+          </li>
+        ))}
+      </ul>
+      {uc.honestNote && (
+        <p class="mt-6 rounded-2xl border border-amber-200 bg-amber-50 px-5 py-4 text-sm leading-relaxed text-amber-900">{uc.honestNote}</p>
+      )}
+    </div>
+  </section>
+
+  <section class="border-t border-ink-100 bg-ink-50/40">
+    <div class="container-narrow py-16 sm:py-20">
+      <span class="eyebrow">Pricing</span>
+      <h2 class="h2 mt-3">{uc.pricing.h2}</h2>
+      <p class="mt-4 text-[17px] leading-relaxed text-ink-700">{uc.pricing.body}</p>
+      <div class="mt-6 flex flex-wrap gap-3">
+        <a href="/pricing/" class="btn-secondary">See full pricing</a>
+        <a href={ctaPrimary} class="btn-primary">Start your free 14-day trial</a>
+      </div>
+    </div>
+  </section>
+
+  <FAQ items={uc.faq} title={`${uc.breadcrumbLeaf} — frequently asked questions`} />
+
+  <section class="border-t border-ink-100 bg-ink-50/40">
+    <div class="container-narrow py-12">
+      <p class="eyebrow">Related</p>
+      <ul class="mt-3 flex flex-wrap gap-x-6 gap-y-2 text-sm text-brand-700">
+        {uc.related.map((r) => (
+          <li><a class="hover:underline" href={r.href}>{r.label}</a></li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <CTA
+    eyebrow="Get started"
+    title={`Try 399Apps for ${uc.industry} — free for 14 days`}
+    body="GST billing, accounting and inventory with unlimited users and no per-seat fee. From ₹399/month for your first app; +₹99/month per add-on (prices exclude GST)."
+    primaryLabel="Start your free 14-day trial"
+    primaryHref={ctaPrimary}
+    secondaryLabel="Get a free demo"
+    secondaryHref={ctaSecondary}
+  />
+</Layout>
