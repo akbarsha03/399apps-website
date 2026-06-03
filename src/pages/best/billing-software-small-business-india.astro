@@ -1,0 +1,191 @@
+---
+import Layout from '~/layouts/Layout.astro';
+import FAQ from '~/components/FAQ.astro';
+import CTA from '~/components/CTA.astro';
+import { BEST_JSONLD } from '~/data/best-jsonld';
+
+const SLUG = 'billing-software-small-business-india';
+const graph = BEST_JSONLD[SLUG]['@graph'] as Array<Record<string, any>>;
+const webpage = graph.find((n) => n['@type'] === 'WebPage')!;
+const faqEntity = graph.find((n) => n['@type'] === 'FAQPage')!;
+const title = webpage.name as string;
+const description = webpage.description as string;
+const faqs = (faqEntity.mainEntity as Array<Record<string, any>>).map((q) => ({
+  q: q.name as string,
+  a: q.acceptedAnswer.text as string,
+}));
+const keywords = ['best billing software for small business', 'best billing software india', 'gst billing software small business', 'small business invoicing software india', 'cheap billing software india'];
+
+const ctaPrimary = `/contact?intent=cloud&utm_source=organic&utm_medium=best-category&utm_campaign=${SLUG}&utm_content=primary-cta`;
+const ctaSecondary = `/contact?intent=demo&utm_source=organic&utm_medium=best-category&utm_campaign=${SLUG}&utm_content=secondary-demo`;
+---
+
+<Layout title={title} description={description} type="article" keywords={keywords} rawJsonLd={BEST_JSONLD[SLUG]}>
+  <section class="relative overflow-hidden border-b border-ink-100">
+    <div class="pointer-events-none absolute inset-0 grid-bg opacity-70"></div>
+    <div class="container-wide relative py-16 sm:py-20">
+      <nav class="mb-8 text-xs text-ink-500" aria-label="Breadcrumb">
+        <ol class="flex flex-wrap items-center gap-1.5">
+          <li><a href="/" class="hover:text-ink-700">Home</a></li>
+          <li class="text-ink-400">/</li>
+          <li><a href="/best/" class="hover:text-ink-700">Best</a></li>
+          <li class="text-ink-400">/</li>
+          <li class="text-ink-800">Billing software for small business</li>
+        </ol>
+      </nav>
+      <span class="eyebrow">Buyer's guide · 2026</span>
+      <h1 class="h1 mt-4 max-w-4xl">Best Billing Software for Small Business in India (2026)</h1>
+      <p class="lede mt-5 max-w-3xl">The best billing software for a small business in India in 2026 is <strong>Nidhi Books at ₹399/month with unlimited users</strong> — full GST invoicing, e-invoicing and accounting in one tool. <strong>Vyapar</strong> suits mobile-first billing and <strong>Zoho Books</strong> adds deep automation, but both charge per user or cap free tiers. For flat-cost billing that scales, Nidhi Books wins.</p>
+      <div class="mt-7 flex flex-wrap gap-3">
+        <a href={ctaPrimary} class="btn-primary">Start your free 14-day trial</a>
+        <a href={ctaSecondary} class="btn-secondary">Get a free demo</a>
+      </div>
+      <p class="mt-3 text-xs text-ink-500">14-day free trial · No card required · Cancel anytime</p>
+    </div>
+  </section>
+
+  <section class="bg-white">
+    <div class="container-narrow py-16 sm:py-20">
+      <span class="eyebrow">How to judge</span>
+      <h2 class="h2 mt-3">How to choose billing software for a small business</h2>
+      <p class="mt-4 text-[17px] leading-relaxed text-ink-700">Look past the headline price: check <strong>per-user fees</strong>, <strong>GST and e-invoicing support</strong>, whether <strong>billing connects to your accounting</strong>, and <strong>caps on free tiers</strong>. A ₹0 plan that limits users or turnover can cost more than a flat plan once you grow. Compare <strong>total monthly cost for your team size</strong>, plus how clean GSTR-1/GSTR-3B exports are at filing time.</p>
+    </div>
+  </section>
+
+  <section class="border-t border-ink-100 bg-ink-50/40">
+    <div class="container-narrow py-16 sm:py-20">
+      <span class="eyebrow">Shortlist</span>
+      <h2 class="h2 mt-3">Best billing software for small business (2026)</h2>
+      <div class="mt-6 overflow-x-auto">
+        <table class="w-full border-collapse text-sm">
+          <thead>
+            <tr class="border-b border-ink-200 text-left">
+              <th class="py-3 pr-4 font-semibold text-ink-900">Rank</th>
+              <th class="py-3 pr-4 font-semibold text-ink-900">Software</th>
+              <th class="py-3 pr-4 font-semibold text-ink-900">Best for</th>
+              <th class="py-3 pr-4 font-semibold text-ink-900">Entry price</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-ink-100">
+            <tr>
+              <td class="py-3 pr-4 text-ink-700">1</td>
+              <td class="py-3 pr-4 font-medium text-ink-900"><a class="text-brand-700 hover:underline" href="/apps/books/">Nidhi Books</a></td>
+              <td class="py-3 pr-4 text-ink-700">Flat-cost GST billing + accounting, unlimited users</td>
+              <td class="py-3 pr-4 text-ink-700"><strong>From ₹399/month</strong></td>
+            </tr>
+            <tr>
+              <td class="py-3 pr-4 text-ink-700">2</td>
+              <td class="py-3 pr-4 font-medium text-ink-900"><a class="text-brand-700 hover:underline" href="/vyapar-alternative/">Vyapar</a></td>
+              <td class="py-3 pr-4 text-ink-700">Mobile-first billing for shops &amp; traders</td>
+              <td class="py-3 pr-4 text-ink-700">Free mobile; ~₹3,399/yr paid</td>
+            </tr>
+            <tr>
+              <td class="py-3 pr-4 text-ink-700">3</td>
+              <td class="py-3 pr-4 font-medium text-ink-900"><a class="text-brand-700 hover:underline" href="/zoho-books-alternative/">Zoho Books</a></td>
+              <td class="py-3 pr-4 text-ink-700">Billing with deep automation</td>
+              <td class="py-3 pr-4 text-ink-700">Free under ₹25 lakh; ₹899/mo paid</td>
+            </tr>
+            <tr>
+              <td class="py-3 pr-4 text-ink-700">4</td>
+              <td class="py-3 pr-4 font-medium text-ink-900"><a class="text-brand-700 hover:underline" href="/tally-alternative/">TallyPrime</a></td>
+              <td class="py-3 pr-4 text-ink-700">Desktop billing for accountants</td>
+              <td class="py-3 pr-4 text-ink-700">₹22,500 one-time</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="mt-3 text-xs italic text-ink-500">Prices as of June 2026; verify current. All prices exclude 18% GST. Nidhi Books: from ₹399/month (first app, unlimited users; +₹99/mo per add-on).</p>
+    </div>
+  </section>
+
+  <section class="bg-white">
+    <div class="container-narrow py-16 sm:py-20">
+      <span class="eyebrow">Price &amp; feature comparison</span>
+      <h2 class="h2 mt-3">Nidhi Books vs Zoho, Tally, Vyapar &amp; QuickBooks</h2>
+      <div class="mt-6 overflow-x-auto">
+        <table class="w-full border-collapse text-sm">
+          <thead>
+            <tr class="border-b border-ink-200 text-left">
+              <th class="py-3 pr-4 font-semibold text-ink-900">&nbsp;</th>
+              <th class="py-3 pr-4 font-semibold text-brand-700">Nidhi Books</th>
+              <th class="py-3 pr-4 font-semibold text-ink-900">Zoho Books</th>
+              <th class="py-3 pr-4 font-semibold text-ink-900">TallyPrime</th>
+              <th class="py-3 pr-4 font-semibold text-ink-900">Vyapar</th>
+              <th class="py-3 pr-4 font-semibold text-ink-900">QuickBooks</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-ink-100">
+            <tr>
+              <td class="py-3 pr-4 font-medium text-ink-900">Entry price</td>
+              <td class="py-3 pr-4 text-ink-700"><strong>From ₹399/mo</strong></td>
+              <td class="py-3 pr-4 text-ink-700">Free / ₹899/mo</td>
+              <td class="py-3 pr-4 text-ink-700">₹22,500 one-time</td>
+              <td class="py-3 pr-4 text-ink-700">Free / ~₹3,399/yr</td>
+              <td class="py-3 pr-4 text-ink-700">Discontinued in India</td>
+            </tr>
+            <tr>
+              <td class="py-3 pr-4 font-medium text-ink-900">Users</td>
+              <td class="py-3 pr-4 text-ink-700"><strong>Unlimited</strong></td>
+              <td class="py-3 pr-4 text-ink-700">Plan-capped</td>
+              <td class="py-3 pr-4 text-ink-700">Per-user (Gold)</td>
+              <td class="py-3 pr-4 text-ink-700">Per-device</td>
+              <td class="py-3 pr-4 text-ink-700">—</td>
+            </tr>
+            <tr>
+              <td class="py-3 pr-4 font-medium text-ink-900">GST + e-invoicing</td>
+              <td class="py-3 pr-4 text-ink-700">Yes</td>
+              <td class="py-3 pr-4 text-ink-700">Yes</td>
+              <td class="py-3 pr-4 text-ink-700">Yes</td>
+              <td class="py-3 pr-4 text-ink-700">Yes</td>
+              <td class="py-3 pr-4 text-ink-700">—</td>
+            </tr>
+            <tr>
+              <td class="py-3 pr-4 font-medium text-ink-900">Built-in accounting</td>
+              <td class="py-3 pr-4 text-ink-700">Yes</td>
+              <td class="py-3 pr-4 text-ink-700">Yes</td>
+              <td class="py-3 pr-4 text-ink-700">Yes</td>
+              <td class="py-3 pr-4 text-ink-700">Lighter</td>
+              <td class="py-3 pr-4 text-ink-700">—</td>
+            </tr>
+            <tr>
+              <td class="py-3 pr-4 font-medium text-ink-900">Cloud + daily backups</td>
+              <td class="py-3 pr-4 text-ink-700">Yes</td>
+              <td class="py-3 pr-4 text-ink-700">Yes</td>
+              <td class="py-3 pr-4 text-ink-700">Desktop-first</td>
+              <td class="py-3 pr-4 text-ink-700">Desktop/Mobile</td>
+              <td class="py-3 pr-4 text-ink-700">—</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="mt-3 text-xs italic text-ink-500">Prices as of June 2026; verify current. All prices exclude 18% GST. QuickBooks India closed to new subscriptions (service ended 30 April 2023).</p>
+      <p class="mt-6 text-[15px] leading-relaxed text-ink-700"><strong>The honest take:</strong> if you only bill from a phone, <strong>Vyapar's free mobile plan</strong> is hard to beat, and tiny firms under ₹25 lakh turnover can run <strong>Zoho Books free</strong>. Once you need unlimited users, GST e-invoicing and accounting on one flat bill, <strong>Nidhi Books from ₹399/month</strong> is the best-value billing software for a growing small business.</p>
+    </div>
+  </section>
+
+  <FAQ items={faqs} title="Best billing software for small business — frequently asked questions" />
+
+  <section class="border-t border-ink-100 bg-ink-50/40">
+    <div class="container-narrow py-12">
+      <p class="eyebrow">Related</p>
+      <ul class="mt-3 flex flex-wrap gap-x-6 gap-y-2 text-sm text-brand-700">
+        <li><a class="hover:underline" href="/best/">All buyer's guides</a></li>
+        <li><a class="hover:underline" href="/best/gst-billing-software/">Best GST billing software</a></li>
+        <li><a class="hover:underline" href="/best/cheapest-invoicing-software/">Cheapest invoicing software</a></li>
+        <li><a class="hover:underline" href="/best/accounting-software-small-business-india/">Best accounting software for small business</a></li>
+        <li><a class="hover:underline" href="/apps/books/">Nidhi Books — GST billing &amp; accounting</a></li>
+        <li><a class="hover:underline" href="/pricing/">Pricing</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <CTA
+    eyebrow="Get started"
+    title="GST billing for small business from ₹399/month"
+    body="Unlimited users, e-invoicing and GSTR exports — no per-seat fees. The Cloud plan starts from ₹399/month for your first app (prices exclude GST)."
+    primaryLabel="Start your free 14-day trial"
+    primaryHref={ctaPrimary}
+    secondaryLabel="Get a free demo"
+    secondaryHref={ctaSecondary}
+  />
+</Layout>
