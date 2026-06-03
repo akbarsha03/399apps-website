@@ -1,0 +1,208 @@
+---
+import Layout from '~/layouts/Layout.astro';
+import FAQ from '~/components/FAQ.astro';
+import CTA from '~/components/CTA.astro';
+import { BEST_JSONLD } from '~/data/best-jsonld';
+
+const SLUG = 'e-invoicing-software-india';
+const graph = BEST_JSONLD[SLUG]['@graph'] as Array<Record<string, any>>;
+const webpage = graph.find((n) => n['@type'] === 'WebPage')!;
+const faqEntity = graph.find((n) => n['@type'] === 'FAQPage')!;
+const title = webpage.name as string;
+const description = webpage.description as string;
+const faqs = (faqEntity.mainEntity as Array<Record<string, any>>).map((q) => ({
+  q: q.name as string,
+  a: q.acceptedAnswer.text as string,
+}));
+const keywords = ['best e-invoicing software india', 'e-invoicing software india', 'gst e-invoice software', 'irn generation software', 'e invoice software for small business'];
+
+const ctaPrimary = `/contact?intent=cloud&utm_source=organic&utm_medium=best-category&utm_campaign=${SLUG}&utm_content=primary-cta`;
+const ctaSecondary = `/contact?intent=demo&utm_source=organic&utm_medium=best-category&utm_campaign=${SLUG}&utm_content=secondary-demo`;
+---
+
+<Layout title={title} description={description} type="article" keywords={keywords} rawJsonLd={BEST_JSONLD[SLUG]}>
+  <section class="relative overflow-hidden border-b border-ink-100">
+    <div class="pointer-events-none absolute inset-0 grid-bg opacity-70"></div>
+    <div class="container-wide relative py-16 sm:py-20">
+      <nav class="mb-8 text-xs text-ink-500" aria-label="Breadcrumb">
+        <ol class="flex flex-wrap items-center gap-1.5">
+          <li><a href="/" class="hover:text-ink-700">Home</a></li>
+          <li class="text-ink-400">/</li>
+          <li><a href="/best/" class="hover:text-ink-700">Best</a></li>
+          <li class="text-ink-400">/</li>
+          <li class="text-ink-800">E-invoicing software in India</li>
+        </ol>
+      </nav>
+      <span class="eyebrow">Buyer's guide · 2026</span>
+      <h1 class="h1 mt-4 max-w-4xl">Best E-Invoicing Software in India (2026)</h1>
+      <p class="lede mt-5 max-w-3xl">The best e-invoicing software in India in 2026 is <strong>Nidhi Books at ₹399/month with unlimited users</strong> — it generates IRN/QR e-invoices, e-way bills and GST returns from one tool. <strong>Zoho Books</strong> suits automation-heavy teams and <strong>TallyPrime</strong> fits desktop accountants, but cost more to scale. With e-invoicing now mandatory above ₹5 crore turnover, flat-cost software that bundles it with accounting wins.</p>
+      <div class="mt-7 flex flex-wrap gap-3">
+        <a href={ctaPrimary} class="btn-primary">Start your free 14-day trial</a>
+        <a href={ctaSecondary} class="btn-secondary">Get a free demo</a>
+      </div>
+      <p class="mt-3 text-xs text-ink-500">14-day free trial · No card required · Cancel anytime</p>
+    </div>
+  </section>
+
+  <section class="bg-white">
+    <div class="container-narrow py-16 sm:py-20">
+      <span class="eyebrow">Who needs it</span>
+      <h2 class="h2 mt-3">Do you need e-invoicing software?</h2>
+      <p class="mt-4 text-[17px] leading-relaxed text-ink-700">As of 2026, <strong>e-invoicing is mandatory for businesses with aggregate annual turnover above ₹5 crore</strong> for B2B and export invoices. The threshold has fallen steadily (from ₹500 crore in 2020 down to ₹5 crore), so the number of businesses in scope keeps growing. E-invoicing software prepares your invoice in the required schema, registers it with the <strong>Invoice Registration Portal (IRP)</strong>, and returns an <strong>IRN (Invoice Reference Number)</strong> and a signed <strong>QR code</strong> — automatically, as you bill.</p>
+    </div>
+  </section>
+
+  <section class="border-t border-ink-100 bg-ink-50/40">
+    <div class="container-narrow py-16 sm:py-20">
+      <span class="eyebrow">How to judge</span>
+      <h2 class="h2 mt-3">How to choose e-invoicing software</h2>
+      <p class="mt-4 text-[17px] leading-relaxed text-ink-700">Look for <strong>built-in IRP integration</strong> (IRN/QR generated in the background, not a manual upload), <strong>e-way bill</strong> generation from the same invoice, <strong>GSTR-1/3B-ready</strong> data so e-invoices flow into returns, and <strong>per-user pricing</strong> as you add staff. Bonus if e-invoicing sits inside full accounting — so you aren't running a separate IRP tool alongside your books.</p>
+    </div>
+  </section>
+
+  <section class="bg-white">
+    <div class="container-narrow py-16 sm:py-20">
+      <span class="eyebrow">Shortlist</span>
+      <h2 class="h2 mt-3">Best e-invoicing software in India (2026)</h2>
+      <div class="mt-6 overflow-x-auto">
+        <table class="w-full border-collapse text-sm">
+          <thead>
+            <tr class="border-b border-ink-200 text-left">
+              <th class="py-3 pr-4 font-semibold text-ink-900">Rank</th>
+              <th class="py-3 pr-4 font-semibold text-ink-900">Software</th>
+              <th class="py-3 pr-4 font-semibold text-ink-900">Best for</th>
+              <th class="py-3 pr-4 font-semibold text-ink-900">Entry price</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-ink-100">
+            <tr>
+              <td class="py-3 pr-4 text-ink-700">1</td>
+              <td class="py-3 pr-4 font-medium text-ink-900"><a class="text-brand-700 hover:underline" href="/apps/books/">Nidhi Books</a></td>
+              <td class="py-3 pr-4 text-ink-700">Flat-cost e-invoicing + e-way bill + accounting, unlimited users</td>
+              <td class="py-3 pr-4 text-ink-700"><strong>From ₹399/month</strong></td>
+            </tr>
+            <tr>
+              <td class="py-3 pr-4 text-ink-700">2</td>
+              <td class="py-3 pr-4 font-medium text-ink-900"><a class="text-brand-700 hover:underline" href="/zoho-books-alternative/">Zoho Books</a></td>
+              <td class="py-3 pr-4 text-ink-700">E-invoicing with deep automation</td>
+              <td class="py-3 pr-4 text-ink-700">Free under ₹25 lakh; ₹899/mo paid</td>
+            </tr>
+            <tr>
+              <td class="py-3 pr-4 text-ink-700">3</td>
+              <td class="py-3 pr-4 font-medium text-ink-900"><a class="text-brand-700 hover:underline" href="/tally-alternative/">TallyPrime</a></td>
+              <td class="py-3 pr-4 text-ink-700">Desktop e-invoicing for accountants</td>
+              <td class="py-3 pr-4 text-ink-700">₹22,500 one-time</td>
+            </tr>
+            <tr>
+              <td class="py-3 pr-4 text-ink-700">4</td>
+              <td class="py-3 pr-4 font-medium text-ink-900"><a class="text-brand-700 hover:underline" href="/vyapar-alternative/">Vyapar</a></td>
+              <td class="py-3 pr-4 text-ink-700">Mobile-first e-invoicing &amp; billing</td>
+              <td class="py-3 pr-4 text-ink-700">Free mobile; ~₹3,399/yr paid</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="mt-3 text-xs italic text-ink-500">Prices as of June 2026; verify current. All prices exclude 18% GST. Nidhi Books: from ₹399/month (first app, unlimited users; +₹99/mo per add-on).</p>
+    </div>
+  </section>
+
+  <section class="border-t border-ink-100 bg-ink-50/40">
+    <div class="container-narrow py-16 sm:py-20">
+      <span class="eyebrow">Price &amp; feature comparison</span>
+      <h2 class="h2 mt-3">Nidhi Books vs Zoho, Tally, Vyapar &amp; QuickBooks</h2>
+      <div class="mt-6 overflow-x-auto">
+        <table class="w-full border-collapse text-sm">
+          <thead>
+            <tr class="border-b border-ink-200 text-left">
+              <th class="py-3 pr-4 font-semibold text-ink-900">&nbsp;</th>
+              <th class="py-3 pr-4 font-semibold text-brand-700">Nidhi Books</th>
+              <th class="py-3 pr-4 font-semibold text-ink-900">Zoho Books</th>
+              <th class="py-3 pr-4 font-semibold text-ink-900">TallyPrime</th>
+              <th class="py-3 pr-4 font-semibold text-ink-900">Vyapar</th>
+              <th class="py-3 pr-4 font-semibold text-ink-900">QuickBooks</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-ink-100">
+            <tr>
+              <td class="py-3 pr-4 font-medium text-ink-900">Entry price</td>
+              <td class="py-3 pr-4 text-ink-700"><strong>From ₹399/mo</strong></td>
+              <td class="py-3 pr-4 text-ink-700">Free / ₹899/mo</td>
+              <td class="py-3 pr-4 text-ink-700">₹22,500 one-time</td>
+              <td class="py-3 pr-4 text-ink-700">Free / ~₹3,399/yr</td>
+              <td class="py-3 pr-4 text-ink-700">Discontinued in India</td>
+            </tr>
+            <tr>
+              <td class="py-3 pr-4 font-medium text-ink-900">Users</td>
+              <td class="py-3 pr-4 text-ink-700"><strong>Unlimited</strong></td>
+              <td class="py-3 pr-4 text-ink-700">Plan-capped</td>
+              <td class="py-3 pr-4 text-ink-700">Per-user (Gold)</td>
+              <td class="py-3 pr-4 text-ink-700">Per-device</td>
+              <td class="py-3 pr-4 text-ink-700">—</td>
+            </tr>
+            <tr>
+              <td class="py-3 pr-4 font-medium text-ink-900">E-invoice (IRN/QR)</td>
+              <td class="py-3 pr-4 text-ink-700">Yes</td>
+              <td class="py-3 pr-4 text-ink-700">Yes</td>
+              <td class="py-3 pr-4 text-ink-700">Yes</td>
+              <td class="py-3 pr-4 text-ink-700">Yes</td>
+              <td class="py-3 pr-4 text-ink-700">—</td>
+            </tr>
+            <tr>
+              <td class="py-3 pr-4 font-medium text-ink-900">E-way bill</td>
+              <td class="py-3 pr-4 text-ink-700">Yes</td>
+              <td class="py-3 pr-4 text-ink-700">Yes</td>
+              <td class="py-3 pr-4 text-ink-700">Yes</td>
+              <td class="py-3 pr-4 text-ink-700">Yes</td>
+              <td class="py-3 pr-4 text-ink-700">—</td>
+            </tr>
+            <tr>
+              <td class="py-3 pr-4 font-medium text-ink-900">GSTR-1 / 3B returns</td>
+              <td class="py-3 pr-4 text-ink-700">Yes</td>
+              <td class="py-3 pr-4 text-ink-700">Yes</td>
+              <td class="py-3 pr-4 text-ink-700">Yes</td>
+              <td class="py-3 pr-4 text-ink-700">Lighter</td>
+              <td class="py-3 pr-4 text-ink-700">—</td>
+            </tr>
+            <tr>
+              <td class="py-3 pr-4 font-medium text-ink-900">Cloud + daily backups</td>
+              <td class="py-3 pr-4 text-ink-700">Yes</td>
+              <td class="py-3 pr-4 text-ink-700">Yes</td>
+              <td class="py-3 pr-4 text-ink-700">Desktop-first</td>
+              <td class="py-3 pr-4 text-ink-700">Desktop/Mobile</td>
+              <td class="py-3 pr-4 text-ink-700">—</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="mt-3 text-xs italic text-ink-500">Prices as of June 2026; verify current. All prices exclude 18% GST. E-invoicing mandate: turnover above ₹5 crore (2026). QuickBooks India closed to new subscriptions (service ended 30 April 2023).</p>
+      <p class="mt-6 text-[15px] leading-relaxed text-ink-700"><strong>The honest take:</strong> if you're a small firm that just crossed the threshold, <strong>Zoho Books</strong> or <strong>Vyapar</strong> can get you compliant cheaply, and desktop practices may stay on <strong>TallyPrime</strong>. But if you want e-invoicing, e-way bills, returns and full accounting on one flat bill with unlimited users, <strong>Nidhi Books from ₹399/month</strong> is the best-value e-invoicing software for a growing Indian business.</p>
+    </div>
+  </section>
+
+  <FAQ items={faqs} title="Best e-invoicing software in India — frequently asked questions" />
+
+  <section class="border-t border-ink-100 bg-ink-50/40">
+    <div class="container-narrow py-12">
+      <p class="eyebrow">Related</p>
+      <ul class="mt-3 flex flex-wrap gap-x-6 gap-y-2 text-sm text-brand-700">
+        <li><a class="hover:underline" href="/best/">All buyer's guides</a></li>
+        <li><a class="hover:underline" href="/best/gst-software-india/">Best GST software (India)</a></li>
+        <li><a class="hover:underline" href="/best/gst-billing-software/">Best GST billing software</a></li>
+        <li><a class="hover:underline" href="/best/accounting-software-small-business-india/">Best accounting software for small business</a></li>
+        <li><a class="hover:underline" href="/tally-alternative/">Tally alternative</a></li>
+        <li><a class="hover:underline" href="/apps/books/">Nidhi Books — GST accounting</a></li>
+        <li><a class="hover:underline" href="/pricing/">Pricing</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <CTA
+    eyebrow="Get started"
+    title="E-invoicing software from ₹399/month"
+    body="IRN/QR e-invoices, e-way bills, GST returns and full accounting — unlimited users, no per-seat fees. The Cloud plan starts from ₹399/month for your first app (prices exclude GST)."
+    primaryLabel="Start your free 14-day trial"
+    primaryHref={ctaPrimary}
+    secondaryLabel="Get a free demo"
+    secondaryHref={ctaSecondary}
+  />
+</Layout>

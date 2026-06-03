@@ -830,5 +830,283 @@ export const BEST_JSONLD: Record<string, Record<string, unknown>> = {
         ]
       }
     ]
+  },
+  "gst-software-india": {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://399apps.com/#organization",
+        "name": "399Apps",
+        "url": "https://399apps.com/"
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://399apps.com/#website",
+        "url": "https://399apps.com/",
+        "name": "399Apps",
+        "publisher": {
+          "@id": "https://399apps.com/#organization"
+        }
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://399apps.com/best/gst-software-india/#webpage",
+        "url": "https://399apps.com/best/gst-software-india/",
+        "name": "Best GST Software in India (2026)",
+        "description": "The best GST software in India for 2026 — full accounting, GST returns and e-invoicing compared on price, users and value across Nidhi Books, Zoho Books, TallyPrime and Vyapar.",
+        "inLanguage": "en-IN",
+        "isPartOf": {
+          "@id": "https://399apps.com/#website"
+        },
+        "breadcrumb": {
+          "@id": "https://399apps.com/best/gst-software-india/#breadcrumb"
+        },
+        "mainEntity": {
+          "@id": "https://399apps.com/best/gst-software-india/#itemlist"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://399apps.com/best/gst-software-india/#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://399apps.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Best",
+            "item": "https://399apps.com/best/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Best GST Software in India",
+            "item": "https://399apps.com/best/gst-software-india/"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://399apps.com/best/gst-software-india/#faq",
+        "isPartOf": {
+          "@id": "https://399apps.com/best/gst-software-india/#webpage"
+        },
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is the best GST software in India in 2026?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Nidhi Books (399Apps) for value — full GST accounting, returns and e-invoicing from ₹399/month with unlimited users. Zoho Books suits firms wanting deep automation, and TallyPrime fits desktop-first accountants. Prices exclude GST."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the difference between GST software and GST billing software?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "GST billing software focuses on raising GST invoices and e-invoices. GST software (or GST accounting software) adds the full picture — ledgers, GSTR-1/3B-ready exports, reconciliation and financial statements — so your invoices flow into returns-ready books. Nidhi Books, Zoho Books and TallyPrime are GST software; lighter tools are billing-first."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Which is the cheapest GST software in India?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Nidhi Books is among the cheapest full GST software at ₹399/month with unlimited users (prices exclude GST). Zoho Books is free under ₹25 lakh turnover, and Vyapar has a free mobile tier, but both are more limited than flat-priced full accounting as you grow."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does GST software handle GSTR-1 and GSTR-3B filing?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Good GST software produces GSTR-1 and GSTR-3B-ready exports from your invoices and books. Nidhi Books, Zoho Books and TallyPrime all generate return-ready data; you (or your accountant) then file it on the GST portal."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is e-invoicing included in GST software?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes — leading GST software includes e-invoicing (IRN/QR generation) for businesses above the ₹5 crore turnover threshold. Nidhi Books, Zoho Books, TallyPrime and Vyapar all support e-invoices and e-way bills."
+            }
+          }
+        ]
+      },
+      {
+        "@type": "ItemList",
+        "@id": "https://399apps.com/best/gst-software-india/#itemlist",
+        "name": "Best GST Software in India 2026",
+        "itemListOrder": "https://schema.org/ItemListOrderDescending",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Nidhi Books",
+            "url": "https://399apps.com/apps/books/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Zoho Books"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "TallyPrime"
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "name": "Vyapar"
+          }
+        ]
+      }
+    ]
+  },
+  "e-invoicing-software-india": {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://399apps.com/#organization",
+        "name": "399Apps",
+        "url": "https://399apps.com/"
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://399apps.com/#website",
+        "url": "https://399apps.com/",
+        "name": "399Apps",
+        "publisher": {
+          "@id": "https://399apps.com/#organization"
+        }
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://399apps.com/best/e-invoicing-software-india/#webpage",
+        "url": "https://399apps.com/best/e-invoicing-software-india/",
+        "name": "Best E-Invoicing Software in India (2026)",
+        "description": "The best e-invoicing software in India for 2026 — IRN/QR generation, IRP integration and GST returns compared on price and value across Nidhi Books, Zoho Books, TallyPrime and Vyapar.",
+        "inLanguage": "en-IN",
+        "isPartOf": {
+          "@id": "https://399apps.com/#website"
+        },
+        "breadcrumb": {
+          "@id": "https://399apps.com/best/e-invoicing-software-india/#breadcrumb"
+        },
+        "mainEntity": {
+          "@id": "https://399apps.com/best/e-invoicing-software-india/#itemlist"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://399apps.com/best/e-invoicing-software-india/#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://399apps.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Best",
+            "item": "https://399apps.com/best/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Best E-Invoicing Software in India",
+            "item": "https://399apps.com/best/e-invoicing-software-india/"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://399apps.com/best/e-invoicing-software-india/#faq",
+        "isPartOf": {
+          "@id": "https://399apps.com/best/e-invoicing-software-india/#webpage"
+        },
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is the best e-invoicing software in India in 2026?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Nidhi Books (399Apps) for value — it generates IRN/QR e-invoices, e-way bills and GST returns from ₹399/month with unlimited users (prices exclude GST). Zoho Books and TallyPrime are strong for automation-heavy and desktop-first setups respectively."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Who needs to use e-invoicing in India?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "As of 2026, e-invoicing (IRN/QR via the IRP) is mandatory for businesses with aggregate annual turnover above ₹5 crore for B2B and export invoices. The threshold has fallen over time, so the number of businesses in scope keeps growing."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does e-invoicing software work?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "E-invoicing software prepares your invoice in the required schema, sends it to the Invoice Registration Portal (IRP), and receives back an IRN (Invoice Reference Number) and a signed QR code, which are added to the invoice. Good software does this in the background as you bill and keeps the data return-ready."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is e-invoicing the same as e-way bill?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. E-invoicing registers a B2B/export invoice with the IRP to get an IRN and QR code; an e-way bill authorises movement of goods above a value threshold. Many tools, including Nidhi Books, generate both from the same invoice data."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the cheapest e-invoicing software in India?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Nidhi Books is among the cheapest full options at ₹399/month with unlimited users and e-invoicing included (prices exclude GST). Vyapar has a low-cost tier, while Zoho Books is free under ₹25 lakh turnover — though most businesses needing e-invoicing are above the ₹5 crore mandate."
+            }
+          }
+        ]
+      },
+      {
+        "@type": "ItemList",
+        "@id": "https://399apps.com/best/e-invoicing-software-india/#itemlist",
+        "name": "Best E-Invoicing Software in India 2026",
+        "itemListOrder": "https://schema.org/ItemListOrderDescending",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Nidhi Books",
+            "url": "https://399apps.com/apps/books/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Zoho Books"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "TallyPrime"
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "name": "Vyapar"
+          }
+        ]
+      }
+    ]
   }
 };

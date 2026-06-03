@@ -1509,5 +1509,151 @@ export const ALT_JSONLD: Record<string, Record<string, unknown>> = {
         ]
       }
     ]
+  },
+  "khatabook-alternative": {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://399apps.com/#organization",
+        "name": "399Apps",
+        "url": "https://399apps.com/"
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://399apps.com/#website",
+        "url": "https://399apps.com/",
+        "name": "399Apps",
+        "publisher": {
+          "@id": "https://399apps.com/#organization"
+        }
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://399apps.com/khatabook-alternative/#webpage",
+        "url": "https://399apps.com/khatabook-alternative/",
+        "name": "Best Khatabook Alternative in 2026 — GST Invoicing, Returns-Ready Books & Inventory from ₹399/mo | 399Apps",
+        "description": "Outgrown Khatabook's free digital ledger? 399Apps (Nidhi Books) is the upgrade — GST invoices, GSTR-ready accounting and inventory from ₹399/month, unlimited users (prices exclude GST). Khatabook is a free bahi-khata app; 399Apps adds the billing and accounting depth it lacks. Free trial.",
+        "inLanguage": "en-IN",
+        "isPartOf": {
+          "@id": "https://399apps.com/#website"
+        },
+        "mainEntity": {
+          "@id": "https://399apps.com/khatabook-alternative/#software"
+        },
+        "breadcrumb": {
+          "@id": "https://399apps.com/khatabook-alternative/#breadcrumb"
+        }
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://399apps.com/khatabook-alternative/#software",
+        "name": "399Apps",
+        "applicationCategory": "BusinessApplication",
+        "applicationSubCategory": "Accounting & GST Billing Software",
+        "operatingSystem": "Web, Android, iOS",
+        "inLanguage": [
+          "en-IN",
+          "hi-IN",
+          "ta-IN"
+        ],
+        "description": "Cloud GST accounting, billing and inventory software for Indian small businesses — a Khatabook alternative for businesses that have outgrown a free digital ledger and now need GST invoices, returns-ready books and stock management. From ₹399/month for your first app, unlimited users, every feature included; +₹99/month per additional app/add-on (prices exclude GST).",
+        "url": "https://399apps.com/",
+        "provider": {
+          "@id": "https://399apps.com/#organization"
+        },
+        "offers": {
+          "@type": "Offer",
+          "price": "399",
+          "priceCurrency": "INR",
+          "description": "Entry/from price: ₹399/month covers your first app with unlimited users; each additional app or add-on is ₹99/month. Prices exclude GST (added per invoice based on billing location).",
+          "availability": "https://schema.org/InStock",
+          "url": "https://399apps.com/pricing/",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "price": "399",
+            "priceCurrency": "INR",
+            "billingDuration": "P1M",
+            "unitText": "MONTH",
+            "valueAddedTaxIncluded": false
+          }
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://399apps.com/khatabook-alternative/#faq",
+        "isPartOf": {
+          "@id": "https://399apps.com/khatabook-alternative/#webpage"
+        },
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Is 399Apps a good Khatabook alternative?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes — when you've outgrown a digital ledger. Khatabook is a free bahi-khata app for recording credit/debit entries and sending payment reminders; it isn't GST accounting software. 399Apps (Nidhi Books) is the upgrade: GST-compliant invoices, GSTR-1/3B-ready books, inventory and full accounting from ₹399/month with unlimited users. If you now need to raise proper tax invoices and file returns from your records, 399Apps is the better fit."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is Khatabook free, and is 399Apps worth paying for?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Khatabook's core ledger app is free, and for simply tracking who owes you money it's hard to beat. 399Apps is paid (from ₹399/month, prices exclude GST), and you pay for capability, not just a cheaper ledger: GST invoicing, returns-ready accounting, inventory and unlimited team access. If a free ledger still covers your needs, stay on Khatabook; if you're issuing GST invoices and filing returns, 399Apps earns its price."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does Khatabook have GST invoicing and full accounting?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Khatabook is built around a digital ledger (bahi-khata) for recording transactions and collecting payments, not full GST accounting. It does not offer the GST invoicing depth, GSTR-ready exports, ledgers, P&L/balance sheet and inventory that a business filing GST returns needs. 399Apps (Nidhi Books) is purpose-built for exactly that."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the best Khatabook alternative in India for GST billing?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "399Apps (Nidhi Books) is a strong choice — it's GST-native with HSN/SAC invoices, GSTR-1/3B-ready exports, e-invoice and e-way bill support, full accounting and inventory, on web + mobile cloud with unlimited users from ₹399/month (prices exclude GST). Vyapar and Zoho Books are other alternatives, but Vyapar is billing-first and Zoho's free tier is capped by turnover."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I move my Khatabook data to 399Apps?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Export your customers/suppliers and transaction history from Khatabook to CSV/Excel, then import parties and opening balances into 399Apps and set balances as of your switch date. Guided migration support is available for larger datasets — it's assisted, not one-click."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does 399Apps support GST returns and inventory like a proper accounting tool?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. 399Apps produces GST-compliant invoices (HSN/SAC, CGST/SGST/IGST, place of supply), GSTR-1/3B-ready exports, e-invoice and e-way bill support above thresholds, plus ledgers, P&L, balance sheet and inventory/stock management — the returns-ready books and stock control a free ledger app doesn't provide."
+            }
+          }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://399apps.com/khatabook-alternative/#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://399apps.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Best Khatabook Alternative in 2026",
+            "item": "https://399apps.com/khatabook-alternative/"
+          }
+        ]
+      }
+    ]
   }
 };

@@ -1,0 +1,195 @@
+---
+import Layout from '~/layouts/Layout.astro';
+import FAQ from '~/components/FAQ.astro';
+import CTA from '~/components/CTA.astro';
+import { ALT_JSONLD } from '~/data/alt-jsonld';
+
+const SLUG = 'khatabook-alternative';
+const graph = ALT_JSONLD[SLUG]['@graph'] as Array<Record<string, any>>;
+const webpage = graph.find((n) => n['@type'] === 'WebPage')!;
+const faqEntity = graph.find((n) => n['@type'] === 'FAQPage')!;
+const title = (webpage.name as string).replace(/\s*\|\s*399Apps\s*$/, '');
+const description = webpage.description as string;
+const faqs = (faqEntity.mainEntity as Array<Record<string, any>>).map((q) => ({
+  q: q.name as string,
+  a: q.acceptedAnswer.text as string,
+}));
+const keywords = ['khatabook alternative', 'khatabook alternative india', 'khatabook alternative with gst invoicing', 'khatabook vs 399apps', 'gst accounting after khatabook', 'bahi khata app upgrade'];
+
+const ctaPrimary = `/contact?intent=cloud&utm_source=organic&utm_medium=alt-vs-cluster&utm_campaign=${SLUG}&utm_content=primary-cta`;
+const ctaSecondary = `/contact?intent=demo&utm_source=organic&utm_medium=alt-vs-cluster&utm_campaign=${SLUG}&utm_content=secondary-demo`;
+---
+
+<Layout title={title} description={description} type="product" keywords={keywords} rawJsonLd={ALT_JSONLD[SLUG]}>
+  <section class="relative overflow-hidden border-b border-ink-100">
+    <div class="pointer-events-none absolute inset-0 grid-bg opacity-70"></div>
+    <div class="container-wide relative py-16 sm:py-20">
+      <nav class="mb-8 text-xs text-ink-500" aria-label="Breadcrumb">
+        <ol class="flex flex-wrap items-center gap-1.5">
+          <li><a href="/" class="hover:text-ink-700">Home</a></li>
+          <li class="text-ink-400">/</li>
+          <li class="text-ink-800">{title}</li>
+        </ol>
+      </nav>
+      <span class="eyebrow">399Apps vs Khatabook</span>
+      <h1 class="h1 mt-4 max-w-4xl">The best Khatabook alternative in 2026: GST invoices and real books, not just a digital ledger</h1>
+      <p class="lede mt-5 max-w-3xl">Is 399Apps a good Khatabook alternative? Yes — when you've outgrown a digital ledger. Khatabook is a popular <strong>free bahi-khata app</strong> for recording credit/debit entries and chasing payments, but it isn't GST accounting software. 399Apps (Nidhi Books) is the upgrade: <strong>GST invoices, GSTR-ready books, inventory and full accounting</strong> from ₹399/month with <strong>unlimited users</strong>. We're honest about it — Khatabook is free; our edge is capability, not a cheaper ledger.</p>
+      <div class="mt-7 flex flex-wrap gap-3">
+        <a href={ctaPrimary} class="btn-primary">Start your free 14-day trial</a>
+        <a href={ctaSecondary} class="btn-secondary">Get a free demo</a>
+      </div>
+      <p class="mt-3 text-xs text-ink-500">14-day free trial · No card required · Cancel anytime</p>
+    </div>
+  </section>
+
+  <section class="bg-white">
+    <div class="container-narrow py-16 sm:py-20">
+      <h2 class="h2">What is a "Khatabook alternative"?</h2>
+      <p class="mt-4 text-[17px] leading-relaxed text-ink-700">A Khatabook alternative is software a business moves to when a free digital ledger (bahi-khata) app is no longer enough — typically because you now need to raise <strong>GST-compliant invoices</strong>, keep <strong>returns-ready books</strong> (GSTR-1/3B), track <strong>inventory</strong>, or give a team and an accountant access to the same records. Khatabook (by Khatabook/OkCredit-style apps) is excellent for recording who owes you money and sending payment reminders; the common upgrades are full GST accounting tools like 399Apps (Nidhi Books) and Zoho Books, or billing apps like Vyapar.</p>
+      <p class="mt-4 text-[17px] leading-relaxed text-ink-700">Who looks for one? Shops and traders who've started issuing GST bills, businesses that need to file returns from their records, and owners who've grown past a personal ledger into real accounting, inventory and multi-user books.</p>
+    </div>
+  </section>
+
+  <section class="border-t border-ink-100 bg-ink-50/40">
+    <div class="container-narrow py-16 sm:py-20">
+      <span class="eyebrow">At a glance</span>
+      <h2 class="h2 mt-3">399Apps vs Khatabook — at a glance</h2>
+      <div class="mt-6 overflow-x-auto">
+        <table class="w-full border-collapse text-sm">
+          <thead>
+            <tr class="border-b border-ink-200 text-left">
+              <th class="py-3 pr-4 font-semibold text-ink-900"></th>
+              <th class="py-3 pr-4 font-semibold text-ink-900">399Apps</th>
+              <th class="py-3 pr-4 font-semibold text-ink-900">Khatabook</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-ink-100">
+            <tr>
+              <td class="py-3 pr-4 font-medium text-ink-900">Core focus</td>
+              <td class="py-3 pr-4 text-ink-700">Full GST accounting + billing + inventory</td>
+              <td class="py-3 pr-4 text-ink-700">Digital ledger (bahi-khata) + payment collection</td>
+            </tr>
+            <tr>
+              <td class="py-3 pr-4 font-medium text-ink-900">GST invoicing</td>
+              <td class="py-3 pr-4 text-ink-700">GST-native invoices (HSN/SAC, CGST/SGST/IGST)</td>
+              <td class="py-3 pr-4 text-ink-700">Basic bills; not full GST accounting</td>
+            </tr>
+            <tr>
+              <td class="py-3 pr-4 font-medium text-ink-900">Returns-ready books</td>
+              <td class="py-3 pr-4 text-ink-700">GSTR-1 / GSTR-3B-ready exports</td>
+              <td class="py-3 pr-4 text-ink-700">No GST returns workflow</td>
+            </tr>
+            <tr>
+              <td class="py-3 pr-4 font-medium text-ink-900">Accounting depth</td>
+              <td class="py-3 pr-4 text-ink-700">Ledgers, P&amp;L, balance sheet, reports</td>
+              <td class="py-3 pr-4 text-ink-700">Transaction ledger only</td>
+            </tr>
+            <tr>
+              <td class="py-3 pr-4 font-medium text-ink-900">Inventory</td>
+              <td class="py-3 pr-4 text-ink-700">Yes — stock, items, low-stock alerts</td>
+              <td class="py-3 pr-4 text-ink-700">No real inventory management</td>
+            </tr>
+            <tr>
+              <td class="py-3 pr-4 font-medium text-ink-900">Deployment</td>
+              <td class="py-3 pr-4 text-ink-700">Cloud (web) + mobile, multi-device sync</td>
+              <td class="py-3 pr-4 text-ink-700">Mobile-first app</td>
+            </tr>
+            <tr>
+              <td class="py-3 pr-4 font-medium text-ink-900">Users</td>
+              <td class="py-3 pr-4 text-ink-700">Unlimited users included — no per-seat fee</td>
+              <td class="py-3 pr-4 text-ink-700">Add staff/operators in-app</td>
+            </tr>
+            <tr>
+              <td class="py-3 pr-4 font-medium text-ink-900">Pricing</td>
+              <td class="py-3 pr-4 text-ink-700">From ₹399/mo — first app, unlimited users; +₹99/mo per add-on; prices exclude GST</td>
+              <td class="py-3 pr-4 text-ink-700">Free core ledger app</td>
+            </tr>
+            <tr>
+              <td class="py-3 pr-4 font-medium text-ink-900">Best for</td>
+              <td class="py-3 pr-4 text-ink-700">Businesses needing GST invoices, returns &amp; inventory</td>
+              <td class="py-3 pr-4 text-ink-700">Tracking dues &amp; collecting payments</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="mt-3 text-xs italic text-ink-500">Khatabook is a free digital-ledger app focused on recording transactions and collecting payments (India, verified June 2026). 399Apps Cloud plan: from ₹399/mo for your first app, unlimited users; +₹99/mo per additional app/add-on; prices exclude GST.</p>
+      <p class="mt-6 rounded-2xl border border-amber-200 bg-amber-50 px-5 py-4 text-sm leading-relaxed text-amber-900">Honest note on price: Khatabook's core ledger app is free, and 399Apps is paid (from ₹399/month, prices exclude GST). We're not trying to undercut a free app — the trade is capability. If all you need is to track who owes you and send reminders, stay on Khatabook. The moment you're raising GST invoices, filing returns and managing stock, you need accounting software, and that's where 399Apps earns its price.</p>
+    </div>
+  </section>
+
+  <section class="bg-white">
+    <div class="container-narrow py-16 sm:py-20">
+      <h2 class="h2">Why businesses move from Khatabook to 399Apps</h2>
+      <ol class="mt-5 list-decimal space-y-3 pl-5 text-[15px] leading-relaxed text-ink-700">
+        <li><strong>You've started raising GST invoices.</strong> A bahi-khata records dues; it doesn't produce compliant tax invoices. 399Apps gives you GST-native invoices (HSN/SAC, CGST/SGST/IGST, place of supply) out of the box.</li>
+        <li><strong>You need returns-ready books.</strong> When it's time to file GSTR-1/3B, you need your sales and purchases in accounting form. 399Apps keeps GSTR-ready exports so filing isn't a manual rebuild.</li>
+        <li><strong>You're managing stock.</strong> 399Apps adds real inventory — items, stock levels and low-stock alerts — which a ledger app doesn't do.</li>
+        <li><strong>You want real accounting, not just a ledger.</strong> Ledgers, P&amp;L and balance sheet give you the financial view a digital khata can't, with unlimited team access included.</li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="border-t border-ink-100 bg-ink-50/40">
+    <div class="container-narrow py-16 sm:py-20">
+      <h2 class="h2">GST &amp; India advantage</h2>
+      <p class="mt-4 text-[17px] leading-relaxed text-ink-700">Both are India-first tools for small businesses. Where Khatabook is a free ledger, 399Apps is the GST accounting layer you grow into:</p>
+      <ul class="mt-5 space-y-3 text-[15px] leading-relaxed text-ink-700">
+        <li>GST-compliant invoices (HSN/SAC, CGST/SGST/IGST, place of supply).</li>
+        <li>GSTR-1 / GSTR-3B-ready exports.</li>
+        <li>E-invoice &amp; e-way bill support above thresholds.</li>
+        <li>Inventory and stock management with low-stock alerts.</li>
+        <li>Full accounting — ledgers and financial statements, not just a transaction list.</li>
+        <li>Unlimited users included — staff and your accountant in the same cloud books, no per-seat fee.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="bg-white">
+    <div class="container-narrow py-16 sm:py-20">
+      <h2 class="h2">How to migrate from Khatabook to 399Apps</h2>
+      <ol class="mt-5 list-decimal space-y-3 pl-5 text-[15px] leading-relaxed text-ink-700">
+        <li><strong>Export from Khatabook</strong> — your parties (customers &amp; suppliers) and transaction history (Khatabook lets you download reports/statements; use Excel/CSV for import).</li>
+        <li><strong>Note opening balances</strong> — who owes you and whom you owe, as of your switch date.</li>
+        <li><strong>Import into 399Apps</strong> — parties and opening balances via CSV/Excel, with guided support available for larger datasets (assisted, not one-click).</li>
+        <li><strong>Set GST settings</strong> (GSTIN, tax rates, place of supply) and raise a test GST invoice.</li>
+        <li><strong>Add items/stock</strong> if you're managing inventory, and add your team (unlimited, included).</li>
+        <li><strong>Go live</strong> in 399Apps; keep Khatabook for a cycle to cross-check outstanding balances before retiring it.</li>
+      </ol>
+      <p class="mt-6 rounded-2xl border border-amber-200 bg-amber-50 px-5 py-4 text-sm leading-relaxed text-amber-900">Tip: keep Khatabook open for a billing cycle or two after you switch, so you can reconcile outstanding dues against your old khata before moving fully to 399Apps.</p>
+    </div>
+  </section>
+
+  <section class="border-t border-ink-100 bg-ink-50/40">
+    <div class="container-narrow py-16 sm:py-20">
+      <h2 class="h2">When Khatabook might still be the better fit</h2>
+      <p class="mt-4 text-[17px] leading-relaxed text-ink-700">Stay on Khatabook if your need is simply tracking credit/debit with customers and sending payment reminders — its free ledger app is hard to beat for that narrow job, and you may not need GST invoicing or accounting yet. Choose 399Apps when you've started issuing GST invoices, need returns-ready books and inventory, and want real accounting with unlimited users at a flat price as you grow.</p>
+    </div>
+  </section>
+
+  <FAQ items={faqs} title="Khatabook alternative — frequently asked questions" />
+
+  <section class="border-t border-ink-100 bg-ink-50/40">
+    <div class="container-narrow py-12">
+      <p class="eyebrow">Related</p>
+      <ul class="mt-3 flex flex-wrap gap-x-6 gap-y-2 text-sm text-brand-700">
+        <li><a class="hover:underline" href="/vyapar-alternative/">Vyapar alternative</a></li>
+        <li><a class="hover:underline" href="/mybillbook-alternative/">myBillBook alternative</a></li>
+        <li><a class="hover:underline" href="/zoho-books-alternative/">Zoho Books alternative</a></li>
+        <li><a class="hover:underline" href="/best/gst-software-india/">Best GST software (India)</a></li>
+        <li><a class="hover:underline" href="/best/accounting-software-small-business-india/">Best accounting software for small business (India)</a></li>
+        <li><a class="hover:underline" href="/apps/books/">Nidhi Books — GST accounting</a></li>
+        <li><a class="hover:underline" href="/pricing/">Pricing</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <CTA
+    eyebrow="Outgrown your khata?"
+    title="Upgrade from a free ledger to real GST books"
+    body="GST invoices, returns-ready accounting and inventory with unlimited users. From ₹399/month for your first app (prices exclude GST)."
+    primaryLabel="Start your free 14-day trial"
+    primaryHref={ctaPrimary}
+    secondaryLabel="Get a free demo"
+    secondaryHref={ctaSecondary}
+  />
+</Layout>
