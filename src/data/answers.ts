@@ -202,7 +202,7 @@ export const ANSWERS: Record<string, AnswerPageData> = {
       },
       {
         q: 'Is there free invoicing software in India?',
-        a: 'Some tools offer free tiers (for example Vyapar’s free mobile plan or Zoho’s free plan under ₹25 lakh turnover), but they are usually limited on users, invoices or features. For multi-user GST invoicing, a flat ₹399/month with unlimited users is often cheaper overall.',
+        a: 'Some tools offer free tiers (for example Vyapar’s free mobile plan or Zoho’s free plan under ₹25 lakh turnover), but they are usually limited on users, invoices or features. For multi-user GST invoicing, a single ₹399/month plan with unlimited users (+₹99/mo per add-on, GST extra) is often cheaper overall.',
       },
       {
         q: 'What is included for ₹399/month?',
