@@ -1023,5 +1023,491 @@ export const ALT_JSONLD: Record<string, Record<string, unknown>> = {
         ]
       }
     ]
+  },
+  "mybillbook-alternative": {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://399apps.com/#organization",
+        "name": "399Apps",
+        "url": "https://399apps.com/"
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://399apps.com/#website",
+        "url": "https://399apps.com/",
+        "name": "399Apps",
+        "publisher": {
+          "@id": "https://399apps.com/#organization"
+        }
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://399apps.com/mybillbook-alternative/#webpage",
+        "url": "https://399apps.com/mybillbook-alternative/",
+        "name": "Best myBillBook Alternative in 2026 — Cloud GST Accounting, Unlimited Users from ₹399/mo | 399Apps",
+        "description": "Looking for a myBillBook alternative? 399Apps is cloud GST billing + full accounting from ₹399/month — unlimited users with no per-seat fee (myBillBook charges per user/year), plus ledgers and GSTR-ready exports (prices exclude GST). Free trial.",
+        "inLanguage": "en-IN",
+        "isPartOf": {
+          "@id": "https://399apps.com/#website"
+        },
+        "mainEntity": {
+          "@id": "https://399apps.com/mybillbook-alternative/#software"
+        },
+        "breadcrumb": {
+          "@id": "https://399apps.com/mybillbook-alternative/#breadcrumb"
+        }
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://399apps.com/mybillbook-alternative/#software",
+        "name": "399Apps",
+        "applicationCategory": "BusinessApplication",
+        "applicationSubCategory": "Accounting & GST Billing Software",
+        "operatingSystem": "Web, Android, iOS",
+        "inLanguage": [
+          "en-IN",
+          "hi-IN",
+          "ta-IN"
+        ],
+        "description": "Cloud GST billing, accounting and inventory software for Indian small businesses — a myBillBook alternative with unlimited users (no per-user fees) and full accounting depth beyond billing. From ₹399/month for your first app, unlimited users, every feature included; +₹99/month per additional app/add-on (prices exclude GST).",
+        "url": "https://399apps.com/",
+        "provider": {
+          "@id": "https://399apps.com/#organization"
+        },
+        "offers": {
+          "@type": "Offer",
+          "price": "399",
+          "priceCurrency": "INR",
+          "description": "Entry/from price: ₹399/month covers your first app with unlimited users; each additional app or add-on is ₹99/month. Prices exclude GST (added per invoice based on billing location).",
+          "availability": "https://schema.org/InStock",
+          "url": "https://399apps.com/pricing/",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "price": "399",
+            "priceCurrency": "INR",
+            "billingDuration": "P1M",
+            "unitText": "MONTH",
+            "valueAddedTaxIncluded": false
+          }
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://399apps.com/mybillbook-alternative/#faq",
+        "isPartOf": {
+          "@id": "https://399apps.com/mybillbook-alternative/#webpage"
+        },
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Is 399apps a good myBillBook alternative?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. 399Apps is a cloud GST billing and full-accounting platform with unlimited users included (no per-user fees), monthly billing from ₹399/month, and ledgers, P&L and financial reports beyond billing. It suits teams that have outgrown a per-user billing app and want true accounting depth with team access included."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the best myBillBook alternative in India?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "399Apps — it's GST-native, includes unlimited users with no per-seat fee, adds full accounting (not just billing), runs on web + mobile cloud, and is priced from ₹399/month (prices exclude GST), which fits growing Indian SMBs better than per-user billing plans."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does myBillBook charge per user?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. myBillBook's paid plans (for example Diamond, from ₹3,599/user/year +GST) are priced per user and billed annually, so adding staff increases the cost. 399Apps includes unlimited users in its ₹399/month first-app plan with no per-seat fee (verified June 2026)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is 399apps cheaper than myBillBook?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "It depends on team size and scope. myBillBook is per-user/year (Diamond from ₹3,599/user/year +GST, annual-only billing); 399Apps is from ₹399/month for your first app with unlimited users included, so it's usually cheaper for multi-user teams — and it adds full accounting and monthly billing (verified June 2026)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I move my myBillBook data to 399Apps?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Export your parties (customers and suppliers), items/stock and invoices from myBillBook to CSV/Excel, then import them into 399Apps and set opening balances as of your switch date. Guided migration support is available for larger datasets — it's assisted, not one-click."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does 399apps support GST like myBillBook?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. 399Apps is GST-native: GST-compliant invoices (HSN/SAC, CGST/SGST/IGST, place of supply), GSTR-1/3B-ready exports, and e-invoice/e-way bill support above the applicable thresholds."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does 399apps have full accounting, not just billing?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Beyond GST invoicing, 399Apps gives you ledgers, profit & loss, balance sheet and financial reports — accounting depth that a billing-first app like myBillBook doesn't fully cover."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is 399apps cloud and mobile like myBillBook?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. 399Apps is web-based with mobile access and automatic cloud backup, so your books sync across devices and your whole team can work in them at once — with unlimited users included."
+            }
+          }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://399apps.com/mybillbook-alternative/#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://399apps.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Best myBillBook Alternative in 2026",
+            "item": "https://399apps.com/mybillbook-alternative/"
+          }
+        ]
+      }
+    ]
+  },
+  "busy-alternative": {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://399apps.com/#organization",
+        "name": "399Apps",
+        "url": "https://399apps.com/"
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://399apps.com/#website",
+        "url": "https://399apps.com/",
+        "name": "399Apps",
+        "publisher": {
+          "@id": "https://399apps.com/#organization"
+        }
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://399apps.com/busy-alternative/#webpage",
+        "url": "https://399apps.com/busy-alternative/",
+        "name": "Best BUSY Accounting Software Alternative in 2026 — Cloud, No Upfront License | 399Apps",
+        "description": "Looking for a BUSY accounting software alternative? 399Apps is cloud GST accounting from ₹399/month — no perpetual license, no annual BLS renewal, no Windows PC, unlimited users, access from any device (prices exclude GST). Free trial.",
+        "inLanguage": "en-IN",
+        "isPartOf": {
+          "@id": "https://399apps.com/#website"
+        },
+        "mainEntity": {
+          "@id": "https://399apps.com/busy-alternative/#software"
+        },
+        "breadcrumb": {
+          "@id": "https://399apps.com/busy-alternative/#breadcrumb"
+        }
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://399apps.com/busy-alternative/#software",
+        "name": "399Apps",
+        "applicationCategory": "BusinessApplication",
+        "applicationSubCategory": "Accounting & GST Billing Software",
+        "operatingSystem": "Web, Android, iOS",
+        "inLanguage": [
+          "en-IN",
+          "hi-IN",
+          "ta-IN"
+        ],
+        "description": "Cloud GST accounting, billing and inventory software for Indian small businesses — a cloud alternative to BUSY (desktop) with no upfront license or BLS renewal. From ₹399/month for your first app, unlimited users, every feature included; +₹99/month per additional app/add-on (prices exclude GST).",
+        "url": "https://399apps.com/",
+        "provider": {
+          "@id": "https://399apps.com/#organization"
+        },
+        "offers": {
+          "@type": "Offer",
+          "price": "399",
+          "priceCurrency": "INR",
+          "description": "Entry/from price: ₹399/month covers your first app with unlimited users; each additional app or add-on is ₹99/month. Prices exclude GST (added per invoice based on billing location).",
+          "availability": "https://schema.org/InStock",
+          "url": "https://399apps.com/pricing/",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "price": "399",
+            "priceCurrency": "INR",
+            "billingDuration": "P1M",
+            "unitText": "MONTH",
+            "valueAddedTaxIncluded": false
+          }
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://399apps.com/busy-alternative/#faq",
+        "isPartOf": {
+          "@id": "https://399apps.com/busy-alternative/#webpage"
+        },
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Is 399apps a good BUSY alternative?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. 399Apps is cloud GST accounting you can run from any browser or phone with no upfront license, nothing to install per PC, and unlimited users — from ₹399/month. It suits BUSY users who want anywhere access without buying and maintaining a Windows desktop license."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the best BUSY accounting software alternative?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "399Apps — cloud-based, GST-native, with no perpetual license or annual BLS renewal, unlimited users, and pricing from ₹399/month (prices exclude GST). It's the natural cloud switch for traders and SMBs who currently run BUSY on a Windows PC."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How much does BUSY cost compared with 399apps?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "BUSY is a perpetual license — Basic ₹9,999, Standard ₹14,999, Enterprise ₹19,999 (single user, +GST) — plus an annual BUSY License Subscription (BLS) renewal. 399Apps has no upfront license; it's from ₹399/month with unlimited users included (verified June 2026)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is BUSY cloud-based?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "BUSY is primarily Windows desktop software installed per PC (it offers add-on cloud/mobile access). 399Apps is cloud-native — web + mobile with multi-device sync and automatic backup, with nothing to install or maintain."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I move my BUSY data to 399Apps?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Export your masters (parties, items), opening balances and transactions from BUSY to Excel/CSV and import them into 399Apps. Guided migration support is available for larger or more complex datasets — it's assisted, not one-click."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does 399apps handle GST returns like BUSY?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. 399Apps produces GST-compliant invoices and GSTR-1/3B-ready exports, with e-invoice and e-way bill support above the applicable thresholds."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do I have to pay per user like BUSY multi-user editions?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. 399Apps includes unlimited users in its ₹399/month first-app plan with no per-seat fee, whereas BUSY multi-user editions and additional PCs increase the cost."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is 399apps good for traders and distributors who use BUSY?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. It handles GST billing, inventory and accounting for trading and distribution businesses — in the cloud, with team access included — without the upfront license and Windows-PC dependency of BUSY."
+            }
+          }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://399apps.com/busy-alternative/#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://399apps.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Best BUSY Accounting Software Alternative in 2026",
+            "item": "https://399apps.com/busy-alternative/"
+          }
+        ]
+      }
+    ]
+  },
+  "marg-alternative": {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://399apps.com/#organization",
+        "name": "399Apps",
+        "url": "https://399apps.com/"
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://399apps.com/#website",
+        "url": "https://399apps.com/",
+        "name": "399Apps",
+        "publisher": {
+          "@id": "https://399apps.com/#organization"
+        }
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://399apps.com/marg-alternative/#webpage",
+        "url": "https://399apps.com/marg-alternative/",
+        "name": "Best Marg ERP Alternative in 2026 — Cloud GST Accounting, No Per-PC License | 399Apps",
+        "description": "Looking for a Marg ERP alternative? 399Apps is cloud GST accounting & billing from ₹399/month — no per-PC license or AMC, no Windows install, unlimited users, access from any device (prices exclude GST). Free trial.",
+        "inLanguage": "en-IN",
+        "isPartOf": {
+          "@id": "https://399apps.com/#website"
+        },
+        "mainEntity": {
+          "@id": "https://399apps.com/marg-alternative/#software"
+        },
+        "breadcrumb": {
+          "@id": "https://399apps.com/marg-alternative/#breadcrumb"
+        }
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://399apps.com/marg-alternative/#software",
+        "name": "399Apps",
+        "applicationCategory": "BusinessApplication",
+        "applicationSubCategory": "Accounting & GST Billing Software",
+        "operatingSystem": "Web, Android, iOS",
+        "inLanguage": [
+          "en-IN",
+          "hi-IN",
+          "ta-IN"
+        ],
+        "description": "Cloud GST accounting, billing and inventory software for Indian small businesses — a simpler, cloud alternative to Marg ERP 9+ (desktop). From ₹399/month for your first app, unlimited users, every feature included; +₹99/month per additional app/add-on (prices exclude GST).",
+        "url": "https://399apps.com/",
+        "provider": {
+          "@id": "https://399apps.com/#organization"
+        },
+        "offers": {
+          "@type": "Offer",
+          "price": "399",
+          "priceCurrency": "INR",
+          "description": "Entry/from price: ₹399/month covers your first app with unlimited users; each additional app or add-on is ₹99/month. Prices exclude GST (added per invoice based on billing location).",
+          "availability": "https://schema.org/InStock",
+          "url": "https://399apps.com/pricing/",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "price": "399",
+            "priceCurrency": "INR",
+            "billingDuration": "P1M",
+            "unitText": "MONTH",
+            "valueAddedTaxIncluded": false
+          }
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://399apps.com/marg-alternative/#faq",
+        "isPartOf": {
+          "@id": "https://399apps.com/marg-alternative/#webpage"
+        },
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Is 399apps a good Marg ERP alternative?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes — for small businesses that want cloud GST billing and accounting without installing and maintaining desktop ERP. 399Apps runs in any browser, includes unlimited users, and starts at ₹399/month. (Marg is very deep in pharma and distribution; if you need that vertical depth, evaluate both.)"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the best Marg ERP alternative for small business?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "399Apps — cloud-based, GST-native, with no per-PC license or AMC, unlimited users, simpler to set up, and pricing from ₹399/month (prices exclude GST). It fits general SMBs that find a desktop distribution ERP heavier than they need."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How much does Marg cost compared with 399apps?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Marg ERP is licensed per user, typically from around ₹9,999 (with lower-cost annual editions from roughly ₹5,550/year), often with installation and AMC. 399Apps has no upfront license — it's from ₹399/month with unlimited users included (verified June 2026)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is Marg ERP cloud-based?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Marg ERP 9+ is primarily Windows desktop software installed on your PC. 399Apps is cloud-native — web + mobile with multi-device sync and automatic backup, with nothing to install."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I move my Marg data to 399Apps?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Export your parties, items/stock and balances from Marg to Excel/CSV and import them into 399Apps and set opening balances at your switch date. Guided migration support is available — it's assisted, not one-click."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does 399apps do inventory and GST like Marg?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. 399Apps handles GST billing, inventory and accounting with GSTR-1/3B-ready exports and e-invoice/e-way bill support — in the cloud, for general SMB use."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is 399apps simpler than Marg ERP?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Generally yes. Marg is a feature-dense desktop ERP built for distribution and pharma; 399Apps is a lighter cloud app focused on GST billing and accounting that's faster to set up for typical small businesses."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does 399apps charge per user like Marg licenses?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. 399Apps includes unlimited users in its ₹399/month first-app plan with no per-seat fee, unlike per-user desktop licenses."
+            }
+          }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://399apps.com/marg-alternative/#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://399apps.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Best Marg ERP Alternative in 2026",
+            "item": "https://399apps.com/marg-alternative/"
+          }
+        ]
+      }
+    ]
   }
 };
