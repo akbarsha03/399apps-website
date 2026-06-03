@@ -6,11 +6,18 @@ import { ANSWERS, ANSWERS_ORDER, ANSWERS_HUB } from './answers';
 
 const SITE = 'https://399apps.com';
 
+// Freshness signals for answer-engine citation / AI Overviews. Bump when copy changes.
+const PUBLISHED = '2026-06-03';
+const MODIFIED = '2026-06-03';
+
 const ORG = {
   '@type': 'Organization',
   '@id': `${SITE}/#organization`,
   name: '399Apps',
   url: `${SITE}/`,
+  logo: `${SITE}/logo.png`,
+  description:
+    'Affordable cloud business software for Indian small businesses — GST accounting, billing and inventory from ₹399/month with unlimited users.',
 };
 const WEBSITE = {
   '@type': 'WebSite',
@@ -36,6 +43,9 @@ function answerGraph(slug: string): Record<string, unknown> {
         description: a.metaDescription,
         inLanguage: 'en-IN',
         isPartOf: { '@id': `${SITE}/#website` },
+        about: { '@id': `${SITE}/#organization` },
+        datePublished: PUBLISHED,
+        dateModified: MODIFIED,
         mainEntity: { '@id': `${base}#qapage` },
         breadcrumb: { '@id': `${base}#breadcrumb` },
       },
@@ -52,6 +62,8 @@ function answerGraph(slug: string): Record<string, unknown> {
             '@type': 'Answer',
             text: a.directAnswer,
             url: base,
+            dateCreated: PUBLISHED,
+            author: { '@id': `${SITE}/#organization` },
           },
         },
       },
@@ -93,6 +105,9 @@ function hubGraph(): Record<string, unknown> {
         description: ANSWERS_HUB.metaDescription,
         inLanguage: 'en-IN',
         isPartOf: { '@id': `${SITE}/#website` },
+        about: { '@id': `${SITE}/#organization` },
+        datePublished: PUBLISHED,
+        dateModified: MODIFIED,
         mainEntity: { '@id': `${base}#itemlist` },
         breadcrumb: { '@id': `${base}#breadcrumb` },
       },
