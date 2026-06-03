@@ -1,0 +1,187 @@
+---
+import Layout from '~/layouts/Layout.astro';
+import FAQ from '~/components/FAQ.astro';
+import CTA from '~/components/CTA.astro';
+import { ALT_JSONLD } from '~/data/alt-jsonld';
+import { localizedPath, type Lang } from '~/data/i18n';
+import { getAltQuickbooksCopy } from '~/data/i18n/alt-quickbooks-alternative-india';
+import { localizeAltGraph } from '~/data/i18n/localize-graph';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = getAltQuickbooksCopy(lang);
+
+const SLUG = 'quickbooks-alternative-india';
+const BASE = '/quickbooks-alternative-india/';
+
+const enGraph = ALT_JSONLD[SLUG]['@graph'] as Array<Record<string, any>>;
+const graph = localizeAltGraph(enGraph, lang, BASE, t.faq.items, { name: t.seo.title, description: t.seo.description }, t.breadcrumbLeaf);
+const rawJsonLd = { '@context': 'https://schema.org', '@graph': graph };
+
+const faqs = t.faq.items.map((f) => ({ q: f.q, a: f.a }));
+
+const ctaPrimary = localizedPath(`/contact?intent=cloud&utm_source=organic&utm_medium=alt-vs-cluster&utm_campaign=${SLUG}&utm_content=primary-cta`, lang);
+const ctaSecondary = localizedPath(`/contact?intent=demo&utm_source=organic&utm_medium=alt-vs-cluster&utm_campaign=${SLUG}&utm_content=secondary-demo`, lang);
+
+const L = (p: string) => localizedPath(p, lang);
+
+// Related links: hrefs taken from the EN page, labels from the data (same order).
+const LOCALIZED_RELATED = new Set(['/zoho-books-alternative/', '/tally-alternative/', '/vyapar-alternative/', '/quickbooks-alternative-india/', '/best/accounting-software-small-business-india/', '/best/gst-billing-software/', '/best/cheapest-invoicing-software/', '/apps/books/', '/pricing/']);
+const relLink = (p: string) => (LOCALIZED_RELATED.has(p) ? L(p) : p);
+const relatedLinks = [
+  { label: 'Tally vs Zoho vs Vyapar vs 399Apps', href: relLink('/tally-vs-zoho-vs-vyapar-vs-399apps/') },
+  { label: 'Tally alternative', href: relLink('/tally-alternative/') },
+  { label: 'FreshBooks alternative (India)', href: relLink('/freshbooks-alternative-india/') },
+  { label: 'Best GST billing software in India', href: relLink('/best/gst-billing-software/') },
+  { label: 'Best accounting software for small business (India)', href: relLink('/best/accounting-software-small-business-india/') },
+  { label: 'Nidhi Books — GST accounting', href: relLink('/apps/books/') },
+  { label: 'Pricing', href: relLink('/pricing/') },
+];
+---
+
+<Layout title={t.seo.title} description={t.seo.description} type="product" keywords={t.seo.keywords} rawJsonLd={rawJsonLd} lang={lang} localizedOf={BASE}>
+  <section class="relative overflow-hidden border-b border-ink-100">
+    <div class="pointer-events-none absolute inset-0 grid-bg opacity-70"></div>
+    <div class="container-wide relative py-16 sm:py-20">
+      <nav class="mb-8 text-xs text-ink-500" aria-label="Breadcrumb">
+        <ol class="flex flex-wrap items-center gap-1.5">
+          <li><a href={L('/')} class="hover:text-ink-700">Home</a></li>
+          <li class="text-ink-400">/</li>
+          <li class="text-ink-800">{t.breadcrumbLeaf}</li>
+        </ol>
+      </nav>
+      <span class="eyebrow">{t.hero.eyebrow}</span>
+      <h1 class="h1 mt-4 max-w-4xl">{t.hero.h1}</h1>
+      <p class="lede mt-5 max-w-3xl">{t.hero.lede}</p>
+      <div class="mt-7 flex flex-wrap gap-3">
+        <a href={ctaPrimary} class="btn-primary">{t.cta.primaryLabel}</a>
+        <a href={ctaSecondary} class="btn-secondary">{t.cta.secondaryLabel}</a>
+      </div>
+      <p class="mt-3 text-xs text-ink-500">{t.hero.note}</p>
+    </div>
+  </section>
+
+  <!-- 1. What is a QuickBooks alternative for India? -->
+  <section class="bg-white">
+    <div class="container-narrow py-16 sm:py-20">
+      <span class="eyebrow">{t.whatIs.eyebrow}</span>
+      <h2 class="h2 mt-3">{t.whatIs.h2}</h2>
+      <p class="mt-4 text-[17px] leading-relaxed text-ink-700">{t.whatIs.body[0]}</p>
+      <p class="mt-4 text-[17px] leading-relaxed text-ink-700">{t.whatIs.body[1]}</p>
+    </div>
+  </section>
+
+  <!-- 2. At a glance comparison table -->
+  <section class="border-t border-ink-100 bg-ink-50/40">
+    <div class="container-narrow py-16 sm:py-20">
+      <span class="eyebrow">{t.glance.eyebrow}</span>
+      <h2 class="h2 mt-3">{t.glance.h2}</h2>
+      <div class="mt-6 overflow-x-auto">
+        <table class="w-full border-collapse text-sm">
+          <thead>
+            <tr class="border-b border-ink-200 text-left">
+              <th class="py-3 pr-4 font-semibold text-ink-900">{t.glance.table.head[0]}</th>
+              <th class="py-3 pr-4 font-semibold text-ink-900">{t.glance.table.head[1]}</th>
+              <th class="py-3 pr-4 font-semibold text-ink-900">{t.glance.table.head[2]}</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-ink-100">
+            {t.glance.table.rows.map((r) => (
+              <tr>
+                <td class="py-3 pr-4 font-medium text-ink-900">{r.label}</td>
+                <td class="py-3 pr-4 text-ink-700">{r.a}</td>
+                <td class="py-3 pr-4 text-ink-700">{r.b}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p class="mt-3 text-xs italic text-ink-500">{t.glance.note}</p>
+    </div>
+  </section>
+
+  <!-- 3. Why Indian businesses switch from QuickBooks -->
+  <section class="bg-white">
+    <div class="container-narrow py-16 sm:py-20">
+      <span class="eyebrow">{t.whySwitch.eyebrow}</span>
+      <h2 class="h2 mt-3">{t.whySwitch.h2}</h2>
+      <ol class="mt-5 list-decimal space-y-3 pl-5 text-[15px] leading-relaxed text-ink-700">
+        {t.whySwitch.items.map((item) => (
+          <li>{item}</li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <!-- 4. Pricing comparison note -->
+  <section class="border-t border-ink-100 bg-ink-50/40">
+    <div class="container-narrow py-16 sm:py-20">
+      <span class="eyebrow">{t.pricing.eyebrow}</span>
+      <h2 class="h2 mt-3">{t.pricing.h2}</h2>
+      <p class="mt-4 text-[17px] leading-relaxed text-ink-700">{t.pricing.body[0]}</p>
+      <p class="mt-3 text-xs italic text-ink-500">{t.pricing.note}</p>
+    </div>
+  </section>
+
+  <!-- 5. GST & India advantage -->
+  <section class="bg-white">
+    <div class="container-narrow py-16 sm:py-20">
+      <span class="eyebrow">{t.gstAdvantage.eyebrow}</span>
+      <h2 class="h2 mt-3">{t.gstAdvantage.h2}</h2>
+      <p class="mt-4 text-[17px] leading-relaxed text-ink-700">{t.gstAdvantage.lead}</p>
+      <ul class="mt-5 space-y-3 text-[15px] leading-relaxed text-ink-700">
+        {t.gstAdvantage.items.map((item) => (
+          <li>{item}</li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <!-- 6. How to migrate -->
+  <section class="border-t border-ink-100 bg-ink-50/40">
+    <div class="container-narrow py-16 sm:py-20">
+      <span class="eyebrow">{t.migrate.eyebrow}</span>
+      <h2 class="h2 mt-3">{t.migrate.h2}</h2>
+      <ol class="mt-5 list-decimal space-y-3 pl-5 text-[15px] leading-relaxed text-ink-700">
+        {t.migrate.items.map((step) => (
+          <li>{step}</li>
+        ))}
+      </ol>
+      <p class="mt-6 rounded-2xl border border-amber-200 bg-amber-50 px-5 py-4 text-sm leading-relaxed text-amber-900">{t.migrate.note}</p>
+    </div>
+  </section>
+
+  <!-- 7. When QuickBooks might still be the better fit -->
+  <section class="bg-white">
+    <div class="container-narrow py-16 sm:py-20">
+      <span class="eyebrow">{t.whenQuickbooks.eyebrow}</span>
+      <h2 class="h2 mt-3">{t.whenQuickbooks.h2}</h2>
+      <p class="mt-4 text-[17px] leading-relaxed text-ink-700">{t.whenQuickbooks.body[0]}</p>
+    </div>
+  </section>
+
+  <FAQ items={faqs} title={t.faq.title} />
+
+  <section class="border-t border-ink-100 bg-ink-50/40">
+    <div class="container-narrow py-12">
+      <p class="eyebrow">{t.related.title}</p>
+      <ul class="mt-3 flex flex-wrap gap-x-6 gap-y-2 text-sm text-brand-700">
+        {relatedLinks.map((r) => (
+          <li><a class="hover:underline" href={r.href}>{r.label}</a></li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <CTA
+    eyebrow={t.cta.eyebrow}
+    title={t.cta.title}
+    body={t.cta.body}
+    primaryLabel={t.cta.primaryLabel}
+    primaryHref={ctaPrimary}
+    secondaryLabel={t.cta.secondaryLabel}
+    secondaryHref={ctaSecondary}
+  />
+</Layout>

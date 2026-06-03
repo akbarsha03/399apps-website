@@ -14,6 +14,16 @@ export default defineConfig({
       changefreq: 'weekly',
       priority: 0.7,
       lastmod: new Date(),
+      i18n: {
+        defaultLocale: 'en',
+        locales: {
+          en: 'en-IN',
+          hi: 'hi-Latn-IN',
+          ta: 'ta-Latn-IN',
+          hindi: 'hi-IN',
+          tamil: 'ta-IN',
+        },
+      },
     }),
   ],
   compressHTML: true,
