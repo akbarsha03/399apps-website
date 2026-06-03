@@ -1,0 +1,132 @@
+---
+// Wave-6 / W5 — GST guide page (APPAA-67). English-first, data-driven.
+// Renders any entry in GUIDES; JSON-LD (Article + HowTo + FAQ + Breadcrumb)
+// is generated from the same data so schema == visible text.
+import Layout from '~/layouts/Layout.astro';
+import FAQ from '~/components/FAQ.astro';
+import CTA from '~/components/CTA.astro';
+import { getGuide, buildGuideGraph, GUIDE_UPDATED } from '~/data/guides';
+
+interface Props {
+  slug: string;
+}
+const { slug } = Astro.props;
+const g = getGuide(slug);
+if (!g) throw new Error(`GuidePage: unknown slug "${slug}"`);
+
+const rawJsonLd = buildGuideGraph(slug);
+
+const ctaPrimary = `/contact?intent=cloud&utm_source=organic&utm_medium=gst-guide&utm_campaign=${slug}&utm_content=primary-cta`;
+const ctaSecondary = `/contact?intent=demo&utm_source=organic&utm_medium=gst-guide&utm_campaign=${slug}&utm_content=secondary-demo`;
+---
+
+<Layout
+  title={g.seo.title}
+  description={g.seo.description}
+  type="article"
+  keywords={g.seo.keywords}
+  rawJsonLd={rawJsonLd}
+>
+  <section class="relative overflow-hidden border-b border-ink-100">
+    <div class="pointer-events-none absolute inset-0 grid-bg opacity-70"></div>
+    <div class="container-wide relative py-16 sm:py-20">
+      <nav class="mb-8 text-xs text-ink-500" aria-label="Breadcrumb">
+        <ol class="flex flex-wrap items-center gap-1.5">
+          <li><a href="/" class="hover:text-ink-700">Home</a></li>
+          <li class="text-ink-400">/</li>
+          <li><a href="/guides/" class="hover:text-ink-700">Guides</a></li>
+          <li class="text-ink-400">/</li>
+          <li class="text-ink-800">{g.breadcrumbLeaf}</li>
+        </ol>
+      </nav>
+      <span class="eyebrow">{g.hero.eyebrow}</span>
+      <h1 class="h1 mt-4 max-w-4xl">{g.hero.h1}</h1>
+      <div class="mt-6 max-w-3xl rounded-2xl border border-brand-100 bg-brand-50/60 px-6 py-5">
+        <p class="text-xs font-semibold uppercase tracking-wider text-brand-700">Short answer</p>
+        <p class="mt-2 text-[17px] leading-relaxed text-ink-800">{g.hero.directAnswer}</p>
+      </div>
+      <p class="mt-4 text-xs text-ink-500">Updated {GUIDE_UPDATED} · 399Apps · General GST information, not tax advice</p>
+    </div>
+  </section>
+
+  {g.steps && (
+    <section class="bg-white">
+      <div class="container-narrow py-16 sm:py-20">
+        <h2 class="h2">{g.steps.h2}</h2>
+        {g.steps.intro && (
+          <p class="mt-4 text-[17px] leading-relaxed text-ink-700">{g.steps.intro}</p>
+        )}
+        <ol class="mt-8 space-y-6">
+          {g.steps.items.map((s, i) => (
+            <li id={`step-${i + 1}`} class="scroll-mt-24 flex gap-4">
+              <span class="flex h-9 w-9 flex-none items-center justify-center rounded-full bg-brand-600 text-sm font-semibold text-white">{i + 1}</span>
+              <div>
+                <h3 class="text-[17px] font-semibold text-ink-900">{s.name}</h3>
+                <p class="mt-1.5 text-[15px] leading-relaxed text-ink-700">{s.text}</p>
+              </div>
+            </li>
+          ))}
+        </ol>
+      </div>
+    </section>
+  )}
+
+  <section class={g.steps ? 'border-t border-ink-100 bg-ink-50/40' : 'bg-white'}>
+    <div class="container-narrow py-16 sm:py-20">
+      <div class="space-y-12">
+        {g.sections.map((sec) => (
+          <div>
+            <h2 class="h2">{sec.h2}</h2>
+            <p class="mt-4 text-[17px] leading-relaxed text-ink-700">{sec.body}</p>
+            {sec.body2 && (
+              <p class="mt-4 text-[17px] leading-relaxed text-ink-700">{sec.body2}</p>
+            )}
+            {sec.bullets && (
+              <ul class="mt-5 space-y-3 text-[15px] leading-relaxed text-ink-700">
+                {sec.bullets.map((b) => (
+                  <li class="flex gap-3">
+                    <span class="mt-1 text-brand-600">•</span>
+                    <span>{b}</span>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+        ))}
+      </div>
+
+      <div class="mt-12 rounded-2xl border border-brand-100 bg-brand-50/60 px-6 py-5">
+        <p class="text-xs font-semibold uppercase tracking-wider text-brand-700">How 399Apps helps</p>
+        <p class="mt-2 text-[15.5px] leading-relaxed text-ink-800">{g.productNote}</p>
+        <div class="mt-4 flex flex-wrap gap-3">
+          <a href={ctaPrimary} class="btn-primary">Start your free 14-day trial</a>
+          <a href="/pricing/" class="btn-secondary">See pricing</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <FAQ items={g.faq} title={`${g.breadcrumbLeaf} — frequently asked questions`} />
+
+  <section class="border-t border-ink-100 bg-ink-50/40">
+    <div class="container-narrow py-12">
+      <p class="eyebrow">Related</p>
+      <ul class="mt-3 flex flex-wrap gap-x-6 gap-y-2 text-sm text-brand-700">
+        {g.related.map((r) => (
+          <li><a class="hover:underline" href={r.href}>{r.label}</a></li>
+        ))}
+        <li><a class="hover:underline" href="/guides/">All GST guides</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <CTA
+    eyebrow="Try 399Apps"
+    title="GST billing, returns & e-invoicing — done automatically"
+    body="Nidhi Books raises GST-compliant invoices and prepares GSTR-1 and GSTR-3B exports, with unlimited users from ₹399/month for your first app (+₹99/month per add-on, prices exclude GST). Free for 14 days."
+    primaryLabel="Start your free 14-day trial"
+    primaryHref={ctaPrimary}
+    secondaryLabel="Get a free demo"
+    secondaryHref={ctaSecondary}
+  />
+</Layout>
