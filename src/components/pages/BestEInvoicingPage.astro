@@ -1,0 +1,178 @@
+---
+import Layout from '~/layouts/Layout.astro';
+import FAQ from '~/components/FAQ.astro';
+import CTA from '~/components/CTA.astro';
+import { BEST_JSONLD } from '~/data/best-jsonld';
+import { localizedPath, type Lang } from '~/data/i18n';
+import { getBestEInvoicingCopy } from '~/data/i18n/alt-best-e-invoicing-software-india';
+import { localizeAltGraph } from '~/data/i18n/localize-graph';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = getBestEInvoicingCopy(lang);
+
+const SLUG = 'e-invoicing-software-india';
+const BASE = `/best/${SLUG}/`;
+
+const enGraph = BEST_JSONLD[SLUG]['@graph'] as Array<Record<string, any>>;
+const graph = localizeAltGraph(enGraph, lang, BASE, t.faq.items, { name: t.seo.title, description: t.seo.description }, t.breadcrumb.leaf);
+const rawJsonLd = { '@context': 'https://schema.org', '@graph': graph };
+
+const faqs = t.faq.items.map((f) => ({ q: f.q, a: f.a }));
+
+const ctaPrimary = localizedPath(`/contact?intent=cloud&utm_source=organic&utm_medium=best-category&utm_campaign=${SLUG}&utm_content=primary-cta`, lang);
+const ctaSecondary = localizedPath(`/contact?intent=demo&utm_source=organic&utm_medium=best-category&utm_campaign=${SLUG}&utm_content=secondary-demo`, lang);
+
+const L = (p: string) => localizedPath(p, lang);
+// Software-name → canonical path for the shortlist table (same-locale links).
+const softwareHref: Record<string, string> = {
+  'Nidhi Books': '/apps/books/',
+  'Zoho Books': '/zoho-books-alternative/',
+  TallyPrime: '/tally-alternative/',
+  Vyapar: '/vyapar-alternative/',
+};
+// Related/cross-link targets that have locale variants; everything else stays EN-only.
+const LOCALIZED_RELATED = new Set([
+  '/best/gst-software-india/',
+  '/best/gst-billing-software/',
+  '/best/accounting-software-small-business-india/',
+  '/khatabook-alternative/',
+  '/zoho-books-alternative/',
+  '/tally-alternative/',
+  '/apps/books/',
+  '/pricing/',
+]);
+const relLink = (p: string) => (LOCALIZED_RELATED.has(p) ? L(p) : p);
+const relatedLinks = t.related.links.map((r) => ({ label: r.label, href: relLink(r.href) }));
+---
+
+<Layout title={t.seo.title} description={t.seo.description} type="article" keywords={t.seo.keywords} rawJsonLd={rawJsonLd} lang={lang} localizedOf={BASE}>
+  <section class="relative overflow-hidden border-b border-ink-100">
+    <div class="pointer-events-none absolute inset-0 grid-bg opacity-70"></div>
+    <div class="container-wide relative py-16 sm:py-20">
+      <nav class="mb-8 text-xs text-ink-500" aria-label="Breadcrumb">
+        <ol class="flex flex-wrap items-center gap-1.5">
+          <li><a href={L('/')} class="hover:text-ink-700">Home</a></li>
+          <li class="text-ink-400">/</li>
+          <li><a href={L('/best/')} class="hover:text-ink-700">Best</a></li>
+          <li class="text-ink-400">/</li>
+          <li class="text-ink-800">{t.breadcrumb.leaf}</li>
+        </ol>
+      </nav>
+      <span class="eyebrow">{t.hero.eyebrow}</span>
+      <h1 class="h1 mt-4 max-w-4xl">{t.hero.h1}</h1>
+      <p class="lede mt-5 max-w-3xl">{t.hero.lede}</p>
+      <div class="mt-7 flex flex-wrap gap-3">
+        <a href={ctaPrimary} class="btn-primary">{t.cta.primaryLabel}</a>
+        <a href={ctaSecondary} class="btn-secondary">{t.cta.secondaryLabel}</a>
+      </div>
+      <p class="mt-3 text-xs text-ink-500">{t.hero.trustNote}</p>
+    </div>
+  </section>
+
+  <section class="bg-white">
+    <div class="container-narrow py-16 sm:py-20">
+      <span class="eyebrow">{t.whoNeeds.eyebrow}</span>
+      <h2 class="h2 mt-3">{t.whoNeeds.h2}</h2>
+      <p class="mt-4 text-[17px] leading-relaxed text-ink-700">{t.whoNeeds.body}</p>
+    </div>
+  </section>
+
+  <section class="border-t border-ink-100 bg-ink-50/40">
+    <div class="container-narrow py-16 sm:py-20">
+      <span class="eyebrow">{t.howToChoose.eyebrow}</span>
+      <h2 class="h2 mt-3">{t.howToChoose.h2}</h2>
+      <p class="mt-4 text-[17px] leading-relaxed text-ink-700">{t.howToChoose.body}</p>
+    </div>
+  </section>
+
+  <section class="bg-white">
+    <div class="container-narrow py-16 sm:py-20">
+      <span class="eyebrow">{t.shortlist.eyebrow}</span>
+      <h2 class="h2 mt-3">{t.shortlist.h2}</h2>
+      <div class="mt-6 overflow-x-auto">
+        <table class="w-full border-collapse text-sm">
+          <thead>
+            <tr class="border-b border-ink-200 text-left">
+              {t.shortlist.table.head.map((h) => (
+                <th class="py-3 pr-4 font-semibold text-ink-900">{h}</th>
+              ))}
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-ink-100">
+            {t.shortlist.table.rows.map((r) => (
+              <tr>
+                <td class="py-3 pr-4 text-ink-700">{r.rank}</td>
+                <td class="py-3 pr-4 font-medium text-ink-900">
+                  {softwareHref[r.software]
+                    ? <a class="text-brand-700 hover:underline" href={L(softwareHref[r.software])}>{r.software}</a>
+                    : r.software}
+                </td>
+                <td class="py-3 pr-4 text-ink-700">{r.bestFor}</td>
+                <td class="py-3 pr-4 text-ink-700"><strong>{r.price}</strong></td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p class="mt-3 text-xs italic text-ink-500">{t.shortlist.note}</p>
+    </div>
+  </section>
+
+  <section class="border-t border-ink-100 bg-ink-50/40">
+    <div class="container-narrow py-16 sm:py-20">
+      <span class="eyebrow">{t.compare.eyebrow}</span>
+      <h2 class="h2 mt-3">{t.compare.h2}</h2>
+      <div class="mt-6 overflow-x-auto">
+        <table class="w-full border-collapse text-sm">
+          <thead>
+            <tr class="border-b border-ink-200 text-left">
+              {t.compare.table.head.map((h, i) => (
+                <th class={`py-3 pr-4 font-semibold ${i === 1 ? 'text-brand-700' : 'text-ink-900'}`}>{h}</th>
+              ))}
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-ink-100">
+            {t.compare.table.rows.map((r) => (
+              <tr>
+                <td class="py-3 pr-4 font-medium text-ink-900">{r.label}</td>
+                <td class="py-3 pr-4 text-ink-700"><strong>{r.nidhi}</strong></td>
+                <td class="py-3 pr-4 text-ink-700">{r.zoho}</td>
+                <td class="py-3 pr-4 text-ink-700">{r.tally}</td>
+                <td class="py-3 pr-4 text-ink-700">{r.vyapar}</td>
+                <td class="py-3 pr-4 text-ink-700">{r.quickbooks}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p class="mt-3 text-xs italic text-ink-500">{t.compare.note}</p>
+      <p class="mt-6 text-[15px] leading-relaxed text-ink-700">{t.compare.honestTake}</p>
+    </div>
+  </section>
+
+  <FAQ items={faqs} title={t.faq.title} />
+
+  <section class="border-t border-ink-100 bg-ink-50/40">
+    <div class="container-narrow py-12">
+      <p class="eyebrow">{t.related.title}</p>
+      <ul class="mt-3 flex flex-wrap gap-x-6 gap-y-2 text-sm text-brand-700">
+        {relatedLinks.map((r) => (
+          <li><a class="hover:underline" href={r.href}>{r.label}</a></li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <CTA
+    eyebrow={t.cta.eyebrow}
+    title={t.cta.title}
+    body={t.cta.body}
+    primaryLabel={t.cta.primaryLabel}
+    primaryHref={ctaPrimary}
+    secondaryLabel={t.cta.secondaryLabel}
+    secondaryHref={ctaSecondary}
+  />
+</Layout>

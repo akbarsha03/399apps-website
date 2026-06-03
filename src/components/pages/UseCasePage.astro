@@ -4,19 +4,38 @@
 import Layout from '~/layouts/Layout.astro';
 import FAQ from '~/components/FAQ.astro';
 import CTA from '~/components/CTA.astro';
-import { USECASES, buildUseCaseGraph } from '~/data/usecase';
+import { getUseCase, buildUseCaseGraph } from '~/data/usecase';
+import { localizedPath, type Lang } from '~/data/i18n';
 
 interface Props {
   slug: string;
+  lang: Lang;
 }
-const { slug } = Astro.props;
-const uc = USECASES[slug];
+const { slug, lang } = Astro.props;
+const uc = getUseCase(slug, lang);
 if (!uc) throw new Error(`UseCasePage: unknown slug "${slug}"`);
 
-const rawJsonLd = buildUseCaseGraph(slug);
+const rawJsonLd = buildUseCaseGraph(slug, lang);
 
-const ctaPrimary = `/contact?intent=cloud&utm_source=organic&utm_medium=industry-usecase&utm_campaign=${slug}&utm_content=primary-cta`;
-const ctaSecondary = `/contact?intent=demo&utm_source=organic&utm_medium=industry-usecase&utm_campaign=${slug}&utm_content=secondary-demo`;
+const BASE = '/' + slug + '/';
+
+const ctaPrimary = localizedPath(`/contact?intent=cloud&utm_source=organic&utm_medium=industry-usecase&utm_campaign=${slug}&utm_content=primary-cta`, lang);
+const ctaSecondary = localizedPath(`/contact?intent=demo&utm_source=organic&utm_medium=industry-usecase&utm_campaign=${slug}&utm_content=secondary-demo`, lang);
+
+// Related links: localize hrefs that have locale variants; leave EN-only ones as-is.
+const LOCALIZED = new Set([
+  '/gst-billing-software-for-retail-shops/',
+  '/billing-software-for-pharmacy-medical-store/',
+  '/billing-software-for-restaurants-cafes/',
+  '/gst-software-for-traders-wholesalers/',
+  '/best/gst-billing-software/',
+  '/best/gst-software-india/',
+  '/best/e-invoicing-software-india/',
+  '/apps/books/',
+  '/apps/inventory/',
+  '/pricing/',
+]);
+const relLink = (p: string) => (LOCALIZED.has(p) ? localizedPath(p, lang) : p);
 ---
 
 <Layout
@@ -25,13 +44,15 @@ const ctaSecondary = `/contact?intent=demo&utm_source=organic&utm_medium=industr
   type="product"
   keywords={uc.seo.keywords}
   rawJsonLd={rawJsonLd}
+  lang={lang}
+  localizedOf={BASE}
 >
   <section class="relative overflow-hidden border-b border-ink-100">
     <div class="pointer-events-none absolute inset-0 grid-bg opacity-70"></div>
     <div class="container-wide relative py-16 sm:py-20">
       <nav class="mb-8 text-xs text-ink-500" aria-label="Breadcrumb">
         <ol class="flex flex-wrap items-center gap-1.5">
-          <li><a href="/" class="hover:text-ink-700">Home</a></li>
+          <li><a href={localizedPath('/', lang)} class="hover:text-ink-700">Home</a></li>
           <li class="text-ink-400">/</li>
           <li class="text-ink-800">{uc.breadcrumbLeaf}</li>
         </ol>
@@ -107,7 +128,7 @@ const ctaSecondary = `/contact?intent=demo&utm_source=organic&utm_medium=industr
       <h2 class="h2 mt-3">{uc.pricing.h2}</h2>
       <p class="mt-4 text-[17px] leading-relaxed text-ink-700">{uc.pricing.body}</p>
       <div class="mt-6 flex flex-wrap gap-3">
-        <a href="/pricing/" class="btn-secondary">See full pricing</a>
+        <a href={relLink('/pricing/')} class="btn-secondary">See full pricing</a>
         <a href={ctaPrimary} class="btn-primary">Start your free 14-day trial</a>
       </div>
     </div>
@@ -120,7 +141,7 @@ const ctaSecondary = `/contact?intent=demo&utm_source=organic&utm_medium=industr
       <p class="eyebrow">Related</p>
       <ul class="mt-3 flex flex-wrap gap-x-6 gap-y-2 text-sm text-brand-700">
         {uc.related.map((r) => (
-          <li><a class="hover:underline" href={r.href}>{r.label}</a></li>
+          <li><a class="hover:underline" href={relLink(r.href)}>{r.label}</a></li>
         ))}
       </ul>
     </div>

@@ -1,0 +1,9 @@
+---
+import UseCasePage from '~/components/pages/UseCasePage.astro';
+import type { Lang } from '~/data/i18n';
+export function getStaticPaths() {
+  return [{ params: { lang: 'hi' } }, { params: { lang: 'ta' } }, { params: { lang: 'hindi' } }, { params: { lang: 'tamil' } }];
+}
+const lang = Astro.params.lang as Lang;
+---
+<UseCasePage slug="billing-software-for-restaurants-cafes" lang={lang} />
