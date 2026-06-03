@@ -8,6 +8,7 @@ import {
   GLOSSARY_TERMS,
   GLOSSARY_FAQS,
   localizedPath,
+  DEFAULT_LANG,
   type Lang,
 } from '~/data/i18n';
 
@@ -16,6 +17,19 @@ interface Props {
 }
 const { lang } = Astro.props;
 const t = getGlossaryCopy(lang);
+
+// Internal-linking architecture v1 (APPAA-52): deep-link each glossary term to the
+// money/app page where it actually gets done, so entity relationships are explicit
+// for crawlers + AI engines (e.g. GSTR-1 → Nidhi Books). EN-only money pages.
+const TERM_MONEY_LINK: Record<string, { href: string; label: string }> = {
+  gst: { href: '/apps/books/', label: 'GST accounting in Nidhi Books' },
+  'gstr-1': { href: '/apps/books/', label: 'File GSTR-1 with Nidhi Books' },
+  'gstr-3b': { href: '/apps/books/', label: 'File GSTR-3B with Nidhi Books' },
+  'e-invoice': { href: '/best/gst-billing-software/', label: 'Best GST e-invoicing software' },
+  'e-way-bill': { href: '/apps/inventory/', label: 'Manage stock & e-way bills in Nidhi Inventory' },
+  tds: { href: '/apps/books/', label: 'Track TDS in Nidhi Books' },
+};
+const showMoneyLinks = lang === DEFAULT_LANG;
 
 // This page's own canonical URL (localized), used as the JSON-LD @id base so the
 // DefinedTermSet/BreadcrumbList identity matches the page's <link rel="canonical">.
@@ -125,6 +139,17 @@ const jsonLd = [definedTermSet, breadcrumb, faqPage];
                     {nameBySlug[slug] ?? slug}
                   </a>
                 ))}
+              </dd>
+            )}
+            {showMoneyLinks && TERM_MONEY_LINK[term.slug] && (
+              <dd class="mt-4">
+                <a
+                  href={TERM_MONEY_LINK[term.slug].href}
+                  class="inline-flex items-center gap-1.5 text-sm font-medium text-brand-700 hover:underline"
+                >
+                  {TERM_MONEY_LINK[term.slug].label}
+                  <span aria-hidden="true">→</span>
+                </a>
               </dd>
             )}
           </div>

@@ -7,7 +7,7 @@ import CTA from '~/components/CTA.astro';
 import FAQ from '~/components/FAQ.astro';
 import { APPS, PLANS, type App } from '~/data/apps';
 import { SITE, canonicalUrl } from '~/data/site';
-import { getAppDetailCopy, localizedPath, type Lang } from '~/data/i18n';
+import { getAppDetailCopy, localizedPath, DEFAULT_LANG, type Lang } from '~/data/i18n';
 
 interface Props {
   app: App;
@@ -17,6 +17,29 @@ const { app, lang } = Astro.props;
 const t = getAppDetailCopy(lang);
 
 const related = APPS.filter((a) => a.slug !== app.slug).slice(0, 3);
+
+// Internal-linking architecture v1 (APPAA-52): link each app down to its buyer-guide
+// listicle(s) and the top "X alternative" money pages where this app is the switch-to
+// recommendation. EN-only (these commercial pages are English-intent, not localized).
+const APP_MONEY_LINKS: Record<string, { href: string; label: string }[]> = {
+  books: [
+    { href: '/best/accounting-software-small-business-india/', label: 'Best accounting software for small business (India)' },
+    { href: '/best/gst-billing-software/', label: 'Best GST billing software in India' },
+    { href: '/tally-alternative/', label: 'Tally alternative' },
+    { href: '/zoho-books-alternative/', label: 'Zoho Books alternative' },
+  ],
+  inventory: [
+    { href: '/best/', label: 'Best software buyer’s guides' },
+    { href: '/vyapar-alternative/', label: 'Vyapar alternative' },
+    { href: '/apps/books/', label: 'Nidhi Books — GST accounting' },
+  ],
+  'books-inventory-bundle': [
+    { href: '/best/accounting-software-small-business-india/', label: 'Best accounting software for small business (India)' },
+    { href: '/tally-alternative/', label: 'Tally alternative' },
+    { href: '/vyapar-alternative/', label: 'Vyapar alternative' },
+  ],
+};
+const moneyLinks = lang === DEFAULT_LANG ? (APP_MONEY_LINKS[app.slug] ?? []) : [];
 const homeHref = localizedPath('/', lang);
 const appsAnchor = localizedPath('/#apps', lang);
 const pricingHref = localizedPath('/pricing', lang);
@@ -313,6 +336,17 @@ const finalTitle = t.finalCta.titleTemplate.replace('{name}', app.name);
       <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {related.map((r) => <AppCard app={r} lang={lang} />)}
       </div>
+
+      {moneyLinks.length > 0 && (
+        <div class="mt-10 border-t border-ink-100 pt-8">
+          <span class="text-xs font-semibold uppercase tracking-wide text-ink-400">Compare &amp; buyer’s guides</span>
+          <ul class="mt-3 flex flex-wrap gap-x-6 gap-y-2 text-sm text-brand-700">
+            {moneyLinks.map((l) => (
+              <li><a class="hover:underline" href={l.href}>{l.label}</a></li>
+            ))}
+          </ul>
+        </div>
+      )}
     </div>
   </section>
 
