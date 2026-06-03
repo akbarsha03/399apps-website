@@ -4,7 +4,7 @@ import FAQ from '~/components/FAQ.astro';
 import CTA from '~/components/CTA.astro';
 import { BEST_JSONLD } from '~/data/best-jsonld';
 
-const SLUG = 'inventory-management-software-india';
+const SLUG = 'gst-return-filing-software';
 const graph = BEST_JSONLD[SLUG]['@graph'] as Array<Record<string, any>>;
 const webpage = graph.find((n) => n['@type'] === 'WebPage')!;
 const faqEntity = graph.find((n) => n['@type'] === 'FAQPage')!;
@@ -14,7 +14,7 @@ const faqs = (faqEntity.mainEntity as Array<Record<string, any>>).map((q) => ({
   q: q.name as string,
   a: q.acceptedAnswer.text as string,
 }));
-const keywords = ['best inventory software india', 'best inventory management software india', 'inventory software small business india', 'gst inventory software', 'warehouse management software india'];
+const keywords = ['best gst return filing software', 'gst return filing software india', 'gstr-1 filing software', 'gstr-3b software', 'gst return software for small business'];
 
 const ctaPrimary = `/contact?intent=cloud&utm_source=organic&utm_medium=best-category&utm_campaign=${SLUG}&utm_content=primary-cta`;
 const ctaSecondary = `/contact?intent=demo&utm_source=organic&utm_medium=best-category&utm_campaign=${SLUG}&utm_content=secondary-demo`;
@@ -30,12 +30,12 @@ const ctaSecondary = `/contact?intent=demo&utm_source=organic&utm_medium=best-ca
           <li class="text-ink-400">/</li>
           <li><a href="/best/" class="hover:text-ink-700">Best</a></li>
           <li class="text-ink-400">/</li>
-          <li class="text-ink-800">Inventory management software</li>
+          <li class="text-ink-800">GST return filing software</li>
         </ol>
       </nav>
       <span class="eyebrow">Buyer's guide · 2026</span>
-      <h1 class="h1 mt-4 max-w-4xl">Best Inventory Management Software in India (2026)</h1>
-      <p class="lede mt-5 max-w-3xl">The best inventory management software in India in 2026 is <strong>Nidhi Inventory — ₹99/month added to Nidhi Books, with unlimited users</strong> and real-time stock across warehouses. <strong>Zoho Inventory</strong> suits automation-heavy teams and <strong>TallyPrime</strong> fits accountants, but both cost more per user. For integrated stock + GST books at flat cost, Nidhi Inventory wins.</p>
+      <h1 class="h1 mt-4 max-w-4xl">Best GST Return Filing Software in India (2026)</h1>
+      <p class="lede mt-5 max-w-3xl">The best GST return filing software for most Indian businesses in 2026 is <strong>Nidhi Books at ₹399/month with unlimited users</strong> — it turns your invoices and books into <strong>GSTR-1 and GSTR-3B-ready exports</strong>, with e-invoicing and e-way bills built in. <strong>Zoho Books</strong> suits automation-heavy firms and <strong>TallyPrime</strong> fits desktop accountants; dedicated utilities like <strong>ClearTax</strong> add high-volume reconciliation. For flat-cost, returns-ready books that scale, Nidhi Books wins.</p>
       <div class="mt-7 flex flex-wrap gap-3">
         <a href={ctaPrimary} class="btn-primary">Start your free 14-day trial</a>
         <a href={ctaSecondary} class="btn-secondary">Get a free demo</a>
@@ -46,16 +46,24 @@ const ctaSecondary = `/contact?intent=demo&utm_source=organic&utm_medium=best-ca
 
   <section class="bg-white">
     <div class="container-narrow py-16 sm:py-20">
-      <span class="eyebrow">How to judge</span>
-      <h2 class="h2 mt-3">How to choose inventory software in India</h2>
-      <p class="mt-4 text-[17px] leading-relaxed text-ink-700">The right inventory tool depends on <strong>multi-warehouse and branch tracking</strong>, whether stock <strong>syncs with your GST accounting</strong>, <strong>per-user or per-organisation fees</strong>, and support for <strong>barcodes, batches and channels</strong>. A standalone inventory app that doesn't talk to your books forces double entry — so weigh <strong>integration and total cost</strong>, not just stock features.</p>
+      <span class="eyebrow">What it does</span>
+      <h2 class="h2 mt-3">What GST return filing software actually does</h2>
+      <p class="mt-4 text-[17px] leading-relaxed text-ink-700">Most "filing" software does not file for you — it makes filing painless. As you raise GST invoices and record purchases, the software keeps <strong>return-ready books</strong> and produces <strong>GSTR-1</strong> (outward supplies) and <strong>GSTR-3B</strong> (summary) data you can upload to the GST portal, or file through a <strong>GST Suvidha Provider (GSP)</strong>. The best tools also reconcile your purchases against <strong>GSTR-2B</strong> so you don't lose input tax credit. Nidhi Books, Zoho Books and TallyPrime all generate return-ready exports; you or your CA do the final submission.</p>
     </div>
   </section>
 
   <section class="border-t border-ink-100 bg-ink-50/40">
     <div class="container-narrow py-16 sm:py-20">
+      <span class="eyebrow">How to judge</span>
+      <h2 class="h2 mt-3">How to choose GST return filing software</h2>
+      <p class="mt-4 text-[17px] leading-relaxed text-ink-700">Check four things: does it produce <strong>GSTR-1 and GSTR-3B-ready exports</strong> from your day-to-day invoices; does it <strong>reconcile GSTR-2B</strong> for accurate input tax credit; what is the <strong>real monthly cost</strong> once you add users (per-seat fees add up fast at filing time); and can your <strong>accountant work in the same books</strong>. A free tier that caps users or turnover can cost more than a flat plan once filing season hits.</p>
+    </div>
+  </section>
+
+  <section class="bg-white">
+    <div class="container-narrow py-16 sm:py-20">
       <span class="eyebrow">Shortlist</span>
-      <h2 class="h2 mt-3">Best inventory management software (2026)</h2>
+      <h2 class="h2 mt-3">Best GST return filing software (2026)</h2>
       <div class="mt-6 overflow-x-auto">
         <table class="w-full border-collapse text-sm">
           <thead>
@@ -69,46 +77,46 @@ const ctaSecondary = `/contact?intent=demo&utm_source=organic&utm_medium=best-ca
           <tbody class="divide-y divide-ink-100">
             <tr>
               <td class="py-3 pr-4 text-ink-700">1</td>
-              <td class="py-3 pr-4 font-medium text-ink-900"><a class="text-brand-700 hover:underline" href="/apps/inventory/">Nidhi Inventory</a></td>
-              <td class="py-3 pr-4 text-ink-700">Integrated stock + GST books, unlimited users</td>
-              <td class="py-3 pr-4 text-ink-700"><strong>+₹99/month</strong> with Nidhi Books</td>
+              <td class="py-3 pr-4 font-medium text-ink-900"><a class="text-brand-700 hover:underline" href="/apps/books/">Nidhi Books</a></td>
+              <td class="py-3 pr-4 text-ink-700">Flat-cost GSTR-1/3B-ready books, unlimited users</td>
+              <td class="py-3 pr-4 text-ink-700"><strong>From ₹399/month</strong></td>
             </tr>
             <tr>
               <td class="py-3 pr-4 text-ink-700">2</td>
-              <td class="py-3 pr-4 font-medium text-ink-900">Zoho Inventory</td>
-              <td class="py-3 pr-4 text-ink-700">Multichannel automation</td>
-              <td class="py-3 pr-4 text-ink-700">Free tier; paid per plan + users</td>
+              <td class="py-3 pr-4 font-medium text-ink-900"><a class="text-brand-700 hover:underline" href="/zoho-books-alternative/">Zoho Books</a></td>
+              <td class="py-3 pr-4 text-ink-700">Automation-heavy GST accounting</td>
+              <td class="py-3 pr-4 text-ink-700">Free under ₹25 lakh; ₹899/mo paid</td>
             </tr>
             <tr>
               <td class="py-3 pr-4 text-ink-700">3</td>
               <td class="py-3 pr-4 font-medium text-ink-900"><a class="text-brand-700 hover:underline" href="/tally-alternative/">TallyPrime</a></td>
-              <td class="py-3 pr-4 text-ink-700">Desktop stock for accountants</td>
+              <td class="py-3 pr-4 text-ink-700">Desktop bookkeeping for accountants</td>
               <td class="py-3 pr-4 text-ink-700">₹22,500 one-time</td>
             </tr>
             <tr>
               <td class="py-3 pr-4 text-ink-700">4</td>
               <td class="py-3 pr-4 font-medium text-ink-900"><a class="text-brand-700 hover:underline" href="/vyapar-alternative/">Vyapar</a></td>
-              <td class="py-3 pr-4 text-ink-700">Mobile stock for shops &amp; traders</td>
+              <td class="py-3 pr-4 text-ink-700">Mobile-first billing with GST reports</td>
               <td class="py-3 pr-4 text-ink-700">Free mobile; ~₹3,399/yr paid</td>
             </tr>
           </tbody>
         </table>
       </div>
-      <p class="mt-3 text-xs italic text-ink-500">Prices as of June 2026; verify current. All prices exclude 18% GST. Nidhi Inventory: +₹99/month as an add-on to Nidhi Books (₹399/mo) — ₹498/month for both, unlimited users.</p>
+      <p class="mt-3 text-xs italic text-ink-500">Prices as of June 2026; verify current. All prices exclude 18% GST. Nidhi Books: from ₹399/month (first app, unlimited users; +₹99/mo per add-on). Dedicated filing utilities such as ClearTax and GSTHero also exist for high-volume reconciliation.</p>
     </div>
   </section>
 
-  <section class="bg-white">
+  <section class="border-t border-ink-100 bg-ink-50/40">
     <div class="container-narrow py-16 sm:py-20">
       <span class="eyebrow">Price &amp; feature comparison</span>
-      <h2 class="h2 mt-3">399apps vs Zoho, Tally, Vyapar &amp; QuickBooks</h2>
+      <h2 class="h2 mt-3">Nidhi Books vs Zoho, Tally, Vyapar &amp; QuickBooks</h2>
       <div class="mt-6 overflow-x-auto">
         <table class="w-full border-collapse text-sm">
           <thead>
             <tr class="border-b border-ink-200 text-left">
               <th class="py-3 pr-4 font-semibold text-ink-900">&nbsp;</th>
-              <th class="py-3 pr-4 font-semibold text-brand-700">Nidhi Inventory</th>
-              <th class="py-3 pr-4 font-semibold text-ink-900">Zoho Inventory</th>
+              <th class="py-3 pr-4 font-semibold text-brand-700">Nidhi Books</th>
+              <th class="py-3 pr-4 font-semibold text-ink-900">Zoho Books</th>
               <th class="py-3 pr-4 font-semibold text-ink-900">TallyPrime</th>
               <th class="py-3 pr-4 font-semibold text-ink-900">Vyapar</th>
               <th class="py-3 pr-4 font-semibold text-ink-900">QuickBooks</th>
@@ -117,8 +125,8 @@ const ctaSecondary = `/contact?intent=demo&utm_source=organic&utm_medium=best-ca
           <tbody class="divide-y divide-ink-100">
             <tr>
               <td class="py-3 pr-4 font-medium text-ink-900">Entry price</td>
-              <td class="py-3 pr-4 text-ink-700"><strong>+₹99/mo</strong> (₹498/mo with Books)</td>
-              <td class="py-3 pr-4 text-ink-700">Free / paid per plan</td>
+              <td class="py-3 pr-4 text-ink-700"><strong>From ₹399/mo</strong></td>
+              <td class="py-3 pr-4 text-ink-700">Free / ₹899/mo</td>
               <td class="py-3 pr-4 text-ink-700">₹22,500 one-time</td>
               <td class="py-3 pr-4 text-ink-700">Free / ~₹3,399/yr</td>
               <td class="py-3 pr-4 text-ink-700">Discontinued in India</td>
@@ -132,7 +140,15 @@ const ctaSecondary = `/contact?intent=demo&utm_source=organic&utm_medium=best-ca
               <td class="py-3 pr-4 text-ink-700">—</td>
             </tr>
             <tr>
-              <td class="py-3 pr-4 font-medium text-ink-900">Multi-warehouse</td>
+              <td class="py-3 pr-4 font-medium text-ink-900">GSTR-1 / GSTR-3B exports</td>
+              <td class="py-3 pr-4 text-ink-700">Yes</td>
+              <td class="py-3 pr-4 text-ink-700">Yes</td>
+              <td class="py-3 pr-4 text-ink-700">Yes</td>
+              <td class="py-3 pr-4 text-ink-700">Reports</td>
+              <td class="py-3 pr-4 text-ink-700">—</td>
+            </tr>
+            <tr>
+              <td class="py-3 pr-4 font-medium text-ink-900">GSTR-2B reconciliation</td>
               <td class="py-3 pr-4 text-ink-700">Yes</td>
               <td class="py-3 pr-4 text-ink-700">Yes</td>
               <td class="py-3 pr-4 text-ink-700">Yes</td>
@@ -140,11 +156,11 @@ const ctaSecondary = `/contact?intent=demo&utm_source=organic&utm_medium=best-ca
               <td class="py-3 pr-4 text-ink-700">—</td>
             </tr>
             <tr>
-              <td class="py-3 pr-4 font-medium text-ink-900">Built-in GST accounting</td>
-              <td class="py-3 pr-4 text-ink-700">Yes (with Books)</td>
-              <td class="py-3 pr-4 text-ink-700">Via Zoho Books</td>
+              <td class="py-3 pr-4 font-medium text-ink-900">E-invoicing + e-way bill</td>
               <td class="py-3 pr-4 text-ink-700">Yes</td>
-              <td class="py-3 pr-4 text-ink-700">Lighter</td>
+              <td class="py-3 pr-4 text-ink-700">Yes</td>
+              <td class="py-3 pr-4 text-ink-700">Yes</td>
+              <td class="py-3 pr-4 text-ink-700">Yes</td>
               <td class="py-3 pr-4 text-ink-700">—</td>
             </tr>
             <tr>
@@ -159,24 +175,22 @@ const ctaSecondary = `/contact?intent=demo&utm_source=organic&utm_medium=best-ca
         </table>
       </div>
       <p class="mt-3 text-xs italic text-ink-500">Prices as of June 2026; verify current. All prices exclude 18% GST. QuickBooks India closed to new subscriptions (service ended 30 April 2023).</p>
-      <p class="mt-6 text-[15px] leading-relaxed text-ink-700"><strong>The honest take:</strong> for heavy multichannel e-commerce automation, <strong>Zoho Inventory</strong> is strong, and a single-shop trader may be fine on <strong>Vyapar</strong>. But if you want stock and GST accounting truly integrated — every invoice updating stock, every purchase updating your books — <strong>Nidhi Inventory with the <a class="text-brand-700 hover:underline" href="/apps/books-inventory-bundle/">Books + Inventory bundle</a> (₹498/month, unlimited users)</strong> is the best value in India.</p>
+      <p class="mt-6 text-[15px] leading-relaxed text-ink-700"><strong>The honest take:</strong> a tiny firm under ₹25 lakh turnover can file from <strong>Zoho Books free</strong>, and accountants already deep in Tally may stay there. But once you want <strong>GSTR-1/GSTR-3B-ready books, GSTR-2B reconciliation and e-invoicing on one flat bill with unlimited users</strong>, <strong>Nidhi Books from ₹399/month</strong> is the best-value GST return filing software for a growing Indian business.</p>
     </div>
   </section>
 
-  <FAQ items={faqs} title="Best inventory management software — frequently asked questions" />
+  <FAQ items={faqs} title="Best GST return filing software — frequently asked questions" />
 
   <section class="border-t border-ink-100 bg-ink-50/40">
     <div class="container-narrow py-12">
       <p class="eyebrow">Related</p>
       <ul class="mt-3 flex flex-wrap gap-x-6 gap-y-2 text-sm text-brand-700">
         <li><a class="hover:underline" href="/best/">All buyer's guides</a></li>
+        <li><a class="hover:underline" href="/best/gst-software-india/">Best GST software</a></li>
+        <li><a class="hover:underline" href="/best/gst-billing-software/">Best GST billing software</a></li>
         <li><a class="hover:underline" href="/best/e-way-bill-software/">Best e-way bill software</a></li>
-        <li><a class="hover:underline" href="/best/accounting-software-small-business-india/">Best accounting software for small business</a></li>
-        <li><a class="hover:underline" href="/best/billing-software-small-business-india/">Best billing software for small business</a></li>
-        <li><a class="hover:underline" href="/best/tally-alternative/">Best Tally alternatives</a></li>
-        <li><a class="hover:underline" href="/best/e-invoicing-software-india/">Best e-invoicing software</a></li>
-        <li><a class="hover:underline" href="/apps/inventory/">Nidhi Inventory — stock management</a></li>
-        <li><a class="hover:underline" href="/apps/books-inventory-bundle/">Books + Inventory bundle</a></li>
+        <li><a class="hover:underline" href="/best/software-for-chartered-accountants-india/">Best software for chartered accountants</a></li>
+        <li><a class="hover:underline" href="/apps/books/">Nidhi Books — GST accounting</a></li>
         <li><a class="hover:underline" href="/pricing/">Pricing</a></li>
       </ul>
     </div>
@@ -184,8 +198,8 @@ const ctaSecondary = `/contact?intent=demo&utm_source=organic&utm_medium=best-ca
 
   <CTA
     eyebrow="Get started"
-    title="Stock + GST books, integrated, from ₹498/month"
-    body="Nidhi Inventory adds real-time multi-warehouse stock to Nidhi Books for +₹99/month — unlimited users, no per-seat fees. Both apps together are ₹498/month (prices exclude GST)."
+    title="GSTR-ready books from ₹399/month"
+    body="GSTR-1 and GSTR-3B exports, e-invoicing and e-way bills with unlimited users — no per-seat fees. The Cloud plan starts from ₹399/month for your first app (prices exclude GST)."
     primaryLabel="Start your free 14-day trial"
     primaryHref={ctaPrimary}
     secondaryLabel="Get a free demo"

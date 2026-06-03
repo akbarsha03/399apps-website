@@ -1108,5 +1108,422 @@ export const BEST_JSONLD: Record<string, Record<string, unknown>> = {
         ]
       }
     ]
+  },
+  "gst-return-filing-software": {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://399apps.com/#organization",
+        "name": "399Apps",
+        "url": "https://399apps.com/"
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://399apps.com/#website",
+        "url": "https://399apps.com/",
+        "name": "399Apps",
+        "publisher": {
+          "@id": "https://399apps.com/#organization"
+        }
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://399apps.com/best/gst-return-filing-software/#webpage",
+        "url": "https://399apps.com/best/gst-return-filing-software/",
+        "name": "Best GST Return Filing Software in India (2026)",
+        "description": "The best GST return filing software in India for 2026 — GSTR-1, GSTR-3B and reconciliation compared on price, users and value across Nidhi Books, Zoho Books, TallyPrime and Vyapar.",
+        "inLanguage": "en-IN",
+        "isPartOf": {
+          "@id": "https://399apps.com/#website"
+        },
+        "breadcrumb": {
+          "@id": "https://399apps.com/best/gst-return-filing-software/#breadcrumb"
+        },
+        "mainEntity": {
+          "@id": "https://399apps.com/best/gst-return-filing-software/#itemlist"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://399apps.com/best/gst-return-filing-software/#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://399apps.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Best",
+            "item": "https://399apps.com/best/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Best GST Return Filing Software in India",
+            "item": "https://399apps.com/best/gst-return-filing-software/"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://399apps.com/best/gst-return-filing-software/#faq",
+        "isPartOf": {
+          "@id": "https://399apps.com/best/gst-return-filing-software/#webpage"
+        },
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is the best GST return filing software in India in 2026?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Nidhi Books (399Apps) for value — it turns your invoices and books into GSTR-1 and GSTR-3B-ready exports from ₹399/month with unlimited users (prices exclude GST). Zoho Books suits automation-heavy firms and TallyPrime fits desktop-first accountants; dedicated filing utilities like ClearTax also exist for high-volume reconciliation."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can GST software file GSTR-1 and GSTR-3B automatically?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Good GST software prepares GSTR-1 and GSTR-3B-ready data from your invoices and ledgers. Nidhi Books, Zoho Books and TallyPrime generate return-ready exports; you (or your accountant) then upload them to the GST portal, or file via a GST Suvidha Provider (GSP)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is there free GST return filing software?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The GST portal's offline tools are free for manual filing, and Zoho Books is free under ₹25 lakh turnover. For unlimited users with full books and return-ready exports at a flat cost, Nidhi Books is ₹399/month (prices exclude GST)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do I still need a CA to file GST returns?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Not necessarily — software prepares return-ready GSTR-1/GSTR-3B data you can file yourself on the GST portal. Many businesses still have a CA review and file; Nidhi Books supports unlimited users, so your accountant can work in the same books at no extra per-seat cost."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the cheapest GST return filing software with unlimited users?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Nidhi Books at ₹399/month — it includes GST invoicing, GSTR-1/GSTR-3B exports and e-invoicing with unlimited users, where most rivals charge per user or per organisation. Prices exclude GST."
+            }
+          }
+        ]
+      },
+      {
+        "@type": "ItemList",
+        "@id": "https://399apps.com/best/gst-return-filing-software/#itemlist",
+        "name": "Best GST Return Filing Software in India 2026",
+        "itemListOrder": "https://schema.org/ItemListOrderDescending",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Nidhi Books",
+            "url": "https://399apps.com/apps/books/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Zoho Books"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "TallyPrime"
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "name": "Vyapar"
+          }
+        ]
+      }
+    ]
+  },
+  "e-way-bill-software": {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://399apps.com/#organization",
+        "name": "399Apps",
+        "url": "https://399apps.com/"
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://399apps.com/#website",
+        "url": "https://399apps.com/",
+        "name": "399Apps",
+        "publisher": {
+          "@id": "https://399apps.com/#organization"
+        }
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://399apps.com/best/e-way-bill-software/#webpage",
+        "url": "https://399apps.com/best/e-way-bill-software/",
+        "name": "Best e-Way Bill Software in India (2026)",
+        "description": "The best e-way bill software in India for 2026 — generate e-way bills from invoices, with GST and inventory, compared on price and value across Nidhi Books, Zoho Books, TallyPrime and Vyapar.",
+        "inLanguage": "en-IN",
+        "isPartOf": {
+          "@id": "https://399apps.com/#website"
+        },
+        "breadcrumb": {
+          "@id": "https://399apps.com/best/e-way-bill-software/#breadcrumb"
+        },
+        "mainEntity": {
+          "@id": "https://399apps.com/best/e-way-bill-software/#itemlist"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://399apps.com/best/e-way-bill-software/#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://399apps.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Best",
+            "item": "https://399apps.com/best/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Best e-Way Bill Software in India",
+            "item": "https://399apps.com/best/e-way-bill-software/"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://399apps.com/best/e-way-bill-software/#faq",
+        "isPartOf": {
+          "@id": "https://399apps.com/best/e-way-bill-software/#webpage"
+        },
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is the best e-way bill software in India in 2026?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Nidhi Books (399Apps) for value — it generates e-way bills directly from your GST invoices, alongside e-invoicing and GST returns, from ₹399/month with unlimited users (prices exclude GST). Zoho Books and TallyPrime are strong for automation-heavy and desktop-first setups; pair Nidhi Books with Nidhi Inventory for stock-linked dispatch."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "When is an e-way bill required in India?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "An e-way bill is mandatory for the movement of goods where the consignment value exceeds ₹50,000, for both inter-state and (in most states) intra-state movement. It must be generated before the goods are moved and carried with the consignment."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can e-way bill software generate bills automatically from invoices?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes — good software reuses the invoice data to fill Part-A (consignment and tax details) and lets you add Part-B (transporter and vehicle) before generating the e-way bill number. Nidhi Books creates e-way bills from the same invoice you already raised, so you don't re-key data."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is an e-way bill the same as e-invoicing?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. E-invoicing registers a B2B or export invoice with the Invoice Registration Portal (IRP) to get an IRN and signed QR code; an e-way bill authorises the physical movement of goods above ₹50,000. Many tools, including Nidhi Books, generate both from the same invoice data."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the cheapest e-way bill software with unlimited users?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Nidhi Books at ₹399/month includes e-way bill generation, e-invoicing and GST returns with unlimited users, where most rivals charge per user or per device. Add Nidhi Inventory for ₹99/month to link e-way bills to live stock. Prices exclude GST."
+            }
+          }
+        ]
+      },
+      {
+        "@type": "ItemList",
+        "@id": "https://399apps.com/best/e-way-bill-software/#itemlist",
+        "name": "Best e-Way Bill Software in India 2026",
+        "itemListOrder": "https://schema.org/ItemListOrderDescending",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Nidhi Books",
+            "url": "https://399apps.com/apps/books/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Zoho Books"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "TallyPrime"
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "name": "Vyapar"
+          }
+        ]
+      }
+    ]
+  },
+  "software-for-chartered-accountants-india": {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://399apps.com/#organization",
+        "name": "399Apps",
+        "url": "https://399apps.com/"
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://399apps.com/#website",
+        "url": "https://399apps.com/",
+        "name": "399Apps",
+        "publisher": {
+          "@id": "https://399apps.com/#organization"
+        }
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://399apps.com/best/software-for-chartered-accountants-india/#webpage",
+        "url": "https://399apps.com/best/software-for-chartered-accountants-india/",
+        "name": "Best Software for Chartered Accountants & CA Firms in India (2026)",
+        "description": "The best accounting software for chartered accountants and CA firms to use and recommend to clients in 2026 — cloud, GST returns and multi-client books compared across Nidhi Books, Zoho Books, TallyPrime and Vyapar.",
+        "inLanguage": "en-IN",
+        "isPartOf": {
+          "@id": "https://399apps.com/#website"
+        },
+        "breadcrumb": {
+          "@id": "https://399apps.com/best/software-for-chartered-accountants-india/#breadcrumb"
+        },
+        "mainEntity": {
+          "@id": "https://399apps.com/best/software-for-chartered-accountants-india/#itemlist"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://399apps.com/best/software-for-chartered-accountants-india/#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://399apps.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Best",
+            "item": "https://399apps.com/best/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Best Software for Chartered Accountants in India",
+            "item": "https://399apps.com/best/software-for-chartered-accountants-india/"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://399apps.com/best/software-for-chartered-accountants-india/#faq",
+        "isPartOf": {
+          "@id": "https://399apps.com/best/software-for-chartered-accountants-india/#webpage"
+        },
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What software do chartered accountants use in India?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "TallyPrime remains the most widely used tool in Indian CA practices, especially for desktop bookkeeping. Cloud tools are growing fast for client work: Zoho Books for automation and Nidhi Books (399Apps) for low-cost, multi-client GST books with unlimited users at ₹399/month (prices exclude GST)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the best cloud accounting software for CAs to recommend to clients?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "For clients who want low cost and simple cloud GST books, Nidhi Books is the value pick at ₹399/month with unlimited users — so the client, their staff and the CA all work in one set of books at no per-seat cost. Zoho Books suits clients wanting deeper automation."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can a CA manage multiple clients in one tool?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Each client's books are kept separate, and Nidhi Books adds no per-user fee, so a CA can be invited into every client's books without extra cost. CSV/Excel import with guided onboarding makes it quick to bring a new client's data across from Tally or spreadsheets."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is there affordable accounting software for small CA-firm clients?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes — Nidhi Books is ₹399/month for the first app with unlimited users (prices exclude GST), making it one of the cheapest full GST accounting tools for the small businesses CAs serve. Add inventory or other apps for ₹99/month each."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does it support GST returns and e-invoicing for filing?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes — Nidhi Books produces GSTR-1 and GSTR-3B-ready exports and generates e-invoices (IRN/QR) and e-way bills, so a CA gets return-ready data without re-keying. Zoho Books and TallyPrime also handle GST returns and e-invoicing."
+            }
+          }
+        ]
+      },
+      {
+        "@type": "ItemList",
+        "@id": "https://399apps.com/best/software-for-chartered-accountants-india/#itemlist",
+        "name": "Best Software for Chartered Accountants in India 2026",
+        "itemListOrder": "https://schema.org/ItemListOrderDescending",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Nidhi Books",
+            "url": "https://399apps.com/apps/books/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Zoho Books"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "TallyPrime"
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "name": "Vyapar"
+          }
+        ]
+      }
+    ]
   }
 };

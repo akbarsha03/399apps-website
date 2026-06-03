@@ -1,0 +1,208 @@
+---
+import Layout from '~/layouts/Layout.astro';
+import FAQ from '~/components/FAQ.astro';
+import CTA from '~/components/CTA.astro';
+import { BEST_JSONLD } from '~/data/best-jsonld';
+
+const SLUG = 'e-way-bill-software';
+const graph = BEST_JSONLD[SLUG]['@graph'] as Array<Record<string, any>>;
+const webpage = graph.find((n) => n['@type'] === 'WebPage')!;
+const faqEntity = graph.find((n) => n['@type'] === 'FAQPage')!;
+const title = webpage.name as string;
+const description = webpage.description as string;
+const faqs = (faqEntity.mainEntity as Array<Record<string, any>>).map((q) => ({
+  q: q.name as string,
+  a: q.acceptedAnswer.text as string,
+}));
+const keywords = ['best e-way bill software', 'e-way bill software india', 'eway bill generation software', 'gst e-way bill software', 'e-way bill software for transporters'];
+
+const ctaPrimary = `/contact?intent=cloud&utm_source=organic&utm_medium=best-category&utm_campaign=${SLUG}&utm_content=primary-cta`;
+const ctaSecondary = `/contact?intent=demo&utm_source=organic&utm_medium=best-category&utm_campaign=${SLUG}&utm_content=secondary-demo`;
+---
+
+<Layout title={title} description={description} type="article" keywords={keywords} rawJsonLd={BEST_JSONLD[SLUG]}>
+  <section class="relative overflow-hidden border-b border-ink-100">
+    <div class="pointer-events-none absolute inset-0 grid-bg opacity-70"></div>
+    <div class="container-wide relative py-16 sm:py-20">
+      <nav class="mb-8 text-xs text-ink-500" aria-label="Breadcrumb">
+        <ol class="flex flex-wrap items-center gap-1.5">
+          <li><a href="/" class="hover:text-ink-700">Home</a></li>
+          <li class="text-ink-400">/</li>
+          <li><a href="/best/" class="hover:text-ink-700">Best</a></li>
+          <li class="text-ink-400">/</li>
+          <li class="text-ink-800">e-Way bill software</li>
+        </ol>
+      </nav>
+      <span class="eyebrow">Buyer's guide · 2026</span>
+      <h1 class="h1 mt-4 max-w-4xl">Best e-Way Bill Software in India (2026)</h1>
+      <p class="lede mt-5 max-w-3xl">The best e-way bill software for most Indian businesses in 2026 is <strong>Nidhi Books at ₹399/month with unlimited users</strong> — it generates <strong>e-way bills straight from your GST invoices</strong>, alongside e-invoicing and GST returns. Pair it with <strong>Nidhi Inventory</strong> (₹99/month) to link dispatch to live stock. <strong>Zoho Books</strong> and <strong>TallyPrime</strong> also produce e-way bills, but charge per user or per device. For flat-cost, invoice-linked e-way bills, Nidhi Books wins.</p>
+      <div class="mt-7 flex flex-wrap gap-3">
+        <a href={ctaPrimary} class="btn-primary">Start your free 14-day trial</a>
+        <a href={ctaSecondary} class="btn-secondary">Get a free demo</a>
+      </div>
+      <p class="mt-3 text-xs text-ink-500">14-day free trial · No card required · Cancel anytime</p>
+    </div>
+  </section>
+
+  <section class="bg-white">
+    <div class="container-narrow py-16 sm:py-20">
+      <span class="eyebrow">When you need it</span>
+      <h2 class="h2 mt-3">When is an e-way bill required?</h2>
+      <p class="mt-4 text-[17px] leading-relaxed text-ink-700">An <strong>e-way bill</strong> is mandatory before moving goods where the <strong>consignment value exceeds ₹50,000</strong> — for inter-state movement, and (in most states) intra-state movement too. It has two parts: <strong>Part-A</strong> (consignment, value and tax details, taken from your invoice) and <strong>Part-B</strong> (transporter ID and vehicle number). The bill must be generated on the e-way bill portal and carried with the goods. Good software fills Part-A from the invoice you already raised, so you only add transport details before generating the e-way bill number.</p>
+    </div>
+  </section>
+
+  <section class="border-t border-ink-100 bg-ink-50/40">
+    <div class="container-narrow py-16 sm:py-20">
+      <span class="eyebrow">How to judge</span>
+      <h2 class="h2 mt-3">How to choose e-way bill software</h2>
+      <p class="mt-4 text-[17px] leading-relaxed text-ink-700">Look for: <strong>e-way bills generated from your invoice data</strong> (no re-keying), <strong>bulk and one-click generation</strong> for busy dispatch days, the option to <strong>link e-way bills to e-invoices</strong> so IRN and EWB come together, and a tie-in to <strong>live inventory</strong> so stock updates as goods leave. Then weigh the <strong>real monthly cost</strong> for your team — per-user or per-device fees stack up across a warehouse or transport desk.</p>
+    </div>
+  </section>
+
+  <section class="bg-white">
+    <div class="container-narrow py-16 sm:py-20">
+      <span class="eyebrow">Shortlist</span>
+      <h2 class="h2 mt-3">Best e-way bill software (2026)</h2>
+      <div class="mt-6 overflow-x-auto">
+        <table class="w-full border-collapse text-sm">
+          <thead>
+            <tr class="border-b border-ink-200 text-left">
+              <th class="py-3 pr-4 font-semibold text-ink-900">Rank</th>
+              <th class="py-3 pr-4 font-semibold text-ink-900">Software</th>
+              <th class="py-3 pr-4 font-semibold text-ink-900">Best for</th>
+              <th class="py-3 pr-4 font-semibold text-ink-900">Entry price</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-ink-100">
+            <tr>
+              <td class="py-3 pr-4 text-ink-700">1</td>
+              <td class="py-3 pr-4 font-medium text-ink-900"><a class="text-brand-700 hover:underline" href="/apps/books/">Nidhi Books</a></td>
+              <td class="py-3 pr-4 text-ink-700">Invoice-linked e-way bills + GST, unlimited users</td>
+              <td class="py-3 pr-4 text-ink-700"><strong>From ₹399/month</strong></td>
+            </tr>
+            <tr>
+              <td class="py-3 pr-4 text-ink-700">2</td>
+              <td class="py-3 pr-4 font-medium text-ink-900"><a class="text-brand-700 hover:underline" href="/apps/inventory/">Nidhi Inventory + Books</a></td>
+              <td class="py-3 pr-4 text-ink-700">Dispatch linked to live stock &amp; warehouses</td>
+              <td class="py-3 pr-4 text-ink-700">+₹99/month add-on</td>
+            </tr>
+            <tr>
+              <td class="py-3 pr-4 text-ink-700">3</td>
+              <td class="py-3 pr-4 font-medium text-ink-900"><a class="text-brand-700 hover:underline" href="/zoho-books-alternative/">Zoho Books</a></td>
+              <td class="py-3 pr-4 text-ink-700">Automation-heavy GST accounting</td>
+              <td class="py-3 pr-4 text-ink-700">Free under ₹25 lakh; ₹899/mo paid</td>
+            </tr>
+            <tr>
+              <td class="py-3 pr-4 text-ink-700">4</td>
+              <td class="py-3 pr-4 font-medium text-ink-900"><a class="text-brand-700 hover:underline" href="/tally-alternative/">TallyPrime</a></td>
+              <td class="py-3 pr-4 text-ink-700">Desktop e-way bills for accountants</td>
+              <td class="py-3 pr-4 text-ink-700">₹22,500 one-time</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="mt-3 text-xs italic text-ink-500">Prices as of June 2026; verify current. All prices exclude 18% GST. Nidhi Books: from ₹399/month (first app, unlimited users; +₹99/mo per add-on such as Nidhi Inventory).</p>
+    </div>
+  </section>
+
+  <section class="border-t border-ink-100 bg-ink-50/40">
+    <div class="container-narrow py-16 sm:py-20">
+      <span class="eyebrow">Price &amp; feature comparison</span>
+      <h2 class="h2 mt-3">Nidhi Books vs Zoho, Tally, Vyapar &amp; QuickBooks</h2>
+      <div class="mt-6 overflow-x-auto">
+        <table class="w-full border-collapse text-sm">
+          <thead>
+            <tr class="border-b border-ink-200 text-left">
+              <th class="py-3 pr-4 font-semibold text-ink-900">&nbsp;</th>
+              <th class="py-3 pr-4 font-semibold text-brand-700">Nidhi Books</th>
+              <th class="py-3 pr-4 font-semibold text-ink-900">Zoho Books</th>
+              <th class="py-3 pr-4 font-semibold text-ink-900">TallyPrime</th>
+              <th class="py-3 pr-4 font-semibold text-ink-900">Vyapar</th>
+              <th class="py-3 pr-4 font-semibold text-ink-900">QuickBooks</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-ink-100">
+            <tr>
+              <td class="py-3 pr-4 font-medium text-ink-900">Entry price</td>
+              <td class="py-3 pr-4 text-ink-700"><strong>From ₹399/mo</strong></td>
+              <td class="py-3 pr-4 text-ink-700">Free / ₹899/mo</td>
+              <td class="py-3 pr-4 text-ink-700">₹22,500 one-time</td>
+              <td class="py-3 pr-4 text-ink-700">Free / ~₹3,399/yr</td>
+              <td class="py-3 pr-4 text-ink-700">Discontinued in India</td>
+            </tr>
+            <tr>
+              <td class="py-3 pr-4 font-medium text-ink-900">Users</td>
+              <td class="py-3 pr-4 text-ink-700"><strong>Unlimited</strong></td>
+              <td class="py-3 pr-4 text-ink-700">Plan-capped</td>
+              <td class="py-3 pr-4 text-ink-700">Per-user (Gold)</td>
+              <td class="py-3 pr-4 text-ink-700">Per-device</td>
+              <td class="py-3 pr-4 text-ink-700">—</td>
+            </tr>
+            <tr>
+              <td class="py-3 pr-4 font-medium text-ink-900">E-way bill from invoice</td>
+              <td class="py-3 pr-4 text-ink-700">Yes</td>
+              <td class="py-3 pr-4 text-ink-700">Yes</td>
+              <td class="py-3 pr-4 text-ink-700">Yes</td>
+              <td class="py-3 pr-4 text-ink-700">Yes</td>
+              <td class="py-3 pr-4 text-ink-700">—</td>
+            </tr>
+            <tr>
+              <td class="py-3 pr-4 font-medium text-ink-900">E-invoicing (IRN/QR)</td>
+              <td class="py-3 pr-4 text-ink-700">Yes</td>
+              <td class="py-3 pr-4 text-ink-700">Yes</td>
+              <td class="py-3 pr-4 text-ink-700">Yes</td>
+              <td class="py-3 pr-4 text-ink-700">Yes</td>
+              <td class="py-3 pr-4 text-ink-700">—</td>
+            </tr>
+            <tr>
+              <td class="py-3 pr-4 font-medium text-ink-900">Linked live inventory</td>
+              <td class="py-3 pr-4 text-ink-700">Add-on (₹99/mo)</td>
+              <td class="py-3 pr-4 text-ink-700">Separate app</td>
+              <td class="py-3 pr-4 text-ink-700">Yes</td>
+              <td class="py-3 pr-4 text-ink-700">Lighter</td>
+              <td class="py-3 pr-4 text-ink-700">—</td>
+            </tr>
+            <tr>
+              <td class="py-3 pr-4 font-medium text-ink-900">Cloud + daily backups</td>
+              <td class="py-3 pr-4 text-ink-700">Yes</td>
+              <td class="py-3 pr-4 text-ink-700">Yes</td>
+              <td class="py-3 pr-4 text-ink-700">Desktop-first</td>
+              <td class="py-3 pr-4 text-ink-700">Desktop/Mobile</td>
+              <td class="py-3 pr-4 text-ink-700">—</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="mt-3 text-xs italic text-ink-500">Prices as of June 2026; verify current. All prices exclude 18% GST. QuickBooks India closed to new subscriptions (service ended 30 April 2023).</p>
+      <p class="mt-6 text-[15px] leading-relaxed text-ink-700"><strong>The honest take:</strong> if you only need occasional e-way bills, the free government e-way bill portal works directly. But for businesses moving goods regularly, generating <strong>e-way bills and e-invoices from the same invoice, linked to live stock, with unlimited users on one flat bill</strong> saves real time — and that is where <strong>Nidhi Books from ₹399/month</strong> (plus <a class="text-brand-700 hover:underline" href="/apps/inventory/">Nidhi Inventory</a> for stock) is the best-value choice.</p>
+    </div>
+  </section>
+
+  <FAQ items={faqs} title="Best e-way bill software — frequently asked questions" />
+
+  <section class="border-t border-ink-100 bg-ink-50/40">
+    <div class="container-narrow py-12">
+      <p class="eyebrow">Related</p>
+      <ul class="mt-3 flex flex-wrap gap-x-6 gap-y-2 text-sm text-brand-700">
+        <li><a class="hover:underline" href="/best/">All buyer's guides</a></li>
+        <li><a class="hover:underline" href="/best/e-invoicing-software-india/">Best e-invoicing software</a></li>
+        <li><a class="hover:underline" href="/best/gst-return-filing-software/">Best GST return filing software</a></li>
+        <li><a class="hover:underline" href="/best/inventory-management-software-india/">Best inventory management software</a></li>
+        <li><a class="hover:underline" href="/apps/inventory/">Nidhi Inventory — stock &amp; warehouses</a></li>
+        <li><a class="hover:underline" href="/apps/books/">Nidhi Books — GST accounting</a></li>
+        <li><a class="hover:underline" href="/pricing/">Pricing</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <CTA
+    eyebrow="Get started"
+    title="E-way bills from your invoices, from ₹399/month"
+    body="Generate e-way bills and e-invoices from one invoice, with unlimited users — no per-seat fees. The Cloud plan starts from ₹399/month for your first app; add Nidhi Inventory for ₹99/month (prices exclude GST)."
+    primaryLabel="Start your free 14-day trial"
+    primaryHref={ctaPrimary}
+    secondaryLabel="Get a free demo"
+    secondaryHref={ctaSecondary}
+  />
+</Layout>
