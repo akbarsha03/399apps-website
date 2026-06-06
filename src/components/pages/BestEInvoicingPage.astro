@@ -22,7 +22,7 @@ const rawJsonLd = { '@context': 'https://schema.org', '@graph': graph };
 
 const faqs = t.faq.items.map((f) => ({ q: f.q, a: f.a }));
 
-const ctaPrimary = localizedPath(`/contact?intent=cloud&utm_source=organic&utm_medium=best-category&utm_campaign=${SLUG}&utm_content=primary-cta`, lang);
+const ctaPrimary = 'https://books.399apps.com/sign-up';
 const ctaSecondary = localizedPath(`/contact?intent=demo&utm_source=organic&utm_medium=best-category&utm_campaign=${SLUG}&utm_content=secondary-demo`, lang);
 
 const L = (p: string) => localizedPath(p, lang);
