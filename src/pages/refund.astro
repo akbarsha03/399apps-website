@@ -1,0 +1,88 @@
+---
+import Layout from '~/layouts/Layout.astro';
+import { SITE } from '~/data/site';
+
+const title = 'Refund & Cancellation Policy — 399apps';
+const description =
+  'Refund and cancellation policy for 399apps cloud subscriptions and self-hosted licences — eligibility, timelines, and how to request a refund.';
+const updated = '2026-06-06';
+---
+
+<Layout title={title} description={description} keywords={['399apps refund policy', 'cancellation policy', 'SaaS refund']}>
+  <section class="bg-white">
+    <div class="container-narrow py-16 sm:py-20">
+      <span class="eyebrow">Legal</span>
+      <h1 class="h1 mt-5">Refund &amp; Cancellation Policy</h1>
+      <p class="mt-3 text-sm text-ink-500">Last updated: {updated}</p>
+
+      <div class="prose prose-ink mt-10 max-w-none">
+        <p>
+          This Refund &amp; Cancellation Policy explains when and how you can cancel a 399apps
+          subscription or licence and request a refund. It applies to all purchases made through
+          {SITE.domain} and our authorised payment partners (including Razorpay and Cashfree). All
+          payments are processed in Indian Rupees (INR).
+        </p>
+
+        <h2>Cloud subscriptions</h2>
+        <p>
+          399apps cloud plans are billed in INR — ₹399/month for your first app and ₹99/month for
+          each additional app or add-on (annual billing available on request). All prices exclude
+          GST, which is added where applicable.
+        </p>
+        <ul>
+          <li>
+            <strong>30-day refund window.</strong> New cloud subscriptions are refundable on a
+            pro-rata basis within the first 30 days of the initial purchase. After 30 days,
+            subscription fees are non-refundable for the current billing period.
+          </li>
+          <li>
+            <strong>Cancellation.</strong> You can cancel your subscription at any time from your
+            account or by emailing us. On cancellation, your plan stays active until the end of the
+            current billing period and is not renewed thereafter.
+          </li>
+          <li>
+            <strong>Renewals.</strong> Recurring charges renew automatically. If you cancel before a
+            renewal date, you will not be charged for the next period. A renewal charge can be
+            refunded if you cancel within 7 days of that renewal and have not made significant use of
+            the service in the new period.
+          </li>
+        </ul>
+
+        <h2>Self-hosted &amp; enterprise licences</h2>
+        <p>
+          Self-hosted and enterprise deployments are licensed under a custom quote. Self-host
+          licences are refundable within 14 days of purchase, provided you have not deployed the
+          software to a production environment. Custom development, onboarding, and professional
+          services are non-refundable once work has commenced.
+        </p>
+
+        <h2>Non-refundable items</h2>
+        <ul>
+          <li>Charges older than the applicable refund window above.</li>
+          <li>One-time setup, migration, training, or professional-services fees once delivered.</li>
+          <li>Applicable taxes and payment-gateway charges, where non-recoverable.</li>
+          <li>Accounts suspended or terminated for breach of our <a href="/terms/">Terms of Service</a>.</li>
+        </ul>
+
+        <h2>How to request a refund</h2>
+        <p>
+          Email <a href={`mailto:${SITE.email}`}>{SITE.email}</a> from the address associated with
+          your account, with your order or invoice reference and the reason for the request. We
+          respond to every refund request within 3 business days.
+        </p>
+
+        <h2>Refund timelines</h2>
+        <p>
+          Approved refunds are issued to the original payment method via the original payment gateway
+          (Razorpay or Cashfree). Once approved, refunds are typically credited within 5–7 business
+          days, though the exact time depends on your bank or card issuer.
+        </p>
+
+        <h2>Contact</h2>
+        <p>
+          Questions about this policy? Write to <a href={`mailto:${SITE.email}`}>{SITE.email}</a>.
+        </p>
+      </div>
+    </div>
+  </section>
+</Layout>
