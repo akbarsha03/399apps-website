@@ -129,6 +129,12 @@ const jsonLd = props.rawJsonLd
       keywords={props.keywords}
       jsonLd={jsonLd}
     />
+
+    {/* Paddle.js — checkout. Auto-opens checkout when the URL carries ?_ptxn=… */}
+    <script is:inline src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
+    <script is:inline>
+      Paddle.Initialize({ token: 'live_3ec8d54530af94c865643627cda' });
+    </script>
   </head>
   <body>
     <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded focus:bg-ink-900 focus:px-3 focus:py-2 focus:text-white">
