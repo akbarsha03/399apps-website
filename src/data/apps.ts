@@ -32,7 +32,7 @@ export const PLANS: Plan[] = [
       'Unlimited exports, every feature included',
       'Daily backups, India data region',
     ],
-    cta: { label: 'Start now', href: '/contact?intent=cloud' },
+    cta: { label: 'Start now', href: 'https://books.399apps.com/sign-up' },
     featured: true,
   },
   {
