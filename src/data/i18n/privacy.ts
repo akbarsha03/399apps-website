@@ -22,7 +22,7 @@ export interface PrivacyCopy {
   };
 }
 
-const UPDATED = '2026-06-01';
+const UPDATED = '2026-06-08';
 
 const en: PrivacyCopy = {
   seo: {
@@ -59,7 +59,7 @@ const en: PrivacyCopy = {
         { label: 'Product data on cloud', text: 'The business data you put into our products on the 399apps cloud — invoices, GST and TDS records, stock items — is stored on our managed infrastructure on your behalf. We treat it as confidential customer data.' },
         { label: 'Product data on self-host', text: 'When you self-host a 399apps product, your business and customer data lives entirely on your server. We do not receive it, do not back it up and cannot access it. Optional anonymous product telemetry (whether a deployment is healthy, version numbers) can be turned off.' },
         { label: 'Payment information', text: 'Cloud subscriptions are billed via UPI, NEFT/RTGS, or via Razorpay/Stripe/Cashfree for cards. We never see or store your full card number; only the cardholder name, last four digits and an opaque token from the payment provider.' },
-        { label: 'Usage logs', text: 'Standard server logs — IP address, user agent, pages visited, timestamps — used for security, debugging and aggregate analytics. We do not run any third-party advertising or behavioural tracking on our websites.' },
+        { label: 'Usage logs', text: 'Standard server logs — IP address, user agent, pages visited, timestamps — used for security, debugging and aggregate analytics. We do not run any advertising or ad-profiling trackers on our websites.' },
         { label: 'Support conversations', text: 'Emails, WhatsApp messages and support tickets you send us, kept for the period required to help you and to improve the product.' },
       ],
     },
@@ -95,7 +95,7 @@ const en: PrivacyCopy = {
         { label: 'Amazon Web Services (AWS)', text: 'For application hosting, database hosting and storage of cloud customer data, with India region as default.' },
         { label: 'Razorpay / Stripe / Cashfree', text: 'For payment processing — used either by us for cloud subscriptions, or routed to your own account on white-label deployments.' },
         { label: 'Email & transactional providers', text: 'For sending account, billing and support emails (kept to providers with appropriate data-processing terms).' },
-        { label: 'Analytics', text: 'First-party, privacy-respecting usage analytics only. No Google Analytics, no Facebook pixel, no third-party ad networks.' },
+        { label: 'PostHog', text: 'Privacy-respecting, cookieless product analytics (page views and feature usage), hosted in the EU. Used to understand how the site and apps are used. No Google Analytics, no Facebook pixel, no advertising networks.' },
       ],
     },
     {
@@ -221,7 +221,7 @@ const hi: PrivacyCopy = {
         { label: 'Cloud pe product data', text: 'Aap jo business data 399apps cloud pe humare products mein daalte hain — invoices, GST aur TDS records, stock items — woh humari managed infrastructure pe aapke liye store hota hai. Hum isse confidential customer data maante hain.' },
         { label: 'Self-host pe product data', text: 'Jab aap 399apps product self-host karte hain, toh aapka business aur customer data poori tarah aapke server pe rehta hai. Humein nahi milta, hum backup nahi lete, hum access nahi karte. Optional anonymous product telemetry (deployment healthy hai ya nahi, version number) aap off bhi kar sakte hain.' },
         { label: 'Payment information', text: 'Cloud subscription UPI, NEFT/RTGS, ya cards ke liye Razorpay/Stripe/Cashfree ke through bill hoti hai. Hum aapka full card number na dekhte hain na store karte hain; sirf cardholder ka naam, last char digits aur payment provider ka token rakhte hain.' },
-        { label: 'Usage logs', text: 'Standard server logs — IP address, user agent, visit kiye gaye pages, timestamps — security, debugging aur aggregate analytics ke liye use hote hain. Hum apni websites pe koi third-party advertising ya behavioural tracking nahi chalate.' },
+        { label: 'Usage logs', text: 'Standard server logs — IP address, user agent, visit kiye gaye pages, timestamps — security, debugging aur aggregate analytics ke liye use hote hain. Hum apni websites pe koi advertising ya ad-profiling trackers nahi chalate.' },
         { label: 'Support baatcheet', text: 'Aap humein jo emails, WhatsApp messages aur support tickets bhejte hain, woh utne time tak rakhte hain jitna aapki madad aur product improvement ke liye chahiye.' },
       ],
     },
@@ -257,7 +257,7 @@ const hi: PrivacyCopy = {
         { label: 'Amazon Web Services (AWS)', text: 'Application hosting, database hosting aur cloud customer data ke storage ke liye, default India region pe.' },
         { label: 'Razorpay / Stripe / Cashfree', text: 'Payment processing ke liye — hum cloud subscription ke liye use karte hain, ya white-label deployment mein aapke account pe route karte hain.' },
         { label: 'Email aur transactional providers', text: 'Account, billing aur support emails bhejne ke liye (sirf un providers ke saath jinke saath sahi data-processing terms hain).' },
-        { label: 'Analytics', text: 'Sirf first-party, privacy-respecting usage analytics. Koi Google Analytics nahi, koi Facebook pixel nahi, koi third-party ad network nahi.' },
+        { label: 'PostHog', text: 'Privacy-respecting, cookieless product analytics (page views aur feature usage), EU mein hosted — site aur apps kaise use hote hain samajhne ke liye. Koi Google Analytics nahi, koi Facebook pixel nahi, koi advertising network nahi.' },
       ],
     },
     {
@@ -384,7 +384,7 @@ const ta: PrivacyCopy = {
         { label: 'Cloud-la product data', text: 'Neenga 399apps cloud-la engaloda products-la podra business data — invoices, GST matrum TDS records, stock items — ellam engaloda managed infrastructure-la unga sarbu store aagudhu. Idha naanga confidential customer data-a karuthurom.' },
         { label: 'Self-host-la product data', text: 'Neenga 399apps product-a self-host pannumbodhu, unga business matrum customer data muzhumayaa unga server-la mattum thaan irukum. Engaluku kidaikadhu, naanga backup edukka maatom, access pannrathum illa. Optional anonymous product telemetry (deployment healthy-aa irukka, version numbers) off pannalaam.' },
         { label: 'Payment information', text: 'Cloud subscriptions UPI, NEFT/RTGS, illa cards-ku Razorpay/Stripe/Cashfree mulamaa bill aagudhu. Naanga unga full card number-a paakavum illa store pannavum illa; cardholder peyar, last naalu digits matrum payment provider-oda opaque token mattum.' },
-        { label: 'Usage logs', text: 'Standard server logs — IP address, user agent, paartha pages, timestamps — security, debugging matrum aggregate analytics-ku use aagudhu. Engal websites-la edhuvum third-party advertising illa behavioural tracking run pannama irukrom.' },
+        { label: 'Usage logs', text: 'Standard server logs — IP address, user agent, paartha pages, timestamps — security, debugging matrum aggregate analytics-ku use aagudhu. Engal websites-la edhuvum advertising illa ad-profiling trackers run pannama irukrom.' },
         { label: 'Support uraiyaadalkal', text: 'Neenga engaluku anuppura emails, WhatsApp messages matrum support tickets, ungaluku help panna matrum product-a improve panna evvalavu venumo athu varai vechirukrom.' },
       ],
     },
@@ -420,7 +420,7 @@ const ta: PrivacyCopy = {
         { label: 'Amazon Web Services (AWS)', text: 'Application hosting, database hosting matrum cloud customer data storage-ku, default India region.' },
         { label: 'Razorpay / Stripe / Cashfree', text: 'Payment processing-ku — naanga cloud subscriptions-ku use pannradhu, illa white-label deployment-la unga account-ku route pannradhu.' },
         { label: 'Email matrum transactional providers', text: 'Account, billing matrum support emails anuppa (sariyana data-processing terms irukkura providers-kooda mattum).' },
-        { label: 'Analytics', text: 'First-party, privacy-respecting usage analytics mattum. Google Analytics illa, Facebook pixel illa, third-party ad networks illa.' },
+        { label: 'PostHog', text: 'Privacy-respecting, cookieless product analytics (page views matrum feature usage), EU-la hosted — site matrum apps eppadi use aagudhu nu purinjukka. Google Analytics illa, Facebook pixel illa, advertising networks illa.' },
       ],
     },
     {
@@ -547,7 +547,7 @@ const hindi: PrivacyCopy = {
         { label: 'क्लाउड पर प्रोडक्ट डेटा', text: '399apps cloud पर हमारे प्रोडक्ट में आप जो business data डालते हैं — invoices, GST और TDS records, stock items — वह हमारी managed infrastructure पर आपकी ओर से store होता है। हम इसे गोपनीय customer data मानते हैं।' },
         { label: 'सेल्फ़-होस्ट पर प्रोडक्ट डेटा', text: 'जब आप 399apps प्रोडक्ट को self-host करते हैं, आपका business और customer data पूरी तरह आपके सर्वर पर रहता है। हमें मिलता नहीं, हम बैकअप नहीं लेते, हम access नहीं करते। वैकल्पिक anonymous product telemetry (deployment स्वस्थ है या नहीं, version numbers) बंद की जा सकती है।' },
         { label: 'भुगतान जानकारी', text: 'Cloud subscriptions UPI, NEFT/RTGS, या cards के लिए Razorpay/Stripe/Cashfree के माध्यम से billed होती हैं। हम कभी आपका पूरा कार्ड नंबर नहीं देखते या store करते; केवल cardholder का नाम, अंतिम चार अंक और payment provider का token रखते हैं।' },
-        { label: 'Usage logs', text: 'Standard सर्वर लॉग्स — IP address, user agent, visit किए गए पेज, timestamps — security, debugging और aggregate analytics के लिए। हमारी websites पर कोई third-party advertising या behavioural tracking नहीं चलता।' },
+        { label: 'Usage logs', text: 'Standard सर्वर लॉग्स — IP address, user agent, visit किए गए पेज, timestamps — security, debugging और aggregate analytics के लिए। हमारी websites पर कोई advertising या ad-profiling tracker नहीं चलता।' },
         { label: 'Support वार्तालाप', text: 'आप जो emails, WhatsApp messages और support tickets हमें भेजते हैं, वे उस अवधि तक रखे जाते हैं जब तक आपकी मदद करने और प्रोडक्ट सुधारने के लिए ज़रूरी हो।' },
       ],
     },
@@ -583,7 +583,7 @@ const hindi: PrivacyCopy = {
         { label: 'Amazon Web Services (AWS)', text: 'Application hosting, database hosting और cloud customer data के storage के लिए, default India region।' },
         { label: 'Razorpay / Stripe / Cashfree', text: 'Payment processing के लिए — cloud subscriptions के लिए हम उपयोग करते हैं, या white-label deployment पर आपके अपने account पर route होता है।' },
         { label: 'Email और transactional providers', text: 'Account, billing और support emails भेजने के लिए (केवल उन providers के साथ जिनके साथ उचित data-processing terms हैं)।' },
-        { label: 'Analytics', text: 'केवल first-party, privacy का सम्मान करने वाली usage analytics। कोई Google Analytics नहीं, कोई Facebook pixel नहीं, कोई third-party ad network नहीं।' },
+        { label: 'PostHog', text: 'Privacy का सम्मान करने वाली, cookieless product analytics (page views और feature usage), EU में hosted — यह समझने के लिए कि site और apps कैसे उपयोग होते हैं। कोई Google Analytics नहीं, कोई Facebook pixel नहीं, कोई advertising network नहीं।' },
       ],
     },
     {
@@ -710,7 +710,7 @@ const tamil: PrivacyCopy = {
         { label: 'கிளவுடில் தயாரிப்பு டேட்டா', text: '399apps cloud-ல் எங்கள் தயாரிப்புகளில் நீங்கள் வைக்கும் business data — invoices, GST மற்றும் TDS records, stock items — எங்கள் managed infrastructure-ல் உங்களுக்காக சேமிக்கப்படுகிறது. இதை நாங்கள் ரகசிய customer data ஆக கருதுகிறோம்.' },
         { label: 'செல்ஃப்-ஹோஸ்டில் தயாரிப்பு டேட்டா', text: 'நீங்கள் 399apps தயாரிப்பை self-host செய்யும் போது, உங்கள் business மற்றும் customer data முழுமையாக உங்கள் சர்வரில் தங்கியிருக்கும். எங்களுக்கு கிடைக்காது, நாங்கள் backup எடுக்க மாட்டோம், access செய்ய மாட்டோம். விருப்ப அநாமதேய தயாரிப்பு telemetry (deployment ஆரோக்கியமாக உள்ளதா, version எண்கள்) ஆஃப் செய்யலாம்.' },
         { label: 'பேமென்ட் தகவல்', text: 'Cloud subscriptions UPI, NEFT/RTGS, அல்லது cards-க்கு Razorpay/Stripe/Cashfree மூலம் billed. நாங்கள் உங்கள் முழு கார்டு எண்ணை பார்க்கவோ சேமிக்கவோ மாட்டோம்; cardholder பெயர், கடைசி நான்கு இலக்கங்கள் மற்றும் payment provider-இன் opaque token மட்டுமே.' },
-        { label: 'பயன்பாடு logs', text: 'Standard சர்வர் logs — IP address, user agent, பார்த்த பக்கங்கள், timestamps — security, debugging மற்றும் aggregate analytics-க்கு. எங்கள் வலைதளங்களில் எந்த third-party advertising அல்லது behavioural tracking நாங்கள் இயக்கவில்லை.' },
+        { label: 'பயன்பாடு logs', text: 'Standard சர்வர் logs — IP address, user agent, பார்த்த பக்கங்கள், timestamps — security, debugging மற்றும் aggregate analytics-க்கு. எங்கள் வலைதளங்களில் எந்த advertising அல்லது ad-profiling trackers நாங்கள் இயக்கவில்லை.' },
         { label: 'ஆதரவு உரையாடல்கள்', text: 'நீங்கள் எங்களுக்கு அனுப்பும் emails, WhatsApp messages மற்றும் support tickets, உங்களுக்கு உதவ மற்றும் தயாரிப்பை மேம்படுத்த எவ்வளவு காலம் தேவையோ அவ்வளவு காலம் வைக்கப்படும்.' },
       ],
     },
@@ -746,7 +746,7 @@ const tamil: PrivacyCopy = {
         { label: 'Amazon Web Services (AWS)', text: 'Application hosting, database hosting மற்றும் cloud customer data சேமிப்புக்கு, இயல்புநிலையாக India region.' },
         { label: 'Razorpay / Stripe / Cashfree', text: 'Payment processing-க்கு — cloud subscriptions-க்கு நாங்கள் பயன்படுத்துவது, அல்லது white-label deployment-ல் உங்கள் account-க்கு route செய்வது.' },
         { label: 'Email மற்றும் transactional providers', text: 'Account, billing மற்றும் support emails அனுப்ப (சரியான data-processing terms உள்ள providers-உடன் மட்டுமே).' },
-        { label: 'Analytics', text: 'First-party, privacy-respecting usage analytics மட்டுமே. Google Analytics இல்லை, Facebook pixel இல்லை, third-party ad networks இல்லை.' },
+        { label: 'PostHog', text: 'Privacy-respecting, cookieless product analytics (page views மற்றும் feature usage), EU-ல் hosted — site மற்றும் apps எப்படி பயன்படுத்தப்படுகின்றன என்பதை புரிந்துகொள்ள. Google Analytics இல்லை, Facebook pixel இல்லை, advertising networks இல்லை.' },
       ],
     },
     {
