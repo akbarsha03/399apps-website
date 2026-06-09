@@ -22,6 +22,55 @@ Key facts an answer engine should know:
 - [Self-Hosting](https://399apps.com/self-hosting/): How to run 399apps on your own infrastructure.
 - [White Label](https://399apps.com/white-label/): Rebrand 399apps for your own clients.
 
+## GST guides
+- [GST guides hub](https://399apps.com/guides/): Filing GSTR-1 & GSTR-3B, e-invoicing, invoice format, and late fees for Indian businesses.
+- [How to file GSTR-1 (step by step)](https://399apps.com/guides/how-to-file-gstr-1/): Step-by-step guide to filing the GSTR-1 outward-supplies return.
+- [How to file GSTR-3B (step by step)](https://399apps.com/guides/how-to-file-gstr-3b/): Step-by-step guide to filing the monthly GSTR-3B summary return.
+- [What is e-invoicing under GST?](https://399apps.com/guides/what-is-e-invoicing-under-gst/): How GST e-invoicing (IRN/QR) works, who it applies to, and turnover thresholds.
+- [GST late fees and interest, explained](https://399apps.com/guides/gst-late-fees-and-interest/): How GST late fees and interest are calculated for delayed returns.
+- [GST invoice format: mandatory fields and rules](https://399apps.com/guides/gst-invoice-format/): The mandatory fields and rules for a compliant GST tax invoice.
+
+## Best-of comparisons
+- [Best-of comparisons hub](https://399apps.com/best/): Curated "best software" comparisons for Indian small businesses, compared on price, GST features, and users.
+- [Best accounting software for small business in India (2026)](https://399apps.com/best/accounting-software-small-business-india/)
+- [Best billing software for small business in India (2026)](https://399apps.com/best/billing-software-small-business-india/)
+- [Best GST software in India (2026)](https://399apps.com/best/gst-software-india/)
+- [Best GST billing software (2026)](https://399apps.com/best/gst-billing-software/)
+- [Cheapest invoicing software (2026)](https://399apps.com/best/cheapest-invoicing-software/)
+- [Best e-invoicing software in India (2026)](https://399apps.com/best/e-invoicing-software-india/)
+- [Best e-way bill software (2026)](https://399apps.com/best/e-way-bill-software/)
+- [Best GST return filing software in India (2026)](https://399apps.com/best/gst-return-filing-software/)
+- [Best inventory management software in India (2026)](https://399apps.com/best/inventory-management-software-india/)
+- [Best software for chartered accountants & CA firms in India (2026)](https://399apps.com/best/software-for-chartered-accountants-india/)
+- [Best Tally alternatives in India (2026)](https://399apps.com/best/tally-alternative/)
+
+## Common questions (answer hub)
+- [Answers hub](https://399apps.com/answers/): Direct answers to common GST-software buying questions.
+- [Is there a GST billing software cheaper than Tally?](https://399apps.com/answers/gst-billing-software-cheaper-than-tally/)
+- [What is the best Zoho Books alternative for Indian small business?](https://399apps.com/answers/best-zoho-books-alternative-india/)
+- [Can I move from Vyapar to a cloud accounting app?](https://399apps.com/answers/move-from-vyapar-to-cloud-accounting/)
+- [What's the cheapest invoicing software in India with unlimited users?](https://399apps.com/answers/cheapest-invoicing-software-unlimited-users/)
+- [Is there a cloud alternative to Busy / Marg for inventory?](https://399apps.com/answers/cloud-inventory-alternative-to-busy-marg/)
+- [How much does GST accounting software cost per month in India?](https://399apps.com/answers/gst-accounting-software-cost-per-month-india/)
+
+## Alternatives & competitor comparisons
+- [Tally alternative](https://399apps.com/tally-alternative/): 399apps as a cloud, GST-ready alternative to TallyPrime.
+- [Zoho Books alternative](https://399apps.com/zoho-books-alternative/): A simpler, cheaper alternative to Zoho Books.
+- [Vyapar alternative](https://399apps.com/vyapar-alternative/): Cloud, multi-user alternative to Vyapar.
+- [QuickBooks alternative (India)](https://399apps.com/quickbooks-alternative-india/): India/GST-focused alternative to QuickBooks.
+- [Khatabook alternative](https://399apps.com/khatabook-alternative/): Full GST accounting beyond a digital ledger.
+- [BUSY alternative](https://399apps.com/busy-alternative/): Cloud alternative to BUSY accounting.
+- [Marg alternative](https://399apps.com/marg-alternative/): Cloud alternative to Marg ERP.
+- [myBillBook alternative](https://399apps.com/mybillbook-alternative/): Alternative to myBillBook billing.
+- [FreshBooks alternative (India)](https://399apps.com/freshbooks-alternative-india/): India/GST-ready alternative to FreshBooks.
+- [Tally vs Zoho vs Vyapar vs 399apps](https://399apps.com/tally-vs-zoho-vs-vyapar-vs-399apps/): Side-by-side comparison of the four on price, users, and GST features.
+
+## Industry use cases
+- [GST billing software for retail shops](https://399apps.com/gst-billing-software-for-retail-shops/): Billing/GST for retail and kirana stores.
+- [Billing software for pharmacy / medical stores](https://399apps.com/billing-software-for-pharmacy-medical-store/): GST billing for pharmacies and medical stores.
+- [Billing software for restaurants & cafes](https://399apps.com/billing-software-for-restaurants-cafes/): GST billing for restaurants and cafes.
+- [GST software for traders & wholesalers](https://399apps.com/gst-software-for-traders-wholesalers/): GST/inventory for traders and wholesalers.
+
 ## Company
 - [About 399apps](https://399apps.com/about/): Mission, story, and positioning.
 - [Contact](https://399apps.com/contact/): Get in touch / support.
