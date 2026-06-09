@@ -27,6 +27,10 @@ export function isLang(value: string): value is Lang {
 // Build a path for a given language by swapping the leading lang prefix.
 // localizedPath('/', 'hindi') -> '/hindi'   localizedPath('/hi', 'en') -> '/'
 export function localizedPath(path: string, lang: Lang): string {
+  // Leave absolute/external URLs untouched — a scheme (`https:`, `mailto:`, `tel:`)
+  // or protocol-relative `//` href is not an internal route and must never get a
+  // language prefix (e.g. the app sign-up CTA https://books.399apps.com/sign-up).
+  if (/^[a-z][a-z0-9+.-]*:/i.test(path) || path.startsWith('//')) return path;
   // Preserve hash and query so #anchors and ?intent= survive language switches.
   const hashIdx = path.indexOf('#');
   const queryIdx = path.indexOf('?');

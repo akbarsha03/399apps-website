@@ -5,8 +5,15 @@ import { getChromeCopy, localizedPath, LANGUAGES, DEFAULT_LANG, HTML_LANG_ATTR, 
 
 interface Props {
   lang?: Lang;
+  /**
+   * Whether this page actually has localized (hi/ta/hindi/tamil) variants.
+   * When false the page is English-only, so the language switcher is hidden —
+   * otherwise it would link to /hi/<path> etc. that 404 (no such page exists).
+   * Mirrors the same `localizedOf` gate the Layout uses for hreflang.
+   */
+  localized?: boolean;
 }
-const { lang = DEFAULT_LANG } = Astro.props;
+const { lang = DEFAULT_LANG, localized = false } = Astro.props;
 const t = getChromeCopy(lang);
 const pathname = Astro.url.pathname;
 
@@ -53,7 +60,8 @@ const current = LANGUAGES.find((l) => l.code === lang) ?? LANGUAGES[0];
     </nav>
 
     <div class="flex items-center gap-2">
-      <!-- Language switcher (dropdown) -->
+      <!-- Language switcher (dropdown) — only on pages that have localized variants -->
+      {localized && (
       <details class="group relative hidden sm:block" data-lang-switch>
         <summary
           class="flex cursor-pointer list-none items-center gap-1.5 rounded-full border border-ink-200 px-3 py-1.5 text-xs font-medium text-ink-700 transition-colors hover:border-ink-300 [&::-webkit-details-marker]:hidden"
@@ -83,6 +91,7 @@ const current = LANGUAGES.find((l) => l.code === lang) ?? LANGUAGES[0];
           })}
         </div>
       </details>
+      )}
 
       <a href={contactHref} class="hidden btn-secondary lg:inline-flex">
         {t.header.talkToSales}
@@ -111,6 +120,7 @@ const current = LANGUAGES.find((l) => l.code === lang) ?? LANGUAGES[0];
       ))}
       <a href={contactHref} class="btn-secondary mt-2 justify-center">{t.header.talkToSales}</a>
 
+      {localized && (
       <div class="mt-3 border-t border-ink-100 pt-3">
         <p class="px-3 text-xs uppercase tracking-wider text-ink-500">{t.header.languageLabel}</p>
         <div class="mt-1.5 flex gap-1.5 px-3">
@@ -131,6 +141,7 @@ const current = LANGUAGES.find((l) => l.code === lang) ?? LANGUAGES[0];
           })}
         </div>
       </div>
+      )}
     </nav>
   </div>
 </header>

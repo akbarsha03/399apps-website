@@ -10,5 +10,5 @@
 /apps/jobportal       /#apps    301
 /apps/jobportal/*     /#apps    301
 
-# Future asset placeholders
-/og.png        /og-image.svg    200
+# /og.png alias → the real OG image (og-image.svg never existed; the asset is a PNG)
+/og.png        /og-image.png    200
