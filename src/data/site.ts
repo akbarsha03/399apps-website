@@ -38,7 +38,7 @@ export function canonicalUrl(path = '/'): string {
  * (source = the marketing domain, campaign = free_trial, content = which CTA).
  */
 export const BOOKS_SIGNUP_URL =
-  'https://books.399apps.com/signup?utm_source=399apps.com&utm_medium=referral&utm_campaign=free_trial&utm_content=landing_hero';
+  'https://books.399apps.com/sign-up?utm_source=399apps.com&utm_medium=referral&utm_campaign=free_trial&utm_content=landing_hero';
 
 export const NAV = [
   { label: 'Apps', href: '/#apps' },
