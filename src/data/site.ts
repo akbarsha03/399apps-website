@@ -32,6 +32,14 @@ export function canonicalUrl(path = '/'): string {
   return new URL(withSlash + suffix, SITE.url).toString();
 }
 
+/**
+ * Free-trial sign-up on the Books cloud product. UTM tags are baked in so cloud
+ * sign-ups that originate from this marketing site are attributable in analytics
+ * (source = the marketing domain, campaign = free_trial, content = which CTA).
+ */
+export const BOOKS_SIGNUP_URL =
+  'https://books.399apps.com/signup?utm_source=399apps.com&utm_medium=referral&utm_campaign=free_trial&utm_content=landing_hero';
+
 export const NAV = [
   { label: 'Apps', href: '/#apps' },
   { label: 'Pricing', href: '/pricing' },
