@@ -5,6 +5,7 @@ import CTA from '~/components/CTA.astro';
 import FAQ from '~/components/FAQ.astro';
 import { APPS } from '~/data/apps';
 import { getLandingCopy, localizedPath, DEFAULT_LANG, type Lang } from '~/data/i18n';
+import { BOOKS_SIGNUP_URL } from '~/data/site';
 
 interface Props {
   lang: Lang;
@@ -55,10 +56,13 @@ const altLinks = [
       </h1>
       <p class="lede mx-auto mt-5 max-w-2xl">{t.hero.lede}</p>
       <div class="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
-        <a href="#apps" class="btn-primary">
-          {t.hero.ctaBrowse} <Icon name="arrow-right" size={16} />
+        <a href={BOOKS_SIGNUP_URL} class="btn-primary">
+          {t.hero.ctaTrial} <Icon name="arrow-right" size={16} />
         </a>
-        <a href={demoHref} class="btn-secondary">
+        <a href="#apps" class="btn-secondary">
+          {t.hero.ctaBrowse}
+        </a>
+        <a href={demoHref} class="btn-ghost">
           {t.hero.ctaDemo}
         </a>
       </div>
