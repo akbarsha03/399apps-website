@@ -11,7 +11,8 @@
 //   - Nidhi Books = GST billing + accounting (GST invoices, e-invoice/e-way bill,
 //     GSTR-1 & GSTR-3B exports). Nidhi Inventory = stock. From ₹399/mo first app;
 //     +₹99/mo per add-on; unlimited users (never per seat); prices exclude GST.
-//   - 14-day free trial. No self-serve signup — CTA is /contact/ (/signup 404s).
+//   - 14-day free trial, self-serve at books.399apps.com/sign-up (primary CTA);
+//     /contact/ is the secondary "guided demo" CTA.
 // Editorial facts are general GST compliance information, current as of 2026-06.
 
 const SITE_URL = 'https://399apps.com';
