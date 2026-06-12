@@ -2,7 +2,7 @@
 // Each page: a 40–60 word direct-answer snippet (extractable by answer engines / AI Overviews),
 // supporting detail, cross-links into the live money cluster, and supporting FAQs.
 // Ground truth (must hold on every page): Nidhi Books + Nidhi Inventory + bundle;
-// from ₹399/mo (first app; +₹99/add-on, GST extra); unlimited users; /contact trial CTA (no self-serve signup).
+// from ₹399/mo (first app; +₹99/add-on, GST extra); unlimited users; self-serve 14-day trial at books.399apps.com/sign-up (contact form is the secondary "guided demo" CTA).
 // answers-jsonld.ts derives QAPage + FAQPage JSON-LD from this file so schema == visible text.
 
 export interface AnswerLink {
@@ -30,7 +30,7 @@ export interface AnswerPageData {
   keywords: string[];
 }
 
-const TRIAL_NOTE = 'Start with a 14-day free trial (no card required) via the contact form — there is no self-serve signup on the marketing site yet.';
+const TRIAL_NOTE = 'You can start a 14-day free trial directly from the sign-up page (no card required) — or use the contact form if you would like a guided demo first.';
 
 export const ANSWERS: Record<string, AnswerPageData> = {
   'gst-billing-software-cheaper-than-tally': {
@@ -87,7 +87,7 @@ export const ANSWERS: Record<string, AnswerPageData> = {
       'For most Indian small businesses, 399Apps (Nidhi Books) is the best Zoho Books alternative: cloud GST accounting from ₹399/month with unlimited users and no per-user fees.',
     eyebrow: 'Accounting · alternatives',
     directAnswer:
-      'For most Indian small businesses, 399Apps (Nidhi Books) is the best Zoho Books alternative: cloud GST accounting from ₹399/month with unlimited users — without the per-user fees that make Zoho costly as your team grows. You get GST invoicing, GSTR-1, GSTR-3B, TDS and e-invoicing, guided data import, and a free trial through the contact form.',
+      'For most Indian small businesses, 399Apps (Nidhi Books) is the best Zoho Books alternative: cloud GST accounting from ₹399/month with unlimited users — without the per-user fees that make Zoho costly as your team grows. You get GST invoicing, GSTR-1, GSTR-3B, TDS and e-invoicing, guided data import, and a free 14-day trial you can start directly.',
     sections: [
       {
         h2: 'Where 399Apps wins on value',

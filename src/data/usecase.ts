@@ -10,8 +10,9 @@
 //     reorder automation). + a bundle.
 //   - Pricing: from ₹399/mo for the first app; +₹99/mo per additional app/add-on;
 //     unlimited users (never per seat); prices exclude GST.
-//   - 14-day free trial. Migration is CSV/Excel import with guided support
-//     (assisted, not one-click). No self-serve signup — CTA is /contact/.
+//   - 14-day free trial, self-serve at books.399apps.com/sign-up (primary CTA);
+//     /contact/ is the secondary "guided demo" CTA. Migration is CSV/Excel
+//     import with guided support (assisted, not one-click).
 
 import { localizedPath, HTML_LANG_ATTR, type Lang } from './i18n/shared';
 
